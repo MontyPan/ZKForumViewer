@@ -1,0 +1,15 @@
+	<listbox model="@load(vm.threadList)" selectedItem="@save(vm.selectedThread)" 
+	 width="320px" height="800px" >
+		<template name="model" var="thread">
+			<listitem>
+				<listcell>
+					<label value="@load(thread.author)" />
+					(<label value="@load(thread.post)" />)
+					<separator/>
+					<label value="@load(thread.title)" />					
+					<separator/>
+					Last post by <label value="@load(thread.lastPoster)" />					
+				</listcell>
+			</listitem>
+		</template>
+	</listbox>

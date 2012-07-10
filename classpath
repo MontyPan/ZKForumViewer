@@ -1,0 +1,12 @@
+../dist/lib/zcommon.jar
+../dist/lib/zweb.jar
+../dist/lib/zk.jar
+../dist/lib/zul.jar
+../dist/lib/zkbind.jar
+../dist/lib/zkplus.jar
+../dist/lib/zkmax.jar
+../dist/lib/ext/hibernate3.jar
+../dist/lib/ext/servlet-api.jar
+../dist/lib/ext/jasperreports.jar
+../dist/lib/ext/validation-api.jar
+../dist/lib/ext/hibernate-validator.jar

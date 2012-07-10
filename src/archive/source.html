@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- *************************** List Comments *************************** -->
+	<script type="text/javascript">
+		zkpb('b2ZX3', 'z_9540', '/forum', '/forum/zkau',
+				'/WEB-INF/website/template_header-search.jsp');
+		zkpe();
+	</script>
+	<div id="b2ZX4" class="z-temp">
+		<div class="author">
+			<img class='author-image' title='davout'
+				src='/forum/mediaService?userId=2633&extName=jpeg' /><span
+				class="author-name">davout</span>
+		</div>
+		<div>
+			<span class="comment-date">12 Mar 2012 08:26:02 GMT</span>
+			<div class="comment-cotent">
+				<span class="comment-content">12 Mar 2012 08:26:02 GMT</span>
+				<p style="margin: 2px 2px;">I can't find anything to explain how
+					in ZK6 to bind a selected item in a tree? Is this possible?</p>
+			</div>
+		</div>
+		<div class="author">
+			<img class='author-image' title='benbai'
+				src='/forum/mediaService?userId=41078&extName=null' /><span
+				class="author-name">benbai</span>
+		</div>
+		<div>
+			<span class="comment-date">12 Mar 2012 12:06:08 GMT</span>
+			<div class="comment-cotent">
+				<span class="comment-content">12 Mar 2012 12:06:08 GMT</span>
+				<p style="margin: 2px 2px;">Hi,</p>
+				<p>
+					Please refer to the sample below,<br />you can select treeitem to
+					change the display name,<br />or change the display name to select
+					different treeitem.
+				</p>
+				<p>
+				<div>
+					<textarea class='fiddleiframe' name='fiddleiframe'>&lt;br /&gt;&lt;iframe  width='90%' height='300'  src='http://zkfiddle.org/widget/17gj1g4/1?height=250' &gt; &lt;/iframe&gt;&lt;br /&gt;</textarea>
+					<div name='fiddlecontent'>
+						<br /> TestConverter.java<br />
+						<div class="code" style="width: 100%;">
+							<pre>package j17gj1g4$v1;</p>
+								<p>
+									<br />import org.zkoss.bind.BindContext;<br />import org.zkoss.bind.Converter;<br />import org.zkoss.zk.ui.Component;<br />public class TestConverter implements Converter, java.io.Serializable {</p>
+								<p>	private static final long serialVersionUID = 201109261823L;</p>
+								<p>	Component _comp;<br />	public Object coerceToUi(Object val, Component comp, BindContext ctx) {<br />		if (_comp == null)<br />			_comp = comp;<br />	  	return val;<br />	}<br />	<br />	public Object coerceToBean(Object val, Component comp, BindContext ctx) {<br />		if (_comp == null)<br />			_comp = comp;<br />	 	return val;<br />	}<br />	public Component getComp () {<br />		return _comp;<br />	}<br />}<br />
+							</pre>
+						</div>
+						<br /> TestVM.java<br />
+						<div class="code" style="width: 100%;">
+							<pre>package j17gj1g4$v1;</p>
+								<p>
+									<br />import java.util.*;</p>
+								<p>import org.zkoss.bind.Converter;<br />import org.zkoss.bind.annotation.NotifyChange;<br />import org.zkoss.zul.*;</p>
+								<p>public class TestVM {<br />	Treeitem _selectedItem;<br />	Treeitem _itemOne;<br />	TestConverter _testConverter;<br />	public Treeitem getSelectedItem () {<br />		System.out.println("get " + _selectedItem);<br />		return _selectedItem;<br />	}<br />	@NotifyChange("nameOfSelectedItem")<br />	public void setSelectedItem(Treeitem selectedItem) {<br />		System.out.println("set " + selectedItem);<br />		_selectedItem = selectedItem;<br />	}<br />	public String getNameOfSelectedItem() {<br />		if (_selectedItem != null) {<br />			return ((Treecell)_selectedItem.getTreerow().getFirstChild()).getLabel();<br />		}<br />		return "null";<br />	}<br />	@NotifyChange("selectedItem")<br />	public void setNameOfSelectedItem(String value) {<br />		Tree t = (Tree)((TestConverter)getConverter()).getComp();<br />		Iterator&lt;Treeitem&gt; it =  t.getItems().iterator();<br />		while(it.hasNext()) {<br />			Treeitem ti = it.next();<br />			if (((Treecell)ti.getTreerow().getFirstChild()).getLabel().equals(value)) {<br />				_selectedItem = ti;<br />				break;<br />			}<br />		}<br />	}<br />	public Converter getConverter () {<br />		if (_testConverter == null)<br />			_testConverter = new TestConverter();<br />		return _testConverter;<br />	}<br />}<br />
+							</pre>
+						</div>
+						<br /> index.zul<br />
+						<div class="code" style="width: 100%;">
+							<pre>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;<br />&lt;zk&gt;<br />	&lt;window apply="org.zkoss.bind.BindComposer"<br />		viewModel="@id('vm') @init('j17gj1g4$v1.TestVM')"&gt;<br />		&lt;tree id="tree" rows="5" selectedItem="@bind(vm.selectedItem) @converter(vm.converter)"&gt;<br />			&lt;treecols sizable="true"&gt;<br />				&lt;treecol label="Name" /&gt;<br />				&lt;treecol label="Description" /&gt;<br />			&lt;/treecols&gt;<br />			&lt;treechildren&gt;<br />				&lt;treeitem id="itemOne"&gt;<br />					&lt;treerow&gt;<br />						&lt;treecell label="Item 1" /&gt;<br />						&lt;treecell label="Item 1 description" /&gt;<br />					&lt;/treerow&gt;<br />				&lt;/treeitem&gt;<br />				&lt;treeitem&gt;<br />					&lt;treerow&gt;<br />						&lt;treecell label="Item 2" /&gt;<br />						&lt;treecell label="Item 2 description" /&gt;<br />					&lt;/treerow&gt;<br />					&lt;treechildren&gt;<br />						&lt;treeitem&gt;<br />							&lt;treerow&gt;<br />								&lt;treecell label="Item 2.1" /&gt;<br />							&lt;/treerow&gt;<br />						&lt;/treeitem&gt;<br />						&lt;treeitem&gt;<br />							&lt;treerow&gt;<br />								&lt;treecell label="Item 2.2" /&gt;<br />								&lt;treecell<br />									label="Item 2.2 is something who cares" /&gt;<br />							&lt;/treerow&gt;<br />						&lt;/treeitem&gt;<br />					&lt;/treechildren&gt;<br />				&lt;/treeitem&gt;<br />				&lt;treeitem label="Item 3" /&gt;<br />			&lt;/treechildren&gt;<br />			&lt;treefoot&gt;<br />				&lt;treefooter label="Count" /&gt;<br />				&lt;treefooter label="Summary" /&gt;<br />			&lt;/treefoot&gt;<br />		&lt;/tree&gt;<br />                  Item Name: &lt;div&gt;&lt;/div&gt;<br />                  Change it to select different item&lt;div&gt;&lt;/div&gt;<br />                  &lt;textbox value="@bind(vm.nameOfSelectedItem)" /&gt;<br />	&lt;/window&gt;<br />&lt;/zk&gt;</pre>
+						</div>
+					</div>
+				</div>
+				</p>
+				<p>
+					Regards,<br />Ben
+				</p>
+			</div>
+		</div>
+		<div class="author">
+			<img class='author-image' title='davout'
+				src='/forum/mediaService?userId=2633&extName=jpeg' /><span
+				class="author-name">davout</span>
+		</div>
+		<div>
+			<span class="comment-date">12 Mar 2012 15:31:49 GMT</span>
+			<div class="comment-cotent">
+				<span class="comment-content">12 Mar 2012 15:31:49 GMT</span>
+				<p style="margin: 2px 2px;">
+					Thanks for your help. That works. <br /> <br />One follow up
+					question if I may... how can I change the selected tree item using
+					the data object that is stored within each DefaultTreeNode? <br />
+					<br />On the view model controlling the tree I have a
+					'@GlobalCommand' method that takes an incoming data object as a
+					parameter. This same data object is stored in each DefaultTreeNode.
+					I want to search the tree to find the DefaultTreeNode that has the
+					same data object value as the method param. Any ideas?
+				</p>
+			</div>
+		</div>
+		<div class="author">
+			<img class='author-image' title='davout'
+				src='/forum/mediaService?userId=2633&extName=jpeg' /><span
+				class="author-name">davout</span>
+		</div>
+		<div>
+			<span class="comment-date">12 Mar 2012 16:37:42 GMT</span>
+			<div class="comment-cotent">
+				<span class="comment-content">12 Mar 2012 16:37:42 GMT</span>
+				<p style="margin: 2px 2px;">I found a way of scanning through
+					the model node hierarchy to find the node with the matching data
+					value. I suppose in a way it would be good to have a faster way of
+					doing this - perhaps a hashmap of data object unique key to tree
+					node.</p>
+			</div>
+		</div>
+		<div class="author">
+			<img class='author-image' title='benbai'
+				src='/forum/mediaService?userId=41078&extName=null' /><span
+				class="author-name">benbai</span>
+		</div>
+		<div>
+			<span class="comment-date">13 Mar 2012 05:08:22 GMT</span>
+			<div class="comment-cotent">
+				<span class="comment-content">13 Mar 2012 05:08:22 GMT</span>Hi, You
+				can try store the data/path mapping in a map: [fiddle height="300"
+				sample="http://zkfiddle.org/sample/17gj1g4/2-Tree-binding-selected-item"
+				/] Regards, Ben
+			</div>
+		</div>
+		<div class="author">
+			<img class='author-image' title='Senthilchettyin'
+				src='/forum/mediaService?userId=50199&extName=jpeg' /><span
+				class="author-name">Senthilchettyin</span>
+		</div>
+		<div>
+			<span class="comment-date">6 Jul 2012 11:04:46 GMT</span>
+			<div class="comment-cotent">
+				<span class="comment-content">6 Jul 2012 11:04:46 GMT</span>
+				<p style="margin: 2px 2px;">Hi benbai</p>
+				<p>Can you please give me the same example with tree data
+					loading from the java instead of static values in the zul files</p>
+				<p>
+					I am looking for a sample on MVVM Tree in which i want to load some
+					10 first level nodes and each has some more childs. Actually i want
+					to load all these from<br />the DB. but if i get some sample code,
+					then i can continue from there.
+				</p>
+			</div>
+		</div>
+		<div class="author">
+			<img class='author-image' title='benbai'
+				src='/forum/mediaService?userId=41078&extName=null' /><span
+				class="author-name">benbai</span>
+		</div>
+		<div>
+			<span class="comment-date">9 Jul 2012 10:17:58 GMT</span>
+			<div class="comment-cotent">
+				<span class="comment-content">9 Jul 2012 10:17:58 GMT</span>
+				<p style="margin: 2px 2px;">Hi,</p>
+				<p>
+					Please refer to the sample: <a target="external"
+						href="http://zkfiddle.org/sample/3dm77ch/1-MVVM-tree">http://zkfiddle.org/sample/3dm77ch/1-MVVM-tree</a>
+				</p>
+				<p>
+					For more information, please refer to the document:<br />
+					<a target="external"
+						href="http://books.zkoss.org/wiki/ZK_Developer's_Reference/MVC/Model/Tree_Model">ZK
+						Developer's Reference/MVC/Model/Tree Model</a>
+				</p>
+				<p>
+					Regards,<br />Ben
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

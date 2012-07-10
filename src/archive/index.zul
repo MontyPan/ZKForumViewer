@@ -1,0 +1,28 @@
+<?page title="ZK Forum viewer"?>
+<zk>
+<style>
+.thread_title{
+	font-size:20px;
+}
+
+.mail_from{
+	font-size:14px;
+	color:#093;
+}
+</style>
+<panel framable="true">
+	<toolbar>
+		<hbox>
+			<div width="320px">Inbox</div>
+			<div> (mail content) </div>
+		</hbox>
+	</toolbar>
+	<panelchildren>
+		<hlayout apply="org.zkoss.bind.BindComposer" 
+		 viewModel="@id('vm') @init('org.zkoss.demo.tablet.vm.ThreadViewModel')">
+			<include src="thread.zul" />
+			<include src="content.zul" />
+		</hlayout>
+	</panelchildren>
+</panel>
+</zk>
