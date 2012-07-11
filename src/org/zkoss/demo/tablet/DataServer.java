@@ -25,7 +25,10 @@ public class DataServer {
 	private static ArrayList<ThreadVO> allThread = new ArrayList<ThreadVO>();
 
 	public DataServer() {
-		fetchThreadUrl();
+		//TODO fix fetch algorithm
+		if(allThread.size()==0){
+			fetchThreadUrl();
+		}
 	}
 	
 	private void fetchThreadUrl(){

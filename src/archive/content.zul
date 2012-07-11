@@ -4,8 +4,6 @@
 			<caption label="@load(content.author)" zclass="post_from"/>
 			<label value="@load(content.date)" />
 			<separator />
-			<label value="${contentStatus.index}" />
-			<separator />
 			<html content="@load(content.content)" />
 		</groupbox>					
 	</template>

@@ -54,4 +54,8 @@ public class ThreadViewModel {
 	public List<ContentVO> getContentList(){
 		return selectedThreadContent;
 	}
+	
+	public ThreadVO getSelectedThread(){
+		return selectedThread;
+	}
 }

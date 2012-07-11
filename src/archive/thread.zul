@@ -1,21 +1,22 @@
-	<listbox model="@load(vm.threadList)" selectedItem="@save(vm.selectedThread)" 
-	 width="320px" vflex="1">
-		<template name="model" var="thread">
-			<listitem>
-				<listcell zclass="thread">
-					<hlayout>
-						<checkbox checked="@load(thread.popular)"/>
-						<div zclass="thread" width="260px">
-							<label value="@load(thread.author)" />
-							(<label value='@load(thread.post)' />)
-							<separator/>
-							<label value="@load(thread.title)" />					
-							<separator/>
-							Last post by<label value="@load(thread.lastPoster)" />							
-						</div>
-						<checkbox checked="@load(thread.hot)"/> 
-					</hlayout>					
-				</listcell>
-			</listitem>
-		</template>
-	</listbox>
+<listbox model="@load(vm.threadList)" selectedItem="@save(vm.selectedThread)" vflex="1">
+	<template name="model" var="thread">
+		<listitem>
+			<listcell>
+				<hbox hflex="1" align="center" pack="center">
+					<checkbox hflex="1"/>
+					<div zclass="thread" hflex="7">
+						<label value="@load(thread.author)" />
+						(<label value='@load(thread.post)' />)
+						<separator/>
+						<image src="img/popular.png" visible="@load(thread.popular)" />
+						<label value="@load(thread.title)" />
+						<separator/>
+						Last post by<label value="@load(thread.lastPoster)" />						
+					</div>
+					<image src='@load(thread.hot ? "img/star.png" : "img/starEmpty.png")' />
+					<div width="3px" />
+				</hbox>					
+			</listcell>
+		</listitem>
+	</template>
+</listbox>

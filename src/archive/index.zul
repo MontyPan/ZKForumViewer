@@ -1,35 +1,56 @@
 <?page title="ZK Forum viewer"?>
 <zk>
 <style>
-.thread{
-	font-size:12px;
+.z-label{
+	font-size:13px;
+}
+
+.toolbar{
+	background-color:#C5D4F9;
+	height:40px;
+}
+
+.thread_title{
+	font-size:15px;
 }
 
 .post_from{
-	font-size:18px;
+	font-size:15px;
 	color:#093;
 }
-
-
 </style>
-<panel framable="true" vflex="1">
-	<toolbar>
-		<hbox>
-			<div width="320px">Inbox</div>
-			<div> (mail content) </div>
-		</hbox>
-	</toolbar>
-	<panelchildren>
-		<hlayout apply="org.zkoss.bind.BindComposer" 
-		 viewModel="@id('vm') @init('org.zkoss.demo.tablet.vm.ThreadViewModel')"
-		 vflex="1">
-			<include src="thread.zul" vflex="1" />
-
-			<!-- can't use "include", because VM use @wire and can't wire component which is in "include" -->
-			<window vflex="1" width="100%" id="contentPanel" contentStyle="overflow:auto">
+<borderlayout apply="org.zkoss.bind.BindComposer" 
+ viewModel="@id('vm') @init('org.zkoss.demo.tablet.vm.ThreadViewModel')">
+	<west size="30%" border="none">
+		<vlayout vflex="1">
+			<hbox sclass="toolbar" hflex="1" align="center">
+				<image src="img/list.png" hflex="1"/>
+				<label value="Inbox" vflex="1" hflex="4"/>
+				<image src="img/search.png" hflex="0.7"/>
+				<image src="img/new.png" hflex="1"/>
+			</hbox>
+			<include src="thread.zul" vflex="1"/>
+		</vlayout>
+	</west>
+	<center vflex="1" border="none">
+		<vlayout vflex="1">
+			<hbox sclass="toolbar" hflex="1" align="center" pack="end">
+				<image src="img/archive.png"/>
+				<image src="img/trash.png" />
+				<image src="img/doubleDown.png" />
+				<image src="img/setting.png" />
+			</hbox>
+			<hbox hflex="1" align="center">
+				<div hflex="1">
+					<label value="@load(vm.selectedThread.title)" sclass="thread_title"/>
+					<image src="img/popular.png" visible="@load(vm.selectedThread.popular)" />
+				</div>
+				<image src="img/collapse.png" width="28px" height="28px" />
+			</hbox>
+			<window vflex="1" id="contentPanel" contentStyle="overflow:auto">
 				<include src="content.zul" vflex="1" />
 			</window>
-		</hlayout>
-	</panelchildren>
-</panel>
+		</vlayout>
+	</center>
+</borderlayout>
 </zk>
