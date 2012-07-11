@@ -6,6 +6,8 @@ public class ThreadVO {
 	private String lastPoster;
 	private int post;
 	private String url;
+	private boolean popular;
+	private boolean hot;
 	
 	public String getTitle() {
 		return title;
@@ -36,5 +38,17 @@ public class ThreadVO {
 	}
 	public void setLastPoster(String lastPoster) {
 		this.lastPoster = lastPoster;
+	}
+	public boolean isPopular() {
+		return popular;
+	}
+	public void setPopular(boolean popular) {
+		this.popular = popular;
+	}
+	public boolean isHot() {
+		return hot;
+	}
+	public void setHot(boolean hot) {
+		this.hot = hot;
 	}
 }

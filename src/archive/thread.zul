@@ -1,14 +1,20 @@
 	<listbox model="@load(vm.threadList)" selectedItem="@save(vm.selectedThread)" 
-	 width="320px" height="800px" >
+	 width="320px" vflex="1">
 		<template name="model" var="thread">
 			<listitem>
-				<listcell>
-					<label value="@load(thread.author)" />
-					(<label value="@load(thread.post)" />)
-					<separator/>
-					<label value="@load(thread.title)" />					
-					<separator/>
-					Last post by <label value="@load(thread.lastPoster)" />					
+				<listcell zclass="thread">
+					<hlayout>
+						<checkbox checked="@load(thread.popular)"/>
+						<div zclass="thread" width="260px">
+							<label value="@load(thread.author)" />
+							(<label value='@load(thread.post)' />)
+							<separator/>
+							<label value="@load(thread.title)" />					
+							<separator/>
+							Last post by<label value="@load(thread.lastPoster)" />							
+						</div>
+						<checkbox checked="@load(thread.hot)"/> 
+					</hlayout>					
 				</listcell>
 			</listitem>
 		</template>

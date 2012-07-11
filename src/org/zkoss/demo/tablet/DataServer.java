@@ -1,8 +1,6 @@
 package org.zkoss.demo.tablet;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.zkoss.demo.tablet.vo.ContentVO;
@@ -11,6 +9,7 @@ import org.zkoss.demo.tablet.vo.ThreadVO;
 public class DataServer {
 	private static final String HOST = "http://www.zkoss.org";
 	private static final String SOURCE_URL = HOST+"/forum/listDiscussion/14";
+	private static final String THREAD_START = "<div class=\"discussion-subject\">";
 	private static final String TITLE_HEADER = "<a class=\"discussion-title-unread\" href=\"";
 	private static final String TITLE_TAIL = ";jsessionid";
 	
@@ -20,6 +19,9 @@ public class DataServer {
 	
 	private static final String AUTHOR_HEADER = ",label:'";
 	private static final String AUTHOR_TAIL = "'},";
+	
+	private static final String POPULAR = "<img alt=\"Popular\" title=\"Popular\"";
+	private static final String HOT = "<img alt=\"Hot\" title=\"Hot\"";
 	private static ArrayList<ThreadVO> allThread = new ArrayList<ThreadVO>();
 
 	public DataServer() {
@@ -30,9 +32,24 @@ public class DataServer {
 		String content = Utility.urlToString(SOURCE_URL);
 		
 		int start = 0, end;
-		while((start=content.indexOf(TITLE_HEADER, start)) != -1){
+		while((start=content.indexOf(THREAD_START, start)) != -1){
 			ThreadVO thread = new ThreadVO();
 			
+			//XXX "hot" or "popular" will ignore at last thread
+			int tmp;
+			if((tmp = content.indexOf(POPULAR, start))!=-1){
+				if(tmp < content.indexOf(THREAD_START, start+1)){
+					thread.setPopular(true);	
+				}
+			}
+			
+			if((tmp = content.indexOf(HOT, start))!=-1){
+				if(tmp < content.indexOf(THREAD_START, start+1)){
+					thread.setHot(true);	
+				}
+			}
+			
+			start=content.indexOf(TITLE_HEADER, start);
 			end=content.indexOf(TITLE_TAIL, start);
 			thread.setUrl(content.substring(start+TITLE_HEADER.length(), end));
 			

@@ -1,29 +1,12 @@
-<borderlayout height="800px" width="480px"><center border="0" autoscroll="true">
 <vlayout children="@load(vm.contentList)">
 	<template name="children" var="content">
-					<groupbox mold="3d">
-						<caption label="@load(content.author)" zclass="mail_from"/>
-						<label value="@load(content.date)" />
-						<separator />
-						<html content="@load(content.content)" />
-					</groupbox>
-		
+		<groupbox mold="3d" onOpen='@command("contentOpen")'>
+			<caption label="@load(content.author)" zclass="post_from"/>
+			<label value="@load(content.date)" />
+			<separator />
+			<label value="${contentStatus.index}" />
+			<separator />
+			<html content="@load(content.content)" />
+		</groupbox>					
 	</template>
 </vlayout>
-</center></borderlayout>
-<!--
-	<listbox model="@load(vm.contentList)" height="800px" width="480px">
-		<template name="model" var="content">
-			<listitem>
-				<listcell>
-					<groupbox mold="3d">
-						<caption label="@load(content.author)" zclass="mail_from"/>
-						<label value="@load(content.date)" />
-						<separator />
-						<html content="@load(content.content)" />
-					</groupbox>
-				</listcell>
-			</listitem>
-		</template>
-	</listbox>
--->
