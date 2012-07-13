@@ -1,0 +1,8 @@
+<listbox vflex="1"
+ model="@load(vm.categoryList)" selectedItem="@save(vm.selectedCategory)">
+	<template name="model" var="category">
+		<listitem>
+			<listcell label="${category}" />
+		</listitem>
+	</template>
+</listbox>

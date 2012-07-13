@@ -1,56 +1,62 @@
 <?page title="ZK Forum viewer"?>
 <zk>
 <style>
-.z-label{
-	font-size:13px;
+.button {
+	width: 28px;
+	height: 25px;
+	padding: 2px;
+	border: 1px solid #ccc;
+	border-radius: 5px
 }
 
-.toolbar{
-	background-color:#C5D4F9;
-	height:40px;
+.textCenter {
+	text-align: center;
 }
 
-.thread_title{
-	font-size:15px;
+.z-label {
+	font-size: 13px;
 }
 
-.post_from{
-	font-size:15px;
-	color:#093;
+.thread_title {
+	font-size: 15px;
+}
+
+.post_from {
+	font-size: 15px;
+	color: #093;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
 }
 </style>
+
 <borderlayout apply="org.zkoss.bind.BindComposer" 
  viewModel="@id('vm') @init('org.zkoss.demo.tablet.vm.ThreadViewModel')">
-	<west size="30%" border="none">
-		<vlayout vflex="1">
-			<hbox sclass="toolbar" hflex="1" align="center">
-				<image src="img/list.png" hflex="1"/>
-				<label value="Inbox" vflex="1" hflex="4"/>
-				<image src="img/search.png" hflex="0.7"/>
-				<image src="img/new.png" hflex="1"/>
-			</hbox>
-			<include src="thread.zul" vflex="1"/>
-		</vlayout>
+	<west size="30%" border="none" collapsible="true">
+		<caption>
+			<include src="threadHead.zul" />
+		</caption>
+		<include src="@load(vm.westUrl)" vflex="1"/> 
 	</west>
-	<center vflex="1" border="none">
-		<vlayout vflex="1">
-			<hbox sclass="toolbar" hflex="1" align="center" pack="end">
+	
+	<center border="none">
+		<caption>
+			<hlayout>
 				<image src="img/archive.png"/>
 				<image src="img/trash.png" />
 				<image src="img/doubleDown.png" />
-				<image src="img/setting.png" />
-			</hbox>
-			<hbox hflex="1" align="center">
-				<div hflex="1">
-					<label value="@load(vm.selectedThread.title)" sclass="thread_title"/>
-					<image src="img/popular.png" visible="@load(vm.selectedThread.popular)" />
-				</div>
-				<image src="img/collapse.png" width="28px" height="28px" />
-			</hbox>
-			<window vflex="1" id="contentPanel" contentStyle="overflow:auto">
-				<include src="content.zul" vflex="1" />
-			</window>
-		</vlayout>
+				<image src="img/setting.png" onClick='@command("showSetting")' />
+			</hlayout>
+		</caption>
+		<window vflex="1" id="contentPanel" >
+			<include vflex="1" src="@load(vm.centerUrl)" />
+		</window>
+		
 	</center>
 </borderlayout>
 </zk>

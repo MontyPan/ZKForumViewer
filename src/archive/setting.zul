@@ -1,0 +1,23 @@
+<vlayout>
+	<grid>
+		<rows>
+			<row>
+				<label value="Set Date : " />
+				<datebox />
+			</row>
+			<row>
+				<label value="Set Color : " />
+				<colorbox />
+			</row>
+			<row>
+				<label value="Set Category : " />
+				<combobox model="@load(vm.categoryList)">
+					<template name="model" var="category">
+						<comboitem label="${category}" />
+					</template>
+				</combobox>
+			</row>			
+		</rows>
+	</grid>	
+	<button label="back" onClick='@command("showSetting")' />
+</vlayout>

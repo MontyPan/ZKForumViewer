@@ -8,8 +8,9 @@
 						<label value="@load(thread.author)" />
 						(<label value='@load(thread.post)' />)
 						<separator/>
-						<image src="img/popular.png" visible="@load(thread.popular)" />
-						<label value="@load(thread.title)" />
+						<image visible="@load(thread.popular)" 
+						 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAA4ElEQVQoU2M4NUP4BxD/w4P/A3HD////GWCY4fhUoX9/P+36jwv/eLXmP1DNRyA2h2s6MlHg3/879v/x4RfHQ/4D1T0HYnGwpoM9fP/+X7P4jxffsP9/f0/4f6DazUDMzrC3neff//OG/wniS3b/b24N+Q9Uv5thZxPXv/8nNP8Tg28s1/4PVL+FYWstx7//h5T/E8I354v+B6rdCsQcDBsr2P793yPzHx9+tFjkP1DdCyAWAQfEumKWf/+2if3Hhb9vFPkPVPMRiBFBviqf6RcQ/wXiP1AaHf8H4jrkyAUAlSRgDlxOvSkAAAAASUVORK5CYII=" />
+						<html content="@load(thread.title)" sclass="z-label" />
 						<separator/>
 						Last post by<label value="@load(thread.lastPoster)" />						
 					</div>

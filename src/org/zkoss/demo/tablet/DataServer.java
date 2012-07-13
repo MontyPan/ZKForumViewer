@@ -1,14 +1,39 @@
 package org.zkoss.demo.tablet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.zkoss.demo.tablet.vo.ContentVO;
 import org.zkoss.demo.tablet.vo.ThreadVO;
 
 public class DataServer {
+	public static final String HELP = "Help";
+	public static final String STUDIO = "ZK Studio";
+	public static final String GENERAL = "General";
+	public static final String ANNOUNCE = "Announcements";
+	public static final String INSTALL = "Installation";
+	
+	private static final HashMap<String, Integer> CAT_URL = new HashMap<String, Integer>();
+	static{
+		CAT_URL.put(HELP, 14);
+		CAT_URL.put(STUDIO, 18);
+		CAT_URL.put(GENERAL, 13);
+		CAT_URL.put(ANNOUNCE, 15);
+		CAT_URL.put(INSTALL, 17);
+	}
+	
+	private static final HashMap<String, ArrayList<ThreadVO>> CAT_THREAD = new HashMap<String, ArrayList<ThreadVO>>();
+	static{
+		CAT_THREAD.put(HELP, new ArrayList<ThreadVO>());
+		CAT_THREAD.put(STUDIO, new ArrayList<ThreadVO>());
+		CAT_THREAD.put(GENERAL, new ArrayList<ThreadVO>());
+		CAT_THREAD.put(ANNOUNCE, new ArrayList<ThreadVO>());
+		CAT_THREAD.put(INSTALL, new ArrayList<ThreadVO>());
+	}
+	
 	private static final String HOST = "http://www.zkoss.org";
-	private static final String SOURCE_URL = HOST+"/forum/listDiscussion/14";
+	private static final String SOURCE_URL = HOST+"/forum/listDiscussion/";
 	private static final String THREAD_START = "<div class=\"discussion-subject\">";
 	private static final String TITLE_HEADER = "<a class=\"discussion-title-unread\" href=\"";
 	private static final String TITLE_TAIL = ";jsessionid";
@@ -22,19 +47,15 @@ public class DataServer {
 	
 	private static final String POPULAR = "<img alt=\"Popular\" title=\"Popular\"";
 	private static final String HOT = "<img alt=\"Hot\" title=\"Hot\"";
-	private static ArrayList<ThreadVO> allThread = new ArrayList<ThreadVO>();
 
 	public DataServer() {
-		//TODO fix fetch algorithm
-		if(allThread.size()==0){
-			fetchThreadUrl();
-		}
 	}
 	
-	private void fetchThreadUrl(){
-		String content = Utility.urlToString(SOURCE_URL);
+	private void fetchThreadUrl(String type){
+		String content = Utility.urlToString(SOURCE_URL+CAT_URL.get(type));
 		
 		int start = 0, end;
+		ArrayList<ThreadVO> tvo = CAT_THREAD.get(type);
 		while((start=content.indexOf(THREAD_START, start)) != -1){
 			ThreadVO thread = new ThreadVO();
 			
@@ -72,13 +93,18 @@ public class DataServer {
 			end=content.indexOf(AUTHOR_TAIL, start);
 			thread.setLastPoster(content.substring(start+AUTHOR_HEADER.length(), end));
 
-			allThread.add(thread);
+			tvo.add(thread);
 			start=end;
 		}
 	}
-	
-	public List<ThreadVO> getThreadList(){
-		return allThread;
+
+	//TODO fix fetch algorithm
+	public List<ThreadVO> getThreadList(String type){
+		List<ThreadVO> result = CAT_THREAD.get(type);
+		if(result.size()==0){
+			fetchThreadUrl(type);
+		}
+		return result;
 	}
 
 	private static final String CONTENT_AUTHOR_HEADER = "<span class=\"author-name\">";
