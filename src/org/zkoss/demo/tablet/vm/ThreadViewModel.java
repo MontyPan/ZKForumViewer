@@ -1,5 +1,6 @@
 package org.zkoss.demo.tablet.vm;
 
+import java.util.Date;
 import java.util.List;
 
 import org.zkoss.bind.annotation.Command;
@@ -19,11 +20,13 @@ import org.zkoss.zul.Window;
 public class ThreadViewModel {
 	private static final String[] CATEGORY_LIST = {
 		DataServer.HELP, DataServer.STUDIO, DataServer.GENERAL, DataServer.ANNOUNCE, DataServer.INSTALL
+		, "サポート", "ご要望", "お知らせ"	 //Delete just for demo
 	};
 
+	private AbstractConverter converter = new AbstractConverter();
 	private DataServer server;
 	private ThreadVO selectedThread;
-	private String selectedCategory = DataServer.HELP;
+	private String selectedCategory = DataServer.ANNOUNCE;
 	private List<ThreadVO> selectedThreadList;
 	private List<ContentVO> selectedThreadContent;
 	private boolean westFlag = true;
@@ -63,19 +66,19 @@ public class ThreadViewModel {
 	}
 	
 	@Command
-	public void openContent(){
+	public void openContent(){		
 		//FIXME check it work fine or not
 		Clients.resize(contentPanel);
 	}
 	
 	@Command
-	@NotifyChange("westUrl")
+	@NotifyChange({"westMode", "threadList", "categoryList"})  
 	public void showCategory(){
 		westFlag = !westFlag;
 	}
 
-	public String getWestUrl() {
-		return westFlag ? "thread.zul" : "categoryList.zul";
+	public boolean isWestMode() {
+		return westFlag;
 	}
 
 	@Command
@@ -100,13 +103,29 @@ public class ThreadViewModel {
 	public ThreadVO getSelectedThread(){
 		return selectedThread;
 	}
-	
 		
 	public String[] getCategoryList(){
 		return CATEGORY_LIST;
 	}
 
-	public String getSelectedCategory() {
+	public String getSelectedCategory(){
 		return selectedCategory;
+	}
+	
+	public int getCategoryIndex(){
+		for(int i=0; i<CATEGORY_LIST.length; i++){
+			if(CATEGORY_LIST[i].equals(selectedCategory)){
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public AbstractConverter getConverter(){
+		return converter;
+	}
+	
+	public Date getNow(){
+		return new Date();
 	}
 }

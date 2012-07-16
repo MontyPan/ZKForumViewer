@@ -1,9 +1,13 @@
 <vlayout>
 	<grid>
+		<columns>
+			<column label="Type" width="100px" />
+			<column label="" />
+		</columns>
 		<rows>
 			<row>
 				<label value="Set Date : " />
-				<datebox />
+				<datebox value="@load(vm.now)" />
 			</row>
 			<row>
 				<label value="Set Color : " />
@@ -11,7 +15,7 @@
 			</row>
 			<row>
 				<label value="Set Category : " />
-				<combobox model="@load(vm.categoryList)">
+				<combobox model="@load(vm.categoryList)" selectedIndex="@load(vm.categoryIndex)">
 					<template name="model" var="category">
 						<comboitem label="${category}" />
 					</template>
