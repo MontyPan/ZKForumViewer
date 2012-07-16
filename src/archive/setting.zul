@@ -15,7 +15,7 @@
 			</row>
 			<row>
 				<label value="Set Category : " />
-				<combobox model="@load(vm.categoryList)" selectedIndex="@load(vm.categoryIndex)">
+				<combobox model="@load(vm.categoryList)" selectedIndex="@load(vm.selectedCategoryIndex)">
 					<template name="model" var="category">
 						<comboitem label="${category}" />
 					</template>

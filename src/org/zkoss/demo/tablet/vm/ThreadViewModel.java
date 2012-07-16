@@ -15,6 +15,7 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.Selectors;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.Clients;
+import org.zkoss.zul.Image;
 import org.zkoss.zul.Window;
 
 public class ThreadViewModel {
@@ -23,26 +24,33 @@ public class ThreadViewModel {
 		, "サポート", "ご要望", "お知らせ"	 //Delete just for demo
 	};
 
-	private AbstractConverter converter = new AbstractConverter();
 	private DataServer server;
-	private ThreadVO selectedThread;
-	private String selectedCategory = DataServer.ANNOUNCE;
-	private List<ThreadVO> selectedThreadList;
-	private List<ContentVO> selectedThreadContent;
+	private ThreadVO nowThread;
+	private int nowThreadIndex;
+	private int nowCategoryIndex = 3;
+	private String nowCategory = CATEGORY_LIST[nowCategoryIndex];
+	private List<ThreadVO> nowThreadList;
+	private List<ContentVO> nowContentList;
 	private boolean westFlag = true;
 	private boolean centerFlag = true;
 	
 	@Wire("#contentPanel") private Window contentPanel;
 		
 	public ThreadViewModel() {
+		Image xd = new Image();
 		server  = new DataServer();
-		fetchData();
+		fetchThread();
 	}
 	
-	private void fetchData(){
-		selectedThreadList = server.getThreadList(selectedCategory);
-		selectedThread = selectedThreadList.get(0);
-		selectedThreadContent = server.getContentList(this.selectedThread);
+	private void fetchThread(){
+		nowThreadList = server.getThreadList(CATEGORY_LIST[nowCategoryIndex]);
+		nowThreadIndex = 0;
+		fetchContent();
+	}
+	
+	private void fetchContent(){
+		nowThread = nowThreadList.get(nowThreadIndex);
+		nowContentList = server.getContentList(this.nowThread);
 	}
 	
 	@Init
@@ -50,19 +58,37 @@ public class ThreadViewModel {
 		Selectors.wireComponents(view, this, false);
 	}
 	
-	@NotifyChange({"contentList", "selectedThread"})
-	public void setSelectedThread(ThreadVO thread){
-		this.selectedThread = thread;
-		selectedThreadContent = server.getContentList(this.selectedThread); 
+	@NotifyChange({"contentList", "selectedThread", "threadStart", "threadEnd"})
+	public void setSelectedThreadIndex(int index){
+		nowThreadIndex = index;
+		fetchContent();
 		contentPanel.invalidate();
 	}
 	
 	@NotifyChange("*")
-	public void setSelectedCategory(String category){
+	public void setSelectedCategoryIndex(int index){
+		nowCategoryIndex = index;
 		westFlag = !westFlag;
-		selectedCategory = category;
-		fetchData();
-		contentPanel.invalidate();
+		fetchThread();
+		contentPanel.invalidate();		
+	}
+		
+	@Command
+	@NotifyChange({"contentList", "selectedThread", "selectedThreadIndex", "threadEnd", "threadStart"})
+	public void prevThread(){
+		if(nowThreadIndex>0){
+			nowThreadIndex--;
+			fetchContent();
+		}
+	}
+	
+	@Command
+	@NotifyChange({"contentList", "selectedThread", "selectedThreadIndex", "threadEnd", "threadStart"})
+	public void nextThread(){
+		if(nowThreadIndex<nowThreadList.size()-1){
+			nowThreadIndex++;
+			fetchContent();
+		}
 	}
 	
 	@Command
@@ -91,41 +117,43 @@ public class ThreadViewModel {
 		return centerFlag ? "content.zul" : "setting.zul";
 	}
 	
-	@Command
 	public List<ThreadVO> getThreadList(){	
-		return selectedThreadList;
+		return nowThreadList;
 	}
 	
 	public List<ContentVO> getContentList(){
-		return selectedThreadContent;
+		return nowContentList;
 	}
 	
 	public ThreadVO getSelectedThread(){
-		return selectedThread;
+		return nowThread;
 	}
 		
 	public String[] getCategoryList(){
 		return CATEGORY_LIST;
 	}
-
+	
+	public int getSelectedCategoryIndex(){
+		return nowCategoryIndex;
+	}
+	
 	public String getSelectedCategory(){
-		return selectedCategory;
-	}
-	
-	public int getCategoryIndex(){
-		for(int i=0; i<CATEGORY_LIST.length; i++){
-			if(CATEGORY_LIST[i].equals(selectedCategory)){
-				return i;
-			}
-		}
-		return -1;
-	}
-	
-	public AbstractConverter getConverter(){
-		return converter;
+		return nowCategory;
 	}
 	
 	public Date getNow(){
 		return new Date();
+	}
+
+	public int getSelectedThreadIndex() {
+		return nowThreadIndex;
+	}
+	
+	public boolean isThreadEnd(){
+		return nowThreadIndex==nowThreadList.size()-1;
+	}
+	
+	public boolean isThreadStart(){
+		return nowThreadIndex==0;
 	}
 }

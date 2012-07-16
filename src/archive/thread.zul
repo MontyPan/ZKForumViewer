@@ -1,6 +1,6 @@
 <vlayout vflex="1" hflex="1">
-	<listbox vflex="1" visible="@load(vm.westMode)" 
-	 model="@load(vm.threadList)" selectedItem="@save(vm.selectedThread)" >
+	<listbox vflex='1' visible="@load(vm.westMode)" 
+	 model="@load(vm.threadList)" selectedIndex="@bind(vm.selectedThreadIndex)" >
 		<template name="model" var="thread">
 			<listitem>
 				<listcell>
@@ -24,8 +24,8 @@
 			</listitem>
 		</template>
 	</listbox>
-	<listbox vflex="1" visible="@load(!vm.westMode)"
-	 model="@load(vm.categoryList)" selectedItem="@save(vm.selectedCategory)">
+	<listbox vflex='1' visible="@load(!vm.westMode)"
+	 model="@load(vm.categoryList)" selectedIndex="@bind(vm.selectedCategoryIndex)">
 		<template name="model" var="category">
 			<listitem>
 				<listcell label="${category}" />

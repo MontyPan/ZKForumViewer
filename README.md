@@ -3,6 +3,8 @@
 
 FIXME !!
 --------
+# Border 的 caption 要將寬度設定到 32px
+# Thread 底下會多 0.3em 的空白（.z-vlayout-inner 的 style 有 padding-bottom: 0.3em）
 
 TODO \囧/
 ---------

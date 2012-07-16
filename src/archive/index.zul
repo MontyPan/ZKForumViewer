@@ -65,6 +65,10 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
+.disable {
+	opacity: 0.3;
+}
 </style>
 
 <borderlayout apply="org.zkoss.bind.BindComposer" 
@@ -90,7 +94,17 @@
 		<window vflex="1" id="contentPanel" >
 			<include vflex="1" src="@load(vm.centerUrl)" />
 		</window>
-		
 	</center>
+	
+	<south>
+		<caption>
+			<image sclass='@load(vm.threadStart ? "button disable" : "button")' 
+			 onClick='@command(vm.threadStart ? "" : "prevThread")' 
+			 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUklEQVQ4y2P4//8/AzUxw6iB9DXQIrD3PwhTxUCYYVQxEM2w/RQZSIphBA0k1TBSDaRKLO8n1VBibCXJUGKTzX6qJht0Q6mZ9fZTnA5Hiy+CGACQH5jke2R0BAAAAABJRU5ErkJggg==" />
+			<image sclass='@load(vm.threadEnd ? "button disable" : "button")' 
+			 onClick='@command(vm.threadEnd ? "" : "nextThread")'
+			 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAATklEQVQ4y2P4//8/AzUxw6iBtDXQIrD3PwhT3UBSDCWk4D+phhJjK0mGEhs2RBtKdGBT1UA0wygzkBTDSE02/6mZsKmXDkkxbLS0oQ4GABpVmyQ8nT5cAAAAAElFTkSuQmCC" />
+		</caption>
+	</south>
 </borderlayout>
 </zk>
