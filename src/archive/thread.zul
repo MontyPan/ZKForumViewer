@@ -1,4 +1,4 @@
-<vlayout vflex="1" hflex="1">
+<vlayout vflex="1" hflex="1" spacing="0">
 	<listbox vflex='1' visible="@load(vm.westMode)" 
 	 model="@load(vm.threadList)" selectedIndex="@bind(vm.selectedThreadIndex)" >
 		<template name="model" var="thread">
@@ -14,7 +14,7 @@
 							<separator/>
 							<html content="@load(thread.title)" sclass="thread_bold autoSkip" />
 							<separator/>
-							Last post by<label value="@load(thread.lastPoster)" />						
+							Last post by <label value="@load(thread.lastPoster)" />						
 						</div>
 						<image width="27px" height="25px"
 						 src='@load(thread.hot ? "img/star.png" : "img/starEmpty.png")' />

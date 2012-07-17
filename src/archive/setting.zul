@@ -1,4 +1,4 @@
-<vlayout>
+<div>
 	<grid>
 		<columns>
 			<column label="Type" width="100px" />
@@ -7,7 +7,8 @@
 		<rows>
 			<row>
 				<label value="Set Date : " />
-				<datebox value="@load(vm.now)" />
+				<datebox width="250px" 
+				 value="@load(vm.now)" format="long+medium" />
 			</row>
 			<row>
 				<label value="Set Color : " />
@@ -24,4 +25,4 @@
 		</rows>
 	</grid>	
 	<button label="back" onClick='@command("showSetting")' />
-</vlayout>
+</div>

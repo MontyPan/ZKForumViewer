@@ -3,6 +3,7 @@ package org.zkoss.demo.tablet.vm;
 import java.util.Date;
 import java.util.List;
 
+import org.zkoss.bind.annotation.BindingParam;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.ContextParam;
 import org.zkoss.bind.annotation.ContextType;
@@ -15,8 +16,8 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.Selectors;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.Clients;
-import org.zkoss.zul.Image;
-import org.zkoss.zul.Window;
+import org.zkoss.zul.Center;
+import org.zkoss.zul.Popup;
 
 public class ThreadViewModel {
 	private static final String[] CATEGORY_LIST = {
@@ -34,13 +35,8 @@ public class ThreadViewModel {
 	private boolean westFlag = true;
 	private boolean centerFlag = true;
 	
-	@Wire("#contentPanel") private Window contentPanel;
-		
-	public ThreadViewModel() {
-		Image xd = new Image();
-		server  = new DataServer();
-		fetchThread();
-	}
+	@Wire("#contentPanel") private Center contentPanel;
+	@Wire("#popup") private Popup popup;
 	
 	private void fetchThread(){
 		nowThreadList = server.getThreadList(CATEGORY_LIST[nowCategoryIndex]);
@@ -51,26 +47,27 @@ public class ThreadViewModel {
 	private void fetchContent(){
 		nowThread = nowThreadList.get(nowThreadIndex);
 		nowContentList = server.getContentList(this.nowThread);
+		Clients.resize(contentPanel); //XXX need?
 	}
 	
 	@Init
 	public void init(@ContextParam(ContextType.VIEW) Component view){
 		Selectors.wireComponents(view, this, false);
+		server  = new DataServer();
+		fetchThread();		
 	}
 	
 	@NotifyChange({"contentList", "selectedThread", "threadStart", "threadEnd"})
 	public void setSelectedThreadIndex(int index){
 		nowThreadIndex = index;
 		fetchContent();
-		contentPanel.invalidate();
 	}
 	
 	@NotifyChange("*")
 	public void setSelectedCategoryIndex(int index){
 		nowCategoryIndex = index;
 		westFlag = !westFlag;
-		fetchThread();
-		contentPanel.invalidate();		
+		fetchThread();	
 	}
 		
 	@Command
@@ -92,9 +89,18 @@ public class ThreadViewModel {
 	}
 	
 	@Command
-	public void openContent(){		
-		//FIXME check it work fine or not
-		Clients.resize(contentPanel);
+	public void openContent(){
+	}
+	
+	private boolean popupFlag = false;
+	@Command
+	public void showPopup(@BindingParam("component") Component c){
+		if(popupFlag){
+			popup.close();
+		}else{
+			popup.open(c, "before_center");
+		}
+		popupFlag = !popupFlag;
 	}
 	
 	@Command
@@ -111,6 +117,7 @@ public class ThreadViewModel {
 	@NotifyChange("centerUrl")
 	public void showSetting(){
 		centerFlag = !centerFlag;
+		contentPanel.invalidate(); //Refactory should trigger after setCenterUrl()
 	}
 	
 	public String getCenterUrl() {

@@ -1,4 +1,5 @@
 <?page title="ZK Forum viewer"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/theme" prefix="t" ?>
 <zk>
 <style>
 /* ==override zk style== */
@@ -9,6 +10,17 @@
 .z-hlayout-inner {
 	vertical-align: middle;
 }
+
+.z-west-header, .z-center-header, .z-east-header, .z-north-header, .z-south-header {
+	/* make desktop browser looks like tablet */
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	line-height: 32px;
+}
+
+div.z-column-cnt, div.z-row-cnt {
+	font-size: 15px;
+}
 /* ==== */
 
 .button {
@@ -16,7 +28,8 @@
 	height: 19px;
 	padding: 5px;
 	border: 1px solid #ccc;
-	border-radius: 5px
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .collapse_button {
@@ -24,7 +37,7 @@
 	height: 25px;
 	padding: 2px;
 	border: 1px solid #ccc;
-	border-radius: 5px	
+	border-radius: 5px;	
 }
 
 .textCenter {
@@ -37,7 +50,7 @@
 }
 
 .thread_title {
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: bold;
 }
 
@@ -59,6 +72,22 @@
 	float: left;
 }
 
+.product_btn {
+	float: left;
+	width: 130px;
+	height: 32px;
+	margin-left: 50px;
+}
+.product_btn > img {
+	/* for "product" button image */
+	width: 20px;
+	height: 20px;
+}
+.product_title {
+	font-size: 14px;
+	font-weight: bold;
+}
+
 .autoSkip {
 	display: block;
 	overflow: hidden;
@@ -68,6 +97,16 @@
 
 .disable {
 	opacity: 0.3;
+}
+
+.popup {
+	/* border: 2px solid #D0F0FF; */
+	width: 210px;
+	${t:boxShadow('0 0 10px #ACACAC')}
+	${t:borderRadius("8px")}
+}
+.popup > div {
+	${t:borderRadius("8px")}
 }
 </style>
 
@@ -80,10 +119,11 @@
 		<include src="thread.zul" vflex="1"/>
 	</west>
 	
-	<center border="none">
+	<center border="none" autoscroll="true" id="contentPanel">
 		<caption>
 			<hlayout>
 				<image sclass="button"
+				 onClick='org.zkoss.zk.ui.util.Clients.showNotification("Delete post is not allow.")'
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACfUlEQVQ4y2P4//8/Ay6s69GmBcRbgPgnEH8D4o1ArItPD04J0+BJuqHZ824BDfiPjP1SZz4CyhkQZSBQIScQVwPxEyD+H5Qx+39uw+r/MFDQtOa/fcSE/yA5IH4FxO1ALITTQIuwKVehioF44hUjn87/126/+ALkp4HwlVvPP4NcaRI44RpMnVX41AdAmg2XC8GKgBrCgXxxIP4HxElIapKgjg0DqnEHqv0FUt82Y58kXgP1vdrfAl0yH4i9gdgYiJmBmA3K9gDJ6Xu2f7IInfwXpH7rgeuaeA3Mblj3om/uvnNeidNv24b134VFiHVI30O3uCl3myZtv9w798BdmHqcBi7fcuGaeehksKKksqXXNu6+dPLkhQdH//z5e+DHz98HQewt+66cTK1cdhPo5T8gdQvWnbkJ1CuDK9k0+WUuAIdLTd/Wiw6REy+YB/Zcg7nQ1L8b5OIrVd2bL4DU2EVNB4VxJ950GFW87D1I8eodlyYC+XuXbDh9H5ZsFq49+QTo0iNHzz2YDFIDtPwLwYSd27zhKTRsooCuAuWWD1CaAepSUFi7gtQklK98Q9DAmv4dN6EGFuExMBmkprhj80OCBvbNP3QaamAfHgPrQGpapu29QtDARevPboMauAaPgXNBamYsP36IoIEb9lyZCTXwCB4Dd4DUrNx6YSVBA4+de1AKNfAeHgMvgdTsOXa7g6CBb95/dbSOmPoXaijItQYwA0FsqNh/YEHy99HzD2HElIfcwNR/wzxk8j9EyYOKQXLz1pwC5RAxYgvYzqu3X5wsat/8Ijh30WeYQSB2SceW5yA5oJpukkpsIPYE4lVAvB2I90MxiL0SKodVHwDM8eaDXMjxKgAAAABJRU5ErkJggg==" />
 				<image sclass="button"
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUUlEQVQ4y2P4//8/AzUxw6iBtDPQIrD3PwgTK060gciasYmR4uX/yAagGfaf3DAkyTBiw/A/DjZFYfgf3bXDMAyxGUrIMFJyClGGjRYOg9RAACVSk51kPAfYAAAAAElFTkSuQmCC" />
@@ -91,19 +131,43 @@
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABXklEQVQ4y2NgGPJAz7O9AYj/Q3EDOQYYQA0RAPFL2tYfgBkIYkPVCEDVGBA0zMC74xNIs6FP5yUQPzR77nWYgVC2AVTuP1QtbkP902bNQPIeURikB6eBz1597AjNnke0YSC1ID04Dfz//7/AhWtPbqBrrO3b8r+gaS2GgSC1ID24wm8+EO83D+xBMfDG3RdAPf/nA/F6EBtZDqp2P0gvNgMxXAByFRAYIPnAAORabGqJMjC7ftVDdHWxRYseEmXg4vWn/k9bchhbWBmgpVEUH4D0gPRii5ACIG44ffHhPiwuWA8NYxRxkFqQHpBeXBEjgB4p+DBUrQDOZGMV0tdBasIG6cFp4N6jN2dYh/TDEy0omSCHKYgNEoMlfpBakB58Cdvg6u3nn0AB/f7jt0sgftPk7fC8DGKDxEByIDUgtcjJCqeh0IDGKG0aJmzbActRUDUGJBdnUI0wUED3AhkArBrfFAIi6aMAAAAASUVORK5CYII=" />			
 			</hlayout>
 		</caption>
-		<window vflex="1" id="contentPanel" >
-			<include vflex="1" src="@load(vm.centerUrl)" />
-		</window>
+		<include src="@load(vm.centerUrl)" />
 	</center>
 	
-	<south>
+	<south border="none">
 		<caption>
-			<image sclass='@load(vm.threadStart ? "button disable" : "button")' 
-			 onClick='@command(vm.threadStart ? "" : "prevThread")' 
-			 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUklEQVQ4y2P4//8/AzUxw6iB9DXQIrD3PwhTxUCYYVQxEM2w/RQZSIphBA0k1TBSDaRKLO8n1VBibCXJUGKTzX6qJht0Q6mZ9fZTnA5Hiy+CGACQH5jke2R0BAAAAABJRU5ErkJggg==" />
-			<image sclass='@load(vm.threadEnd ? "button disable" : "button")' 
-			 onClick='@command(vm.threadEnd ? "" : "nextThread")'
-			 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAATklEQVQ4y2P4//8/AzUxw6iBtDXQIrD3PwhT3UBSDCWk4D+phhJjK0mGEhs2RBtKdGBT1UA0wygzkBTDSE02/6mZsKmXDkkxbLS0oQ4GABpVmyQ8nT5cAAAAAElFTkSuQmCC" />
+			<hlayout sclass="right">
+				<image sclass='@load(vm.threadStart ? "button disable" : "button")' 
+				 onClick='@command(vm.threadStart ? "" : "prevThread")' 
+				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUklEQVQ4y2P4//8/AzUxw6iB9DXQIrD3PwhTxUCYYVQxEM2w/RQZSIphBA0k1TBSDaRKLO8n1VBibCXJUGKTzX6qJht0Q6mZ9fZTnA5Hiy+CGACQH5jke2R0BAAAAABJRU5ErkJggg==" />
+				<image sclass='@load(vm.threadEnd ? "button disable" : "button")' 
+				 onClick='@command(vm.threadEnd ? "" : "nextThread")'
+				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAATklEQVQ4y2P4//8/AzUxw6iBtDXQIrD3PwhT3UBSDCWk4D+phhJjK0mGEhs2RBtKdGBT1UA0wygzkBTDSE02/6mZsKmXDkkxbLS0oQ4GABpVmyQ8nT5cAAAAAElFTkSuQmCC" />
+			 </hlayout>			 
+			 <button sclass="product_btn" dir="reverse"
+			  image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAkCAYAAADsHujfAAAAm0lEQVRYw+3VsQqAIBDGcZ+o9+ghhKCpSXBqau2lhesOPGgoMi+r4RP+o+cPHXRE5P6QAwQQQAABBJCTun5dpE8hDJg5ys2fQPjguENo8VUIHxgOEFp4BXKBqMbcRUwFCG1qAuHB4w2ENj4K4YFDBUIbHoFkRDJAZK83QWSAEVGMKXkaudpE9Uv2euvTeCOiGIPfFxBAAAEEkNZtTVf0GEek2W8AAAAASUVORK5CYII="
+			  label="ZK Product" onClick='@command("showPopup", component=self)' />
+			
+			 <popup id="popup" sclass="popup textCenter">
+			 	<vlayout>
+			 	<label sclass="product_title">Application Components</label>
+			 	<label>ZK Spreadsheet</label>
+			 	<label>ZK Pivottable</label>
+			 	<label>ZK Calendar</label>
+			 	</vlayout>
+			 	<separator bar="true" />
+			 	<vlayout>
+			 	<label sclass="product_title">Tools</label>
+			 	<label>ZK Studio</label>
+			 	<label>ZATS</label>
+			 	</vlayout>
+			 	<separator bar="true" />
+			 	<vlayout>
+			 	<label sclass="product_title">Extensions</label>
+			 	<label>ZK Spring</label>
+			 	<label>ZK JSP</label>
+			 	</vlayout>			 	
+			</popup>			  
 		</caption>
 	</south>
 </borderlayout>
