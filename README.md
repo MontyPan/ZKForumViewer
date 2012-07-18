@@ -1,16 +1,25 @@
-待解決事項
-========
+Viewer of [ZK Forum](http://www.zkoss.org/forum/)
 
-FIXME !!
---------
-* Center 的 thread title 在過長導致換行後不會撐開高度，連同 collapse 按鈕都會被截掉。
-* threadHead.zul：在畫面狹長時要把 category title 截短
+> This project is an UI demo project. 
+> The forum data is fetched by rough HTML parser and saved without concern.
+> Please don't use it in real production.
 
-TODO \囧/
----------
-* Groupbox 的內容過程（<pre>）要能左右擺動
+___________________________________________________________________________
 
-Zzz 囧>
--------
-* 整個 thread 的折疊功能
-* 單篇文章折疊時 caption 要加上 title 的前面幾個字
+Goal
+====
+* Write once, run on both tablet and desktop.
+* Pure ZK component.
+* As less custom CSS as possible.
+
+Environment :
+* JDK 1.6
+* ZK 6.1 EE
+* Chrome, iPad, Android
+
+Version
+=======
+
+2012.07.18
+----------
+Release for Demo.
