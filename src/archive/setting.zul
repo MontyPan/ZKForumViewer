@@ -6,22 +6,26 @@
 		</columns>
 		<rows>
 			<row>
-				<label value="Set Date : " />
-				<datebox width="250px" 
+				<label value="Intbox" />
+				<intbox constraint="no zero" placeholder="can't be zero" />
+			</row>		
+			<row>
+				<label value="Datebox : " />
+				<datebox width="300px" 
 				 value="@load(vm.now)" format="long+medium" />
 			</row>
 			<row>
-				<label value="Set Color : " />
+				<label value="Colorbox : " />
 				<colorbox />
 			</row>
 			<row>
-				<label value="Set Category : " />
+				<label value="Combobox : " />
 				<combobox model="@load(vm.categoryList)" selectedIndex="@load(vm.selectedCategoryIndex)">
 					<template name="model" var="category">
 						<comboitem label="${category}" />
 					</template>
 				</combobox>
-			</row>			
+			</row>
 		</rows>
 	</grid>	
 	<button label="back" onClick='@command("showSetting")' />

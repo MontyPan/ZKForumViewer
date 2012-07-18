@@ -131,7 +131,7 @@ div.z-column-cnt, div.z-row-cnt {
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABXklEQVQ4y2NgGPJAz7O9AYj/Q3EDOQYYQA0RAPFL2tYfgBkIYkPVCEDVGBA0zMC74xNIs6FP5yUQPzR77nWYgVC2AVTuP1QtbkP902bNQPIeURikB6eBz1597AjNnke0YSC1ID04Dfz//7/AhWtPbqBrrO3b8r+gaS2GgSC1ID24wm8+EO83D+xBMfDG3RdAPf/nA/F6EBtZDqp2P0gvNgMxXAByFRAYIPnAAORabGqJMjC7ftVDdHWxRYseEmXg4vWn/k9bchhbWBmgpVEUH4D0gPRii5ACIG44ffHhPiwuWA8NYxRxkFqQHpBeXBEjgB4p+DBUrQDOZGMV0tdBasIG6cFp4N6jN2dYh/TDEy0omSCHKYgNEoMlfpBakB58Cdvg6u3nn0AB/f7jt0sgftPk7fC8DGKDxEByIDUgtcjJCqeh0IDGKG0aJmzbActRUDUGJBdnUI0wUED3AhkArBrfFAIi6aMAAAAASUVORK5CYII=" />			
 			</hlayout>
 		</caption>
-		<include src="@load(vm.centerUrl)" />
+		<include src="@load(vm.centerUrl)"/>
 	</center>
 	
 	<south border="none">

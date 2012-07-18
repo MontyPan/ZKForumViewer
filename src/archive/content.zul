@@ -10,7 +10,7 @@
 	</hlayout>
 	<div children="@load(vm.contentList)">
 		<template name="children" var="content">
-			<groupbox onOpen='@command("openContent")'>
+			<groupbox mold="3d" onOpen='@command("openContent")' style="padding: 0 0 0 5px">
 				<caption>
 					<label value="@load(content.author)" zclass="content_author" />
 					<label value="@load(content.date)" />
