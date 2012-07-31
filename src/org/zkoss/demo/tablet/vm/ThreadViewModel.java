@@ -3,6 +3,7 @@ package org.zkoss.demo.tablet.vm;
 import java.util.Date;
 import java.util.List;
 
+import org.zkoss.bind.annotation.AfterCompose;
 import org.zkoss.bind.annotation.BindingParam;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.ContextParam;
@@ -10,19 +11,18 @@ import org.zkoss.bind.annotation.ContextType;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
 import org.zkoss.demo.tablet.DataServer;
+import org.zkoss.demo.tablet.MockServer;
 import org.zkoss.demo.tablet.vo.ContentVO;
 import org.zkoss.demo.tablet.vo.ThreadVO;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.Selectors;
 import org.zkoss.zk.ui.select.annotation.Wire;
-import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.Popup;
 
 public class ThreadViewModel {
 	private static final String[] CATEGORY_LIST = {
 		DataServer.HELP, DataServer.STUDIO, DataServer.GENERAL, DataServer.ANNOUNCE, DataServer.INSTALL
-		, "サポート", "ご要望", "お知らせ"	 //Delete just for demo
 	};
 
 	private DataServer server;
@@ -47,15 +47,18 @@ public class ThreadViewModel {
 	private void fetchContent(){
 		nowThread = nowThreadList.get(nowThreadIndex);
 		nowContentList = server.getContentList(this.nowThread);
-		Clients.resize(contentPanel); //XXX need?
 	}
 	
 	@Init
 	public void init(@ContextParam(ContextType.VIEW) Component view){
-		Selectors.wireComponents(view, this, false);
 		server  = new DataServer();
 		fetchThread();		
 	}
+	
+	@AfterCompose
+	public void afterCompose(@ContextParam(ContextType.VIEW) Component view){
+		 Selectors.wireComponents(view, this, false);
+	 }
 	
 	@NotifyChange({"contentList", "selectedThread", "threadStart", "threadEnd"})
 	public void setSelectedThreadIndex(int index){
@@ -117,6 +120,7 @@ public class ThreadViewModel {
 	@NotifyChange("centerUrl")
 	public void showSetting(){
 		centerFlag = !centerFlag;
+		System.out.println(contentPanel);//Delete
 		contentPanel.invalidate(); //Refactory should trigger after setCenterUrl()
 	}
 	

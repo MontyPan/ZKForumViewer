@@ -62,7 +62,7 @@ div.z-column-cnt, div.z-row-cnt {
 	float: left;
 	font-size: 15px;
 	color: #093;
-}
+}	
 
 .right {
 	float: right;

@@ -1,5 +1,6 @@
 package org.zkoss.demo.tablet;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -142,5 +143,30 @@ public class DataServer {
 			start=end;
 		}
 		return result;
+	}
+	
+	public static void main(String[] args){
+		MockServer ds = new MockServer();
+		
+		String[] CATEGORY_LIST = {
+			DataServer.HELP, DataServer.STUDIO, DataServer.GENERAL, DataServer.ANNOUNCE, DataServer.INSTALL
+		};
+		for(String type : CATEGORY_LIST){
+			List<ThreadVO> list = ds.getThreadList(type);
+		}
+//			String thread = Utility.urlToString(SOURCE_URL+CAT_URL.get(type));
+//			Utility.stringToText(new File("d:/"+CAT_URL.get(type)+".html"), thread);
+//			int start = 0, end;
+//			while((start=thread.indexOf(THREAD_START, start)) != -1){
+//				start=thread.indexOf(TITLE_HEADER, start);
+//				end=thread.indexOf(TITLE_TAIL, start);
+//
+//				String url = thread.substring(start+TITLE_HEADER.length(), end);
+//				String content = Utility.urlToString(HOST+url);
+//				Utility.stringToText(new File("d:/"+url+".html"), content);
+//				
+//				start=end;
+//			}
+//		}
 	}
 }

@@ -3,7 +3,9 @@ package org.zkoss.demo.tablet;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -41,5 +43,15 @@ public class Utility {
 			return "";
 		}
 		return result.toString();
+	}
+	
+	public static void stringToText(File f, String s){
+		try{
+			OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(f), "UTF-8");
+			osw.write(s);
+			osw.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }

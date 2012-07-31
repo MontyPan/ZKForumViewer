@@ -14,7 +14,7 @@ Goal
 
 Environment :
 * JDK 1.6
-* ZK 6.1 EE
+* ZK 6.5 EE
 * Chrome, iPad, Android
 
 Version
