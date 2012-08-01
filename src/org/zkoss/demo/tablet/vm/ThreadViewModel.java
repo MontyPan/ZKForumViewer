@@ -120,7 +120,6 @@ public class ThreadViewModel {
 	@NotifyChange("centerUrl")
 	public void showSetting(){
 		centerFlag = !centerFlag;
-		System.out.println(contentPanel);//Delete
 		contentPanel.invalidate(); //Refactory should trigger after setCenterUrl()
 	}
 	

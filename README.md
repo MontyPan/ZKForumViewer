@@ -4,6 +4,7 @@ Viewer of [ZK Forum](http://www.zkoss.org/forum/)
 > The forum data is fetched by rough HTML parser and saved without concern.
 > Please don't use it in real production.
 
+# [Download WAR file](https://github.com/downloads/MontyPan/ZKForumViewer/ZKForumViewer-6.5.0.FL.20120730.war)
 ___________________________________________________________________________
 
 Goal
