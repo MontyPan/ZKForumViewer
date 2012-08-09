@@ -11,7 +11,6 @@ import org.zkoss.bind.annotation.ContextType;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
 import org.zkoss.demo.tablet.DataServer;
-import org.zkoss.demo.tablet.MockServer;
 import org.zkoss.demo.tablet.vo.ContentVO;
 import org.zkoss.demo.tablet.vo.ThreadVO;
 import org.zkoss.zk.ui.Component;
