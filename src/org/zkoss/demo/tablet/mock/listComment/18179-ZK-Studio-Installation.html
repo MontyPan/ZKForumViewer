@@ -1,0 +1,833 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A?1343202475756' />
+<title>ZK Studio Installation | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="ZK Studio Installation"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="daslicht"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('fP0Q_','z_era','/forum;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A','/forum/zkau;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="fP0Q0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','fP0Q0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A?path=http://www.zkoss.org/forum/listComment/18179-ZK-Studio-Installation'},[]]);
+</script>
+<div id="fP0Q1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','fP0Q1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A"><img src="/forum/images/home.png;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A" alt="Home"/></a></li>
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/14;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A">Help</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/17;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A">Installation</a>
+										</li>
+									
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">ZK Studio Installation</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('fP0Q4','z_era','/forum;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A','/forum/zkau;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="fP0Q2" class="z-temp"><div class="author"><img class='author-image' title='daslicht' src='/forum/mediaService?userId=49513&extName=null' /><span class="author-name">daslicht</span></div><div><span class="comment-date">14 Dec 2011 10:39:43 GMT</span><div class="comment-cotent"><span class="comment-content">14 Dec 2011 10:39:43 GMT</span><p  style="margin:2px 2px;">When I try to install ZK Studio (in Eclipse Helion) form the Marketplace the installation get stuck at:<br/>http://img6.imagebanana.com/img/vhse4mkc/zkhung.PNG</p></div></div><div class="author"><img class='author-image' title='daslicht' src='/forum/mediaService?userId=49513&extName=null' /><span class="author-name">daslicht</span></div><div><span class="comment-date">14 Dec 2011 12:02:29 GMT</span><div class="comment-cotent"><span class="comment-content">14 Dec 2011 12:02:29 GMT</span><p  style="margin:2px 2px;">If I try to install using the eclipse update I get:<br/>An error occurred while collecting items to be installed<br/>session context was:(profile=epp.package.jee, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).<br/>Comparison method violates its general contract!<br/>Comparison method violates its general contract!</p><p><br/>I try now the offline installation :/</p></div></div><div class="author"><img class='author-image' title='daslicht' src='/forum/mediaService?userId=49513&extName=null' /><span class="author-name">daslicht</span></div><div><span class="comment-date">14 Dec 2011 12:40:32 GMT</span><div class="comment-cotent"><span class="comment-content">14 Dec 2011 12:40:32 GMT</span><p  style="margin:2px 2px;">Ok I have tried the manual installation now and get:<br/>An error occurred while collecting items to be installed<br/>session context was:(profile=epp.package.jee, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).<br/>Comparison method violates its general contract!<br/>Comparison method violates its general contract!</p></div></div><div class="author"><img class='author-image' title='jimmyshiau' src='/forum/mediaService?userId=14563&extName=jpeg' /><span class="author-name">jimmyshiau</span></div><div><span class="comment-date">29 Dec 2011 07:15:26 GMT</span><div class="comment-cotent"><span class="comment-content">29 Dec 2011 07:15:26 GMT</span><p  style="margin:2px 2px;">Hi daslicht,<br/>What version of eclipse do you use? and OS?</p></div></div><div class="author"><img class='author-image' title='davidg' src='/forum/mediaService?userId=50116&extName=null' /><span class="author-name">davidg</span></div><div><span class="comment-date">9 Jan 2012 11:14:02 GMT</span><div class="comment-cotent"><span class="comment-content">9 Jan 2012 11:14:02 GMT</span><p  style="margin:2px 2px;">same issue here.. using eclipse 3.6 under windows 7 64Bit.</p></div></div><div class="author"><img class='author-image' title='daslicht' src='/forum/mediaService?userId=49513&extName=null' /><span class="author-name">daslicht</span></div><div><span class="comment-date">9 Jan 2012 12:36:36 GMT</span><div class="comment-cotent"><span class="comment-content">9 Jan 2012 12:36:36 GMT</span><p  style="margin:2px 2px;">I have finally managed to install it under Helios!</p><p>But I am not able to drag and drop or select components to the visual editor ?<br/>The visuel editor looks like if its actually running the code, so I can press buttons etc..</p><p>How do I put it in edit mode so that I can select components ?</p></div></div><div class="author"><img class='author-image' title='daslicht' src='/forum/mediaService?userId=49513&extName=null' /><span class="author-name">daslicht</span></div><div><span class="comment-date">9 Jan 2012 14:18:25 GMT</span><div class="comment-cotent"><span class="comment-content">9 Jan 2012 14:18:25 GMT</span><p  style="margin:2px 2px;">The Dicumentation says:<br/>"When you select a certain component within the ZUL Editor, the component inside the ZUL Visual Editor is highlighted with a blue dash-line rectangle frame,"</p><p>That did not happen here ?</p></div></div><div class="author"><img class='author-image' title='jimmyshiau' src='/forum/mediaService?userId=14563&extName=jpeg' /><span class="author-name">jimmyshiau</span></div><div><span class="comment-date">6 Feb 2012 11:36:29 GMT</span><div class="comment-cotent"><span class="comment-content">6 Feb 2012 11:36:29 GMT</span><p  style="margin:2px 2px;">Hi daslicht<br/>The VE is not allow click and drag,<br/>about  the highlighted feature, ZK 5 project have not support yet.</p></div></div><div class="author"><img class='author-image' title='pasqualeleone' src='/forum/mediaService?userId=52256&extName=null' /><span class="author-name">pasqualeleone</span></div><div><span class="comment-date">6 Mar 2012 11:59:57 GMT</span><div class="comment-cotent"><span class="comment-content">6 Mar 2012 11:59:57 GMT</span><p  style="margin:2px 2px;">@ daslicht <br/>how do you manged install under Helios? can you tell me, please.<br/>I have the same problem.<br/>Thank you</p></div></div><div class="author"><img class='author-image' title='jmatsenguele' src='/forum/mediaService?userId=56253&extName=null' /><span class="author-name">jmatsenguele</span></div><div><span class="comment-date">9 Jun 2012 23:17:06 GMT</span><div class="comment-cotent"><span class="comment-content">9 Jun 2012 23:17:06 GMT</span><p  style="margin:2px 2px;">I have the same problem described above, please can u help describing the solution u applied for the problem? Thank u</p></div></div><div class="author"><img class='author-image' title='pasqualeleone' src='/forum/mediaService?userId=52256&extName=null' /><span class="author-name">pasqualeleone</span></div><div><span class="comment-date">10 Jun 2012 09:48:14 GMT</span><div class="comment-cotent"><span class="comment-content">10 Jun 2012 09:48:14 GMT</span><p  style="margin:2px 2px;">hi,<br/>try to install a version 32 bit of Eclipse.</p></div></div><div class="author"><img class='author-image' title='carlosanibal' src='/forum/mediaService?userId=54330&extName=null' /><span class="author-name">carlosanibal</span></div><div><span class="comment-date">13 Jun 2012 00:22:11 GMT</span><div class="comment-cotent"><span class="comment-content">13 Jun 2012 00:22:11 GMT</span><p  style="margin:2px 2px;">hi</p><p>I have tryed to install zkoss, but when i want to add server running time not reconize tomcat server</p><p>my email es carlosanibal03@yahoo.com</p><p>if there is someone that can help me I thaks so much.</p><p>bye</p></div></div><div class="author"><img class='author-image' title='jimmyshiau' src='/forum/mediaService?userId=14563&extName=jpeg' /><span class="author-name">jimmyshiau</span></div><div><span class="comment-date">25 Jun 2012 08:34:23 GMT</span><div class="comment-cotent"><span class="comment-content">25 Jun 2012 08:34:23 GMT</span><p  style="margin:2px 2px;">Hi carlosanibal,</p><p>Please refer to this <a target="external" href="http://books.zkoss.org/wiki/ZK_Studio_Essentials/Begin_Your_First_ZK_Project/Create_a_New_ZK_Project#Running_the_ZUL_File">doc</a>.</p></div></div><div class="author"><img class='author-image' title='janetstar' src='/forum/mediaService?userId=57317&extName=null' /><span class="author-name">janetstar</span></div><div><span class="comment-date">9 Jul 2012 07:08:07 GMT</span><div class="comment-cotent"><span class="comment-content">9 Jul 2012 07:08:07 GMT</span><p  style="margin:2px 2px;">thanks just what i was searching for<br/>_______________________<br/><a target="external" href="http://topwowlevelingguides.com/blog/wow-gold-jewelcrafting" rel="nofollow" >wow gold jewelcrafting</a><br/><a target="external" href="http://topwowlevelingguides.com/blog/beginners-guide-to-the-auction-house" rel="nofollow" >Auction House guide</a><br/><a target="external" href="http://topwowlevelingguides.com/blog/what-is-world-of-warcraft-dungeon-leveling-guide" rel="nofollow" >Dungeon Leveling Guide</a></p></div></div><div class="author"><img class='author-image' title='LisaJBlevins' src='/forum/mediaService?userId=57874&extName=null' /><span class="author-name">LisaJBlevins</span></div><div><span class="comment-date">20 Jul 2012 06:41:28 GMT</span><div class="comment-cotent"><span class="comment-content">20 Jul 2012 06:41:28 GMT</span><p  style="margin:2px 2px;">Yeah I too am getting this error I am so glad it wasn't just me.</p><p>~--------------------------------------------------------~<br/>No matter how the wind howls, the mountain does not move.<br/><a target="external" href="http://www.supersonicemporium.com" rel="nofollow" >Modern Furniture</a><br/>~--------------------------------------------------------~</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','fP0Q2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','fP0Qd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','fP0Q5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A?path=http://www.zkoss.org/forum/listComment/18179-ZK-Studio-Installation'},[]],
+['zk.Native','fP0Qe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','fP0Q6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:15,_offset:0},[
+['zul.grid.Columns','fP0Q7',{$$onColSize:false},[
+['zul.grid.Column','fP0Q8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','fP0Q9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','fP0Qa',{sclass:'comment-rows',_offset:0,visibleItemCount:15},[
+['zul.grid.Row','fP0Qn',{_loaded:true,_index:0},[
+['zul.wnd.Window','fP0Qg0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qh0',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qi0',{},[
+['zul.box.Hlayout','fP0Qj0',{},[
+['zul.wgt.Toolbarbutton','fP0Qk0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'daslicht'},[]]]],
+['zul.wgt.Label','fP0Qm0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Qo0',{},[]],
+['zul.wgt.Div','fP0Qr0',{},[
+['zul.wgt.Label','fP0Qs0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Qt0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'8'},[]]]],
+['zul.wgt.Div','fP0Qu0',{},[
+['zul.wgt.Label','fP0Qv0',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qw0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Dec 14, 2011'},[]]]],
+['zul.wgt.Div','fP0Qx0',{},[]],
+['zul.wgt.Div','fP0Qz0',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Q01',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Q11',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Q21',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Q31',{id:'dateCreated',sclass:'comment-date',value:'Dec 14, 2011'},[]],
+['zul.wgt.Div','fP0Q41',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Q71',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">When I try to install ZK Studio (in Eclipse Helion) form the Marketplace the installation get stuck at:<br/>http://img6.imagebanana.com/img/vhse4mkc/zkhung.PNG</p>'},[]],
+['zul.wgt.Separator','fP0Q81',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Q91',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qa1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Qp',{_loaded:true,_index:1},[
+['zul.wnd.Window','fP0Qb1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qc1',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qd1',{},[
+['zul.box.Hlayout','fP0Qe1',{},[
+['zul.wgt.Toolbarbutton','fP0Qf1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'daslicht'},[]]]],
+['zul.wgt.Label','fP0Qh1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Qj1',{},[]],
+['zul.wgt.Div','fP0Qm1',{},[
+['zul.wgt.Label','fP0Qn1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Qo1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'8'},[]]]],
+['zul.wgt.Div','fP0Qp1',{},[
+['zul.wgt.Label','fP0Qq1',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qr1',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Dec 14, 2011'},[]]]],
+['zul.wgt.Div','fP0Qs1',{},[]],
+['zul.wgt.Div','fP0Qu1',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Qw1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qx1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qy1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qz1',{id:'dateCreated',sclass:'comment-date',value:'Dec 14, 2011'},[]],
+['zul.wgt.Div','fP0Q_2',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Q22',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">If I try to install using the eclipse update I get:<br/>An error occurred while collecting items to be installed<br/>session context was:(profile=epp.package.jee, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).<br/>Comparison method violates its general contract!<br/>Comparison method violates its general contract!</p><p><br/>I try now the offline installation :/</p>'},[]],
+['zul.wgt.Separator','fP0Q32',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Q42',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Q52',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Qr',{_loaded:true,_index:2},[
+['zul.wnd.Window','fP0Q62',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Q72',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Q82',{},[
+['zul.box.Hlayout','fP0Q92',{},[
+['zul.wgt.Toolbarbutton','fP0Qa2',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'daslicht'},[]]]],
+['zul.wgt.Label','fP0Qc2',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Qe2',{},[]],
+['zul.wgt.Div','fP0Qh2',{},[
+['zul.wgt.Label','fP0Qi2',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Qj2',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'8'},[]]]],
+['zul.wgt.Div','fP0Qk2',{},[
+['zul.wgt.Label','fP0Ql2',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qm2',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Dec 14, 2011'},[]]]],
+['zul.wgt.Div','fP0Qn2',{},[]],
+['zul.wgt.Div','fP0Qp2',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Qr2',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qs2',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qt2',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qu2',{id:'dateCreated',sclass:'comment-date',value:'Dec 14, 2011'},[]],
+['zul.wgt.Div','fP0Qv2',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qy2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Ok I have tried the manual installation now and get:<br/>An error occurred while collecting items to be installed<br/>session context was:(profile=epp.package.jee, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).<br/>Comparison method violates its general contract!<br/>Comparison method violates its general contract!</p>'},[]],
+['zul.wgt.Separator','fP0Qz2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Q_3',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Q03',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Qt',{_loaded:true,_index:3},[
+['zul.wnd.Window','fP0Q13',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Q23',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Q33',{},[
+['zul.box.Hlayout','fP0Q43',{},[
+['zul.wgt.Toolbarbutton','fP0Q53',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'jimmyshiau'},[]]]],
+['zul.wgt.Label','fP0Q73',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','fP0Q83',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A?userId=14563&extName=jpeg'},[]],
+['zul.wgt.Div','fP0Q93',{},[]],
+['zul.wgt.Div','fP0Qc3',{},[
+['zul.wgt.Label','fP0Qd3',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Qe3',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1412'},[]]]],
+['zul.wgt.Div','fP0Qf3',{},[
+['zul.wgt.Label','fP0Qg3',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qh3',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 13, 2009'},[]]]],
+['zul.wgt.Div','fP0Qi3',{},[]],
+['zul.wgt.Div','fP0Qk3',{},[
+['zul.wgt.Toolbarbutton','fP0Ql3',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org/',image:'/forum/images/Globe18x18.png;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A',href:'http://www.zkoss.org/',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','fP0Qm3',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qn3',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qo3',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qp3',{id:'dateCreated',sclass:'comment-date',value:'Dec 28, 2011'},[]],
+['zul.wgt.Div','fP0Qq3',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qt3',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi daslicht,<br/>What version of eclipse do you use? and OS?</p>'},[]],
+['zul.wgt.Separator','fP0Qu3',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Qv3',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qw3',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'potix Jimmy'},[]]]]]]]],
+['zul.grid.Row','fP0Qv',{_loaded:true,_index:4},[
+['zul.wnd.Window','fP0Qx3',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qy3',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qz3',{},[
+['zul.box.Hlayout','fP0Q_4',{},[
+['zul.wgt.Toolbarbutton','fP0Q04',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'davidg'},[]]]],
+['zul.wgt.Label','fP0Q24',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Q44',{},[]],
+['zul.wgt.Div','fP0Q74',{},[
+['zul.wgt.Label','fP0Q84',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Q94',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','fP0Qa4',{},[
+['zul.wgt.Label','fP0Qb4',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qc4',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jan 04, 2012'},[]]]],
+['zul.wgt.Div','fP0Qd4',{},[]],
+['zul.wgt.Div','fP0Qf4',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Qh4',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qi4',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qj4',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qk4',{id:'dateCreated',sclass:'comment-date',value:'Jan 09, 2012'},[]],
+['zul.wgt.Div','fP0Ql4',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qo4',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">same issue here.. using eclipse 3.6 under windows 7 64Bit.</p>'},[]],
+['zul.wgt.Separator','fP0Qp4',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Qq4',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qr4',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Qx',{_loaded:true,_index:5},[
+['zul.wnd.Window','fP0Qs4',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qt4',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qu4',{},[
+['zul.box.Hlayout','fP0Qv4',{},[
+['zul.wgt.Toolbarbutton','fP0Qw4',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'daslicht'},[]]]],
+['zul.wgt.Label','fP0Qy4',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Q_5',{},[]],
+['zul.wgt.Div','fP0Q25',{},[
+['zul.wgt.Label','fP0Q35',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Q45',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'8'},[]]]],
+['zul.wgt.Div','fP0Q55',{},[
+['zul.wgt.Label','fP0Q65',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Q75',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Dec 14, 2011'},[]]]],
+['zul.wgt.Div','fP0Q85',{},[]],
+['zul.wgt.Div','fP0Qa5',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Qc5',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qd5',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qe5',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qf5',{id:'dateCreated',sclass:'comment-date',value:'Jan 09, 2012'},[]],
+['zul.wgt.Div','fP0Qg5',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qj5',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">I have finally managed to install it under Helios!</p><p>But I am not able to drag and drop or select components to the visual editor ?<br/>The visuel editor looks like if its actually running the code, so I can press buttons etc..</p><p>How do I put it in edit mode so that I can select components ?</p>'},[]],
+['zul.wgt.Separator','fP0Qk5',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Ql5',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qm5',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Qz',{_loaded:true,_index:6},[
+['zul.wnd.Window','fP0Qn5',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qo5',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qp5',{},[
+['zul.box.Hlayout','fP0Qq5',{},[
+['zul.wgt.Toolbarbutton','fP0Qr5',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'daslicht'},[]]]],
+['zul.wgt.Label','fP0Qt5',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Qv5',{},[]],
+['zul.wgt.Div','fP0Qy5',{},[
+['zul.wgt.Label','fP0Qz5',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Q_6',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'8'},[]]]],
+['zul.wgt.Div','fP0Q06',{},[
+['zul.wgt.Label','fP0Q16',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Q26',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Dec 14, 2011'},[]]]],
+['zul.wgt.Div','fP0Q36',{},[]],
+['zul.wgt.Div','fP0Q56',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Q76',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Q86',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Q96',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qa6',{id:'dateCreated',sclass:'comment-date',value:'Jan 09, 2012'},[]],
+['zul.wgt.Div','fP0Qb6',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qe6',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">The Dicumentation says:<br/>"When you select a certain component within the ZUL Editor, the component inside the ZUL Visual Editor is highlighted with a blue dash-line rectangle frame,"</p><p>That did not happen here ?</p>'},[]],
+['zul.wgt.Separator','fP0Qf6',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Qg6',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qh6',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Q00',{_loaded:true,_index:7},[
+['zul.wnd.Window','fP0Qi6',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qj6',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qk6',{},[
+['zul.box.Hlayout','fP0Ql6',{},[
+['zul.wgt.Toolbarbutton','fP0Qm6',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'jimmyshiau'},[]]]],
+['zul.wgt.Label','fP0Qo6',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','fP0Qp6',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A?userId=14563&extName=jpeg'},[]],
+['zul.wgt.Div','fP0Qq6',{},[]],
+['zul.wgt.Div','fP0Qt6',{},[
+['zul.wgt.Label','fP0Qu6',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Qv6',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1412'},[]]]],
+['zul.wgt.Div','fP0Qw6',{},[
+['zul.wgt.Label','fP0Qx6',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qy6',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 13, 2009'},[]]]],
+['zul.wgt.Div','fP0Qz6',{},[]],
+['zul.wgt.Div','fP0Q07',{},[
+['zul.wgt.Toolbarbutton','fP0Q17',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org/',image:'/forum/images/Globe18x18.png;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A',href:'http://www.zkoss.org/',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','fP0Q27',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Q37',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Q47',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Q57',{id:'dateCreated',sclass:'comment-date',value:'Feb 06, 2012'},[]],
+['zul.wgt.Div','fP0Q67',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Q97',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi daslicht<br/>The VE is not allow click and drag,<br/>about  the highlighted feature, ZK 5 project have not support yet.</p>'},[]],
+['zul.wgt.Separator','fP0Qa7',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Qb7',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qc7',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'potix Jimmy'},[]]]]]]]],
+['zul.grid.Row','fP0Q20',{_loaded:true,_index:8},[
+['zul.wnd.Window','fP0Qd7',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qe7',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qf7',{},[
+['zul.box.Hlayout','fP0Qg7',{},[
+['zul.wgt.Toolbarbutton','fP0Qh7',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'pasqualeleone'},[]]]],
+['zul.wgt.Label','fP0Qj7',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Ql7',{},[]],
+['zul.wgt.Div','fP0Qo7',{},[
+['zul.wgt.Label','fP0Qp7',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Qq7',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'14'},[]]]],
+['zul.wgt.Div','fP0Qr7',{},[
+['zul.wgt.Label','fP0Qs7',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qt7',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Mar 05, 2012'},[]]]],
+['zul.wgt.Div','fP0Qu7',{},[]],
+['zul.wgt.Div','fP0Qw7',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Qy7',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qz7',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Q_8',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Q08',{id:'dateCreated',sclass:'comment-date',value:'Mar 06, 2012'},[]],
+['zul.wgt.Div','fP0Q18',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Q48',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">@ daslicht <br/>how do you manged install under Helios? can you tell me, please.<br/>I have the same problem.<br/>Thank you</p>'},[]],
+['zul.wgt.Separator','fP0Q58',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Q68',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Q78',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Q40',{_loaded:true,_index:9},[
+['zul.wnd.Window','fP0Q88',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Q98',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qa8',{},[
+['zul.box.Hlayout','fP0Qb8',{},[
+['zul.wgt.Toolbarbutton','fP0Qc8',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'jmatsenguele'},[]]]],
+['zul.wgt.Label','fP0Qe8',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Qg8',{},[]],
+['zul.wgt.Div','fP0Qj8',{},[
+['zul.wgt.Label','fP0Qk8',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Ql8',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','fP0Qm8',{},[
+['zul.wgt.Label','fP0Qn8',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qo8',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 09, 2012'},[]]]],
+['zul.wgt.Div','fP0Qp8',{},[]],
+['zul.wgt.Div','fP0Qr8',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Qt8',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qu8',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qv8',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qw8',{id:'dateCreated',sclass:'comment-date',value:'Jun 09, 2012'},[]],
+['zul.wgt.Div','fP0Qx8',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Q_9',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">I have the same problem described above, please can u help describing the solution u applied for the problem? Thank u</p>'},[]],
+['zul.wgt.Separator','fP0Q09',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Q19',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Q29',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Q60',{_loaded:true,_index:10},[
+['zul.wnd.Window','fP0Q39',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Q49',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Q59',{},[
+['zul.box.Hlayout','fP0Q69',{},[
+['zul.wgt.Toolbarbutton','fP0Q79',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'pasqualeleone'},[]]]],
+['zul.wgt.Label','fP0Q99',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Qb9',{},[]],
+['zul.wgt.Div','fP0Qe9',{},[
+['zul.wgt.Label','fP0Qf9',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Qg9',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'14'},[]]]],
+['zul.wgt.Div','fP0Qh9',{},[
+['zul.wgt.Label','fP0Qi9',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qj9',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Mar 05, 2012'},[]]]],
+['zul.wgt.Div','fP0Qk9',{},[]],
+['zul.wgt.Div','fP0Qm9',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Qo9',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qp9',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qq9',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qr9',{id:'dateCreated',sclass:'comment-date',value:'Jun 10, 2012'},[]],
+['zul.wgt.Div','fP0Qs9',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qv9',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">hi,<br/>try to install a version 32 bit of Eclipse.</p>'},[]],
+['zul.wgt.Separator','fP0Qw9',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Qx9',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qy9',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Q80',{_loaded:true,_index:11},[
+['zul.wnd.Window','fP0Qz9',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Q_a',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Q0a',{},[
+['zul.box.Hlayout','fP0Q1a',{},[
+['zul.wgt.Toolbarbutton','fP0Q2a',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'carlosanibal'},[]]]],
+['zul.wgt.Label','fP0Q4a',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Q6a',{},[]],
+['zul.wgt.Div','fP0Q9a',{},[
+['zul.wgt.Label','fP0Qaa',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Qba',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','fP0Qca',{},[
+['zul.wgt.Label','fP0Qda',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Qea',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Apr 23, 2012'},[]]]],
+['zul.wgt.Div','fP0Qfa',{},[]],
+['zul.wgt.Div','fP0Qha',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Qja',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qka',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qla',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qma',{id:'dateCreated',sclass:'comment-date',value:'Jun 12, 2012'},[]],
+['zul.wgt.Div','fP0Qna',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qqa',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">hi</p><p>I have tryed to install zkoss, but when i want to add server running time not reconize tomcat server</p><p>my email es carlosanibal03@yahoo.com</p><p>if there is someone that can help me I thaks so much.</p><p>bye</p>'},[]],
+['zul.wgt.Separator','fP0Qra',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Qsa',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qta',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Qa0',{_loaded:true,_index:12},[
+['zul.wnd.Window','fP0Qua',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qva',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qwa',{},[
+['zul.box.Hlayout','fP0Qxa',{},[
+['zul.wgt.Toolbarbutton','fP0Qya',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'jimmyshiau'},[]]]],
+['zul.wgt.Label','fP0Q_b',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','fP0Q0b',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A?userId=14563&extName=jpeg'},[]],
+['zul.wgt.Div','fP0Q1b',{},[]],
+['zul.wgt.Div','fP0Q4b',{},[
+['zul.wgt.Label','fP0Q5b',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Q6b',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1412'},[]]]],
+['zul.wgt.Div','fP0Q7b',{},[
+['zul.wgt.Label','fP0Q8b',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Q9b',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 13, 2009'},[]]]],
+['zul.wgt.Div','fP0Qab',{},[]],
+['zul.wgt.Div','fP0Qcb',{},[
+['zul.wgt.Toolbarbutton','fP0Qdb',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org/',image:'/forum/images/Globe18x18.png;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A',href:'http://www.zkoss.org/',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','fP0Qeb',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qfb',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qgb',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qhb',{id:'dateCreated',sclass:'comment-date',value:'Jun 25, 2012'},[]],
+['zul.wgt.Div','fP0Qib',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qlb',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi carlosanibal,</p><p>Please refer to this <a target="external" href="http://books.zkoss.org/wiki/ZK_Studio_Essentials/Begin_Your_First_ZK_Project/Create_a_New_ZK_Project#Running_the_ZUL_File">doc</a>.</p>'},[]],
+['zul.wgt.Separator','fP0Qmb',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Qnb',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qob',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'potix Jimmy'},[]]]]]]]],
+['zul.grid.Row','fP0Qc0',{_loaded:true,_index:13},[
+['zul.wnd.Window','fP0Qpb',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qqb',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qrb',{},[
+['zul.box.Hlayout','fP0Qsb',{},[
+['zul.wgt.Toolbarbutton','fP0Qtb',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'janetstar'},[]]]],
+['zul.wgt.Label','fP0Qvb',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Qxb',{},[]],
+['zul.wgt.Div','fP0Q_c',{},[
+['zul.wgt.Label','fP0Q0c',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Q1c',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','fP0Q2c',{},[
+['zul.wgt.Label','fP0Q3c',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Q4c',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 08, 2012'},[]]]],
+['zul.wgt.Div','fP0Q5c',{},[]],
+['zul.wgt.Div','fP0Q7c',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Q9c',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Qac',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Qbc',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Qcc',{id:'dateCreated',sclass:'comment-date',value:'Jul 08, 2012'},[]],
+['zul.wgt.Div','fP0Qdc',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qgc',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">thanks just what i was searching for<br/>_______________________<br/><a target="external" href="http://topwowlevelingguides.com/blog/wow-gold-jewelcrafting" rel="nofollow" >wow gold jewelcrafting</a><br/><a target="external" href="http://topwowlevelingguides.com/blog/beginners-guide-to-the-auction-house" rel="nofollow" >Auction House guide</a><br/><a target="external" href="http://topwowlevelingguides.com/blog/what-is-world-of-warcraft-dungeon-leveling-guide" rel="nofollow" >Dungeon Leveling Guide</a></p>'},[]],
+['zul.wgt.Separator','fP0Qhc',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Qic',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qjc',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','fP0Qe0',{_loaded:true,_index:14},[
+['zul.wnd.Window','fP0Qkc',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','fP0Qlc',{prolog:'\n\t'},[
+['zul.box.Vlayout','fP0Qmc',{},[
+['zul.box.Hlayout','fP0Qnc',{},[
+['zul.wgt.Toolbarbutton','fP0Qoc',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'LisaJBlevins'},[]]]],
+['zul.wgt.Label','fP0Qqc',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','fP0Qsc',{},[]],
+['zul.wgt.Div','fP0Qvc',{},[
+['zul.wgt.Label','fP0Qwc',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','fP0Qxc',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','fP0Qyc',{},[
+['zul.wgt.Label','fP0Qzc',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','fP0Q_d',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'5 days ago'},[]]]],
+['zul.wgt.Div','fP0Q0d',{},[]],
+['zul.wgt.Div','fP0Q2d',{},[]]],'vertical']]],
+['zul.wnd.Window','fP0Q4d',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','fP0Q5d',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','fP0Q6d',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','fP0Q7d',{id:'dateCreated',sclass:'comment-date',value:'5 days ago'},[]],
+['zul.wgt.Div','fP0Q8d',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','fP0Qbd',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Yeah I too am getting this error I am so glad it wasn\'t just me.</p><p>~--------------------------------------------------------~<br/>No matter how the wind howls, the mountain does not move.<br/><a target="external" href="http://www.supersonicemporium.com" rel="nofollow" >Modern Furniture</a><br/>~--------------------------------------------------------~</p>'},[]],
+['zul.wgt.Separator','fP0Qcd',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','fP0Qdd',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','fP0Qed',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','fP0Qb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','fP0Qc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="fP0Qf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','fP0Qf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="fP0Qg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','fP0Qg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A?path=http://www.zkoss.org/forum/listComment/18179-ZK-Studio-Installation'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="fP0Qh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','fP0Qh',{id:'comment-reply'},[
+['zk.Native','fP0Qk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','fP0Qi',{},[]],
+['zul.wgt.Label','fP0Qj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=F14F3EAAFB93B0521907BC4705A7E94A"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

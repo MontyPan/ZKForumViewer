@@ -1,0 +1,614 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA?1343202477020' />
+<title>Installation of ZK Spreadsheet | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="Installation of ZK Spreadsheet"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="Lesglass"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('kS7Q_','z_lob','/forum;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA','/forum/zkau;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="kS7Q0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','kS7Q0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA?path=http://www.zkoss.org/forum/listComment/13337-Installation-of-ZK-Spreadsheet'},[]]);
+</script>
+<div id="kS7Q1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','kS7Q1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA"><img src="/forum/images/home.png;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA" alt="Home"/></a></li>
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/14;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA">Help</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/17;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA">Installation</a>
+										</li>
+									
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">Installation of ZK Spreadsheet</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('kS7Q4','z_lob','/forum;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA','/forum/zkau;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="kS7Q2" class="z-temp"><div class="author"><img class='author-image' title='Lesglass' src='/forum/mediaService?userId=31443&extName=null' /><span class="author-name">Lesglass</span></div><div><span class="comment-date">9 Aug 2010 05:33:25 GMT</span><div class="comment-cotent"><span class="comment-content">9 Aug 2010 05:33:25 GMT</span><p  style="margin:2px 2px;">Hi All,
+<br/>
+<br/>I develop spreadsheets and see great potential in the ZK Spreadsheet - if I can get it to work!
+<br/>
+<br/>My first - and very simple question is this: Can I run ZSS as a stand-alone component under Apache Tomcat 7.0.0 or does Tomcat require ZK as well? I've searched the documentation and forums but this is not clear - at least to me.
+<br/>
+<br/>Thanks in advance for any replies.</p></div></div><div class="author"><img class='author-image' title='Lesglass' src='/forum/mediaService?userId=31443&extName=null' /><span class="author-name">Lesglass</span></div><div><span class="comment-date">11 Aug 2010 05:48:14 GMT</span><div class="comment-cotent"><span class="comment-content">11 Aug 2010 05:48:14 GMT</span><p  style="margin:2px 2px;">Hi All,
+<br/>Thanks to Jean Yen for clarifying that ZK Spreadsheet depends on the ZK platform. If any of you are running ZK spreadsheet I would be grateful for a guide on the steps to take in order to set it up.</p></div></div><div class="author"><img class='author-image' title='mrpreeth2000' src='/forum/mediaService?userId=32842&extName=null' /><span class="author-name">mrpreeth2000</span></div><div><span class="comment-date">16 Sep 2010 05:14:56 GMT</span><div class="comment-cotent"><span class="comment-content">16 Sep 2010 05:14:56 GMT</span><p  style="margin:2px 2px;">HI THere.</p><p>Can you please guide me in INstallation of ZK Spread sheet on Netbeans 6.5.1</p><p><br/>Thanks in advance,</p><p><br/>Preeth</p></div></div><div class="author"><img class='author-image' title='iantsai' src='/forum/mediaService?userId=146&extName=jpeg' /><span class="author-name">iantsai</span></div><div><span class="comment-date">26 Sep 2010 20:43:37 GMT</span><div class="comment-cotent"><span class="comment-content">26 Sep 2010 20:43:37 GMT</span><p  style="margin:2px 2px;">you should post your request in a new thread</p></div></div><div class="author"><img class='author-image' title='Lesglass' src='/forum/mediaService?userId=31443&extName=null' /><span class="author-name">Lesglass</span></div><div><span class="comment-date">14 Oct 2010 11:16:29 GMT</span><div class="comment-cotent"><span class="comment-content">14 Oct 2010 11:16:29 GMT</span><p  style="margin:2px 2px;">Hi All,
+<br/>
+<br/>Thanks I now have ZK Spreadsheet running on Apache Tomcat 7.0.2
+<br/>
+<br/>Lesglass</p></div></div><div class="author"><img class='author-image' title='szilva' src='/forum/mediaService?userId=56572&extName=null' /><span class="author-name">szilva</span></div><div><span class="comment-date">20 Jun 2012 10:22:05 GMT</span><div class="comment-cotent"><span class="comment-content">20 Jun 2012 10:22:05 GMT</span><p  style="margin:2px 2px;">Hi!<br/>I can not install zk spreadsheet on eclipse. Zk is up and running without problem but i can't get zss working.</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','kS7Q2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','kS7Qd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','kS7Q5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA?path=http://www.zkoss.org/forum/listComment/13337-Installation-of-ZK-Spreadsheet'},[]],
+['zk.Native','kS7Qe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','kS7Q6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:6,_offset:0},[
+['zul.grid.Columns','kS7Q7',{$$onColSize:false},[
+['zul.grid.Column','kS7Q8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','kS7Q9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','kS7Qa',{sclass:'comment-rows',_offset:0,visibleItemCount:6},[
+['zul.grid.Row','kS7Qn',{_loaded:true,_index:0},[
+['zul.wnd.Window','kS7Qz',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','kS7Q_0',{prolog:'\n\t'},[
+['zul.box.Vlayout','kS7Q00',{},[
+['zul.box.Hlayout','kS7Q10',{},[
+['zul.wgt.Toolbarbutton','kS7Q20',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'Lesglass'},[]]]],
+['zul.wgt.Label','kS7Q40',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','kS7Q60',{},[]],
+['zul.wgt.Div','kS7Q90',{},[
+['zul.wgt.Label','kS7Qa0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','kS7Qb0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'20'},[]]]],
+['zul.wgt.Div','kS7Qc0',{},[
+['zul.wgt.Label','kS7Qd0',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','kS7Qe0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 08, 2010'},[]]]],
+['zul.wgt.Div','kS7Qf0',{},[]],
+['zul.wgt.Div','kS7Qh0',{},[]]],'vertical']]],
+['zul.wnd.Window','kS7Qj0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','kS7Qk0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','kS7Ql0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','kS7Qm0',{id:'dateCreated',sclass:'comment-date',value:'Aug 08, 2010'},[]],
+['zul.wgt.Div','kS7Qn0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','kS7Qq0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi All,\r<br/>\r<br/>I develop spreadsheets and see great potential in the ZK Spreadsheet - if I can get it to work!\r<br/>\r<br/>My first - and very simple question is this: Can I run ZSS as a stand-alone component under Apache Tomcat 7.0.0 or does Tomcat require ZK as well? I\'ve searched the documentation and forums but this is not clear - at least to me.\r<br/>\r<br/>Thanks in advance for any replies.</p>'},[]],
+['zul.wgt.Separator','kS7Qr0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','kS7Qs0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','kS7Qt0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','kS7Qp',{_loaded:true,_index:1},[
+['zul.wnd.Window','kS7Qu0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','kS7Qv0',{prolog:'\n\t'},[
+['zul.box.Vlayout','kS7Qw0',{},[
+['zul.box.Hlayout','kS7Qx0',{},[
+['zul.wgt.Toolbarbutton','kS7Qy0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'Lesglass'},[]]]],
+['zul.wgt.Label','kS7Q_1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','kS7Q11',{},[]],
+['zul.wgt.Div','kS7Q41',{},[
+['zul.wgt.Label','kS7Q51',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','kS7Q61',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'20'},[]]]],
+['zul.wgt.Div','kS7Q71',{},[
+['zul.wgt.Label','kS7Q81',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','kS7Q91',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 08, 2010'},[]]]],
+['zul.wgt.Div','kS7Qa1',{},[]],
+['zul.wgt.Div','kS7Qc1',{},[]]],'vertical']]],
+['zul.wnd.Window','kS7Qe1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','kS7Qf1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','kS7Qg1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','kS7Qh1',{id:'dateCreated',sclass:'comment-date',value:'Aug 10, 2010'},[]],
+['zul.wgt.Div','kS7Qi1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','kS7Ql1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi All,\r<br/>Thanks to Jean Yen for clarifying that ZK Spreadsheet depends on the ZK platform. If any of you are running ZK spreadsheet I would be grateful for a guide on the steps to take in order to set it up.</p>'},[]],
+['zul.wgt.Separator','kS7Qm1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','kS7Qn1',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','kS7Qo1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','kS7Qr',{_loaded:true,_index:2},[
+['zul.wnd.Window','kS7Qp1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','kS7Qq1',{prolog:'\n\t'},[
+['zul.box.Vlayout','kS7Qr1',{},[
+['zul.box.Hlayout','kS7Qs1',{},[
+['zul.wgt.Toolbarbutton','kS7Qt1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'mrpreeth2000'},[]]]],
+['zul.wgt.Label','kS7Qv1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','kS7Qx1',{},[]],
+['zul.wgt.Div','kS7Q_2',{},[
+['zul.wgt.Label','kS7Q02',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','kS7Q12',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','kS7Q22',{},[
+['zul.wgt.Label','kS7Q32',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','kS7Q42',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 15, 2010'},[]]]],
+['zul.wgt.Div','kS7Q52',{},[]],
+['zul.wgt.Div','kS7Q72',{},[]]],'vertical']]],
+['zul.wnd.Window','kS7Q92',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','kS7Qa2',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','kS7Qb2',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','kS7Qc2',{id:'dateCreated',sclass:'comment-date',value:'Sep 15, 2010'},[]],
+['zul.wgt.Div','kS7Qd2',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','kS7Qg2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">HI THere.</p><p>Can you please guide me in INstallation of ZK Spread sheet on Netbeans 6.5.1</p><p><br/>Thanks in advance,</p><p><br/>Preeth</p>'},[]],
+['zul.wgt.Separator','kS7Qh2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','kS7Qi2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','kS7Qj2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','kS7Qt',{_loaded:true,_index:3},[
+['zul.wnd.Window','kS7Qk2',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','kS7Ql2',{prolog:'\n\t'},[
+['zul.box.Vlayout','kS7Qm2',{},[
+['zul.box.Hlayout','kS7Qn2',{},[
+['zul.wgt.Toolbarbutton','kS7Qo2',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'iantsai'},[]]]],
+['zul.wgt.Label','kS7Qq2',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','kS7Qr2',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA?userId=146&extName=jpeg'},[]],
+['zul.wgt.Div','kS7Qs2',{},[]],
+['zul.wgt.Div','kS7Qv2',{},[
+['zul.wgt.Label','kS7Qw2',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','kS7Qx2',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'882'},[]]]],
+['zul.wgt.Div','kS7Qy2',{},[
+['zul.wgt.Label','kS7Qz2',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','kS7Q_3',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 07, 2007'},[]]]],
+['zul.wgt.Div','kS7Q03',{},[]],
+['zul.wgt.Div','kS7Q23',{},[]]],'vertical']]],
+['zul.wnd.Window','kS7Q43',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','kS7Q53',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','kS7Q63',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','kS7Q73',{id:'dateCreated',sclass:'comment-date',value:'Sep 26, 2010'},[]],
+['zul.wgt.Div','kS7Q83',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','kS7Qb3',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">you should post your request in a new thread</p>'},[]],
+['zul.wgt.Separator','kS7Qc3',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','kS7Qd3',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','kS7Qe3',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','kS7Qv',{_loaded:true,_index:4},[
+['zul.wnd.Window','kS7Qf3',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','kS7Qg3',{prolog:'\n\t'},[
+['zul.box.Vlayout','kS7Qh3',{},[
+['zul.box.Hlayout','kS7Qi3',{},[
+['zul.wgt.Toolbarbutton','kS7Qj3',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'Lesglass'},[]]]],
+['zul.wgt.Label','kS7Ql3',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','kS7Qn3',{},[]],
+['zul.wgt.Div','kS7Qq3',{},[
+['zul.wgt.Label','kS7Qr3',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','kS7Qs3',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'20'},[]]]],
+['zul.wgt.Div','kS7Qt3',{},[
+['zul.wgt.Label','kS7Qu3',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','kS7Qv3',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 08, 2010'},[]]]],
+['zul.wgt.Div','kS7Qw3',{},[]],
+['zul.wgt.Div','kS7Qy3',{},[]]],'vertical']]],
+['zul.wnd.Window','kS7Q_4',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','kS7Q04',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','kS7Q14',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','kS7Q24',{id:'dateCreated',sclass:'comment-date',value:'Oct 14, 2010'},[]],
+['zul.wgt.Div','kS7Q34',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','kS7Q64',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi All,\r<br/>\r<br/>Thanks I now have ZK Spreadsheet running on Apache Tomcat 7.0.2\r<br/>\r<br/>Lesglass</p>'},[]],
+['zul.wgt.Separator','kS7Q74',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','kS7Q84',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','kS7Q94',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','kS7Qx',{_loaded:true,_index:5},[
+['zul.wnd.Window','kS7Qa4',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','kS7Qb4',{prolog:'\n\t'},[
+['zul.box.Vlayout','kS7Qc4',{},[
+['zul.box.Hlayout','kS7Qd4',{},[
+['zul.wgt.Toolbarbutton','kS7Qe4',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'szilva'},[]]]],
+['zul.wgt.Label','kS7Qg4',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','kS7Qi4',{},[]],
+['zul.wgt.Div','kS7Ql4',{},[
+['zul.wgt.Label','kS7Qm4',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','kS7Qn4',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'4'},[]]]],
+['zul.wgt.Div','kS7Qo4',{},[
+['zul.wgt.Label','kS7Qp4',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','kS7Qq4',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 18, 2012'},[]]]],
+['zul.wgt.Div','kS7Qr4',{},[]],
+['zul.wgt.Div','kS7Qt4',{},[]]],'vertical']]],
+['zul.wnd.Window','kS7Qv4',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','kS7Qw4',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','kS7Qx4',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','kS7Qy4',{id:'dateCreated',sclass:'comment-date',value:'Jun 20, 2012'},[]],
+['zul.wgt.Div','kS7Qz4',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','kS7Q15',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi!<br/>I can not install zk spreadsheet on eclipse. Zk is up and running without problem but i can\'t get zss working.</p>'},[]],
+['zul.wgt.Separator','kS7Q25',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','kS7Q35',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','kS7Q45',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','kS7Qb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','kS7Qc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="kS7Qf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','kS7Qf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="kS7Qg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','kS7Qg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA?path=http://www.zkoss.org/forum/listComment/13337-Installation-of-ZK-Spreadsheet'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="kS7Qh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','kS7Qh',{id:'comment-reply'},[
+['zk.Native','kS7Qk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','kS7Qi',{},[]],
+['zul.wgt.Label','kS7Qj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=935A53AA9CCC5C762CB7F774A9561BBA"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

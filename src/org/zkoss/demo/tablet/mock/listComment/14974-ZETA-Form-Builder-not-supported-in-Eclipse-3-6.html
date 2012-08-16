@@ -1,0 +1,680 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46?1343202453912' />
+<title>ZETA Form Builder - not supported in Eclipse 3.6 | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="ZETA Form Builder - not supported in Eclipse 3.6"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="dscovill"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('iR3T_','z_ao50','/forum;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46','/forum/zkau;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="iR3T0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','iR3T0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46?path=http://www.zkoss.org/forum/listComment/14974-ZETA-Form-Builder-not-supported-in-Eclipse-3-6'},[]]);
+</script>
+<div id="iR3T1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','iR3T1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46"><img src="/forum/images/home.png;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46" alt="Home"/></a></li>
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/14;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46">Help</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/18;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46">ZK Studio</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">ZETA Form Builder - not supported in Eclipse 3.6</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('iR3T4','z_ao50','/forum;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46','/forum/zkau;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="iR3T2" class="z-temp"><div class="author"><img class='author-image' title='dscovill' src='/forum/mediaService?userId=7570&extName=null' /><span class="author-name">dscovill</span></div><div><span class="comment-date">11 Jan 2011 14:15:54 GMT</span><div class="comment-cotent"><span class="comment-content">11 Jan 2011 14:15:54 GMT</span><p  style="margin:2px 2px;">The release mentioned that The ZETA Form Builder will not supported in Eclipse 3.6 ... is that functionality going to be added later if so what is the general time frame?</p></div></div><div class="author"><img class='author-image' title='fmelossi' src='/forum/mediaService?userId=24198&extName=bmp' /><span class="author-name">fmelossi</span></div><div><span class="comment-date">11 Jan 2011 20:59:41 GMT</span><div class="comment-cotent"><span class="comment-content">11 Jan 2011 20:59:41 GMT</span><p  style="margin:2px 2px;">ZETA Form Builder does not support zk 5.0.5 ?<br/>will be supported later?</p></div></div><div class="author"><img class='author-image' title='tmillsclare' src='/forum/mediaService?userId=10913&extName=null' /><span class="author-name">tmillsclare</span></div><div><span class="comment-date">12 Jan 2011 05:06:58 GMT</span><div class="comment-cotent"><span class="comment-content">12 Jan 2011 05:06:58 GMT</span><p  style="margin:2px 2px;">Currently ZETA form builder is an experimental plugin, at the time we hadn't tested with Eclipse 3.6. Following your feedback we tried it and it does work.</p><p>ZETA form builder does work with ZK 5.0.5. If you run into any bug please let us know.</p><p>Thanks,<br/>Tim</p></div></div><div class="author"><img class='author-image' title='robertpic71' src='/forum/mediaService?userId=1306&extName=jpeg' /><span class="author-name">robertpic71</span><span class="author-role">Top Contributor</span></div><div><span class="comment-date">12 Jan 2011 08:27:08 GMT</span><div class="comment-cotent"><span class="comment-content">12 Jan 2011 08:27:08 GMT</span><p  style="margin:2px 2px;">&gt;&gt; Currently ZETA form builder is an experimental plugin, at the time we hadn't tested with Eclipse 3.6. Following your feedback we tried it and it does work.<br/>How we get ZETA form builder for Eclipse 3.6?</p></div></div><div class="author"><img class='author-image' title='dscovill' src='/forum/mediaService?userId=7570&extName=null' /><span class="author-name">dscovill</span></div><div><span class="comment-date">12 Jan 2011 11:20:54 GMT</span><div class="comment-cotent"><span class="comment-content">12 Jan 2011 11:20:54 GMT</span><p  style="margin:2px 2px;">are there plans to make it a full part of studio?   does it create code that is not the current correct architecture?</p></div></div><div class="author"><img class='author-image' title='PeterKuo' src='/forum/mediaService?userId=2885&extName=jpeg' /><span class="author-name">PeterKuo</span></div><div><span class="comment-date">17 Jan 2011 04:01:57 GMT</span><div class="comment-cotent"><span class="comment-content">17 Jan 2011 04:01:57 GMT</span><p  style="margin:2px 2px;">@robertpic71<br/>http://www.zkoss.org/download/zkstudio.dsp</p><p>Zeta has been provided as independent package, and you can download it.<br/>I have tested with Eclipse 3.6 and ZK 5.0.5, it works.<br/>(You have to remove breeze.jar inside ZK 5.0.5, or download freshly breeze.jar actually)</p><p>@dsconvill<br/>It works with Eclipse 3.6 and ZK 5.0.5.<br/>We're aiming to make it be compatible to new Spring.</p></div></div><div class="author"><img class='author-image' title='zk2wd' src='/forum/mediaService?userId=53918&extName=null' /><span class="author-name">zk2wd</span></div><div><span class="comment-date">17 Apr 2012 08:04:57 GMT</span><div class="comment-cotent"><span class="comment-content">17 Apr 2012 08:04:57 GMT</span><p  style="margin:2px 2px;">@PeterKuo<br/>您好！我用相同的方式将zkstudio_1.0.2_indigo和zeta_0.1.0作为插件分别安装到我的Eclipse3.7和MyEclipse8.6中，在Eclipse3.7中当我新建的时候存在Zeta Form，而在MyEclipse中却没有，请问为什么？</p><p>我的版本：<br/>ZK:5.0.4<br/>MyEclipse:8.6<br/>Eclipse:3.5</p></div></div><div class="author"><img class='author-image' title='oziel' src='/forum/mediaService?userId=28121&extName=null' /><span class="author-name">oziel</span></div><div><span class="comment-date">20 Jun 2012 18:46:10 GMT</span><div class="comment-cotent"><span class="comment-content">20 Jun 2012 18:46:10 GMT</span><p  style="margin:2px 2px;">I have download and install <b >zkstudio_1.0.2_helios</b>, I use zk-bin-5.0.8 and Eclipse 3.6 but I don't see the <b >zeta db form</b>.<br/>the Release Notes at <a target="external" href="http://www.zkoss.org/product/zkstudio/releasenote/1.0.2">http://www.zkoss.org/product/zkstudio/releasenote/1.0.2</a> talk about the new features and Feature Highlights Where it is included the <b >Zeta DB Form Builder</b>, but I don't see it.<br/>I wonder:<br/>1-am I making something bad? why the<b > zeta db form</b> is not present in the zkstudio 1.0.2?<br/>2-is this Feature or plugin still in experimental phase?<br/>3-does this plugin only work for the version 0.9.6 of the zkstudio?<br/>4-does it exist today some version higher of the plugin zeta form that the present in zkstudio_0.9.6?  where I can find it?</p><p>I would appreciate any help.<br/>thank you</p></div></div><div class="author"><img class='author-image' title='zaaylo' src='/forum/mediaService?userId=57209&extName=null' /><span class="author-name">zaaylo</span></div><div><span class="comment-date">5 Jul 2012 10:39:04 GMT</span><div class="comment-cotent"><span class="comment-content">5 Jul 2012 10:39:04 GMT</span><p  style="margin:2px 2px;">i am sorry but unable ot read answer by zk2wd<br/>__________________________________________________________________________________________________________________________________<br/>@PeterKuo<br/>您好！我用相同的方式将zkstudio_1.0.2_indigo和zeta_0.1.0作为插件分别安装到我的Eclipse3.7和MyEclipse8.6中，在Eclipse3.7中当我新建的时候存在Zeta Form，而在MyEclipse中却没有，请问为什么？<br/>我的版本：<br/>ZK:5.0.4<br/>MyEclipse:8.6<br/>Eclipse:3.5<br/>==============================================================================================================================<br/>_______________________________________________________________________________________________________________________________<br/>can anybody please reply this in English<br/>_______________________________________________________________________________________________________________________________<br/>-zaaylo <a target="external" href="http://www.a2zwebindex.com," rel="nofollow" >web directory,</a> | <a target="external" href="http://www.zaaylo.co.uk," rel="nofollow" >zaaylo uk,</a> | <a target="external" href="http://www.seoaura.com," rel="nofollow" >seo aura uk</a><br/>________________________________________________________________________________________________________________________________</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','iR3T2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','iR3Td',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','iR3T5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46?path=http://www.zkoss.org/forum/listComment/14974-ZETA-Form-Builder-not-supported-in-Eclipse-3-6'},[]],
+['zk.Native','iR3Te',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','iR3T6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:9,_offset:0},[
+['zul.grid.Columns','iR3T7',{$$onColSize:false},[
+['zul.grid.Column','iR3T8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','iR3T9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','iR3Ta',{sclass:'comment-rows',_offset:0,visibleItemCount:9},[
+['zul.grid.Row','iR3Tn',{_loaded:true,_index:0},[
+['zul.wnd.Window','iR3T40',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','iR3T50',{prolog:'\n\t'},[
+['zul.box.Vlayout','iR3T60',{},[
+['zul.box.Hlayout','iR3T70',{},[
+['zul.wgt.Toolbarbutton','iR3T80',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'dscovill'},[]]]],
+['zul.wgt.Label','iR3Ta0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','iR3Tc0',{},[]],
+['zul.wgt.Div','iR3Tf0',{},[
+['zul.wgt.Label','iR3Tg0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','iR3Th0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'4'},[]]]],
+['zul.wgt.Div','iR3Ti0',{},[
+['zul.wgt.Label','iR3Tj0',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','iR3Tk0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jan 26, 2009'},[]]]],
+['zul.wgt.Div','iR3Tl0',{},[]],
+['zul.wgt.Div','iR3Tn0',{},[]]],'vertical']]],
+['zul.wnd.Window','iR3Tp0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','iR3Tq0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','iR3Tr0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','iR3Ts0',{id:'dateCreated',sclass:'comment-date',value:'Jan 11, 2011'},[]],
+['zul.wgt.Div','iR3Tt0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','iR3Tw0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">The release mentioned that The ZETA Form Builder will not supported in Eclipse 3.6 ... is that functionality going to be added later if so what is the general time frame?</p>'},[]],
+['zul.wgt.Separator','iR3Tx0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','iR3Ty0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','iR3Tz0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','iR3Tp',{_loaded:true,_index:1},[
+['zul.wnd.Window','iR3T_1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','iR3T01',{prolog:'\n\t'},[
+['zul.box.Vlayout','iR3T11',{},[
+['zul.box.Hlayout','iR3T21',{},[
+['zul.wgt.Toolbarbutton','iR3T31',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'fmelossi'},[]]]],
+['zul.wgt.Label','iR3T51',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','iR3T61',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46?userId=24198&extName=bmp'},[]],
+['zul.wgt.Div','iR3T71',{},[]],
+['zul.wgt.Div','iR3Ta1',{},[
+['zul.wgt.Label','iR3Tb1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','iR3Tc1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'28'},[]]]],
+['zul.wgt.Div','iR3Td1',{},[
+['zul.wgt.Label','iR3Te1',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','iR3Tf1',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Feb 07, 2010'},[]]]],
+['zul.wgt.Div','iR3Tg1',{},[]],
+['zul.wgt.Div','iR3Ti1',{},[]]],'vertical']]],
+['zul.wnd.Window','iR3Tk1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','iR3Tl1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','iR3Tm1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','iR3Tn1',{id:'dateCreated',sclass:'comment-date',value:'Jan 11, 2011'},[]],
+['zul.wgt.Div','iR3To1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','iR3Tr1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">ZETA Form Builder does not support zk 5.0.5 ?<br/>will be supported later?</p>'},[]],
+['zul.wgt.Separator','iR3Ts1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','iR3Tt1',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','iR3Tu1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','iR3Tr',{_loaded:true,_index:2},[
+['zul.wnd.Window','iR3Tv1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','iR3Tw1',{prolog:'\n\t'},[
+['zul.box.Vlayout','iR3Tx1',{},[
+['zul.box.Hlayout','iR3Ty1',{},[
+['zul.wgt.Toolbarbutton','iR3Tz1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'tmillsclare'},[]]]],
+['zul.wgt.Label','iR3T02',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','iR3T22',{},[]],
+['zul.wgt.Div','iR3T52',{},[
+['zul.wgt.Label','iR3T62',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','iR3T72',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'223'},[]]]],
+['zul.wgt.Div','iR3T82',{},[
+['zul.wgt.Label','iR3T92',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','iR3Ta2',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Apr 22, 2009'},[]]]],
+['zul.wgt.Div','iR3Tb2',{},[]],
+['zul.wgt.Div','iR3Td2',{},[]]],'vertical']]],
+['zul.wnd.Window','iR3Tf2',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','iR3Tg2',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','iR3Th2',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','iR3Ti2',{id:'dateCreated',sclass:'comment-date',value:'Jan 11, 2011'},[]],
+['zul.wgt.Div','iR3Tj2',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','iR3Tm2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Currently ZETA form builder is an experimental plugin, at the time we hadn\'t tested with Eclipse 3.6. Following your feedback we tried it and it does work.</p><p>ZETA form builder does work with ZK 5.0.5. If you run into any bug please let us know.</p><p>Thanks,<br/>Tim</p>'},[]],
+['zul.wgt.Separator','iR3Tn2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','iR3To2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','iR3Tp2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','iR3Tt',{_loaded:true,_index:3},[
+['zul.wnd.Window','iR3Tq2',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','iR3Tr2',{prolog:'\n\t'},[
+['zul.box.Vlayout','iR3Ts2',{},[
+['zul.box.Hlayout','iR3Tt2',{},[
+['zul.wgt.Toolbarbutton','iR3Tu2',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'robertpic71'},[]]]],
+['zul.wgt.Label','iR3Tw2',{id:'roleDescription',style:'color: #EA4317;',value:'Top Contributor'},[]]]],
+['zul.wgt.Image','iR3Tx2',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46?userId=1306&extName=jpeg'},[]],
+['zul.wgt.Div','iR3Ty2',{},[]],
+['zul.wgt.Div','iR3T03',{},[
+['zul.wgt.Label','iR3T13',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','iR3T23',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'424'},[]]]],
+['zul.wgt.Div','iR3T33',{},[
+['zul.wgt.Label','iR3T43',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','iR3T53',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 08, 2008'},[]]]],
+['zul.wgt.Div','iR3T63',{},[]],
+['zul.wgt.Div','iR3T83',{},[]]],'vertical']]],
+['zul.wnd.Window','iR3Ta3',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','iR3Tb3',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','iR3Tc3',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','iR3Td3',{id:'dateCreated',sclass:'comment-date',value:'Jan 12, 2011'},[]],
+['zul.wgt.Div','iR3Te3',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','iR3Th3',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">&gt;&gt; Currently ZETA form builder is an experimental plugin, at the time we hadn\'t tested with Eclipse 3.6. Following your feedback we tried it and it does work.<br/>How we get ZETA form builder for Eclipse 3.6?</p>'},[]],
+['zul.wgt.Separator','iR3Ti3',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','iR3Tj3',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','iR3Tk3',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','iR3Tv',{_loaded:true,_index:4},[
+['zul.wnd.Window','iR3Tl3',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','iR3Tm3',{prolog:'\n\t'},[
+['zul.box.Vlayout','iR3Tn3',{},[
+['zul.box.Hlayout','iR3To3',{},[
+['zul.wgt.Toolbarbutton','iR3Tp3',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'dscovill'},[]]]],
+['zul.wgt.Label','iR3Tr3',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','iR3Tt3',{},[]],
+['zul.wgt.Div','iR3Tw3',{},[
+['zul.wgt.Label','iR3Tx3',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','iR3Ty3',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'4'},[]]]],
+['zul.wgt.Div','iR3Tz3',{},[
+['zul.wgt.Label','iR3T_4',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','iR3T04',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jan 26, 2009'},[]]]],
+['zul.wgt.Div','iR3T14',{},[]],
+['zul.wgt.Div','iR3T34',{},[]]],'vertical']]],
+['zul.wnd.Window','iR3T54',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','iR3T64',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','iR3T74',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','iR3T84',{id:'dateCreated',sclass:'comment-date',value:'Jan 12, 2011'},[]],
+['zul.wgt.Div','iR3T94',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','iR3Tc4',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">are there plans to make it a full part of studio?   does it create code that is not the current correct architecture?</p>'},[]],
+['zul.wgt.Separator','iR3Td4',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','iR3Te4',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','iR3Tf4',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','iR3Tx',{_loaded:true,_index:5},[
+['zul.wnd.Window','iR3Tg4',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','iR3Th4',{prolog:'\n\t'},[
+['zul.box.Vlayout','iR3Ti4',{},[
+['zul.box.Hlayout','iR3Tj4',{},[
+['zul.wgt.Toolbarbutton','iR3Tk4',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'PeterKuo'},[]]]],
+['zul.wgt.Label','iR3Tm4',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','iR3Tn4',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46?userId=2885&extName=jpeg'},[]],
+['zul.wgt.Div','iR3To4',{},[]],
+['zul.wgt.Div','iR3Tr4',{},[
+['zul.wgt.Label','iR3Ts4',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','iR3Tt4',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1427'},[]]]],
+['zul.wgt.Div','iR3Tu4',{},[
+['zul.wgt.Label','iR3Tv4',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','iR3Tw4',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 24, 2008'},[]]]],
+['zul.wgt.Div','iR3Tx4',{},[]],
+['zul.wgt.Div','iR3Tz4',{},[]]],'vertical']]],
+['zul.wnd.Window','iR3T05',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','iR3T15',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','iR3T25',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','iR3T35',{id:'dateCreated',sclass:'comment-date',value:'Jan 16, 2011'},[]],
+['zul.wgt.Div','iR3T45',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','iR3T75',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">@robertpic71<br/>http://www.zkoss.org/download/zkstudio.dsp</p><p>Zeta has been provided as independent package, and you can download it.<br/>I have tested with Eclipse 3.6 and ZK 5.0.5, it works.<br/>(You have to remove breeze.jar inside ZK 5.0.5, or download freshly breeze.jar actually)</p><p>@dsconvill<br/>It works with Eclipse 3.6 and ZK 5.0.5.<br/>We\'re aiming to make it be compatible to new Spring.</p>'},[]],
+['zul.wgt.Separator','iR3T85',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','iR3T95',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','iR3Ta5',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'ZK Forum Email Notification. http://www.zkoss.org/forum/listComment/10792'},[]]]]]]]],
+['zul.grid.Row','iR3Tz',{_loaded:true,_index:6},[
+['zul.wnd.Window','iR3Tb5',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','iR3Tc5',{prolog:'\n\t'},[
+['zul.box.Vlayout','iR3Td5',{},[
+['zul.box.Hlayout','iR3Te5',{},[
+['zul.wgt.Toolbarbutton','iR3Tf5',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'zk2wd'},[]]]],
+['zul.wgt.Label','iR3Th5',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','iR3Tj5',{},[]],
+['zul.wgt.Div','iR3Tm5',{},[
+['zul.wgt.Label','iR3Tn5',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','iR3To5',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'5'},[]]]],
+['zul.wgt.Div','iR3Tp5',{},[
+['zul.wgt.Label','iR3Tq5',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','iR3Tr5',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Apr 12, 2012'},[]]]],
+['zul.wgt.Div','iR3Ts5',{},[]],
+['zul.wgt.Div','iR3Tu5',{},[]]],'vertical']]],
+['zul.wnd.Window','iR3Tw5',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','iR3Tx5',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','iR3Ty5',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','iR3Tz5',{id:'dateCreated',sclass:'comment-date',value:'Apr 17, 2012'},[]],
+['zul.wgt.Div','iR3T_6',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','iR3T26',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">@PeterKuo<br/>您好\uff01我用相同的方式将zkstudio_1.0.2_indigo和zeta_0.1.0作为插件分别安装到我的Eclipse3.7和MyEclipse8.6中\uff0c在Eclipse3.7中当我新建的时候存在Zeta Form\uff0c而在MyEclipse中却没有\uff0c请问为什么\uff1f</p><p>我的版本\uff1a<br/>ZK:5.0.4<br/>MyEclipse:8.6<br/>Eclipse:3.5</p>'},[]],
+['zul.wgt.Separator','iR3T36',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','iR3T46',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','iR3T56',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','iR3T00',{_loaded:true,_index:7},[
+['zul.wnd.Window','iR3T66',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','iR3T76',{prolog:'\n\t'},[
+['zul.box.Vlayout','iR3T86',{},[
+['zul.box.Hlayout','iR3T96',{},[
+['zul.wgt.Toolbarbutton','iR3Ta6',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'oziel'},[]]]],
+['zul.wgt.Label','iR3Tc6',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','iR3Te6',{},[]],
+['zul.wgt.Div','iR3Th6',{},[
+['zul.wgt.Label','iR3Ti6',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','iR3Tj6',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'9'},[]]]],
+['zul.wgt.Div','iR3Tk6',{},[
+['zul.wgt.Label','iR3Tl6',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','iR3Tm6',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'May 12, 2010'},[]]]],
+['zul.wgt.Div','iR3Tn6',{},[]],
+['zul.wgt.Div','iR3Tp6',{},[]]],'vertical']]],
+['zul.wnd.Window','iR3Tr6',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','iR3Ts6',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','iR3Tt6',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','iR3Tu6',{id:'dateCreated',sclass:'comment-date',value:'Jun 20, 2012'},[]],
+['zul.wgt.Div','iR3Tv6',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','iR3Ty6',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">I have download and install <b >zkstudio_1.0.2_helios</b>, I use zk-bin-5.0.8 and Eclipse 3.6 but I don\'t see the <b >zeta db form</b>.<br/>the Release Notes at <a target="external" href="http://www.zkoss.org/product/zkstudio/releasenote/1.0.2">http://www.zkoss.org/product/zkstudio/releasenote/1.0.2</a> talk about the new features and Feature Highlights Where it is included the <b >Zeta DB Form Builder</b>, but I don\'t see it.<br/>I wonder:<br/>1-am I making something bad? why the<b > zeta db form</b> is not present in the zkstudio 1.0.2?<br/>2-is this Feature or plugin still in experimental phase?<br/>3-does this plugin only work for the version 0.9.6 of the zkstudio?<br/>4-does it exist today some version higher of the plugin zeta form that the present in zkstudio_0.9.6?  where I can find it?</p><p>I would appreciate any help.<br/>thank you</p>'},[]],
+['zul.wgt.Separator','iR3Tz6',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','iR3T_7',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','iR3T07',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','iR3T20',{_loaded:true,_index:8},[
+['zul.wnd.Window','iR3T17',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','iR3T27',{prolog:'\n\t'},[
+['zul.box.Vlayout','iR3T37',{},[
+['zul.box.Hlayout','iR3T47',{},[
+['zul.wgt.Toolbarbutton','iR3T57',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'zaaylo'},[]]]],
+['zul.wgt.Label','iR3T77',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','iR3T97',{},[]],
+['zul.wgt.Div','iR3Tc7',{},[
+['zul.wgt.Label','iR3Td7',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','iR3Te7',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','iR3Tf7',{},[
+['zul.wgt.Label','iR3Tg7',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','iR3Th7',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 05, 2012'},[]]]],
+['zul.wgt.Div','iR3Ti7',{},[]],
+['zul.wgt.Div','iR3Tk7',{},[]]],'vertical']]],
+['zul.wnd.Window','iR3Tm7',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','iR3Tn7',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','iR3To7',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','iR3Tp7',{id:'dateCreated',sclass:'comment-date',value:'Jul 05, 2012'},[]],
+['zul.wgt.Div','iR3Tq7',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','iR3Tt7',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">i am sorry but unable ot read answer by zk2wd<br/>__________________________________________________________________________________________________________________________________<br/>@PeterKuo<br/>您好\uff01我用相同的方式将zkstudio_1.0.2_indigo和zeta_0.1.0作为插件分别安装到我的Eclipse3.7和MyEclipse8.6中\uff0c在Eclipse3.7中当我新建的时候存在Zeta Form\uff0c而在MyEclipse中却没有\uff0c请问为什么\uff1f<br/>我的版本\uff1a<br/>ZK:5.0.4<br/>MyEclipse:8.6<br/>Eclipse:3.5<br/>==============================================================================================================================<br/>_______________________________________________________________________________________________________________________________<br/>can anybody please reply this in English<br/>_______________________________________________________________________________________________________________________________<br/>-zaaylo <a target="external" href="http://www.a2zwebindex.com," rel="nofollow" >web directory,</a> | <a target="external" href="http://www.zaaylo.co.uk," rel="nofollow" >zaaylo uk,</a> | <a target="external" href="http://www.seoaura.com," rel="nofollow" >seo aura uk</a><br/>________________________________________________________________________________________________________________________________</p>'},[]],
+['zul.wgt.Separator','iR3Tu7',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','iR3Tv7',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','iR3Tw7',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','iR3Tb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','iR3Tc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="iR3Tf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','iR3Tf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="iR3Tg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','iR3Tg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46?path=http://www.zkoss.org/forum/listComment/14974-ZETA-Form-Builder-not-supported-in-Eclipse-3-6'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="iR3Th" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','iR3Th',{id:'comment-reply'},[
+['zk.Native','iR3Tk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','iR3Ti',{},[]],
+['zul.wgt.Label','iR3Tj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=9E83C01813AF7C1F6B8E4FCA12B5DB46"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

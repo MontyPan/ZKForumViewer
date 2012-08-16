@@ -1,0 +1,510 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=92417708C9C8FFEF5D43164485A4A6E9'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=92417708C9C8FFEF5D43164485A4A6E9?1343202477922' />
+<title>Install eclipse plugin Juno | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="Install eclipse plugin Juno"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="sicci"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=92417708C9C8FFEF5D43164485A4A6E9"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=92417708C9C8FFEF5D43164485A4A6E9" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=92417708C9C8FFEF5D43164485A4A6E9" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=92417708C9C8FFEF5D43164485A4A6E9' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('kQLQ_','z_zbc','/forum;jsessionid=92417708C9C8FFEF5D43164485A4A6E9','/forum/zkau;jsessionid=92417708C9C8FFEF5D43164485A4A6E9','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="kQLQ0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=92417708C9C8FFEF5D43164485A4A6E9'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','kQLQ0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=92417708C9C8FFEF5D43164485A4A6E9?path=http://www.zkoss.org/forum/listComment/19672-Install-eclipse-plugin-Juno'},[]]);
+</script>
+<div id="kQLQ1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','kQLQ1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=92417708C9C8FFEF5D43164485A4A6E9'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=92417708C9C8FFEF5D43164485A4A6E9" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=92417708C9C8FFEF5D43164485A4A6E9">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=92417708C9C8FFEF5D43164485A4A6E9"><img src="/forum/images/home.png;jsessionid=92417708C9C8FFEF5D43164485A4A6E9" alt="Home"/></a></li>
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/14;jsessionid=92417708C9C8FFEF5D43164485A4A6E9">Help</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=92417708C9C8FFEF5D43164485A4A6E9">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=92417708C9C8FFEF5D43164485A4A6E9">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=92417708C9C8FFEF5D43164485A4A6E9">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/17;jsessionid=92417708C9C8FFEF5D43164485A4A6E9">Installation</a>
+										</li>
+									
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">Install eclipse plugin Juno</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('kQLQ4','z_zbc','/forum;jsessionid=92417708C9C8FFEF5D43164485A4A6E9','/forum/zkau;jsessionid=92417708C9C8FFEF5D43164485A4A6E9','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="kQLQ2" class="z-temp"><div class="author"><img class='author-image' title='sicci' src='/forum/mediaService?userId=55759&extName=null' /><span class="author-name">sicci</span></div><div><span class="comment-date">29 May 2012 14:02:32 GMT</span><div class="comment-cotent"><span class="comment-content">29 May 2012 14:02:32 GMT</span><p  style="margin:2px 2px;">Hi,</p><p>i'm tring to install the Zkoss plugin for eclipse. I downloaded Eclipse IDE for Java EE Developers version. The last release, named Juno.</p><p>I tried to install the Zkoss plugin going on Help &gt;&gt; Install New Software and adding the site http://studio.zkoss.org/resource/plugins/eclipse_3_7.</p><p>It found the plugin I was looking for (ZK Studio 1.0.2) but when i go ahead it stops and report and error:<div style="class=code" class="code"><pre>Cannot complete the install because one or more required items could not be found.
+  Software being installed: ZK Studio 1.0.2.v201203141244 (org.zkoss.eclipse.feature.group 1.0.2.v201203141244)
+  Missing requirement: ZK Studio Services Plug&#45;in 1.0.2.v201203141244 (org.zkoss.eclipse.services 1.0.2.v201203141244) requires 'bundle org.eclipse.update.ui 0.0.0' but it could not be found
+  Cannot satisfy dependency:
+    From: ZK Studio ZUL Editor Plug&#45;in 1.0.2.v201203141244 (org.zkoss.eclipse.editor 1.0.2.v201203141244)
+    To: bundle org.zkoss.eclipse.services 0.0.0
+  Cannot satisfy dependency:
+    From: ZK Studio 1.0.2.v201203141244 (org.zkoss.eclipse.feature.group 1.0.2.v201203141244)
+    To: org.zkoss.eclipse.editor [1.0.2.v201203141244]</pre></div></p><p>Did i made some mistakes? What should i do?</p></div></div><div class="author"><img class='author-image' title='sicci' src='/forum/mediaService?userId=55759&extName=null' /><span class="author-name">sicci</span></div><div><span class="comment-date">29 May 2012 14:25:16 GMT</span><div class="comment-cotent"><span class="comment-content">29 May 2012 14:25:16 GMT</span><p  style="margin:2px 2px;">Ok i've done it.</p><p>Using the Marketplace it woks.</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','kQLQ2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','kQLQd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','kQLQ5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=92417708C9C8FFEF5D43164485A4A6E9?path=http://www.zkoss.org/forum/listComment/19672-Install-eclipse-plugin-Juno'},[]],
+['zk.Native','kQLQe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','kQLQ6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:2,_offset:0},[
+['zul.grid.Columns','kQLQ7',{$$onColSize:false},[
+['zul.grid.Column','kQLQ8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','kQLQ9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','kQLQa',{sclass:'comment-rows',_offset:0,visibleItemCount:2},[
+['zul.grid.Row','kQLQn',{_loaded:true,_index:0},[
+['zul.wnd.Window','kQLQr',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','kQLQs',{prolog:'\n\t'},[
+['zul.box.Vlayout','kQLQt',{},[
+['zul.box.Hlayout','kQLQu',{},[
+['zul.wgt.Toolbarbutton','kQLQv',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'sicci'},[]]]],
+['zul.wgt.Label','kQLQx',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','kQLQz',{},[]],
+['zul.wgt.Div','kQLQ10',{},[
+['zul.wgt.Label','kQLQ20',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','kQLQ30',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'2'},[]]]],
+['zul.wgt.Div','kQLQ40',{},[
+['zul.wgt.Label','kQLQ50',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','kQLQ60',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'May 29, 2012'},[]]]],
+['zul.wgt.Div','kQLQ70',{},[]],
+['zul.wgt.Div','kQLQ90',{},[]]],'vertical']]],
+['zul.wnd.Window','kQLQb0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','kQLQc0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','kQLQd0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','kQLQe0',{id:'dateCreated',sclass:'comment-date',value:'May 29, 2012'},[]],
+['zul.wgt.Div','kQLQf0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','kQLQi0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi,</p><p>i\'m tring to install the Zkoss plugin for eclipse. I downloaded Eclipse IDE for Java EE Developers version. The last release, named Juno.</p><p>I tried to install the Zkoss plugin going on Help &gt;&gt; Install New Software and adding the site http://studio.zkoss.org/resource/plugins/eclipse_3_7.</p><p>It found the plugin I was looking for (ZK Studio 1.0.2) but when i go ahead it stops and report and error:<div style="class=code" class="code"><pre>Cannot complete the install because one or more required items could not be found.\n  Software being installed: ZK Studio 1.0.2.v201203141244 (org.zkoss.eclipse.feature.group 1.0.2.v201203141244)\n  Missing requirement: ZK Studio Services Plug&#45;in 1.0.2.v201203141244 (org.zkoss.eclipse.services 1.0.2.v201203141244) requires \'bundle org.eclipse.update.ui 0.0.0\' but it could not be found\n  Cannot satisfy dependency:\n    From: ZK Studio ZUL Editor Plug&#45;in 1.0.2.v201203141244 (org.zkoss.eclipse.editor 1.0.2.v201203141244)\n    To: bundle org.zkoss.eclipse.services 0.0.0\n  Cannot satisfy dependency:\n    From: ZK Studio 1.0.2.v201203141244 (org.zkoss.eclipse.feature.group 1.0.2.v201203141244)\n    To: org.zkoss.eclipse.editor [1.0.2.v201203141244]</pre></div></p><p>Did i made some mistakes? What should i do?</p>'},[]],
+['zul.wgt.Separator','kQLQj0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','kQLQk0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','kQLQl0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','kQLQp',{_loaded:true,_index:1},[
+['zul.wnd.Window','kQLQm0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','kQLQn0',{prolog:'\n\t'},[
+['zul.box.Vlayout','kQLQo0',{},[
+['zul.box.Hlayout','kQLQp0',{},[
+['zul.wgt.Toolbarbutton','kQLQq0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'sicci'},[]]]],
+['zul.wgt.Label','kQLQs0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','kQLQu0',{},[]],
+['zul.wgt.Div','kQLQx0',{},[
+['zul.wgt.Label','kQLQy0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','kQLQz0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'2'},[]]]],
+['zul.wgt.Div','kQLQ_1',{},[
+['zul.wgt.Label','kQLQ01',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','kQLQ11',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'May 29, 2012'},[]]]],
+['zul.wgt.Div','kQLQ21',{},[]],
+['zul.wgt.Div','kQLQ41',{},[]]],'vertical']]],
+['zul.wnd.Window','kQLQ61',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','kQLQ71',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','kQLQ81',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','kQLQ91',{id:'dateCreated',sclass:'comment-date',value:'May 29, 2012'},[]],
+['zul.wgt.Div','kQLQa1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','kQLQd1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Ok i\'ve done it.</p><p>Using the Marketplace it woks.</p>'},[]],
+['zul.wgt.Separator','kQLQe1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','kQLQf1',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','kQLQg1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','kQLQb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','kQLQc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="kQLQf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','kQLQf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="kQLQg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','kQLQg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=92417708C9C8FFEF5D43164485A4A6E9?path=http://www.zkoss.org/forum/listComment/19672-Install-eclipse-plugin-Juno'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="kQLQh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','kQLQh',{id:'comment-reply'},[
+['zk.Native','kQLQk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','kQLQi',{},[]],
+['zul.wgt.Label','kQLQj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=92417708C9C8FFEF5D43164485A4A6E9" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=92417708C9C8FFEF5D43164485A4A6E9"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

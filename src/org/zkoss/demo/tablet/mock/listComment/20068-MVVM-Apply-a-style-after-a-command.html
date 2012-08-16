@@ -1,0 +1,603 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7?1343202452017' />
+<title>[MVVM] Apply a style after a command | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="[MVVM] Apply a style after a command"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="pasqualeleone"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('xLBU_','z_1a40','/forum;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7','/forum/zkau;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="xLBU0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','xLBU0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7?path=http://www.zkoss.org/forum/listComment/20068-MVVM-Apply-a-style-after-a-command'},[]]);
+</script>
+<div id="xLBU1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','xLBU1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7"><img src="/forum/images/home.png;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7" alt="Home"/></a></li>
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/14;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7">Help</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/18;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7">ZK Studio</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">[MVVM] Apply a style after a command</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('xLBU4','z_1a40','/forum;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7','/forum/zkau;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="xLBU2" class="z-temp"><div class="author"><img class='author-image' title='pasqualeleone' src='/forum/mediaService?userId=52256&extName=null' /><span class="author-name">pasqualeleone</span></div><div><span class="comment-date">13 Jul 2012 09:05:57 GMT</span><div class="comment-cotent"><span class="comment-content">13 Jul 2012 09:05:57 GMT</span><p  style="margin:2px 2px;">Hi,<br/>How do I apply a style to the UI after a command?<br/>In my application I have several buttons on UI, and after I press one of these, start a command and IU should change the style.<br/>I had thought of this solution:<div style="class=code" class="code"><pre>
+&lt;button id="addUsr"
+	image="@load((not umvm.addDisabledBtn) ? '/image/add_user.png' : '/image/add_user_disabled.png')"
+	tooltiptext="Add a User" onClick="@command('preAdd')"
+	disabled="@load(umvm.addDisabledBtn)"
+       sclass="@load(mygrp.setSclass('add'), after='preAdd')"/&gt;</pre></div></p><p>but "after='abort' throw exception:</p><p>java.lang.NullPointerException<br/>	at org.zkoss.bind.tracker.impl.TrackerImpl.addBeanMap(TrackerImpl.java:221)<br/>	at org.zkoss.bind.tracker.impl.TrackerImpl.tieValue(TrackerImpl.java:192)<br/>	at org.zkoss.bind.xel.zel.BindELResolver.tieValue(BindELResolver.java:131)<br/>	at org.zkoss.bind.xel.zel.BindELResolver.getValue(BindELResolver.java:68)<br/>	at org.zkoss.zel.impl.parser.AstIdentifier.getValue(AstIdentifier.java:75)<br/>	at org.zkoss.zel.impl.parser.AstValue.getValue(AstValue.java:155)<br/>	at org.zkoss.zel.impl.ValueExpressionImpl.getValue(ValueExpressionImpl.java:189)<br/>	at org.zkoss.xel.zel.ELXelExpression.evaluate(ELXelExpression.java:40)<br/>	at org.zkoss.bind.impl.BindEvaluatorXImpl.getValue(BindEvaluatorXImpl.java:44)<br/>	at org.zkoss.bind.impl.LoadPropertyBindingImpl.load(LoadPropertyBindingImpl.java:55)<br/>	at org.zkoss.bind.impl.PropertyBindingHandler.doLoadBinding(PropertyBindingHandler.java:172)<br/>	at org.zkoss.bind.impl.PropertyBindingHandler.doLoadAfter(PropertyBindingHandler.java:333)<br/>	at org.zkoss.bind.impl.BinderImpl.doLoadAfter(BinderImpl.java:1585)<br/>	at org.zkoss.bind.impl.BinderImpl.doCommand(BinderImpl.java:1255)<br/>	at org.zkoss.bind.impl.BinderImpl.access$1300(BinderImpl.java:92)<br/>	at org.zkoss.bind.impl.BinderImpl$CommandEventListener.onEvent(BinderImpl.java:1141)<br/>	at org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)<br/>	at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)<br/>	at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)<br/>	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)<br/>	at org.zkoss.zk.ui.impl.UiEngineImpl.processEvent(UiEngineImpl.java:1699)<br/>	at org.zkoss.zk.ui.impl.UiEngineImpl.process(UiEngineImpl.java:1484)<br/>	at org.zkoss.zk.ui.impl.UiEngineImpl.execUpdate(UiEngineImpl.java:1201)<br/>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.process(DHtmlUpdateServlet.java:558)<br/>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:456)<br/>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:464)<br/>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:637)<br/>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)<br/>	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)<br/>	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)<br/>	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)<br/>	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)<br/>	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)<br/>	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)<br/>	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)<br/>	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)<br/>	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)<br/>	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)<br/>	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)<br/>	at java.lang.Thread.run(Unknown Source)</p><p>Can you help me please?</p></div></div><div class="author"><img class='author-image' title='vincentjian' src='/forum/mediaService?userId=44365&extName=null' /><span class="author-name">vincentjian</span></div><div><span class="comment-date">18 Jul 2012 01:37:15 GMT</span><div class="comment-cotent"><span class="comment-content">18 Jul 2012 01:37:15 GMT</span><p  style="margin:2px 2px;">Hi</p><p>I tried the following sample and it works.<div style="class=code" class="code"><pre>
+&lt;zk&gt;
+&lt;style&gt;
+.button &#123;
+	color: red;
+	font&#45;size: 20px;
+&#125;
+&lt;/style&gt;
+&lt;vbox id="vbox" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('forum.ButtonVM')"&gt;
+	&lt;button id="cmd" label="cmd" onClick="@command('cmd')" sclass="@load(vm.sclass, after='cmd')" mold="os"/&gt;
+&lt;/vbox&gt;
+&lt;/zk&gt;
+</pre></div><br/><div style="class=code" class="code"><pre>
+public class ButtonVM &#123;
+	private String sclass = "button";
+
+	public String getSclass() &#123;
+		return sclass;
+	&#125;
+
+	@NotifyChange
+	public void setSclass(String sclass) &#123;
+		this.sclass = sclass;
+	&#125;
+	
+	@Command
+	public void cmd() &#123;
+	&#125;
+&#125;
+</pre></div><br/>The problem seems that your button sclass is loaded from other View Model and it cannot recognize it.</p></div></div><div class="author"><img class='author-image' title='pasqualeleone' src='/forum/mediaService?userId=52256&extName=null' /><span class="author-name">pasqualeleone</span></div><div><span class="comment-date">19 Jul 2012 11:03:28 GMT</span><div class="comment-cotent"><span class="comment-content">19 Jul 2012 11:03:28 GMT</span><p  style="margin:2px 2px;">thank you vincentjian!<br/>if I use the code you wrote works, ok.<br/>I knew where I raised the exception, but can not seem to solve.<br/>in a version of the code of my application I used in the component button, only sclass, and it's ok, then I added in the same component,  image = "@ load ((not umvm.addDisabledBtn)? '/ image / add_user.png': '/ image / add_user_disabled.png ') "and disabled =" @ load (umvm.addDisabledBtn) ". and this is the problem.<br/>If you use the same code in your example adding disabled<div style="class=code" class="code"><pre>&lt;zk &gt;
+&lt;style&gt;
+.button &#123;
+	color: red;
+	font&#45;size: 20px;
+&#125;
+&lt;/style&gt;
+&lt;vbox id="vbox" apply="org.zkoss.bind.BindComposer" viewModel="@id('bvm') @init('forum.ButtonVM')"&gt;
+	&lt;button id="cmd" label="cmd" onClick="@command('cmd')" sclass="@load(vm.sclass, after='cmd')" disabled="@load(bvm.btnDisabled)" mold="os"&gt;&lt;/button&gt;
+&lt;/vbox&gt;
+&lt;/zk&gt;</pre></div><br/><div style="class=code" class="code"><pre>package forum;
+
+import org.zkoss.bind.annotation.Command;
+import org.zkoss.bind.annotation.NotifyChange;
+
+public class ButtonVM &#123;
+	private String sclass = "button";
+	private boolean btnDisabled;
+
+	public String getSclass() &#123;
+		return sclass;
+	&#125;
+
+
+	public void setBtnDisabled(boolean btnDisabled) &#123;
+		this.btnDisabled = btnDisabled;
+	&#125;
+
+	public boolean isBtnDisabled() &#123;
+		return btnDisabled;
+	&#125;
+	@NotifyChange
+	public void setSclass(String sclass) &#123;
+		this.sclass = sclass;
+	&#125;
+	
+	@Command
+	@NotifyChange("btnDisabled")
+	public void cmd() &#123;
+		btnDisabled=true;
+	&#125;
+	
+&#125;</pre></div></p><p>you'll see that the problem occurs to you too.<br/>Is there a way to avoid the exception?</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','xLBU2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','xLBUd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','xLBU5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7?path=http://www.zkoss.org/forum/listComment/20068-MVVM-Apply-a-style-after-a-command'},[]],
+['zk.Native','xLBUe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','xLBU6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:3,_offset:0},[
+['zul.grid.Columns','xLBU7',{$$onColSize:false},[
+['zul.grid.Column','xLBU8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','xLBU9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','xLBUa',{sclass:'comment-rows',_offset:0,visibleItemCount:3},[
+['zul.grid.Row','xLBUn',{_loaded:true,_index:0},[
+['zul.wnd.Window','xLBUt',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','xLBUu',{prolog:'\n\t'},[
+['zul.box.Vlayout','xLBUv',{},[
+['zul.box.Hlayout','xLBUw',{},[
+['zul.wgt.Toolbarbutton','xLBUx',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'pasqualeleone'},[]]]],
+['zul.wgt.Label','xLBUz',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','xLBU00',{},[]],
+['zul.wgt.Div','xLBU30',{},[
+['zul.wgt.Label','xLBU40',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','xLBU50',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'14'},[]]]],
+['zul.wgt.Div','xLBU60',{},[
+['zul.wgt.Label','xLBU70',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','xLBU80',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Mar 05, 2012'},[]]]],
+['zul.wgt.Div','xLBU90',{},[]],
+['zul.wgt.Div','xLBUb0',{},[]]],'vertical']]],
+['zul.wnd.Window','xLBUd0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','xLBUe0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','xLBUf0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','xLBUg0',{id:'dateCreated',sclass:'comment-date',value:'Jul 13, 2012'},[]],
+['zul.wgt.Div','xLBUh0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','xLBUk0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi,<br/>How do I apply a style to the UI after a command?<br/>In my application I have several buttons on UI, and after I press one of these, start a command and IU should change the style.<br/>I had thought of this solution:<div style="class=code" class="code"><pre>\n&lt;button id="addUsr"\n\timage="@load((not umvm.addDisabledBtn) ? \'/image/add_user.png\' : \'/image/add_user_disabled.png\')"\n\ttooltiptext="Add a User" onClick="@command(\'preAdd\')"\n\tdisabled="@load(umvm.addDisabledBtn)"\n       sclass="@load(mygrp.setSclass(\'add\'), after=\'preAdd\')"/&gt;</pre></div></p><p>but "after=\'abort\' throw exception:</p><p>java.lang.NullPointerException<br/>\tat org.zkoss.bind.tracker.impl.TrackerImpl.addBeanMap(TrackerImpl.java:221)<br/>\tat org.zkoss.bind.tracker.impl.TrackerImpl.tieValue(TrackerImpl.java:192)<br/>\tat org.zkoss.bind.xel.zel.BindELResolver.tieValue(BindELResolver.java:131)<br/>\tat org.zkoss.bind.xel.zel.BindELResolver.getValue(BindELResolver.java:68)<br/>\tat org.zkoss.zel.impl.parser.AstIdentifier.getValue(AstIdentifier.java:75)<br/>\tat org.zkoss.zel.impl.parser.AstValue.getValue(AstValue.java:155)<br/>\tat org.zkoss.zel.impl.ValueExpressionImpl.getValue(ValueExpressionImpl.java:189)<br/>\tat org.zkoss.xel.zel.ELXelExpression.evaluate(ELXelExpression.java:40)<br/>\tat org.zkoss.bind.impl.BindEvaluatorXImpl.getValue(BindEvaluatorXImpl.java:44)<br/>\tat org.zkoss.bind.impl.LoadPropertyBindingImpl.load(LoadPropertyBindingImpl.java:55)<br/>\tat org.zkoss.bind.impl.PropertyBindingHandler.doLoadBinding(PropertyBindingHandler.java:172)<br/>\tat org.zkoss.bind.impl.PropertyBindingHandler.doLoadAfter(PropertyBindingHandler.java:333)<br/>\tat org.zkoss.bind.impl.BinderImpl.doLoadAfter(BinderImpl.java:1585)<br/>\tat org.zkoss.bind.impl.BinderImpl.doCommand(BinderImpl.java:1255)<br/>\tat org.zkoss.bind.impl.BinderImpl.access$1300(BinderImpl.java:92)<br/>\tat org.zkoss.bind.impl.BinderImpl$CommandEventListener.onEvent(BinderImpl.java:1141)<br/>\tat org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)<br/>\tat org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)<br/>\tat org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)<br/>\tat org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)<br/>\tat org.zkoss.zk.ui.impl.UiEngineImpl.processEvent(UiEngineImpl.java:1699)<br/>\tat org.zkoss.zk.ui.impl.UiEngineImpl.process(UiEngineImpl.java:1484)<br/>\tat org.zkoss.zk.ui.impl.UiEngineImpl.execUpdate(UiEngineImpl.java:1201)<br/>\tat org.zkoss.zk.au.http.DHtmlUpdateServlet.process(DHtmlUpdateServlet.java:558)<br/>\tat org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:456)<br/>\tat org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:464)<br/>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:637)<br/>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:717)<br/>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)<br/>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)<br/>\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)<br/>\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)<br/>\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)<br/>\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)<br/>\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)<br/>\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)<br/>\tat org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)<br/>\tat org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)<br/>\tat org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)<br/>\tat java.lang.Thread.run(Unknown Source)</p><p>Can you help me please?</p>'},[]],
+['zul.wgt.Separator','xLBUl0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','xLBUm0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','xLBUn0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','xLBUp',{_loaded:true,_index:1},[
+['zul.wnd.Window','xLBUo0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','xLBUp0',{prolog:'\n\t'},[
+['zul.box.Vlayout','xLBUq0',{},[
+['zul.box.Hlayout','xLBUr0',{},[
+['zul.wgt.Toolbarbutton','xLBUs0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'vincentjian'},[]]]],
+['zul.wgt.Label','xLBUu0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','xLBUw0',{},[]],
+['zul.wgt.Div','xLBUz0',{},[
+['zul.wgt.Label','xLBU_1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','xLBU01',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'209'},[]]]],
+['zul.wgt.Div','xLBU11',{},[
+['zul.wgt.Label','xLBU21',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','xLBU31',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 05, 2011'},[]]]],
+['zul.wgt.Div','xLBU41',{},[]],
+['zul.wgt.Div','xLBU61',{},[]]],'vertical']]],
+['zul.wnd.Window','xLBU81',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','xLBU91',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','xLBUa1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','xLBUb1',{id:'dateCreated',sclass:'comment-date',value:'7 days ago'},[]],
+['zul.wgt.Div','xLBUc1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','xLBUf1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi</p><p>I tried the following sample and it works.<div style="class=code" class="code"><pre>\n&lt;zk&gt;\n&lt;style&gt;\n.button &#123;\n\tcolor: red;\n\tfont&#45;size: 20px;\n&#125;\n&lt;/style&gt;\n&lt;vbox id="vbox" apply="org.zkoss.bind.BindComposer" viewModel="@id(\'vm\') @init(\'forum.ButtonVM\')"&gt;\n\t&lt;button id="cmd" label="cmd" onClick="@command(\'cmd\')" sclass="@load(vm.sclass, after=\'cmd\')" mold="os"/&gt;\n&lt;/vbox&gt;\n&lt;/zk&gt;\n</pre></div><br/><div style="class=code" class="code"><pre>\npublic class ButtonVM &#123;\n\tprivate String sclass = "button";\n\n\tpublic String getSclass() &#123;\n\t\treturn sclass;\n\t&#125;\n\n\t@NotifyChange\n\tpublic void setSclass(String sclass) &#123;\n\t\tthis.sclass = sclass;\n\t&#125;\n\t\n\t@Command\n\tpublic void cmd() &#123;\n\t&#125;\n&#125;\n</pre></div><br/>The problem seems that your button sclass is loaded from other View Model and it cannot recognize it.</p>'},[]],
+['zul.wgt.Separator','xLBUg1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','xLBUh1',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','xLBUi1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','xLBUr',{_loaded:true,_index:2},[
+['zul.wnd.Window','xLBUj1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','xLBUk1',{prolog:'\n\t'},[
+['zul.box.Vlayout','xLBUl1',{},[
+['zul.box.Hlayout','xLBUm1',{},[
+['zul.wgt.Toolbarbutton','xLBUn1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'pasqualeleone'},[]]]],
+['zul.wgt.Label','xLBUp1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','xLBUr1',{},[]],
+['zul.wgt.Div','xLBUu1',{},[
+['zul.wgt.Label','xLBUv1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','xLBUw1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'14'},[]]]],
+['zul.wgt.Div','xLBUx1',{},[
+['zul.wgt.Label','xLBUy1',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','xLBUz1',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Mar 05, 2012'},[]]]],
+['zul.wgt.Div','xLBU_2',{},[]],
+['zul.wgt.Div','xLBU12',{},[]]],'vertical']]],
+['zul.wnd.Window','xLBU32',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','xLBU42',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','xLBU52',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','xLBU62',{id:'dateCreated',sclass:'comment-date',value:'5 days ago'},[]],
+['zul.wgt.Div','xLBU72',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','xLBUa2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">thank you vincentjian!<br/>if I use the code you wrote works, ok.<br/>I knew where I raised the exception, but can not seem to solve.<br/>in a version of the code of my application I used in the component button, only sclass, and it\'s ok, then I added in the same component,  image = "@ load ((not umvm.addDisabledBtn)? \'/ image / add_user.png\': \'/ image / add_user_disabled.png \') "and disabled =" @ load (umvm.addDisabledBtn) ". and this is the problem.<br/>If you use the same code in your example adding disabled<div style="class=code" class="code"><pre>&lt;zk &gt;\n&lt;style&gt;\n.button &#123;\n\tcolor: red;\n\tfont&#45;size: 20px;\n&#125;\n&lt;/style&gt;\n&lt;vbox id="vbox" apply="org.zkoss.bind.BindComposer" viewModel="@id(\'bvm\') @init(\'forum.ButtonVM\')"&gt;\n\t&lt;button id="cmd" label="cmd" onClick="@command(\'cmd\')" sclass="@load(vm.sclass, after=\'cmd\')" disabled="@load(bvm.btnDisabled)" mold="os"&gt;&lt;/button&gt;\n&lt;/vbox&gt;\n&lt;/zk&gt;</pre></div><br/><div style="class=code" class="code"><pre>package forum;\n\nimport org.zkoss.bind.annotation.Command;\nimport org.zkoss.bind.annotation.NotifyChange;\n\npublic class ButtonVM &#123;\n\tprivate String sclass = "button";\n\tprivate boolean btnDisabled;\n\n\tpublic String getSclass() &#123;\n\t\treturn sclass;\n\t&#125;\n\n\n\tpublic void setBtnDisabled(boolean btnDisabled) &#123;\n\t\tthis.btnDisabled = btnDisabled;\n\t&#125;\n\n\tpublic boolean isBtnDisabled() &#123;\n\t\treturn btnDisabled;\n\t&#125;\n\t@NotifyChange\n\tpublic void setSclass(String sclass) &#123;\n\t\tthis.sclass = sclass;\n\t&#125;\n\t\n\t@Command\n\t@NotifyChange("btnDisabled")\n\tpublic void cmd() &#123;\n\t\tbtnDisabled=true;\n\t&#125;\n\t\n&#125;</pre></div></p><p>you\'ll see that the problem occurs to you too.<br/>Is there a way to avoid the exception?</p>'},[]],
+['zul.wgt.Separator','xLBUb2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','xLBUc2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','xLBUd2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','xLBUb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','xLBUc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="xLBUf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','xLBUf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="xLBUg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','xLBUg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7?path=http://www.zkoss.org/forum/listComment/20068-MVVM-Apply-a-style-after-a-command'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="xLBUh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','xLBUh',{id:'comment-reply'},[
+['zk.Native','xLBUk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','xLBUi',{},[]],
+['zul.wgt.Label','xLBUj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=4D42E48ECED3D7D7341E9AC48B044FC7"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

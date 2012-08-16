@@ -11,6 +11,8 @@ import org.zkoss.bind.annotation.ContextType;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
 import org.zkoss.demo.tablet.DataServer;
+import org.zkoss.demo.tablet.AbstractServer;
+import org.zkoss.demo.tablet.mock.MockServer;
 import org.zkoss.demo.tablet.vo.ContentVO;
 import org.zkoss.demo.tablet.vo.ThreadVO;
 import org.zkoss.zk.ui.Component;
@@ -21,10 +23,10 @@ import org.zkoss.zul.Popup;
 
 public class ThreadViewModel {
 	private static final String[] CATEGORY_LIST = {
-		DataServer.HELP, DataServer.STUDIO, DataServer.GENERAL, DataServer.ANNOUNCE, DataServer.INSTALL
+		AbstractServer.HELP, AbstractServer.STUDIO, AbstractServer.GENERAL, AbstractServer.ANNOUNCE, AbstractServer.INSTALL
 	};
 
-	private DataServer server;
+	private AbstractServer server;
 	private ThreadVO nowThread;
 	private int nowThreadIndex;
 	private int nowCategoryIndex = 3;
@@ -49,8 +51,8 @@ public class ThreadViewModel {
 	}
 	
 	@Init
-	public void init(@ContextParam(ContextType.VIEW) Component view){
-		server  = new DataServer();
+	public void init(@ContextParam(ContextType.VIEW) Component view, @BindingParam("mode") String mode){
+		server  = ("mock".equals(mode) ?  new MockServer() : new DataServer()); 	
 		fetchThread();		
 	}
 	
@@ -59,7 +61,7 @@ public class ThreadViewModel {
 		 Selectors.wireComponents(view, this, false);
 	 }
 	
-	@NotifyChange({"contentList", "selectedThread", "threadStart", "threadEnd"})
+	@NotifyChange({"contentList", "selectedThread", "threadStart", "threadEnd", "contentIndex"})
 	public void setSelectedThreadIndex(int index){
 		nowThreadIndex = index;
 		fetchContent();
@@ -73,7 +75,10 @@ public class ThreadViewModel {
 	}
 		
 	@Command
-	@NotifyChange({"contentList", "selectedThread", "selectedThreadIndex", "threadEnd", "threadStart"})
+	@NotifyChange(
+		{"contentList", "selectedThread", "selectedThreadIndex", "contentIndex", 
+		 "threadEnd", "threadStart"}
+	)
 	public void prevThread(){
 		if(nowThreadIndex>0){
 			nowThreadIndex--;
@@ -82,12 +87,19 @@ public class ThreadViewModel {
 	}
 	
 	@Command
-	@NotifyChange({"contentList", "selectedThread", "selectedThreadIndex", "threadEnd", "threadStart"})
+	@NotifyChange(
+		{"contentList", "selectedThread", "selectedThreadIndex", "contentIndex", 
+		 "threadEnd", "threadStart"}
+	)
 	public void nextThread(){
 		if(nowThreadIndex<nowThreadList.size()-1){
 			nowThreadIndex++;
 			fetchContent();
 		}
+	}
+	
+	public int getContentIndex(){
+		return 0;
 	}
 	
 	@Command

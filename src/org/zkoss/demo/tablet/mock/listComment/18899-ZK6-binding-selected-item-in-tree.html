@@ -1,0 +1,753 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=E8C77DF329615C87687F79544DF3FC40'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=E8C77DF329615C87687F79544DF3FC40?1343202445274' />
+<title>ZK6 - binding selected item in tree? | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="ZK6 - binding selected item in tree?"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="davout"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=E8C77DF329615C87687F79544DF3FC40"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=E8C77DF329615C87687F79544DF3FC40" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=E8C77DF329615C87687F79544DF3FC40" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=E8C77DF329615C87687F79544DF3FC40' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('aE9D_','z_uc_0','/forum;jsessionid=E8C77DF329615C87687F79544DF3FC40','/forum/zkau;jsessionid=E8C77DF329615C87687F79544DF3FC40','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="aE9D0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=E8C77DF329615C87687F79544DF3FC40'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','aE9D0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=E8C77DF329615C87687F79544DF3FC40?path=http://www.zkoss.org/forum/listComment/18899-ZK6-binding-selected-item-in-tree'},[]]);
+</script>
+<div id="aE9D1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','aE9D1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=E8C77DF329615C87687F79544DF3FC40'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=E8C77DF329615C87687F79544DF3FC40" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=E8C77DF329615C87687F79544DF3FC40">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=E8C77DF329615C87687F79544DF3FC40"><img src="/forum/images/home.png;jsessionid=E8C77DF329615C87687F79544DF3FC40" alt="Home"/></a></li>
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/14;jsessionid=E8C77DF329615C87687F79544DF3FC40">Help</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=E8C77DF329615C87687F79544DF3FC40">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=E8C77DF329615C87687F79544DF3FC40">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=E8C77DF329615C87687F79544DF3FC40">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=E8C77DF329615C87687F79544DF3FC40">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">ZK6 - binding selected item in tree?</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('aE9D4','z_uc_0','/forum;jsessionid=E8C77DF329615C87687F79544DF3FC40','/forum/zkau;jsessionid=E8C77DF329615C87687F79544DF3FC40','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="aE9D2" class="z-temp"><div class="author"><img class='author-image' title='davout' src='/forum/mediaService?userId=2633&extName=jpeg' /><span class="author-name">davout</span></div><div><span class="comment-date">12 Mar 2012 08:26:02 GMT</span><div class="comment-cotent"><span class="comment-content">12 Mar 2012 08:26:02 GMT</span><p  style="margin:2px 2px;">I can't find anything to explain how in ZK6 to bind a selected item in a tree?  Is this possible?</p></div></div><div class="author"><img class='author-image' title='benbai' src='/forum/mediaService?userId=41078&extName=null' /><span class="author-name">benbai</span></div><div><span class="comment-date">12 Mar 2012 12:06:08 GMT</span><div class="comment-cotent"><span class="comment-content">12 Mar 2012 12:06:08 GMT</span><p  style="margin:2px 2px;">Hi,</p><p>Please refer to the sample below,<br/>you can select treeitem to change the display name,<br/>or change the display name to select different treeitem.</p><p><div><textarea  class='fiddleiframe' name='fiddleiframe'>&lt;br /&gt;&lt;iframe  width='90%' height='300'  src='http://zkfiddle.org/widget/17gj1g4/1?height=250' &gt; &lt;/iframe&gt;&lt;br /&gt;</textarea><div name='fiddlecontent' ><br /> TestConverter.java<br /><div class="code" style="width: 100%;"><pre>package j17gj1g4$v1;</p><p><br/>import org.zkoss.bind.BindContext;<br/>import org.zkoss.bind.Converter;<br/>import org.zkoss.zk.ui.Component;<br/>public class TestConverter implements Converter, java.io.Serializable {</p><p>	private static final long serialVersionUID = 201109261823L;</p><p>	Component _comp;<br/>	public Object coerceToUi(Object val, Component comp, BindContext ctx) {<br/>		if (_comp == null)<br/>			_comp = comp;<br/>	  	return val;<br/>	}<br/>	<br/>	public Object coerceToBean(Object val, Component comp, BindContext ctx) {<br/>		if (_comp == null)<br/>			_comp = comp;<br/>	 	return val;<br/>	}<br/>	public Component getComp () {<br/>		return _comp;<br/>	}<br/>}<br/></pre></div><br /> TestVM.java<br /><div class="code" style="width: 100%;"><pre>package j17gj1g4$v1;</p><p><br/>import java.util.*;</p><p>import org.zkoss.bind.Converter;<br/>import org.zkoss.bind.annotation.NotifyChange;<br/>import org.zkoss.zul.*;</p><p>public class TestVM {<br/>	Treeitem _selectedItem;<br/>	Treeitem _itemOne;<br/>	TestConverter _testConverter;<br/>	public Treeitem getSelectedItem () {<br/>		System.out.println("get " + _selectedItem);<br/>		return _selectedItem;<br/>	}<br/>	@NotifyChange("nameOfSelectedItem")<br/>	public void setSelectedItem(Treeitem selectedItem) {<br/>		System.out.println("set " + selectedItem);<br/>		_selectedItem = selectedItem;<br/>	}<br/>	public String getNameOfSelectedItem() {<br/>		if (_selectedItem != null) {<br/>			return ((Treecell)_selectedItem.getTreerow().getFirstChild()).getLabel();<br/>		}<br/>		return "null";<br/>	}<br/>	@NotifyChange("selectedItem")<br/>	public void setNameOfSelectedItem(String value) {<br/>		Tree t = (Tree)((TestConverter)getConverter()).getComp();<br/>		Iterator&lt;Treeitem&gt; it =  t.getItems().iterator();<br/>		while(it.hasNext()) {<br/>			Treeitem ti = it.next();<br/>			if (((Treecell)ti.getTreerow().getFirstChild()).getLabel().equals(value)) {<br/>				_selectedItem = ti;<br/>				break;<br/>			}<br/>		}<br/>	}<br/>	public Converter getConverter () {<br/>		if (_testConverter == null)<br/>			_testConverter = new TestConverter();<br/>		return _testConverter;<br/>	}<br/>}<br/></pre></div><br /> index.zul<br /><div class="code" style="width: 100%;"><pre>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;<br/>&lt;zk&gt;<br/>	&lt;window apply="org.zkoss.bind.BindComposer"<br/>		viewModel="@id('vm') @init('j17gj1g4$v1.TestVM')"&gt;<br/>		&lt;tree id="tree" rows="5" selectedItem="@bind(vm.selectedItem) @converter(vm.converter)"&gt;<br/>			&lt;treecols sizable="true"&gt;<br/>				&lt;treecol label="Name" /&gt;<br/>				&lt;treecol label="Description" /&gt;<br/>			&lt;/treecols&gt;<br/>			&lt;treechildren&gt;<br/>				&lt;treeitem id="itemOne"&gt;<br/>					&lt;treerow&gt;<br/>						&lt;treecell label="Item 1" /&gt;<br/>						&lt;treecell label="Item 1 description" /&gt;<br/>					&lt;/treerow&gt;<br/>				&lt;/treeitem&gt;<br/>				&lt;treeitem&gt;<br/>					&lt;treerow&gt;<br/>						&lt;treecell label="Item 2" /&gt;<br/>						&lt;treecell label="Item 2 description" /&gt;<br/>					&lt;/treerow&gt;<br/>					&lt;treechildren&gt;<br/>						&lt;treeitem&gt;<br/>							&lt;treerow&gt;<br/>								&lt;treecell label="Item 2.1" /&gt;<br/>							&lt;/treerow&gt;<br/>						&lt;/treeitem&gt;<br/>						&lt;treeitem&gt;<br/>							&lt;treerow&gt;<br/>								&lt;treecell label="Item 2.2" /&gt;<br/>								&lt;treecell<br/>									label="Item 2.2 is something who cares" /&gt;<br/>							&lt;/treerow&gt;<br/>						&lt;/treeitem&gt;<br/>					&lt;/treechildren&gt;<br/>				&lt;/treeitem&gt;<br/>				&lt;treeitem label="Item 3" /&gt;<br/>			&lt;/treechildren&gt;<br/>			&lt;treefoot&gt;<br/>				&lt;treefooter label="Count" /&gt;<br/>				&lt;treefooter label="Summary" /&gt;<br/>			&lt;/treefoot&gt;<br/>		&lt;/tree&gt;<br/>                  Item Name: &lt;div&gt;&lt;/div&gt;<br/>                  Change it to select different item&lt;div&gt;&lt;/div&gt;<br/>                  &lt;textbox value="@bind(vm.nameOfSelectedItem)" /&gt;<br/>	&lt;/window&gt;<br/>&lt;/zk&gt;</pre></div></div></div></p><p>Regards,<br/>Ben</p></div></div><div class="author"><img class='author-image' title='davout' src='/forum/mediaService?userId=2633&extName=jpeg' /><span class="author-name">davout</span></div><div><span class="comment-date">12 Mar 2012 15:31:49 GMT</span><div class="comment-cotent"><span class="comment-content">12 Mar 2012 15:31:49 GMT</span><p  style="margin:2px 2px;">Thanks for your help. That works.
+<br/>
+<br/>One follow up question if I may...   how can I change the selected tree item using the data object that is stored within each DefaultTreeNode?  
+<br/>
+<br/>On the view model controlling the tree I have a '@GlobalCommand' method that takes an incoming data object as a parameter. This same data object is stored in each DefaultTreeNode.  I want to search the tree to find the DefaultTreeNode that has the same data object value as the method param. Any ideas?</p></div></div><div class="author"><img class='author-image' title='davout' src='/forum/mediaService?userId=2633&extName=jpeg' /><span class="author-name">davout</span></div><div><span class="comment-date">12 Mar 2012 16:37:42 GMT</span><div class="comment-cotent"><span class="comment-content">12 Mar 2012 16:37:42 GMT</span><p  style="margin:2px 2px;">I found a way of scanning through the model node hierarchy to find the node with the matching data value.  I suppose in a way it would be good to have a faster way of doing this - perhaps a hashmap of data object unique key to tree node.</p></div></div><div class="author"><img class='author-image' title='benbai' src='/forum/mediaService?userId=41078&extName=null' /><span class="author-name">benbai</span></div><div><span class="comment-date">13 Mar 2012 05:08:22 GMT</span><div class="comment-cotent"><span class="comment-content">13 Mar 2012 05:08:22 GMT</span>Hi,
+
+You can try store the data/path mapping in a map:
+
+
+[fiddle height="300" sample="http://zkfiddle.org/sample/17gj1g4/2-Tree-binding-selected-item" /]
+
+Regards,
+Ben</div></div><div class="author"><img class='author-image' title='Senthilchettyin' src='/forum/mediaService?userId=50199&extName=jpeg' /><span class="author-name">Senthilchettyin</span></div><div><span class="comment-date">6 Jul 2012 11:04:46 GMT</span><div class="comment-cotent"><span class="comment-content">6 Jul 2012 11:04:46 GMT</span><p  style="margin:2px 2px;">Hi benbai</p><p>Can you please give me the same example with tree data loading from the java instead of static values in the zul files</p><p>I am looking for a sample on MVVM Tree in which i want to load some 10 first level nodes and each has some more childs.  Actually i want to load all these from<br/>the DB. but if i get some sample code, then i can continue from there.</p></div></div><div class="author"><img class='author-image' title='benbai' src='/forum/mediaService?userId=41078&extName=null' /><span class="author-name">benbai</span></div><div><span class="comment-date">9 Jul 2012 10:17:58 GMT</span><div class="comment-cotent"><span class="comment-content">9 Jul 2012 10:17:58 GMT</span><p  style="margin:2px 2px;">Hi,</p><p>Please refer to the sample: <a target="external" href="http://zkfiddle.org/sample/3dm77ch/1-MVVM-tree">http://zkfiddle.org/sample/3dm77ch/1-MVVM-tree</a></p><p>For more information, please refer to the document:<br/><a target="external" href="http://books.zkoss.org/wiki/ZK_Developer's_Reference/MVC/Model/Tree_Model">ZK Developer's Reference/MVC/Model/Tree Model</a></p><p>Regards,<br/>Ben</p></div></div><div class="author"><img class='author-image' title='Senthilchettyin' src='/forum/mediaService?userId=50199&extName=jpeg' /><span class="author-name">Senthilchettyin</span></div><div><span class="comment-date">9 Jul 2012 12:27:10 GMT</span><div class="comment-cotent"><span class="comment-content">9 Jul 2012 12:27:10 GMT</span><p  style="margin:2px 2px;">Thank you benbai</p><p>I have one question, I think this example fetches the child at the the run time, when i expand the parent ?  right.</p><p>But in my case, in the tree view, i need to have multiple check box and also the requirment is, if i check the parent, then all the childs (any level) should also be checked .</p><p>Is that possible.</p></div></div><div class="author"><img class='author-image' title='benbai' src='/forum/mediaService?userId=41078&extName=null' /><span class="author-name">benbai</span></div><div><span class="comment-date">13 Jul 2012 10:28:46 GMT</span><div class="comment-cotent"><span class="comment-content">13 Jul 2012 10:28:46 GMT</span><p  style="margin:2px 2px;">Hi</p><p>You can try use randerer to render tree node,  and add event listener to check its children to sync the select status, or override treeitem's javascript to send au event when it show/hide and check its parent treeitem's status.</p><p>Regards,<br/>Ben</p></div></div><div class="author"><img class='author-image' title='Senthilchettyin' src='/forum/mediaService?userId=50199&extName=jpeg' /><span class="author-name">Senthilchettyin</span></div><div><span class="comment-date">23 Jul 2012 16:24:03 GMT</span><div class="comment-cotent"><span class="comment-content">23 Jul 2012 16:24:03 GMT</span><p  style="margin:2px 2px;">Hi Ben</p><p>Thank you. If i include the following line in your fiddle example</p><p>multiple="true" checkmark="true"</p><p>it is not showing with multiple, it showing as radio buttons. But i need check box. Where is the problem with me</p></div></div><div class="author"><img class='author-image' title='benbai' src='/forum/mediaService?userId=41078&extName=null' /><span class="author-name">benbai</span></div><div><span class="comment-date">25 Jul 2012 03:26:07 GMT</span><div class="comment-cotent"><span class="comment-content">25 Jul 2012 03:26:07 GMT</span><p  style="margin:2px 2px;">Hi Senthilchettyin,</p><p>If you use model, please try model.setMultiple(true);</p><p>Regards,<br/>Ben</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','aE9D2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','aE9Dd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','aE9D5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=E8C77DF329615C87687F79544DF3FC40?path=http://www.zkoss.org/forum/listComment/18899-ZK6-binding-selected-item-in-tree'},[]],
+['zk.Native','aE9De',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','aE9D6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:11,_offset:0},[
+['zul.grid.Columns','aE9D7',{$$onColSize:false},[
+['zul.grid.Column','aE9D8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','aE9D9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','aE9Da',{sclass:'comment-rows',_offset:0,visibleItemCount:11},[
+['zul.grid.Row','aE9Dn',{_loaded:true,_index:0},[
+['zul.wnd.Window','aE9D80',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9D90',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9Da0',{},[
+['zul.box.Hlayout','aE9Db0',{},[
+['zul.wgt.Toolbarbutton','aE9Dc0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'davout'},[]]]],
+['zul.wgt.Label','aE9De0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','aE9Df0',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=E8C77DF329615C87687F79544DF3FC40?userId=2633&extName=jpeg'},[]],
+['zul.wgt.Div','aE9Dg0',{},[]],
+['zul.wgt.Div','aE9Dj0',{},[
+['zul.wgt.Label','aE9Dk0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9Dl0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'376'},[]]]],
+['zul.wgt.Div','aE9Dm0',{},[
+['zul.wgt.Label','aE9Dn0',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9Do0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 12, 2008'},[]]]],
+['zul.wgt.Div','aE9Dp0',{},[]],
+['zul.wgt.Div','aE9Dr0',{},[]]],'vertical']]],
+['zul.wnd.Window','aE9Dt0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9Du0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9Dv0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9Dw0',{id:'dateCreated',sclass:'comment-date',value:'Mar 12, 2012'},[]],
+['zul.wgt.Div','aE9Dx0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9D_1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">I can\'t find anything to explain how in ZK6 to bind a selected item in a tree?  Is this possible?</p>'},[]],
+['zul.wgt.Separator','aE9D01',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9D11',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9D21',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','aE9Dp',{_loaded:true,_index:1},[
+['zul.wnd.Window','aE9D31',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9D41',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9D51',{},[
+['zul.box.Hlayout','aE9D61',{},[
+['zul.wgt.Toolbarbutton','aE9D71',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'benbai'},[]]]],
+['zul.wgt.Label','aE9D91',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','aE9Db1',{},[]],
+['zul.wgt.Div','aE9De1',{},[
+['zul.wgt.Label','aE9Df1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9Dg1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'416'},[]]]],
+['zul.wgt.Div','aE9Dh1',{},[
+['zul.wgt.Label','aE9Di1',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9Dj1',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Apr 13, 2011'},[]]]],
+['zul.wgt.Div','aE9Dk1',{},[]],
+['zul.wgt.Div','aE9Dm1',{},[
+['zul.wgt.Toolbarbutton','aE9Dn1',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org',image:'/forum/images/Globe18x18.png;jsessionid=E8C77DF329615C87687F79544DF3FC40',href:'http://www.zkoss.org',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','aE9Do1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9Dp1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9Dq1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9Dr1',{id:'dateCreated',sclass:'comment-date',value:'Mar 12, 2012'},[]],
+['zul.wgt.Div','aE9Ds1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9Dv1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi,</p><p>Please refer to the sample below,<br/>you can select treeitem to change the display name,<br/>or change the display name to select different treeitem.</p><p><div><textarea  class=\'fiddleiframe\' name=\'fiddleiframe\'>&lt;br /&gt;&lt;iframe  width=\'90%\' height=\'300\'  src=\'http://zkfiddle.org/widget/17gj1g4/1?height=250\' &gt; &lt;/iframe&gt;&lt;br /&gt;</textarea><div name=\'fiddlecontent\' ><br /> TestConverter.java<br /><div class="code" style="width: 100%;"><pre>package j17gj1g4$v1;</p><p><br/>import org.zkoss.bind.BindContext;<br/>import org.zkoss.bind.Converter;<br/>import org.zkoss.zk.ui.Component;<br/>public class TestConverter implements Converter, java.io.Serializable {</p><p>\tprivate static final long serialVersionUID = 201109261823L;</p><p>\tComponent _comp;<br/>\tpublic Object coerceToUi(Object val, Component comp, BindContext ctx) {<br/>\t\tif (_comp == null)<br/>\t\t\t_comp = comp;<br/>\t  \treturn val;<br/>\t}<br/>\t<br/>\tpublic Object coerceToBean(Object val, Component comp, BindContext ctx) {<br/>\t\tif (_comp == null)<br/>\t\t\t_comp = comp;<br/>\t \treturn val;<br/>\t}<br/>\tpublic Component getComp () {<br/>\t\treturn _comp;<br/>\t}<br/>}<br/></pre></div><br /> TestVM.java<br /><div class="code" style="width: 100%;"><pre>package j17gj1g4$v1;</p><p><br/>import java.util.*;</p><p>import org.zkoss.bind.Converter;<br/>import org.zkoss.bind.annotation.NotifyChange;<br/>import org.zkoss.zul.*;</p><p>public class TestVM {<br/>\tTreeitem _selectedItem;<br/>\tTreeitem _itemOne;<br/>\tTestConverter _testConverter;<br/>\tpublic Treeitem getSelectedItem () {<br/>\t\tSystem.out.println("get " + _selectedItem);<br/>\t\treturn _selectedItem;<br/>\t}<br/>\t@NotifyChange("nameOfSelectedItem")<br/>\tpublic void setSelectedItem(Treeitem selectedItem) {<br/>\t\tSystem.out.println("set " + selectedItem);<br/>\t\t_selectedItem = selectedItem;<br/>\t}<br/>\tpublic String getNameOfSelectedItem() {<br/>\t\tif (_selectedItem != null) {<br/>\t\t\treturn ((Treecell)_selectedItem.getTreerow().getFirstChild()).getLabel();<br/>\t\t}<br/>\t\treturn "null";<br/>\t}<br/>\t@NotifyChange("selectedItem")<br/>\tpublic void setNameOfSelectedItem(String value) {<br/>\t\tTree t = (Tree)((TestConverter)getConverter()).getComp();<br/>\t\tIterator&lt;Treeitem&gt; it =  t.getItems().iterator();<br/>\t\twhile(it.hasNext()) {<br/>\t\t\tTreeitem ti = it.next();<br/>\t\t\tif (((Treecell)ti.getTreerow().getFirstChild()).getLabel().equals(value)) {<br/>\t\t\t\t_selectedItem = ti;<br/>\t\t\t\tbreak;<br/>\t\t\t}<br/>\t\t}<br/>\t}<br/>\tpublic Converter getConverter () {<br/>\t\tif (_testConverter == null)<br/>\t\t\t_testConverter = new TestConverter();<br/>\t\treturn _testConverter;<br/>\t}<br/>}<br/></pre></div><br /> index.zul<br /><div class="code" style="width: 100%;"><pre>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;<br/>&lt;zk&gt;<br/>\t&lt;window apply="org.zkoss.bind.BindComposer"<br/>\t\tviewModel="@id(\'vm\') @init(\'j17gj1g4$v1.TestVM\')"&gt;<br/>\t\t&lt;tree id="tree" rows="5" selectedItem="@bind(vm.selectedItem) @converter(vm.converter)"&gt;<br/>\t\t\t&lt;treecols sizable="true"&gt;<br/>\t\t\t\t&lt;treecol label="Name" /&gt;<br/>\t\t\t\t&lt;treecol label="Description" /&gt;<br/>\t\t\t&lt;/treecols&gt;<br/>\t\t\t&lt;treechildren&gt;<br/>\t\t\t\t&lt;treeitem id="itemOne"&gt;<br/>\t\t\t\t\t&lt;treerow&gt;<br/>\t\t\t\t\t\t&lt;treecell label="Item 1" /&gt;<br/>\t\t\t\t\t\t&lt;treecell label="Item 1 description" /&gt;<br/>\t\t\t\t\t&lt;/treerow&gt;<br/>\t\t\t\t&lt;/treeitem&gt;<br/>\t\t\t\t&lt;treeitem&gt;<br/>\t\t\t\t\t&lt;treerow&gt;<br/>\t\t\t\t\t\t&lt;treecell label="Item 2" /&gt;<br/>\t\t\t\t\t\t&lt;treecell label="Item 2 description" /&gt;<br/>\t\t\t\t\t&lt;/treerow&gt;<br/>\t\t\t\t\t&lt;treechildren&gt;<br/>\t\t\t\t\t\t&lt;treeitem&gt;<br/>\t\t\t\t\t\t\t&lt;treerow&gt;<br/>\t\t\t\t\t\t\t\t&lt;treecell label="Item 2.1" /&gt;<br/>\t\t\t\t\t\t\t&lt;/treerow&gt;<br/>\t\t\t\t\t\t&lt;/treeitem&gt;<br/>\t\t\t\t\t\t&lt;treeitem&gt;<br/>\t\t\t\t\t\t\t&lt;treerow&gt;<br/>\t\t\t\t\t\t\t\t&lt;treecell label="Item 2.2" /&gt;<br/>\t\t\t\t\t\t\t\t&lt;treecell<br/>\t\t\t\t\t\t\t\t\tlabel="Item 2.2 is something who cares" /&gt;<br/>\t\t\t\t\t\t\t&lt;/treerow&gt;<br/>\t\t\t\t\t\t&lt;/treeitem&gt;<br/>\t\t\t\t\t&lt;/treechildren&gt;<br/>\t\t\t\t&lt;/treeitem&gt;<br/>\t\t\t\t&lt;treeitem label="Item 3" /&gt;<br/>\t\t\t&lt;/treechildren&gt;<br/>\t\t\t&lt;treefoot&gt;<br/>\t\t\t\t&lt;treefooter label="Count" /&gt;<br/>\t\t\t\t&lt;treefooter label="Summary" /&gt;<br/>\t\t\t&lt;/treefoot&gt;<br/>\t\t&lt;/tree&gt;<br/>                  Item Name: &lt;div&gt;&lt;/div&gt;<br/>                  Change it to select different item&lt;div&gt;&lt;/div&gt;<br/>                  &lt;textbox value="@bind(vm.nameOfSelectedItem)" /&gt;<br/>\t&lt;/window&gt;<br/>&lt;/zk&gt;</pre></div></div></div></p><p>Regards,<br/>Ben</p>'},[]],
+['zul.wgt.Separator','aE9Dw1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9Dx1',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9Dy1',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'[a href="http://www.zkoss.org"]ZK[/a]'},[]]]]]]]],
+['zul.grid.Row','aE9Dr',{_loaded:true,_index:2},[
+['zul.wnd.Window','aE9Dz1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9D_2',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9D02',{},[
+['zul.box.Hlayout','aE9D12',{},[
+['zul.wgt.Toolbarbutton','aE9D22',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'davout'},[]]]],
+['zul.wgt.Label','aE9D42',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','aE9D52',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=E8C77DF329615C87687F79544DF3FC40?userId=2633&extName=jpeg'},[]],
+['zul.wgt.Div','aE9D62',{},[]],
+['zul.wgt.Div','aE9D92',{},[
+['zul.wgt.Label','aE9Da2',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9Db2',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'376'},[]]]],
+['zul.wgt.Div','aE9Dc2',{},[
+['zul.wgt.Label','aE9Dd2',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9De2',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 12, 2008'},[]]]],
+['zul.wgt.Div','aE9Df2',{},[]],
+['zul.wgt.Div','aE9Dh2',{},[]]],'vertical']]],
+['zul.wnd.Window','aE9Dj2',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9Dk2',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9Dl2',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9Dm2',{id:'dateCreated',sclass:'comment-date',value:'Mar 12, 2012'},[]],
+['zul.wgt.Div','aE9Dn2',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9Dq2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Thanks for your help. That works.\r<br/>\r<br/>One follow up question if I may...   how can I change the selected tree item using the data object that is stored within each DefaultTreeNode?  \r<br/>\r<br/>On the view model controlling the tree I have a \'@GlobalCommand\' method that takes an incoming data object as a parameter. This same data object is stored in each DefaultTreeNode.  I want to search the tree to find the DefaultTreeNode that has the same data object value as the method param. Any ideas?</p>'},[]],
+['zul.wgt.Separator','aE9Dr2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9Ds2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9Dt2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','aE9Dt',{_loaded:true,_index:3},[
+['zul.wnd.Window','aE9Du2',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9Dv2',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9Dw2',{},[
+['zul.box.Hlayout','aE9Dx2',{},[
+['zul.wgt.Toolbarbutton','aE9Dy2',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'davout'},[]]]],
+['zul.wgt.Label','aE9D_3',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','aE9D03',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=E8C77DF329615C87687F79544DF3FC40?userId=2633&extName=jpeg'},[]],
+['zul.wgt.Div','aE9D13',{},[]],
+['zul.wgt.Div','aE9D43',{},[
+['zul.wgt.Label','aE9D53',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9D63',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'376'},[]]]],
+['zul.wgt.Div','aE9D73',{},[
+['zul.wgt.Label','aE9D83',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9D93',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 12, 2008'},[]]]],
+['zul.wgt.Div','aE9Da3',{},[]],
+['zul.wgt.Div','aE9Dc3',{},[]]],'vertical']]],
+['zul.wnd.Window','aE9De3',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9Df3',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9Dg3',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9Dh3',{id:'dateCreated',sclass:'comment-date',value:'Mar 12, 2012'},[]],
+['zul.wgt.Div','aE9Di3',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9Dl3',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">I found a way of scanning through the model node hierarchy to find the node with the matching data value.  I suppose in a way it would be good to have a faster way of doing this - perhaps a hashmap of data object unique key to tree node.</p>'},[]],
+['zul.wgt.Separator','aE9Dm3',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9Dn3',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9Do3',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','aE9Dv',{_loaded:true,_index:4},[
+['zul.wnd.Window','aE9Dp3',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9Dq3',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9Dr3',{},[
+['zul.box.Hlayout','aE9Ds3',{},[
+['zul.wgt.Toolbarbutton','aE9Dt3',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'benbai'},[]]]],
+['zul.wgt.Label','aE9Dv3',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','aE9Dx3',{},[]],
+['zul.wgt.Div','aE9D_4',{},[
+['zul.wgt.Label','aE9D04',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9D14',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'416'},[]]]],
+['zul.wgt.Div','aE9D24',{},[
+['zul.wgt.Label','aE9D34',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9D44',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Apr 13, 2011'},[]]]],
+['zul.wgt.Div','aE9D54',{},[]],
+['zul.wgt.Div','aE9D74',{},[
+['zul.wgt.Toolbarbutton','aE9D84',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org',image:'/forum/images/Globe18x18.png;jsessionid=E8C77DF329615C87687F79544DF3FC40',href:'http://www.zkoss.org',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','aE9D94',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9Da4',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9Db4',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9Dc4',{id:'dateCreated',sclass:'comment-date',value:'Mar 12, 2012'},[]],
+['zul.wgt.Div','aE9Dd4',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9Dg4',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'Hi,\n\nYou can try store the data/path mapping in a map:\n\n\n[fiddle height="300" sample="http://zkfiddle.org/sample/17gj1g4/2-Tree-binding-selected-item" /]\n\nRegards,\nBen'},[]],
+['zul.wgt.Separator','aE9Dh4',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9Di4',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9Dj4',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'[a href="http://www.zkoss.org"]ZK[/a]'},[]]]]]]]],
+['zul.grid.Row','aE9Dx',{_loaded:true,_index:5},[
+['zul.wnd.Window','aE9Dk4',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9Dl4',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9Dm4',{},[
+['zul.box.Hlayout','aE9Dn4',{},[
+['zul.wgt.Toolbarbutton','aE9Do4',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'Senthilchettyin'},[]]]],
+['zul.wgt.Label','aE9Dq4',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','aE9Dr4',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=E8C77DF329615C87687F79544DF3FC40?userId=50199&extName=jpeg'},[]],
+['zul.wgt.Div','aE9Ds4',{},[]],
+['zul.wgt.Div','aE9Dv4',{},[
+['zul.wgt.Label','aE9Dw4',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9Dx4',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'302'},[]]]],
+['zul.wgt.Div','aE9Dy4',{},[
+['zul.wgt.Label','aE9Dz4',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9D_5',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jan 07, 2012'},[]]]],
+['zul.wgt.Div','aE9D05',{},[]],
+['zul.wgt.Div','aE9D25',{},[
+['zul.wgt.Toolbarbutton','aE9D35',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://emrpms.blogspot.in/',image:'/forum/images/Globe18x18.png;jsessionid=E8C77DF329615C87687F79544DF3FC40',href:'http://emrpms.blogspot.in/',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','aE9D45',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9D55',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9D65',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9D75',{id:'dateCreated',sclass:'comment-date',value:'Jul 06, 2012'},[]],
+['zul.wgt.Div','aE9D85',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9Db5',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi benbai</p><p>Can you please give me the same example with tree data loading from the java instead of static values in the zul files</p><p>I am looking for a sample on MVVM Tree in which i want to load some 10 first level nodes and each has some more childs.  Actually i want to load all these from<br/>the DB. but if i get some sample code, then i can continue from there.</p>'},[]],
+['zul.wgt.Separator','aE9Dc5',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9Dd5',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9De5',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'Look for simple examples on zk in  http://emrpms.blogspot.in/'},[]]]]]]]],
+['zul.grid.Row','aE9Dz',{_loaded:true,_index:6},[
+['zul.wnd.Window','aE9Df5',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9Dg5',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9Dh5',{},[
+['zul.box.Hlayout','aE9Di5',{},[
+['zul.wgt.Toolbarbutton','aE9Dj5',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'benbai'},[]]]],
+['zul.wgt.Label','aE9Dl5',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','aE9Dn5',{},[]],
+['zul.wgt.Div','aE9Dq5',{},[
+['zul.wgt.Label','aE9Dr5',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9Ds5',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'416'},[]]]],
+['zul.wgt.Div','aE9Dt5',{},[
+['zul.wgt.Label','aE9Du5',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9Dv5',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Apr 13, 2011'},[]]]],
+['zul.wgt.Div','aE9Dw5',{},[]],
+['zul.wgt.Div','aE9Dy5',{},[
+['zul.wgt.Toolbarbutton','aE9Dz5',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org',image:'/forum/images/Globe18x18.png;jsessionid=E8C77DF329615C87687F79544DF3FC40',href:'http://www.zkoss.org',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','aE9D_6',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9D06',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9D16',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9D26',{id:'dateCreated',sclass:'comment-date',value:'Jul 09, 2012'},[]],
+['zul.wgt.Div','aE9D36',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9D66',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi,</p><p>Please refer to the sample: <a target="external" href="http://zkfiddle.org/sample/3dm77ch/1-MVVM-tree">http://zkfiddle.org/sample/3dm77ch/1-MVVM-tree</a></p><p>For more information, please refer to the document:<br/><a target="external" href="http://books.zkoss.org/wiki/ZK_Developer\'s_Reference/MVC/Model/Tree_Model">ZK Developer\'s Reference/MVC/Model/Tree Model</a></p><p>Regards,<br/>Ben</p>'},[]],
+['zul.wgt.Separator','aE9D76',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9D86',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9D96',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'[a href="http://www.zkoss.org"]ZK[/a]'},[]]]]]]]],
+['zul.grid.Row','aE9D00',{_loaded:true,_index:7},[
+['zul.wnd.Window','aE9Da6',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9Db6',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9Dc6',{},[
+['zul.box.Hlayout','aE9Dd6',{},[
+['zul.wgt.Toolbarbutton','aE9De6',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'Senthilchettyin'},[]]]],
+['zul.wgt.Label','aE9Dg6',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','aE9Dh6',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=E8C77DF329615C87687F79544DF3FC40?userId=50199&extName=jpeg'},[]],
+['zul.wgt.Div','aE9Di6',{},[]],
+['zul.wgt.Div','aE9Dl6',{},[
+['zul.wgt.Label','aE9Dm6',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9Dn6',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'302'},[]]]],
+['zul.wgt.Div','aE9Do6',{},[
+['zul.wgt.Label','aE9Dp6',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9Dq6',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jan 07, 2012'},[]]]],
+['zul.wgt.Div','aE9Dr6',{},[]],
+['zul.wgt.Div','aE9Dt6',{},[
+['zul.wgt.Toolbarbutton','aE9Du6',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://emrpms.blogspot.in/',image:'/forum/images/Globe18x18.png;jsessionid=E8C77DF329615C87687F79544DF3FC40',href:'http://emrpms.blogspot.in/',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','aE9Dv6',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9Dw6',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9Dx6',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9Dy6',{id:'dateCreated',sclass:'comment-date',value:'Jul 09, 2012'},[]],
+['zul.wgt.Div','aE9Dz6',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9D17',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Thank you benbai</p><p>I have one question, I think this example fetches the child at the the run time, when i expand the parent ?  right.</p><p>But in my case, in the tree view, i need to have multiple check box and also the requirment is, if i check the parent, then all the childs (any level) should also be checked .</p><p>Is that possible.</p>'},[]],
+['zul.wgt.Separator','aE9D27',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9D37',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9D47',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'Look for simple examples on zk in  http://emrpms.blogspot.in/'},[]]]]]]]],
+['zul.grid.Row','aE9D20',{_loaded:true,_index:8},[
+['zul.wnd.Window','aE9D57',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9D67',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9D77',{},[
+['zul.box.Hlayout','aE9D87',{},[
+['zul.wgt.Toolbarbutton','aE9D97',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'benbai'},[]]]],
+['zul.wgt.Label','aE9Db7',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','aE9Dd7',{},[]],
+['zul.wgt.Div','aE9Dg7',{},[
+['zul.wgt.Label','aE9Dh7',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9Di7',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'416'},[]]]],
+['zul.wgt.Div','aE9Dj7',{},[
+['zul.wgt.Label','aE9Dk7',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9Dl7',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Apr 13, 2011'},[]]]],
+['zul.wgt.Div','aE9Dm7',{},[]],
+['zul.wgt.Div','aE9Do7',{},[
+['zul.wgt.Toolbarbutton','aE9Dp7',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org',image:'/forum/images/Globe18x18.png;jsessionid=E8C77DF329615C87687F79544DF3FC40',href:'http://www.zkoss.org',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','aE9Dq7',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9Dr7',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9Ds7',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9Dt7',{id:'dateCreated',sclass:'comment-date',value:'Jul 13, 2012'},[]],
+['zul.wgt.Div','aE9Du7',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9Dx7',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi</p><p>You can try use randerer to render tree node,  and add event listener to check its children to sync the select status, or override treeitem\'s javascript to send au event when it show/hide and check its parent treeitem\'s status.</p><p>Regards,<br/>Ben</p>'},[]],
+['zul.wgt.Separator','aE9Dy7',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9Dz7',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9D_8',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'[a href="http://www.zkoss.org"]ZK[/a]'},[]]]]]]]],
+['zul.grid.Row','aE9D40',{_loaded:true,_index:9},[
+['zul.wnd.Window','aE9D08',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9D18',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9D28',{},[
+['zul.box.Hlayout','aE9D38',{},[
+['zul.wgt.Toolbarbutton','aE9D48',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'Senthilchettyin'},[]]]],
+['zul.wgt.Label','aE9D68',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','aE9D78',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=E8C77DF329615C87687F79544DF3FC40?userId=50199&extName=jpeg'},[]],
+['zul.wgt.Div','aE9D88',{},[]],
+['zul.wgt.Div','aE9Db8',{},[
+['zul.wgt.Label','aE9Dc8',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9Dd8',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'302'},[]]]],
+['zul.wgt.Div','aE9De8',{},[
+['zul.wgt.Label','aE9Df8',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9Dg8',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jan 07, 2012'},[]]]],
+['zul.wgt.Div','aE9Dh8',{},[]],
+['zul.wgt.Div','aE9Dj8',{},[
+['zul.wgt.Toolbarbutton','aE9Dk8',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://emrpms.blogspot.in/',image:'/forum/images/Globe18x18.png;jsessionid=E8C77DF329615C87687F79544DF3FC40',href:'http://emrpms.blogspot.in/',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','aE9Dl8',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9Dm8',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9Dn8',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9Do8',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','aE9Dp8',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9Ds8',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi Ben</p><p>Thank you. If i include the following line in your fiddle example</p><p>multiple="true" checkmark="true"</p><p>it is not showing with multiple, it showing as radio buttons. But i need check box. Where is the problem with me</p>'},[]],
+['zul.wgt.Separator','aE9Dt8',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9Du8',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9Dv8',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'Look for simple examples on zk in  http://emrpms.blogspot.in/'},[]]]]]]]],
+['zul.grid.Row','aE9D60',{_loaded:true,_index:10},[
+['zul.wnd.Window','aE9Dw8',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','aE9Dx8',{prolog:'\n\t'},[
+['zul.box.Vlayout','aE9Dy8',{},[
+['zul.box.Hlayout','aE9Dz8',{},[
+['zul.wgt.Toolbarbutton','aE9D_9',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'benbai'},[]]]],
+['zul.wgt.Label','aE9D19',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','aE9D39',{},[]],
+['zul.wgt.Div','aE9D69',{},[
+['zul.wgt.Label','aE9D79',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','aE9D89',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'416'},[]]]],
+['zul.wgt.Div','aE9D99',{},[
+['zul.wgt.Label','aE9Da9',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','aE9Db9',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Apr 13, 2011'},[]]]],
+['zul.wgt.Div','aE9Dc9',{},[]],
+['zul.wgt.Div','aE9De9',{},[
+['zul.wgt.Toolbarbutton','aE9Df9',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org',image:'/forum/images/Globe18x18.png;jsessionid=E8C77DF329615C87687F79544DF3FC40',href:'http://www.zkoss.org',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','aE9Dg9',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','aE9Dh9',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','aE9Di9',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','aE9Dj9',{id:'dateCreated',sclass:'comment-date',value:'4 hrs ago'},[]],
+['zul.wgt.Div','aE9Dk9',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','aE9Dn9',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi Senthilchettyin,</p><p>If you use model, please try model.setMultiple(true);</p><p>Regards,<br/>Ben</p>'},[]],
+['zul.wgt.Separator','aE9Do9',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','aE9Dp9',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','aE9Dq9',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'[a href="http://www.zkoss.org"]ZK[/a]'},[]]]]]]]]]]]],
+['zul.wgt.Popup','aE9Db',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','aE9Dc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="aE9Df" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','aE9Df',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="aE9Dg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','aE9Dg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=E8C77DF329615C87687F79544DF3FC40?path=http://www.zkoss.org/forum/listComment/18899-ZK6-binding-selected-item-in-tree'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="aE9Dh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','aE9Dh',{id:'comment-reply'},[
+['zk.Native','aE9Dk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','aE9Di',{},[]],
+['zul.wgt.Label','aE9Dj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=E8C77DF329615C87687F79544DF3FC40" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=E8C77DF329615C87687F79544DF3FC40"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

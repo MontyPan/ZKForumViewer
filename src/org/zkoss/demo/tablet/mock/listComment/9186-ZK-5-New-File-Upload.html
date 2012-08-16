@@ -1,0 +1,527 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC?1343202474101' />
+<title>ZK 5: New File Upload | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="ZK 5: New File Upload"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="tmillsclare"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('sOBQ_','z_pj9','/forum;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC','/forum/zkau;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="sOBQ0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','sOBQ0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC?path=http://www.zkoss.org/forum/listComment/9186-ZK-5-New-File-Upload'},[]]);
+</script>
+<div id="sOBQ1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','sOBQ1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC"><img src="/forum/images/home.png;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC" alt="Home"/></a></li>
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/14;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC">Help</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/15;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC">Announcements</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">ZK 5: New File Upload</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('sOBQ4','z_pj9','/forum;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC','/forum/zkau;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="sOBQ2" class="z-temp"><div class="author"><img class='author-image' title='tmillsclare' src='/forum/mediaService?userId=10913&extName=null' /><span class="author-name">tmillsclare</span></div><div><span class="comment-date">4 Aug 2009 06:37:43 GMT</span><div class="comment-cotent"><span class="comment-content">4 Aug 2009 06:37:43 GMT</span><p  style="margin:2px 2px;">Jumper Chen introduces us to ZK 5.0's new file upload component! <a target="external" href="http://docs.zkoss.org/wiki/ZK_5:_New_File_Upload">Check it out here!</a></p></div></div><div class="author"><img class='author-image' title='ErayGursoy' src='/forum/mediaService?userId=17034&extName=null' /><span class="author-name">ErayGursoy</span></div><div><span class="comment-date">7 Nov 2009 14:50:56 GMT</span><div class="comment-cotent"><span class="comment-content">7 Nov 2009 14:50:56 GMT</span><p  style="margin:2px 2px;">Can you give a sample code to use new file upload (5.0) from pure jave code.</p><p>Thank you</p></div></div><div class="author"><img class='author-image' title='crack2mann' src='/forum/mediaService?userId=28203&extName=null' /><span class="author-name">crack2mann</span></div><div><span class="comment-date">15 Mar 2012 07:06:20 GMT</span><div class="comment-cotent"><span class="comment-content">15 Mar 2012 07:06:20 GMT</span><p  style="margin:2px 2px;">when you run the sample that jumper gives over the internet, you get "Failed To Upload", "Content Id Required". Any reason why that is?</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','sOBQ2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','sOBQd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','sOBQ5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC?path=http://www.zkoss.org/forum/listComment/9186-ZK-5-New-File-Upload'},[]],
+['zk.Native','sOBQe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','sOBQ6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:3,_offset:0},[
+['zul.grid.Columns','sOBQ7',{$$onColSize:false},[
+['zul.grid.Column','sOBQ8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','sOBQ9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','sOBQa',{sclass:'comment-rows',_offset:0,visibleItemCount:3},[
+['zul.grid.Row','sOBQn',{_loaded:true,_index:0},[
+['zul.wnd.Window','sOBQt',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','sOBQu',{prolog:'\n\t'},[
+['zul.box.Vlayout','sOBQv',{},[
+['zul.box.Hlayout','sOBQw',{},[
+['zul.wgt.Toolbarbutton','sOBQx',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'tmillsclare'},[]]]],
+['zul.wgt.Label','sOBQz',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','sOBQ00',{},[]],
+['zul.wgt.Div','sOBQ30',{},[
+['zul.wgt.Label','sOBQ40',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','sOBQ50',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'223'},[]]]],
+['zul.wgt.Div','sOBQ60',{},[
+['zul.wgt.Label','sOBQ70',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','sOBQ80',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Apr 22, 2009'},[]]]],
+['zul.wgt.Div','sOBQ90',{},[]],
+['zul.wgt.Div','sOBQb0',{},[]]],'vertical']]],
+['zul.wnd.Window','sOBQd0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','sOBQe0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','sOBQf0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','sOBQg0',{id:'dateCreated',sclass:'comment-date',value:'Aug 03, 2009'},[]],
+['zul.wgt.Div','sOBQh0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','sOBQk0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Jumper Chen introduces us to ZK 5.0\'s new file upload component! <a target="external" href="http://docs.zkoss.org/wiki/ZK_5:_New_File_Upload">Check it out here!</a></p>'},[]],
+['zul.wgt.Separator','sOBQl0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','sOBQm0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','sOBQn0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','sOBQp',{_loaded:true,_index:1},[
+['zul.wnd.Window','sOBQo0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','sOBQp0',{prolog:'\n\t'},[
+['zul.box.Vlayout','sOBQq0',{},[
+['zul.box.Hlayout','sOBQr0',{},[
+['zul.wgt.Toolbarbutton','sOBQs0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'ErayGursoy'},[]]]],
+['zul.wgt.Label','sOBQu0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','sOBQw0',{},[]],
+['zul.wgt.Div','sOBQz0',{},[
+['zul.wgt.Label','sOBQ_1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','sOBQ01',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'8'},[]]]],
+['zul.wgt.Div','sOBQ11',{},[
+['zul.wgt.Label','sOBQ21',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','sOBQ31',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 01, 2009'},[]]]],
+['zul.wgt.Div','sOBQ41',{},[]],
+['zul.wgt.Div','sOBQ61',{},[]]],'vertical']]],
+['zul.wnd.Window','sOBQ81',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','sOBQ91',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','sOBQa1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','sOBQb1',{id:'dateCreated',sclass:'comment-date',value:'Nov 07, 2009'},[]],
+['zul.wgt.Div','sOBQc1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','sOBQf1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Can you give a sample code to use new file upload (5.0) from pure jave code.</p><p>Thank you</p>'},[]],
+['zul.wgt.Separator','sOBQg1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','sOBQh1',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','sOBQi1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','sOBQr',{_loaded:true,_index:2},[
+['zul.wnd.Window','sOBQj1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','sOBQk1',{prolog:'\n\t'},[
+['zul.box.Vlayout','sOBQl1',{},[
+['zul.box.Hlayout','sOBQm1',{},[
+['zul.wgt.Toolbarbutton','sOBQn1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'crack2mann'},[]]]],
+['zul.wgt.Label','sOBQp1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','sOBQr1',{},[]],
+['zul.wgt.Div','sOBQu1',{},[
+['zul.wgt.Label','sOBQv1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','sOBQw1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'4'},[]]]],
+['zul.wgt.Div','sOBQx1',{},[
+['zul.wgt.Label','sOBQy1',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','sOBQz1',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'May 13, 2010'},[]]]],
+['zul.wgt.Div','sOBQ_2',{},[]],
+['zul.wgt.Div','sOBQ12',{},[]]],'vertical']]],
+['zul.wnd.Window','sOBQ32',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','sOBQ42',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','sOBQ52',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','sOBQ62',{id:'dateCreated',sclass:'comment-date',value:'Mar 14, 2012'},[]],
+['zul.wgt.Div','sOBQ72',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','sOBQa2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">when you run the sample that jumper gives over the internet, you get "Failed To Upload", "Content Id Required". Any reason why that is?</p>'},[]],
+['zul.wgt.Separator','sOBQb2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','sOBQc2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','sOBQd2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','sOBQb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','sOBQc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="sOBQf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','sOBQf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="sOBQg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','sOBQg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC?path=http://www.zkoss.org/forum/listComment/9186-ZK-5-New-File-Upload'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="sOBQh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','sOBQh',{id:'comment-reply'},[
+['zk.Native','sOBQk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','sOBQi',{},[]],
+['zul.wgt.Label','sOBQj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=3C1DE5D1914DFA37060CBC39658F71BC"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

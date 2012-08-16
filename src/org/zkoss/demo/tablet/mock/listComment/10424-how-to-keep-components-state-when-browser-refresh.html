@@ -1,0 +1,795 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3?1343202457810' />
+<title>how to keep components state when browser refresh | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="how to keep components state when browser refresh"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="likebean"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('vM7Z_','z_mi80','/forum;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3','/forum/zkau;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="vM7Z0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','vM7Z0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3?path=http://www.zkoss.org/forum/listComment/10424-how-to-keep-components-state-when-browser-refresh'},[]]);
+</script>
+<div id="vM7Z1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','vM7Z1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3"><img src="/forum/images/home.png;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3" alt="Home"/></a></li>
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/14;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3">Help</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/13;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3">General</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">how to keep components state when browser refresh</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('vM7Z4','z_mi80','/forum;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3','/forum/zkau;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="vM7Z2" class="z-temp"><div class="author"><img class='author-image' title='likebean' src='/forum/mediaService?userId=21128&extName=null' /><span class="author-name">likebean</span></div><div><span class="comment-date">28 Nov 2009 23:03:37 GMT</span><div class="comment-cotent"><span class="comment-content">28 Nov 2009 23:03:37 GMT</span><p  style="margin:2px 2px;"><b >Any method not recreate the desktop,page and components when refresh browser,and only retrieve the existed  Page Object and redraw?</b>I debug DHtmlLayoutServlet,find when refresh Browser,DHtmlLayoutServlet will create new Desktop and Page and Components each time,old Object seems be discard.(I want to use zk in my portal environment to develop portlet,In the portal page,there maybe other portlet not develop using ajax technology,so operation in non-ajax-portlet may result in whole portal page refresh.so how can I keep the component state of the zk-portlet)
+<br/>
+<br/>I am confused about the concept:Desktop and Page,ZK document say Desktop may contain many pages,what 's meaning?any example about one desktop contain many pages?what's relationship about URL,Desktop and Page?</p></div></div><div class="author"><img class='author-image' title='joylo0122' src='/forum/mediaService?userId=12941&extName=gif' /><span class="author-name">joylo0122</span></div><div><span class="comment-date">29 Nov 2009 19:27:54 GMT</span><div class="comment-cotent"><span class="comment-content">29 Nov 2009 19:27:54 GMT</span><p  style="margin:2px 2px;">@likebean</p><p>Hi likebean, as you see, if you refresh browser, we will create new Desktop & Components. <br/>I'm afraid to inform you that we don't have any method to stop this unless you edited the codes.</p><p>And here is a example about pages in the same desktop.<br/>In zul<div style="class=code" class="code"><pre>
+&lt;zk&gt;
+&lt;page&gt;
+...
+&lt;/page&gt;
+
+&lt;page&gt;
+...
+&lt;/page&gt;
+&lt;/zk&gt;
+</pre></div><br/>You can put any components between the page start tag and the end tag.</p><p>/Joy</p></div></div><div class="author"><img class='author-image' title='likebean' src='/forum/mediaService?userId=21128&extName=null' /><span class="author-name">likebean</span></div><div><span class="comment-date">29 Nov 2009 19:56:41 GMT</span><div class="comment-cotent"><span class="comment-content">29 Nov 2009 19:56:41 GMT</span><p  style="margin:2px 2px;">Can this feature add  in ZK 5.0?because I think serverside executing is the most different and advantage when compare ZK with other ajax-web framework like GWT.If not only using ajax style but also keeping components state when refreshing browser,It's cool,and will be great feature of ZK!</p><p>L.J.W</p></div></div><div class="author"><img class='author-image' title='joylo0122' src='/forum/mediaService?userId=12941&extName=gif' /><span class="author-name">joylo0122</span></div><div><span class="comment-date">29 Nov 2009 20:04:50 GMT</span><div class="comment-cotent"><span class="comment-content">29 Nov 2009 20:04:50 GMT</span><p  style="margin:2px 2px;">@likebean</p><p>Of cause yes, you can post <a target="external" href="https://sourceforge.net/tracker/?group_id=152762&atid=785194">here</a>. If that is a correct way and lot of people need it, we should have some change for it.</p><p>Thanks for your suggestion.</p><p>/Joy</p></div></div><div class="author"><img class='author-image' title='likebean' src='/forum/mediaService?userId=21128&extName=null' /><span class="author-name">likebean</span></div><div><span class="comment-date">30 Nov 2009 08:29:02 GMT</span><div class="comment-cotent"><span class="comment-content">30 Nov 2009 08:29:02 GMT</span><p  style="margin:2px 2px;">Hi joylo,has post feature request,wish get a result quickly...Thanks.</p></div></div><div class="author"><img class='author-image' title='likebean' src='/forum/mediaService?userId=21128&extName=null' /><span class="author-name">likebean</span></div><div><span class="comment-date">30 Nov 2009 22:04:53 GMT</span><div class="comment-cotent"><span class="comment-content">30 Nov 2009 22:04:53 GMT</span><p  style="margin:2px 2px;">Hi joylo,I try to keep id of Desktop and Page Object in Session,when refresh browser,I retrieve Desktop and Page Object throught these id, and reimplement UiEngine execNewPage0 method,not recreate page and components,and invoke code of Cycle 3: Generate output directly,now I refresh browser,page and components state keep,but I found a ajax requst /zkau?dtid=g4nh&cmd_0=rmDesktop send to server immediately,so when I refersh browser again,Desktop could not be retrieve again..Why and how?</p><p>Best rgds</p><p>L.J.W</p></div></div><div class="author"><img class='author-image' title='htang' src='/forum/mediaService?userId=3135&extName=null' /><span class="author-name">htang</span></div><div><span class="comment-date">5 Jan 2010 15:51:12 GMT</span><div class="comment-cotent"><span class="comment-content">5 Jan 2010 15:51:12 GMT</span><p  style="margin:2px 2px;">You may feel interested to read about this option: <a target="external" href="http://docs.zkoss.org/wiki/Developer_reference_Appendix_B._WEB-INF/zk.xml_The_client-config_Element#The_keep-across-visits_Element">keep-across-visits</a>.
+<br/>
+<br/>By specifying this option, the desktop will not be removed automaticaly on the server side when the HTML page is unloaded (and then reloaded). However, by doing so, you should also consider when to actually remove desktops that no long being used by the clients. Otherwise, your server memory will be overwhelmed by useless desktop very soon. There is a max-desktop-per-session counter, so it shall not crash your system. It will still use much more memory: by default, up to 20 times more (as max-desktop-per-session = 20).</p></div></div><div class="author"><img class='author-image' title='mendoza' src='/forum/mediaService?userId=56596&extName=null' /><span class="author-name">mendoza</span></div><div><span class="comment-date">2 Jul 2012 16:57:26 GMT</span><div class="comment-cotent"><span class="comment-content">2 Jul 2012 16:57:26 GMT</span><p  style="margin:2px 2px;">rtsrtysrthsrth</p></div></div><div class="author"><img class='author-image' title='mendoza' src='/forum/mediaService?userId=56596&extName=null' /><span class="author-name">mendoza</span></div><div><span class="comment-date">2 Jul 2012 16:57:43 GMT</span><div class="comment-cotent"><span class="comment-content">2 Jul 2012 16:57:43 GMT</span><p  style="margin:2px 2px;">rthrthrsthfxnfzgfzgfnfgfnfgnn</p></div></div><div class="author"><img class='author-image' title='mendoza' src='/forum/mediaService?userId=56596&extName=null' /><span class="author-name">mendoza</span></div><div><span class="comment-date">2 Jul 2012 16:58:13 GMT</span><div class="comment-cotent"><span class="comment-content">2 Jul 2012 16:58:13 GMT</span><p  style="margin:2px 2px;">erger</p></div></div><div class="author"><img class='author-image' title='tansphinx' src='/forum/mediaService?userId=57204&extName=null' /><span class="author-name">tansphinx</span></div><div><span class="comment-date">5 Jul 2012 08:27:32 GMT</span><div class="comment-cotent"><span class="comment-content">5 Jul 2012 08:27:32 GMT</span><p  style="margin:2px 2px;">just what i was looking for thanks<br/>______________________________<br/><a target="external" href="http://www.lewrens.se/SE/profiliering/" rel="nofollow" >profiltryck</a><br/><a target="external" href="http://www.lewrens.se/SE/Catalog/Pasar_barkassar/" rel="nofollow" >papperspåsar med tryck</a><br/><a target="external" href="http://www.lewrens.se/SE/Catalog/stad_rengoring/Sopsackar/papperspasar/Baguette-grill/2201.html" rel="nofollow" >grillpåsar</a></p></div></div><div class="author"><img class='author-image' title='manaaiyer' src='/forum/mediaService?userId=57406&extName=null' /><span class="author-name">manaaiyer</span></div><div><span class="comment-date">11 Jul 2012 04:08:59 GMT</span><div class="comment-cotent"><span class="comment-content">11 Jul 2012 04:08:59 GMT</span><p  style="margin:2px 2px;">This is exactly the information I need.<br/>____________________________________________________<br/>Until now I'm still looking for reliable <a target="external" href="http://www.americanrecordablemedia.com/" rel="nofollow" >dvd duplicator disc publisher</a>.</p></div></div><div class="author"><img class='author-image' title='mail2anish' src='/forum/mediaService?userId=28041&extName=null' /><span class="author-name">mail2anish</span></div><div><span class="comment-date">24 Jul 2012 06:57:50 GMT</span><div class="comment-cotent"><span class="comment-content">24 Jul 2012 06:57:50 GMT</span><p  style="margin:2px 2px;">You can use the DesktopRecycle approach here.<br/>Create a class which implements org.zkoss.zk.ui.util.DesktopRecycle  <br/>in beforeRemove method push the desktop object to the session.</p><p>in beforeService method pull the deskop from the session and return.</p><p>in afterService  is the session doesn't have the deskop object, push the desktop to session.</p><p>in ZK.xml file add this above class as a listener.</p><p>You should be all set.. with this when you refresh the browser, the UI state would retain as it was before refresh.</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','vM7Z2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','vM7Zd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','vM7Z5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3?path=http://www.zkoss.org/forum/listComment/10424-how-to-keep-components-state-when-browser-refresh'},[]],
+['zk.Native','vM7Ze',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','vM7Z6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:13,_offset:0},[
+['zul.grid.Columns','vM7Z7',{$$onColSize:false},[
+['zul.grid.Column','vM7Z8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','vM7Z9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','vM7Za',{sclass:'comment-rows',_offset:0,visibleItemCount:13},[
+['zul.grid.Row','vM7Zn',{_loaded:true,_index:0},[
+['zul.wnd.Window','vM7Zc0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Zd0',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Ze0',{},[
+['zul.box.Hlayout','vM7Zf0',{},[
+['zul.wgt.Toolbarbutton','vM7Zg0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'likebean'},[]]]],
+['zul.wgt.Label','vM7Zi0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Zk0',{},[]],
+['zul.wgt.Div','vM7Zn0',{},[
+['zul.wgt.Label','vM7Zo0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Zp0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'13'},[]]]],
+['zul.wgt.Div','vM7Zq0',{},[
+['zul.wgt.Label','vM7Zr0',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zs0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Nov 24, 2009'},[]]]],
+['zul.wgt.Div','vM7Zt0',{},[]],
+['zul.wgt.Div','vM7Zv0',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Zx0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Zy0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zz0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Z_1',{id:'dateCreated',sclass:'comment-date',value:'Nov 28, 2009'},[]],
+['zul.wgt.Div','vM7Z01',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Z31',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;"><b >Any method not recreate the desktop,page and components when refresh browser,and only retrieve the existed  Page Object and redraw?</b>I debug DHtmlLayoutServlet,find when refresh Browser,DHtmlLayoutServlet will create new Desktop and Page and Components each time,old Object seems be discard.(I want to use zk in my portal environment to develop portlet,In the portal page,there maybe other portlet not develop using ajax technology,so operation in non-ajax-portlet may result in whole portal page refresh.so how can I keep the component state of the zk-portlet)\r<br/>\r<br/>I am confused about the concept:Desktop and Page,ZK document say Desktop may contain many pages,what \'s meaning?any example about one desktop contain many pages?what\'s relationship about URL,Desktop and Page?</p>'},[]],
+['zul.wgt.Separator','vM7Z41',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Z51',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Z61',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Zp',{_loaded:true,_index:1},[
+['zul.wnd.Window','vM7Z71',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Z81',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Z91',{},[
+['zul.box.Hlayout','vM7Za1',{},[
+['zul.wgt.Toolbarbutton','vM7Zb1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'joylo0122'},[]]]],
+['zul.wgt.Label','vM7Zd1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','vM7Ze1',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3?userId=12941&extName=gif'},[]],
+['zul.wgt.Div','vM7Zf1',{},[]],
+['zul.wgt.Div','vM7Zi1',{},[
+['zul.wgt.Label','vM7Zj1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Zk1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'226'},[]]]],
+['zul.wgt.Div','vM7Zl1',{},[
+['zul.wgt.Label','vM7Zm1',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zn1',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 16, 2009'},[]]]],
+['zul.wgt.Div','vM7Zo1',{},[]],
+['zul.wgt.Div','vM7Zq1',{},[
+['zul.wgt.Toolbarbutton','vM7Zr1',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org',image:'/forum/images/Globe18x18.png;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3',href:'http://www.zkoss.org',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','vM7Zs1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Zt1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zu1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zv1',{id:'dateCreated',sclass:'comment-date',value:'Nov 29, 2009'},[]],
+['zul.wgt.Div','vM7Zw1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Zz1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">@likebean</p><p>Hi likebean, as you see, if you refresh browser, we will create new Desktop & Components. <br/>I\'m afraid to inform you that we don\'t have any method to stop this unless you edited the codes.</p><p>And here is a example about pages in the same desktop.<br/>In zul<div style="class=code" class="code"><pre>\n&lt;zk&gt;\n&lt;page&gt;\n...\n&lt;/page&gt;\n\n&lt;page&gt;\n...\n&lt;/page&gt;\n&lt;/zk&gt;\n</pre></div><br/>You can put any components between the page start tag and the end tag.</p><p>/Joy</p>'},[]],
+['zul.wgt.Separator','vM7Z_2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Z02',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Z12',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'Engineer, Potix & RealMadrid fans.'},[]]]]]]]],
+['zul.grid.Row','vM7Zr',{_loaded:true,_index:2},[
+['zul.wnd.Window','vM7Z22',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Z32',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Z42',{},[
+['zul.box.Hlayout','vM7Z52',{},[
+['zul.wgt.Toolbarbutton','vM7Z62',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'likebean'},[]]]],
+['zul.wgt.Label','vM7Z82',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Za2',{},[]],
+['zul.wgt.Div','vM7Zd2',{},[
+['zul.wgt.Label','vM7Ze2',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Zf2',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'13'},[]]]],
+['zul.wgt.Div','vM7Zg2',{},[
+['zul.wgt.Label','vM7Zh2',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zi2',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Nov 24, 2009'},[]]]],
+['zul.wgt.Div','vM7Zj2',{},[]],
+['zul.wgt.Div','vM7Zl2',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Zn2',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Zo2',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zp2',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zq2',{id:'dateCreated',sclass:'comment-date',value:'Nov 29, 2009'},[]],
+['zul.wgt.Div','vM7Zr2',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Zu2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Can this feature add  in ZK 5.0?because I think serverside executing is the most different and advantage when compare ZK with other ajax-web framework like GWT.If not only using ajax style but also keeping components state when refreshing browser,It\'s cool,and will be great feature of ZK!</p><p>L.J.W</p>'},[]],
+['zul.wgt.Separator','vM7Zv2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Zw2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Zx2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Zt',{_loaded:true,_index:3},[
+['zul.wnd.Window','vM7Zy2',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Zz2',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Z_3',{},[
+['zul.box.Hlayout','vM7Z03',{},[
+['zul.wgt.Toolbarbutton','vM7Z13',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'joylo0122'},[]]]],
+['zul.wgt.Label','vM7Z33',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','vM7Z43',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3?userId=12941&extName=gif'},[]],
+['zul.wgt.Div','vM7Z53',{},[]],
+['zul.wgt.Div','vM7Z83',{},[
+['zul.wgt.Label','vM7Z93',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Za3',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'226'},[]]]],
+['zul.wgt.Div','vM7Zb3',{},[
+['zul.wgt.Label','vM7Zc3',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zd3',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 16, 2009'},[]]]],
+['zul.wgt.Div','vM7Ze3',{},[]],
+['zul.wgt.Div','vM7Zg3',{},[
+['zul.wgt.Toolbarbutton','vM7Zh3',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.zkoss.org',image:'/forum/images/Globe18x18.png;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3',href:'http://www.zkoss.org',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','vM7Zi3',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Zj3',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zk3',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zl3',{id:'dateCreated',sclass:'comment-date',value:'Nov 29, 2009'},[]],
+['zul.wgt.Div','vM7Zm3',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Zp3',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">@likebean</p><p>Of cause yes, you can post <a target="external" href="https://sourceforge.net/tracker/?group_id=152762&atid=785194">here</a>. If that is a correct way and lot of people need it, we should have some change for it.</p><p>Thanks for your suggestion.</p><p>/Joy</p>'},[]],
+['zul.wgt.Separator','vM7Zq3',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Zr3',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Zs3',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'Engineer, Potix & RealMadrid fans.'},[]]]]]]]],
+['zul.grid.Row','vM7Zv',{_loaded:true,_index:4},[
+['zul.wnd.Window','vM7Zt3',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Zu3',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Zv3',{},[
+['zul.box.Hlayout','vM7Zw3',{},[
+['zul.wgt.Toolbarbutton','vM7Zx3',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'likebean'},[]]]],
+['zul.wgt.Label','vM7Zz3',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Z04',{},[]],
+['zul.wgt.Div','vM7Z34',{},[
+['zul.wgt.Label','vM7Z44',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Z54',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'13'},[]]]],
+['zul.wgt.Div','vM7Z64',{},[
+['zul.wgt.Label','vM7Z74',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Z84',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Nov 24, 2009'},[]]]],
+['zul.wgt.Div','vM7Z94',{},[]],
+['zul.wgt.Div','vM7Zb4',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Zd4',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Ze4',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zf4',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zg4',{id:'dateCreated',sclass:'comment-date',value:'Nov 30, 2009'},[]],
+['zul.wgt.Div','vM7Zh4',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Zk4',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi joylo,has post feature request,wish get a result quickly...Thanks.</p>'},[]],
+['zul.wgt.Separator','vM7Zl4',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Zm4',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Zn4',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Zx',{_loaded:true,_index:5},[
+['zul.wnd.Window','vM7Zo4',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Zp4',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Zq4',{},[
+['zul.box.Hlayout','vM7Zr4',{},[
+['zul.wgt.Toolbarbutton','vM7Zs4',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'likebean'},[]]]],
+['zul.wgt.Label','vM7Zu4',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Zw4',{},[]],
+['zul.wgt.Div','vM7Zz4',{},[
+['zul.wgt.Label','vM7Z_5',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Z05',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'13'},[]]]],
+['zul.wgt.Div','vM7Z15',{},[
+['zul.wgt.Label','vM7Z25',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Z35',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Nov 24, 2009'},[]]]],
+['zul.wgt.Div','vM7Z45',{},[]],
+['zul.wgt.Div','vM7Z65',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Z85',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Z95',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Za5',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zb5',{id:'dateCreated',sclass:'comment-date',value:'Nov 30, 2009'},[]],
+['zul.wgt.Div','vM7Zc5',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Zf5',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi joylo,I try to keep id of Desktop and Page Object in Session,when refresh browser,I retrieve Desktop and Page Object throught these id, and reimplement UiEngine execNewPage0 method,not recreate page and components,and invoke code of Cycle 3: Generate output directly,now I refresh browser,page and components state keep,but I found a ajax requst /zkau?dtid=g4nh&cmd_0=rmDesktop send to server immediately,so when I refersh browser again,Desktop could not be retrieve again..Why and how?</p><p>Best rgds</p><p>L.J.W</p>'},[]],
+['zul.wgt.Separator','vM7Zg5',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Zh5',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Zi5',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Zz',{_loaded:true,_index:6},[
+['zul.wnd.Window','vM7Zj5',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Zk5',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Zl5',{},[
+['zul.box.Hlayout','vM7Zm5',{},[
+['zul.wgt.Toolbarbutton','vM7Zn5',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'htang'},[]]]],
+['zul.wgt.Label','vM7Zp5',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Zr5',{},[]],
+['zul.wgt.Div','vM7Zu5',{},[
+['zul.wgt.Label','vM7Zv5',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Zw5',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','vM7Zx5',{},[
+['zul.wgt.Label','vM7Zy5',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zz5',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Oct 08, 2008'},[]]]],
+['zul.wgt.Div','vM7Z_6',{},[]],
+['zul.wgt.Div','vM7Z16',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Z36',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Z46',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Z56',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Z66',{id:'dateCreated',sclass:'comment-date',value:'Jan 05, 2010'},[]],
+['zul.wgt.Div','vM7Z76',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Za6',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">You may feel interested to read about this option: <a target="external" href="http://docs.zkoss.org/wiki/Developer_reference_Appendix_B._WEB-INF/zk.xml_The_client-config_Element#The_keep-across-visits_Element">keep-across-visits</a>.\r<br/>\r<br/>By specifying this option, the desktop will not be removed automaticaly on the server side when the HTML page is unloaded (and then reloaded). However, by doing so, you should also consider when to actually remove desktops that no long being used by the clients. Otherwise, your server memory will be overwhelmed by useless desktop very soon. There is a max-desktop-per-session counter, so it shall not crash your system. It will still use much more memory: by default, up to 20 times more (as max-desktop-per-session = 20).</p>'},[]],
+['zul.wgt.Separator','vM7Zb6',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Zc6',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Zd6',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Z00',{_loaded:true,_index:7},[
+['zul.wnd.Window','vM7Ze6',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Zf6',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Zg6',{},[
+['zul.box.Hlayout','vM7Zh6',{},[
+['zul.wgt.Toolbarbutton','vM7Zi6',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'mendoza'},[]]]],
+['zul.wgt.Label','vM7Zk6',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Zm6',{},[]],
+['zul.wgt.Div','vM7Zp6',{},[
+['zul.wgt.Label','vM7Zq6',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Zr6',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'3'},[]]]],
+['zul.wgt.Div','vM7Zs6',{},[
+['zul.wgt.Label','vM7Zt6',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zu6',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 18, 2012'},[]]]],
+['zul.wgt.Div','vM7Zv6',{},[]],
+['zul.wgt.Div','vM7Zx6',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Zz6',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Z_7',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Z07',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Z17',{id:'dateCreated',sclass:'comment-date',value:'Jul 02, 2012'},[]],
+['zul.wgt.Div','vM7Z27',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Z57',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">rtsrtysrthsrth</p>'},[]],
+['zul.wgt.Separator','vM7Z67',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Z77',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Z87',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Z20',{_loaded:true,_index:8},[
+['zul.wnd.Window','vM7Z97',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Za7',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Zb7',{},[
+['zul.box.Hlayout','vM7Zc7',{},[
+['zul.wgt.Toolbarbutton','vM7Zd7',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'mendoza'},[]]]],
+['zul.wgt.Label','vM7Zf7',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Zh7',{},[]],
+['zul.wgt.Div','vM7Zk7',{},[
+['zul.wgt.Label','vM7Zl7',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Zm7',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'3'},[]]]],
+['zul.wgt.Div','vM7Zn7',{},[
+['zul.wgt.Label','vM7Zo7',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zp7',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 18, 2012'},[]]]],
+['zul.wgt.Div','vM7Zq7',{},[]],
+['zul.wgt.Div','vM7Zs7',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Zu7',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Zv7',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zw7',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zx7',{id:'dateCreated',sclass:'comment-date',value:'Jul 02, 2012'},[]],
+['zul.wgt.Div','vM7Zy7',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Z08',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">rthrthrsthfxnfzgfzgfnfgfnfgnn</p>'},[]],
+['zul.wgt.Separator','vM7Z18',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Z28',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Z38',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Z40',{_loaded:true,_index:9},[
+['zul.wnd.Window','vM7Z48',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Z58',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Z68',{},[
+['zul.box.Hlayout','vM7Z78',{},[
+['zul.wgt.Toolbarbutton','vM7Z88',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'mendoza'},[]]]],
+['zul.wgt.Label','vM7Za8',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Zc8',{},[]],
+['zul.wgt.Div','vM7Zf8',{},[
+['zul.wgt.Label','vM7Zg8',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Zh8',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'3'},[]]]],
+['zul.wgt.Div','vM7Zi8',{},[
+['zul.wgt.Label','vM7Zj8',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zk8',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 18, 2012'},[]]]],
+['zul.wgt.Div','vM7Zl8',{},[]],
+['zul.wgt.Div','vM7Zn8',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Zp8',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Zq8',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zr8',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zs8',{id:'dateCreated',sclass:'comment-date',value:'Jul 02, 2012'},[]],
+['zul.wgt.Div','vM7Zt8',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Zw8',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">erger</p>'},[]],
+['zul.wgt.Separator','vM7Zx8',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Zy8',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Zz8',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Z60',{_loaded:true,_index:10},[
+['zul.wnd.Window','vM7Z_9',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Z09',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Z19',{},[
+['zul.box.Hlayout','vM7Z29',{},[
+['zul.wgt.Toolbarbutton','vM7Z39',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'tansphinx'},[]]]],
+['zul.wgt.Label','vM7Z59',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Z79',{},[]],
+['zul.wgt.Div','vM7Za9',{},[
+['zul.wgt.Label','vM7Zb9',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Zc9',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','vM7Zd9',{},[
+['zul.wgt.Label','vM7Ze9',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zf9',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 05, 2012'},[]]]],
+['zul.wgt.Div','vM7Zg9',{},[]],
+['zul.wgt.Div','vM7Zi9',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Zk9',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Zl9',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zm9',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zn9',{id:'dateCreated',sclass:'comment-date',value:'Jul 05, 2012'},[]],
+['zul.wgt.Div','vM7Zo9',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Zr9',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">just what i was looking for thanks<br/>______________________________<br/><a target="external" href="http://www.lewrens.se/SE/profiliering/" rel="nofollow" >profiltryck</a><br/><a target="external" href="http://www.lewrens.se/SE/Catalog/Pasar_barkassar/" rel="nofollow" >papperspåsar med tryck</a><br/><a target="external" href="http://www.lewrens.se/SE/Catalog/stad_rengoring/Sopsackar/papperspasar/Baguette-grill/2201.html" rel="nofollow" >grillpåsar</a></p>'},[]],
+['zul.wgt.Separator','vM7Zs9',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Zt9',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Zu9',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Z80',{_loaded:true,_index:11},[
+['zul.wnd.Window','vM7Zv9',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Zw9',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Zx9',{},[
+['zul.box.Hlayout','vM7Zy9',{},[
+['zul.wgt.Toolbarbutton','vM7Zz9',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'manaaiyer'},[]]]],
+['zul.wgt.Label','vM7Z0a',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Z2a',{},[]],
+['zul.wgt.Div','vM7Z5a',{},[
+['zul.wgt.Label','vM7Z6a',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Z7a',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'1'},[]]]],
+['zul.wgt.Div','vM7Z8a',{},[
+['zul.wgt.Label','vM7Z9a',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Zaa',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 10, 2012'},[]]]],
+['zul.wgt.Div','vM7Zba',{},[]],
+['zul.wgt.Div','vM7Zda',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Zfa',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Zga',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zha',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zia',{id:'dateCreated',sclass:'comment-date',value:'Jul 10, 2012'},[]],
+['zul.wgt.Div','vM7Zja',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Zma',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">This is exactly the information I need.<br/>____________________________________________________<br/>Until now I\'m still looking for reliable <a target="external" href="http://www.americanrecordablemedia.com/" rel="nofollow" >dvd duplicator disc publisher</a>.</p>'},[]],
+['zul.wgt.Separator','vM7Zna',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Zoa',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Zpa',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','vM7Za0',{_loaded:true,_index:12},[
+['zul.wnd.Window','vM7Zqa',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','vM7Zra',{prolog:'\n\t'},[
+['zul.box.Vlayout','vM7Zsa',{},[
+['zul.box.Hlayout','vM7Zta',{},[
+['zul.wgt.Toolbarbutton','vM7Zua',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'mail2anish'},[]]]],
+['zul.wgt.Label','vM7Zwa',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','vM7Zya',{},[]],
+['zul.wgt.Div','vM7Z0b',{},[
+['zul.wgt.Label','vM7Z1b',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','vM7Z2b',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'2'},[]]]],
+['zul.wgt.Div','vM7Z3b',{},[
+['zul.wgt.Label','vM7Z4b',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','vM7Z5b',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'May 10, 2010'},[]]]],
+['zul.wgt.Div','vM7Z6b',{},[]],
+['zul.wgt.Div','vM7Z8b',{},[]]],'vertical']]],
+['zul.wnd.Window','vM7Zab',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','vM7Zbb',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','vM7Zcb',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','vM7Zdb',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','vM7Zeb',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','vM7Zhb',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">You can use the DesktopRecycle approach here.<br/>Create a class which implements org.zkoss.zk.ui.util.DesktopRecycle  <br/>in beforeRemove method push the desktop object to the session.</p><p>in beforeService method pull the deskop from the session and return.</p><p>in afterService  is the session doesn\'t have the deskop object, push the desktop to session.</p><p>in ZK.xml file add this above class as a listener.</p><p>You should be all set.. with this when you refresh the browser, the UI state would retain as it was before refresh.</p>'},[]],
+['zul.wgt.Separator','vM7Zib',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','vM7Zjb',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','vM7Zkb',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','vM7Zb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','vM7Zc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="vM7Zf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','vM7Zf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="vM7Zg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','vM7Zg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3?path=http://www.zkoss.org/forum/listComment/10424-how-to-keep-components-state-when-browser-refresh'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="vM7Zh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','vM7Zh',{id:'comment-reply'},[
+['zk.Native','vM7Zk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','vM7Zi',{},[]],
+['zul.wgt.Label','vM7Zj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=4AF0034F014CE4064A9F5A6DFC3F2BE3"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

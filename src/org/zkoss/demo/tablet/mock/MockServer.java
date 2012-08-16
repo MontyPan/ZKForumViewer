@@ -1,12 +1,16 @@
-package org.zkoss.demo.tablet;
+package org.zkoss.demo.tablet.mock;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import org.zkoss.demo.tablet.AbstractServer;
+import org.zkoss.demo.tablet.Utility;
 import org.zkoss.demo.tablet.vo.ContentVO;
 import org.zkoss.demo.tablet.vo.ThreadVO;
 
-public class DataServer extends AbstractServer {
+public class MockServer extends AbstractServer{	
 	private static final HashMap<String, ArrayList<ThreadVO>> CAT_THREAD = new HashMap<String, ArrayList<ThreadVO>>();
 	static{
 		CAT_THREAD.put(HELP, new ArrayList<ThreadVO>());
@@ -16,10 +20,8 @@ public class DataServer extends AbstractServer {
 		CAT_THREAD.put(INSTALL, new ArrayList<ThreadVO>());
 	}
 	
-	private static final String HOST = "http://www.zkoss.org";
-	private static final String SOURCE_URL = HOST+"/forum/listDiscussion/";
 	private static final String THREAD_START = "<div class=\"discussion-subject\">";
-	private static final String TITLE_HEADER = "<a class=\"discussion-title-unread\" href=\"";
+	private static final String TITLE_HEADER = "<a class=\"discussion-title-unread\" href=\"/forum/";
 	private static final String TITLE_TAIL = ";jsessionid";
 	
 	//not unique, just in case
@@ -32,14 +34,21 @@ public class DataServer extends AbstractServer {
 	private static final String POPULAR = "<img alt=\"Popular\" title=\"Popular\"";
 	private static final String HOT = "<img alt=\"Hot\" title=\"Hot\"";
 
-	public DataServer() {
+	public MockServer() {}
+	
+	private String mockThread(int no){
+		return Utility.getString(new File(MockServer.class.getResource(no+".html").getFile()));
 	}
 	
-	private void fetchThreadUrl(String type){
-		String content = Utility.urlToString(SOURCE_URL+CAT_URL.get(type));
-		
-		int start = 0, end;
+	private String mockPost(String x){
+		return Utility.getString(new File(MockServer.class.getResource(x+".html").getFile()));
+	}
+	
+	void fetchThreadUrl(String type){
+		String content = mockThread(CAT_URL.get(type));
 		ArrayList<ThreadVO> tvo = CAT_THREAD.get(type);
+
+		int start = 0, end;
 		while((start=content.indexOf(THREAD_START, start)) != -1){
 			ThreadVO thread = new ThreadVO();
 			
@@ -95,7 +104,7 @@ public class DataServer extends AbstractServer {
 	@Override
 	public List<ContentVO> getContentList(ThreadVO thread) {
 		ArrayList<ContentVO> result = new ArrayList<ContentVO>();
-		String content = Utility.urlToString(HOST+thread.getUrl());
+		String content = mockPost(thread.getUrl());
 		
 		int start = 0, end;
 		while((start=content.indexOf(CONTENT_AUTHOR_HEADER, start))!=-1){

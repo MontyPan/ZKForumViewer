@@ -111,7 +111,7 @@ div.z-column-cnt, div.z-row-cnt {
 </style>
 
 <borderlayout apply="org.zkoss.bind.BindComposer" 
- viewModel="@id('vm') @init('org.zkoss.demo.tablet.vm.ThreadViewModel')">
+ viewModel='@id("vm") @init("org.zkoss.demo.tablet.vm.ThreadViewModel", mode="mock")'>
 	<west size="30%" border="none" collapsible="true">
 		<caption>
 			<include src="threadHead.zul" />
@@ -119,7 +119,7 @@ div.z-column-cnt, div.z-row-cnt {
 		<include src="thread.zul" vflex="1"/>
 	</west>
 	
-	<center border="none" autoscroll="true" id="contentPanel">
+	<center border="none" id="contentPanel">
 		<caption>
 			<hlayout>
 				<image sclass="button"
@@ -131,7 +131,7 @@ div.z-column-cnt, div.z-row-cnt {
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABXklEQVQ4y2NgGPJAz7O9AYj/Q3EDOQYYQA0RAPFL2tYfgBkIYkPVCEDVGBA0zMC74xNIs6FP5yUQPzR77nWYgVC2AVTuP1QtbkP902bNQPIeURikB6eBz1597AjNnke0YSC1ID04Dfz//7/AhWtPbqBrrO3b8r+gaS2GgSC1ID24wm8+EO83D+xBMfDG3RdAPf/nA/F6EBtZDqp2P0gvNgMxXAByFRAYIPnAAORabGqJMjC7ftVDdHWxRYseEmXg4vWn/k9bchhbWBmgpVEUH4D0gPRii5ACIG44ffHhPiwuWA8NYxRxkFqQHpBeXBEjgB4p+DBUrQDOZGMV0tdBasIG6cFp4N6jN2dYh/TDEy0omSCHKYgNEoMlfpBakB58Cdvg6u3nn0AB/f7jt0sgftPk7fC8DGKDxEByIDUgtcjJCqeh0IDGKG0aJmzbActRUDUGJBdnUI0wUED3AhkArBrfFAIi6aMAAAAASUVORK5CYII=" />			
 			</hlayout>
 		</caption>
-		<include src="@load(vm.centerUrl)"/>
+		<include vflex='1' hflex='1' src="@load(vm.centerUrl)"/>
 	</center>
 	
 	<south border="none">
