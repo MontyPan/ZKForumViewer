@@ -7,19 +7,14 @@
 	font-size: 13px;
 }
 
-.z-hlayout-inner {
-	vertical-align: middle;
-}
-
+/* make desktop browser looks like tablet */
 .z-west-header, .z-center-header, .z-east-header, .z-north-header, .z-south-header {
-	/* make desktop browser looks like tablet */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	background:    -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	background:     -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	background:      -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	background:	        linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
 	line-height: 32px;
-}
-
-div.z-column-cnt, div.z-row-cnt {
-	font-size: 15px;
 }
 /* ==== */
 
@@ -42,11 +37,6 @@ div.z-column-cnt, div.z-row-cnt {
 
 .textCenter {
 	text-align: center;
-}
-
-.thread_bold {
-	font-size: 14px;
-	font-weight: bold;
 }
 
 .thread_title {
@@ -78,11 +68,13 @@ div.z-column-cnt, div.z-row-cnt {
 	height: 32px;
 	margin-left: 50px;
 }
+
 .product_btn > img {
 	/* for "product" button image */
 	width: 20px;
 	height: 20px;
 }
+
 .product_title {
 	font-size: 14px;
 	font-weight: bold;
@@ -105,6 +97,7 @@ div.z-column-cnt, div.z-row-cnt {
 	${t:boxShadow('0 0 10px #ACACAC')}
 	${t:borderRadius("8px")}
 }
+
 .popup > div {
 	${t:borderRadius("8px")}
 }
@@ -119,11 +112,11 @@ div.z-column-cnt, div.z-row-cnt {
 		<include src="thread.zul" vflex="1"/>
 	</west>
 	
-	<center border="none" id="contentPanel">
+	<center border="none" id="contentPanel" autoscroll="true">
 		<caption>
 			<hlayout>
 				<image sclass="button"
-				 onClick='org.zkoss.zk.ui.util.Clients.showNotification("Delete post is not allow.")'
+				 onClick='Clients.showNotification("Delete post is not allow.")'
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACfUlEQVQ4y2P4//8/Ay6s69GmBcRbgPgnEH8D4o1ArItPD04J0+BJuqHZ824BDfiPjP1SZz4CyhkQZSBQIScQVwPxEyD+H5Qx+39uw+r/MFDQtOa/fcSE/yA5IH4FxO1ALITTQIuwKVehioF44hUjn87/126/+ALkp4HwlVvPP4NcaRI44RpMnVX41AdAmg2XC8GKgBrCgXxxIP4HxElIapKgjg0DqnEHqv0FUt82Y58kXgP1vdrfAl0yH4i9gdgYiJmBmA3K9gDJ6Xu2f7IInfwXpH7rgeuaeA3Mblj3om/uvnNeidNv24b134VFiHVI30O3uCl3myZtv9w798BdmHqcBi7fcuGaeehksKKksqXXNu6+dPLkhQdH//z5e+DHz98HQewt+66cTK1cdhPo5T8gdQvWnbkJ1CuDK9k0+WUuAIdLTd/Wiw6REy+YB/Zcg7nQ1L8b5OIrVd2bL4DU2EVNB4VxJ950GFW87D1I8eodlyYC+XuXbDh9H5ZsFq49+QTo0iNHzz2YDFIDtPwLwYSd27zhKTRsooCuAuWWD1CaAepSUFi7gtQklK98Q9DAmv4dN6EGFuExMBmkprhj80OCBvbNP3QaamAfHgPrQGpapu29QtDARevPboMauAaPgXNBamYsP36IoIEb9lyZCTXwCB4Dd4DUrNx6YSVBA4+de1AKNfAeHgMvgdTsOXa7g6CBb95/dbSOmPoXaijItQYwA0FsqNh/YEHy99HzD2HElIfcwNR/wzxk8j9EyYOKQXLz1pwC5RAxYgvYzqu3X5wsat/8Ijh30WeYQSB2SceW5yA5oJpukkpsIPYE4lVAvB2I90MxiL0SKodVHwDM8eaDXMjxKgAAAABJRU5ErkJggg==" />
 				<image sclass="button"
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUUlEQVQ4y2P4//8/AzUxw6iBtDPQIrD3PwgTK060gciasYmR4uX/yAagGfaf3DAkyTBiw/A/DjZFYfgf3bXDMAyxGUrIMFJyClGGjRYOg9RAACVSk51kPAfYAAAAAElFTkSuQmCC" />
