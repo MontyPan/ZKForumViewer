@@ -6,7 +6,9 @@
 .z-label {
 	font-size: 13px;
 }
-
+.z-caption-l {
+	display: none;
+}
 /* make desktop browser looks like tablet */
 .z-west-header, .z-center-header, .z-east-header, .z-north-header, .z-south-header {
 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
@@ -32,7 +34,8 @@
 	height: 25px;
 	padding: 2px;
 	border: 1px solid #ccc;
-	border-radius: 5px;	
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .textCenter {

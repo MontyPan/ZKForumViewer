@@ -7,5 +7,5 @@
 	</hlayout>
 	<image sclass="button left" onClick='@command("showCategory")'
 	 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAkCAYAAAD7PHgWAAAAeUlEQVRYw+2VMQqAMAxFGw/kmtnRi3gNcfIOXsY1OVVc20VBQSO8vxUKfTT5PImIkjldSR4An0b6cX19Cbd5kPo8LXswYgABvNvi+EAl7t60WFX/22K5umBm7CCAuJgRAwggLsbFlAQX42IAAcTF9aMiTYvPGNL/4AG/MDHYyxz/MQAAAABJRU5ErkJggg==" />
-	<label value="@load(vm.selectedCategory)" hflex="1" onClick='@command("showCategory")' />
+	<label value="@load(vm.selectedCategory)" hflex="1" onClick='@command("showCategory")' sclass="autoSkip"/>
 </div>
