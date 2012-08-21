@@ -5,18 +5,27 @@
 			<image visible="@load(vm.selectedThread.popular)"
 			 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAA4ElEQVQoU2M4NUP4BxD/w4P/A3HD////GWCY4fhUoX9/P+36jwv/eLXmP1DNRyA2h2s6MlHg3/879v/x4RfHQ/4D1T0HYnGwpoM9fP/+X7P4jxffsP9/f0/4f6DazUDMzrC3neff//OG/wniS3b/b24N+Q9Uv5thZxPXv/8nNP8Tg28s1/4PVL+FYWstx7//h5T/E8I354v+B6rdCsQcDBsr2P793yPzHx9+tFjkP1DdCyAWAQfEumKWf/+2if3Hhb9vFPkPVPMRiBFBviqf6RcQ/wXiP1AaHf8H4jrkyAUAlSRgDlxOvSkAAAAASUVORK5CYII=" />
 		</div>
-		<image sclass="collapse_button" 
+		<image sclass="collapse_button" onClick="@command('collapseAll')"
 		 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB+0lEQVRIib2Wy0rDQBSG+2xu3Lj0FXwBwYUi+AK6cS/iDRF1Z+uloFULRdOLIN6o9VK1tyRNYnpJ3YxzIjOZzhyK1qaFD3rmzPk/kqZJIhH62UvWs6v7OgmLlZhOwBFhsvUDg6SuHZIvNsjzR3OgPLw2yPmVTTYOjR8p2JNXzsBFMmc52z9SX1h4b5KXUitU8sVmIHylC8OAC4vl1lAIhJWWwuJuhYxM5vsCZrFMLnyjhUy/MgaWyYXv1ZYCG1yK1khcs34F7GVzWKYgbCuMzz35xDUb7WPAXjaH9bnwo9ZWmFgoktGpxz+fSpiZXSqhmVxY0tsK//n9xmYKaCYXlmkhw4aXaf84Y/8K2MvmsMxAaLQV2CAEietQ81BpplcP4MIKLWREobguhsozvXoVUVg1PQU2eJJ1utahZj15plcPCIR1T4ELc45fR1MWfoFMF8jlnevvgb1ciGRyYY0WMmwwQUPY2vaJicpYPyEIsUwu1C1PgQ2e0meluL6dMLlMozKxB3vZHJbJhYbtKYhCubdzapL0vausi0IsUxB2FP5788YyudB0OgrzW/0/nmAWy+TCOi2GQSD87AyF4E5D/5SW2wmVrv9hhl5xNl0Mk4ubzx/h4YWd3YwbJA13C3qkTuNroMDZ025dsnagE3D5b99H9EuYr/qrsUD2DXWbhb5lMzAlAAAAAElFTkSuQmCC" />
 	</hlayout>
-	<div children="@load(vm.contentList)">
-		<template name="children" var="content">
-			<groupbox mold="3d" onOpen='@command("openContent")' style="padding: 0 0 0 5px">
-				<caption>
-					<label value="@load(content.author)" zclass="content_author" />
-					<label value="@load(content.date)" />
-				</caption>
-				<html content="@load(content.content)" />
-			</groupbox>
-		</template>
+	<div hflex="1">
+		<div children="@load(vm.contentList)">
+			<template name="children" var="content">
+				<groupbox mold="3d" open="@load(content.open)" style="padding: 0 0 0 5px">
+					<caption>
+						<label value="@load(content.author)" zclass="content_author" />
+						<label value="@load(content.date)" />
+					</caption>
+					<html content="@load(content.content)" />
+				</groupbox>
+			</template>
+		</div>
+		<groupbox mold="3d" style="padding: 0 0 0 5px">
+			<caption>
+				<label value="@load(vm.lastContent.author)" zclass="content_author" />
+				<label value="@load(vm.lastContent.date)" />
+			</caption>
+			<html content="@load(vm.lastContent.content)" />
+		</groupbox>
 	</div>
 </vlayout>
