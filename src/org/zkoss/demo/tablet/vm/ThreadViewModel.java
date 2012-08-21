@@ -33,6 +33,7 @@ public class ThreadViewModel {
 	private String nowCategory = CATEGORY_LIST[nowCategoryIndex];
 	private List<ThreadVO> nowThreadList;
 	private List<ContentVO> nowContentList;
+	private ContentVO lastContent;
 	private boolean westFlag = true;
 	private boolean centerFlag = true;
 	
@@ -48,6 +49,8 @@ public class ThreadViewModel {
 	private void fetchContent(){
 		nowThread = nowThreadList.get(nowThreadIndex);
 		nowContentList = server.getContentList(this.nowThread);
+		lastContent = nowContentList.remove(nowContentList.size() - 1);
+		lastContent.setOpen(true);
 	}
 	
 	@Init
@@ -61,7 +64,7 @@ public class ThreadViewModel {
 		 Selectors.wireComponents(view, this, false);
 	 }
 	
-	@NotifyChange({"contentList", "selectedThread", "threadStart", "threadEnd", "contentIndex"})
+	@NotifyChange({"contentList", "lastContent", "selectedThread", "threadStart", "threadEnd", "contentIndex"})
 	public void setSelectedThreadIndex(int index){
 		nowThreadIndex = index;
 		fetchContent();
@@ -76,7 +79,7 @@ public class ThreadViewModel {
 		
 	@Command
 	@NotifyChange(
-		{"contentList", "selectedThread", "selectedThreadIndex", "contentIndex", 
+		{"contentList", "lastContent", "selectedThread", "selectedThreadIndex", "contentIndex", 
 		 "threadEnd", "threadStart"}
 	)
 	public void prevThread(){
@@ -88,7 +91,7 @@ public class ThreadViewModel {
 	
 	@Command
 	@NotifyChange(
-		{"contentList", "selectedThread", "selectedThreadIndex", "contentIndex", 
+		{"contentList", "lastContent", "selectedThread", "selectedThreadIndex", "contentIndex", 
 		 "threadEnd", "threadStart"}
 	)
 	public void nextThread(){
@@ -96,6 +99,13 @@ public class ThreadViewModel {
 			nowThreadIndex++;
 			fetchContent();
 		}
+	}
+	
+	@Command
+	@NotifyChange("contentList")
+	public void collapseAll(){
+		for(ContentVO cvo : nowContentList)
+			cvo.setOpen(!cvo.isOpen());
 	}
 	
 	public int getContentIndex(){
@@ -144,6 +154,10 @@ public class ThreadViewModel {
 	
 	public List<ContentVO> getContentList(){
 		return nowContentList;
+	}
+	
+	public ContentVO getLastContent() {
+		return lastContent;
 	}
 	
 	public ThreadVO getSelectedThread(){

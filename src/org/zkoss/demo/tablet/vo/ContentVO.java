@@ -4,6 +4,8 @@ public class ContentVO {
 	private String author;
 	private String content;
 	private String date;
+	private boolean open;
+	
 	public String getAuthor() {
 		return author;
 	}
@@ -21,5 +23,11 @@ public class ContentVO {
 	}
 	public void setDate(String date) {
 		this.date = date;
+	}
+	public boolean isOpen() {
+		return open;
+	}
+	public void setOpen(boolean open) {
+		this.open = open;
 	}
 }

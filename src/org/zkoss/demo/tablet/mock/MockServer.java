@@ -125,6 +125,7 @@ public class MockServer extends AbstractServer{
 				
 			}
 			cvo.setContent(content.substring(start+CONTENT_HEADER.length(), end));
+			cvo.setOpen(false);
 			result.add(cvo);
 			start=end;
 		}
