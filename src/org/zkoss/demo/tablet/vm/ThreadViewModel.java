@@ -111,11 +111,8 @@ public class ThreadViewModel {
 	public int getContentIndex(){
 		return 0;
 	}
-	
-	@Command
-	public void openContent(){
-	}
-	
+
+	//FIXME button must click twice
 	private boolean popupFlag = false;
 	@Command
 	public void showPopup(@BindingParam("component") Component c){

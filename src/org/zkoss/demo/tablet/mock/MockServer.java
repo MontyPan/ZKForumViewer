@@ -36,6 +36,7 @@ public class MockServer extends AbstractServer{
 
 	public MockServer() {}
 	
+	//FIXME getResource() will error when classpath include blank.
 	private String mockThread(int no){
 		return Utility.getString(new File(MockServer.class.getResource(no+".html").getFile()));
 	}
@@ -91,7 +92,6 @@ public class MockServer extends AbstractServer{
 		}
 	}
 
-	//TODO fix fetch algorithm
 	@Override
 	public List<ThreadVO> getThreadList(String type){
 		List<ThreadVO> result = CAT_THREAD.get(type);

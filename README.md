@@ -22,6 +22,9 @@ Environment :
 
 Version
 =======
+## 2012.08.2x ##
+special thank: [Vincent Jian](https://github.com/VincentJian)
+
 ## 2012.08.17 ##
 * Add mock mode
 	* In index.zul, use `@init("org.zkoss.demo.tablet.vm.ThreadViewModel", mode="mock")` 
