@@ -1,4 +1,4 @@
-<?page title="ZK Forum viewer"?>
+<?page title="ZK Maile 2"?>
 <?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
 <?taglib uri="http://www.zkoss.org/dsp/web/theme" prefix="t" ?>
 <zk>
@@ -24,8 +24,27 @@
 	background:      -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
 	background:	        linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
 	line-height: 32px;
+	
+	/* for fxck IE8+ */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(
+		src='${c:encodeThemeURL('~./zul/img/layout/borderlayout-hm.png')}',
+		sizingMethod='scale'
+	);
+}
+
+@media screen and (max-width: 640px) {
+	.z-borderlayout-icon {
+		display:none;
+	}
 }
 /* ==== */
+
+pre {
+	/* TODO find cross-browser css :'( */
+	white-space: pre-wrap;
+	word-wrap:break-word;
+	word-break:break-all;
+}
 
 .button {
 	width: 22px;
@@ -33,6 +52,10 @@
 	padding: 5px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
+	cursor: pointer;
+}
+
+.back_button {
 	cursor: pointer;
 }
 
@@ -112,10 +135,12 @@
 	${t:borderRadius("8px")}
 }
 </style>
-
-<borderlayout apply="org.zkoss.bind.BindComposer" 
+<borderlayout apply="org.zkoss.bind.BindComposer" onClientInfo='@command("clientInfoChanged", event=event)'
  viewModel='@id("vm") @init("org.zkoss.demo.tablet.vm.ThreadViewModel", mode="mock")'>
-	<west size="30%" border="none" collapsible="true">
+	<west border="none" 
+	 visible="@load(not vm.deviceMode.phone or (vm.deviceMode.phone and not vm.threadMode))"
+	 size='@load(vm.deviceMode.phone ? "100%" : "30%")' 
+	 collapsible="true">
 		<caption>
 			<include src="threadHead.zul" />
 		</caption>
@@ -124,22 +149,29 @@
 	
 	<center border="none" id="contentPanel" autoscroll="true">
 		<caption>
-			<hlayout>
+			<hlayout sclass="right">
 				<image sclass="button"
-				 onClick='Clients.showNotification("Delete post is not allow.")'
+				 onClick='Clients.showNotification("This feature is currently disabled.")'
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACfUlEQVQ4y2P4//8/Ay6s69GmBcRbgPgnEH8D4o1ArItPD04J0+BJuqHZ824BDfiPjP1SZz4CyhkQZSBQIScQVwPxEyD+H5Qx+39uw+r/MFDQtOa/fcSE/yA5IH4FxO1ALITTQIuwKVehioF44hUjn87/126/+ALkp4HwlVvPP4NcaRI44RpMnVX41AdAmg2XC8GKgBrCgXxxIP4HxElIapKgjg0DqnEHqv0FUt82Y58kXgP1vdrfAl0yH4i9gdgYiJmBmA3K9gDJ6Xu2f7IInfwXpH7rgeuaeA3Mblj3om/uvnNeidNv24b134VFiHVI30O3uCl3myZtv9w798BdmHqcBi7fcuGaeehksKKksqXXNu6+dPLkhQdH//z5e+DHz98HQewt+66cTK1cdhPo5T8gdQvWnbkJ1CuDK9k0+WUuAIdLTd/Wiw6REy+YB/Zcg7nQ1L8b5OIrVd2bL4DU2EVNB4VxJ950GFW87D1I8eodlyYC+XuXbDh9H5ZsFq49+QTo0iNHzz2YDFIDtPwLwYSd27zhKTRsooCuAuWWD1CaAepSUFi7gtQklK98Q9DAmv4dN6EGFuExMBmkprhj80OCBvbNP3QaamAfHgPrQGpapu29QtDARevPboMauAaPgXNBamYsP36IoIEb9lyZCTXwCB4Dd4DUrNx6YSVBA4+de1AKNfAeHgMvgdTsOXa7g6CBb95/dbSOmPoXaijItQYwA0FsqNh/YEHy99HzD2HElIfcwNR/wzxk8j9EyYOKQXLz1pwC5RAxYgvYzqu3X5wsat/8Ijh30WeYQSB2SceW5yA5oJpukkpsIPYE4lVAvB2I90MxiL0SKodVHwDM8eaDXMjxKgAAAABJRU5ErkJggg==" />
 				<image sclass="button"
+				 onClick='Clients.showNotification("This feature is currently disabled.")'
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUUlEQVQ4y2P4//8/AzUxw6iBtDPQIrD3PwgTK060gciasYmR4uX/yAagGfaf3DAkyTBiw/A/DjZFYfgf3bXDMAyxGUrIMFJyClGGjRYOg9RAACVSk51kPAfYAAAAAElFTkSuQmCC" />
-				<image sclass="button" onClick='@command("showSetting")'
+				<image sclass="button" visible="@load(not vm.deviceMode.phone)"
+				 tooltiptext="setting"
+				 onClick='@command("showSetting")'
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABXklEQVQ4y2NgGPJAz7O9AYj/Q3EDOQYYQA0RAPFL2tYfgBkIYkPVCEDVGBA0zMC74xNIs6FP5yUQPzR77nWYgVC2AVTuP1QtbkP902bNQPIeURikB6eBz1597AjNnke0YSC1ID04Dfz//7/AhWtPbqBrrO3b8r+gaS2GgSC1ID24wm8+EO83D+xBMfDG3RdAPf/nA/F6EBtZDqp2P0gvNgMxXAByFRAYIPnAAORabGqJMjC7ftVDdHWxRYseEmXg4vWn/k9bchhbWBmgpVEUH4D0gPRii5ACIG44ffHhPiwuWA8NYxRxkFqQHpBeXBEjgB4p+DBUrQDOZGMV0tdBasIG6cFp4N6jN2dYh/TDEy0omSCHKYgNEoMlfpBakB58Cdvg6u3nn0AB/f7jt0sgftPk7fC8DGKDxEByIDUgtcjJCqeh0IDGKG0aJmzbActRUDUGJBdnUI0wUED3AhkArBrfFAIi6aMAAAAASUVORK5CYII=" />			
 			</hlayout>
+			<image sclass="back_button left" visible="@load(vm.deviceMode.phone)"
+			 onClick='@command("backToCategory")' 
+			 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAgCAYAAABHA7voAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABFxJREFUeNrcWUtIo1cUPkmMj6hJNPWJWImPjYkwiA+KinahIAMKltIuSkGoqzI7R4ZCFgNDVqW4qUqx9MEUF7OoG0VduFAUdVEqIoqvsb4To8zCqPHV8x3ml/jKc6D9PXC8l3v///7nu9953Bs109PTFIJ8x/o5qUfesv5cVlbWH3N1dRXsYRvrZ+Xl5XZuNWpA5/V6C9xu9xMmTx8MoJbVUVhY+LHP59OohT69Xm9IS0vT7O7ufqEN8uyX2dnZnxiNxhQVuSeBNAYZz938QAyms377Ecvl5SWpTRiXhlUbCODzvLw8a0xMTFwIcfq/ZfIhF622WCwt6SxqBafIfQwawB5jSz0/P1c1OGC7D+A3ubm5pYmJiUY1xl4wgFbWrzIyMtLVDu4hgI6ioqI8HtPRI5DbAJ9yzfs0NTXVcnFxQY8NoAmJhau/JdLEsrW1RUNDQzfGEhISyG63k81mi9hIrIm1W1tbowL4zGq1FsbHxxsijb2TkxNaWVm5Mz43NyfG5efnR7Tuzs7OveuGA/AJu+XXWVlZmWdnZ1G7RWNjI9XV1Ul/dHSUBgYGhAHeQDo+Pqbh4WE6ODgg/ibV19cLyxCMjY2NSYvNqKmpuWPs9vY2LS8vy7uheIUC8AWDs3wIcJD9/X2an5+/7kNycnKk7e/vF0YhCitNTU0CvKurS1r/OX+QmOvr65O2vb09LAb1iLsPdWLB/dL/jllSUiLswfX5dCQMV1ZWksPhoMPDQ/kuQMNwZa6zs5NWV1epurr6eh0FXFtbG8XGxoZkrwLwJVNv5xuDOdqMBeGrlShkc3OTZmdnieuqGFtQUCAu1t3dLfMajUbeQ/xCMjMzZayjo0PGT09Pr9cHq3DnpKQkCjVPyFmU//zFO/kHx8kuBiJVRQCiqqpKtLm5WcbW1tYktnp7eyUelRi9/a7H4xHjnU4n9fT03JgHu2AQ3hGOXUoW/X59fb3WbDabDAZDQjRMTk1N0eLiovThggqrSh8AkXz8BaUE5QAJaGZmRp5VvEARbBg2aWRkhIqLiyklJSVkBtF5x/qDy+XyRMsijED8QGEoYrC0tFSYraioEBYQi7W1tQLW6/VScnIytbS0iAsiUwJcQ0PDDXZ9Pp+AhIyPj4dsk2ZwcNAf9C9syFMU/HCZ0+l0xHX0zjgSGIzDx+Li4ojvl6QkNfQBWOkjeSAGcZJC/GEca2Lto6MjmWMPk/f94/MhmZycnL19Fn21tLRk4zpj1mHVMARGwYhAAqP8DQNw/4247xSlJCDF5YJ9I9hhe4n1d3aTbK5dWY/xNgH5iRNOA6fjRJPJZHyMAL2szr29vd+4NqoeoPaB7DPGGfVPdlWX6hkMMO/kAl3J9cbM2S9WrSC1AWqIi/VHdlV3NLXxP1TIpTbIQ683NjYmuHgfqo05rq8nbP/bYD/d41T7amFhYf39jqiCPT4dHbvdbg/b/jqU/y79zfpmYmJCqyIC/2H9lQ/7b/4VYACBYoFpUvbg2wAAAABJRU5ErkJggg==" />			
 		</caption>
 		<include vflex='1' hflex='1' src="@load(vm.centerUrl)"/>
 	</center>
 	
 	<south border="none">
 		<caption>
-			<hlayout sclass="right">
+			<hlayout sclass="right" style="padding:0 20px 0 0" spacing="15px"
+			 visible="@load(vm.centerMode and (not vm.deviceMode.phone or vm.threadMode)))">
 				<image sclass='@load(vm.threadStart ? "button disable" : "button")' 
 				 onClick='@command(vm.threadStart ? "" : "prevThread")' 
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUklEQVQ4y2P4//8/AzUxw6iB9DXQIrD3PwhTxUCYYVQxEM2w/RQZSIphBA0k1TBSDaRKLO8n1VBibCXJUGKTzX6qJht0Q6mZ9fZTnA5Hiy+CGACQH5jke2R0BAAAAABJRU5ErkJggg==" />
@@ -148,6 +180,7 @@
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAATklEQVQ4y2P4//8/AzUxw6iBtDXQIrD3PwhT3UBSDCWk4D+phhJjK0mGEhs2RBtKdGBT1UA0wygzkBTDSE02/6mZsKmXDkkxbLS0oQ4GABpVmyQ8nT5cAAAAAElFTkSuQmCC" />
 			 </hlayout>			 
 			 <button sclass="product_btn" dir="reverse"
+			  visible="@load(not vm.deviceMode.phone or (vm.deviceMode.phone and not vm.threadMode))"
 			  image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAkCAYAAADsHujfAAAAm0lEQVRYw+3VsQqAIBDGcZ+o9+ghhKCpSXBqau2lhesOPGgoMi+r4RP+o+cPHXRE5P6QAwQQQAABBJCTun5dpE8hDJg5ys2fQPjguENo8VUIHxgOEFp4BXKBqMbcRUwFCG1qAuHB4w2ENj4K4YFDBUIbHoFkRDJAZK83QWSAEVGMKXkaudpE9Uv2euvTeCOiGIPfFxBAAAEEkNZtTVf0GEek2W8AAAAASUVORK5CYII="
 			  label="ZK Product" onClick='@command("showPopup", component=self)' />
 			

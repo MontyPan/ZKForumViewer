@@ -1,0 +1,828 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=E5E81AE0131266C7000E14287D8DC5F1'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=E5E81AE0131266C7000E14287D8DC5F1?1346908517341' />
+<title>ZK Studio Crashes eclipse(both Helios and ganymede) | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="ZK Studio Crashes eclipse(both Helios and ganymede)"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="barbarconan"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=E5E81AE0131266C7000E14287D8DC5F1"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=E5E81AE0131266C7000E14287D8DC5F1" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=E5E81AE0131266C7000E14287D8DC5F1" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=E5E81AE0131266C7000E14287D8DC5F1' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('lE2U_','z_cl70','/forum;jsessionid=E5E81AE0131266C7000E14287D8DC5F1','/forum/zkau;jsessionid=E5E81AE0131266C7000E14287D8DC5F1','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="lE2U0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=E5E81AE0131266C7000E14287D8DC5F1'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','lE2U0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=E5E81AE0131266C7000E14287D8DC5F1?path=http://www.zkoss.org/forum/listComment/16026-ZK-Studio-Crashes-eclipse-both-Helios-and-ganymede'},[]]);
+</script>
+<div id="lE2U1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','lE2U1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=E5E81AE0131266C7000E14287D8DC5F1'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=E5E81AE0131266C7000E14287D8DC5F1" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=E5E81AE0131266C7000E14287D8DC5F1">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=E5E81AE0131266C7000E14287D8DC5F1"><img src="/forum/images/home.png;jsessionid=E5E81AE0131266C7000E14287D8DC5F1" alt="Home"/></a></li>
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/14;jsessionid=E5E81AE0131266C7000E14287D8DC5F1">Help</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/18;jsessionid=E5E81AE0131266C7000E14287D8DC5F1">ZK Studio</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=E5E81AE0131266C7000E14287D8DC5F1">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=E5E81AE0131266C7000E14287D8DC5F1">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=E5E81AE0131266C7000E14287D8DC5F1">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">ZK Studio Crashes eclipse(both Helios and ganymede)</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('lE2U4','z_cl70','/forum;jsessionid=E5E81AE0131266C7000E14287D8DC5F1','/forum/zkau;jsessionid=E5E81AE0131266C7000E14287D8DC5F1','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="lE2U2" class="z-temp"><div class="author"><img class='author-image' title='barbarconan' src='/forum/mediaService?userId=31039&extName=null' /><span class="author-name">barbarconan</span></div><div><span class="comment-date">28 Apr 2011 09:23:21 GMT</span><div class="comment-cotent"><span class="comment-content">28 Apr 2011 09:23:21 GMT</span><p  style="margin:2px 2px;"><b >OS:</b> Archlinux(With kde4.x)<br/><b >Java version:</b> 1.6.0_25<br/><b >Zk Studio:</b> Latest from update site(1.0 i guess)<br/><b >Eclipse Version:</b> Tried both Helios and Ganymede and same problem(EE)<br/><b >Problem:</b></p><p>1)I install Zk studio from update site<br/>2)Restart eclipse<br/>3)Eclipse Opened<br/>4)When eclipse constructed default ZK dir at project exlorer eclipse crushed and killed.</p><p>Below here i post the log for Ganymede contains the first opened /-crushed and killed and opened again-/second opened phases/-crushed and killed-/.</p><p>Exceptions in these two situation is different from each other.Any idea or solution?</p><p>#######################<br/>Crush logs:<div style="class=code" class="code"><pre>!SESSION 2011&#45;04&#45;28 16:59:03.929 &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
+eclipse.buildId=unknown
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=tr_TR
+Framework arguments:  &#45;product org.eclipse.epp.package.jee.product
+Command&#45;line arguments:  &#45;os linux &#45;ws gtk &#45;arch x86 &#45;product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 4 0 2011&#45;04&#45;28 17:00:34.012
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.ArrayIndexOutOfBoundsException: 9)
+	at org.eclipse.swt.SWT.error(SWT.java:3884)
+	at org.eclipse.swt.SWT.error(SWT.java:3799)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:137)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3468)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3115)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:173)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:388)
+	at org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:944)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.ProvisioningOperationWizard.recomputePlan(ProvisioningOperationWizard.java:229)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.ProvisioningOperationWizard.getNextPage(ProvisioningOperationWizard.java:122)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.WizardWithLicenses.getNextPage(WizardWithLicenses.java:69)
+	at org.eclipse.jface.wizard.WizardPage.getNextPage(WizardPage.java:172)
+	at org.eclipse.jface.wizard.WizardDialog.nextPressed(WizardDialog.java:823)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:369)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3493)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3112)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.equinox.internal.p2.ui.sdk.InstallNewSoftwareHandler.doExecute(InstallNewSoftwareHandler.java:41)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler.doExecuteAndLoad(PreloadingRepositoryHandler.java:101)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$1.run(PreloadingRepositoryHandler.java:52)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler.execute(PreloadingRepositoryHandler.java:50)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.menus.CommandContributionItem.handleWidgetSelection(CommandContributionItem.java:770)
+	at org.eclipse.ui.menus.CommandContributionItem.access$10(CommandContributionItem.java:756)
+	at org.eclipse.ui.menus.CommandContributionItem$5.handleEvent(CommandContributionItem.java:746)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3493)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3112)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 9
+	at org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup.repoComboSelectionChanged(RepositorySelectionGroup.java:626)
+	at org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup$4.modifyText(RepositorySelectionGroup.java:172)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:167)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1200)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1181)
+	at org.eclipse.swt.widgets.Combo.setText(Combo.java:2132)
+	at org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup$10.run(RepositorySelectionGroup.java:338)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	... 56 more
+
+!ENTRY org.eclipse.jface 4 0 2011&#45;04&#45;28 17:00:42.220
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.ArrayIndexOutOfBoundsException: 8)
+	at org.eclipse.swt.SWT.error(SWT.java:3884)
+	at org.eclipse.swt.SWT.error(SWT.java:3799)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:137)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3468)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3115)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:173)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:388)
+	at org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:944)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.ProvisioningOperationWizard.recomputePlan(ProvisioningOperationWizard.java:229)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.ProvisioningOperationWizard.getNextPage(ProvisioningOperationWizard.java:122)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.WizardWithLicenses.getNextPage(WizardWithLicenses.java:69)
+	at org.eclipse.jface.wizard.WizardPage.getNextPage(WizardPage.java:172)
+	at org.eclipse.jface.wizard.WizardDialog.nextPressed(WizardDialog.java:823)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:369)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3493)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3112)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.equinox.internal.p2.ui.sdk.InstallNewSoftwareHandler.doExecute(InstallNewSoftwareHandler.java:41)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler.doExecuteAndLoad(PreloadingRepositoryHandler.java:101)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$1.run(PreloadingRepositoryHandler.java:52)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler.execute(PreloadingRepositoryHandler.java:50)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.menus.CommandContributionItem.handleWidgetSelection(CommandContributionItem.java:770)
+	at org.eclipse.ui.menus.CommandContributionItem.access$10(CommandContributionItem.java:756)
+	at org.eclipse.ui.menus.CommandContributionItem$5.handleEvent(CommandContributionItem.java:746)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3493)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3112)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 8
+	at org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup.repoComboSelectionChanged(RepositorySelectionGroup.java:626)
+	at org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup$10.run(RepositorySelectionGroup.java:346)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	... 56 more
+!SESSION 2011&#45;04&#45;28 17:11:29.651 &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
+eclipse.buildId=unknown
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=tr_TR
+Framework arguments:  &#45;product org.eclipse.epp.package.jee.product
+Command&#45;line arguments:  &#45;os linux &#45;ws gtk &#45;arch x86 &#45;product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 2 0 2011&#45;04&#45;28 17:11:36.122
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:11:36.122
+!MESSAGE Could not parse key sequence: plug&#45;in='org.zkoss.eclipse.services', id='org.zkoss.eclipse.services.commands.docs', keySequence='Ctrl+Shift+D'
+!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:11:36.122
+!MESSAGE Could not parse key sequence: plug&#45;in='org.zkoss.eclipse.services', id='org.zkoss.eclipse.services.commands.welcome', keySequence='Ctrl+Shift+Z'
+!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:11:36.122
+!MESSAGE Could not parse key sequence: plug&#45;in='org.zkoss.eclipse.services', id='org.zkoss.eclipse.services.commands.check_new_version', keySequence='Ctrl+Shift+P'
+
+!ENTRY org.eclipse.osgi 2 0 2011&#45;04&#45;28 17:11:46.712
+!MESSAGE While loading class "org.eclipse.wst.validation.internal.Tracing", thread "Thread[Worker&#45;6,5,main]" timed out waiting (5000ms) for thread "Thread[main,6,main]" to finish starting bundle "org.eclipse.wst.validation_1.2.104.v200911120201 [624]". To avoid deadlock, thread "Thread[Worker&#45;6,5,main]" is proceeding but "org.eclipse.wst.validation.internal.Tracing" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:plugins/org.eclipse.wst.validation_1.2.104.v200911120201.jar" by thread "main".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.eclipse.wst.validation.internal.EventManager.resourceChanged(EventManager.java:235)
+	at org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:313)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1022)
+	at org.eclipse.core.internal.resources.File.create(File.java:178)
+	at org.eclipse.core.internal.resources.File.create(File.java:191)
+	at org.zkoss.eclipse.zks.libmgmt.ZkPackages.copyArchiveEntry(ZkPackages.java:221)
+	at org.zkoss.eclipse.zks.libmgmt.ZkPackages$1.visit(ZkPackages.java:58)
+	at org.zkoss.eclipse.zks.archive.ZkBinaryDistributionArchive.browseJavaLibrarys(ZkBinaryDistributionArchive.java:55)
+	at org.zkoss.eclipse.zks.libmgmt.ZkPackages.copyJavaLibrarys(ZkPackages.java:50)
+	at org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.createZKParcel(AWebArchiveParcelManager.java:179)
+	at org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.accept(AWebArchiveParcelManager.java:99)
+	at org.zkoss.eclipse.zks.storage.mgmt.ZKReleaseParcelManager.accept(ZKReleaseParcelManager.java:172)
+	at org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.accept(AWebArchiveParcelManager.java:58)
+	at org.zkoss.eclipse.pack.PackPlugin.upackZKStandard(PackPlugin.java:79)
+	at org.zkoss.eclipse.pack.PackPlugin.doUnpack(PackPlugin.java:41)
+	at org.zkoss.eclipse.pack.PackPlugin.start(PackPlugin.java:37)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:352)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:280)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:326)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:231)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1193)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:160)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:874)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:267)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:263)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 63 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.eclipse.wst.validation.internal.EventManager.resourceChanged(EventManager.java:235)
+	at org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:313)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1022)
+	at org.eclipse.core.internal.resources.File.create(File.java:178)
+	at org.eclipse.core.internal.resources.File.create(File.java:191)
+	at org.zkoss.eclipse.zks.libmgmt.ZkPackages.copyArchiveEntry(ZkPackages.java:221)
+	at org.zkoss.eclipse.zks.libmgmt.ZkPackages$1.visit(ZkPackages.java:58)
+	at org.zkoss.eclipse.zks.archive.ZkBinaryDistributionArchive.browseJavaLibrarys(ZkBinaryDistributionArchive.java:55)
+	at org.zkoss.eclipse.zks.libmgmt.ZkPackages.copyJavaLibrarys(ZkPackages.java:50)
+	at org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.createZKParcel(AWebArchiveParcelManager.java:179)
+	at org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.accept(AWebArchiveParcelManager.java:99)
+	at org.zkoss.eclipse.zks.storage.mgmt.ZKReleaseParcelManager.accept(ZKReleaseParcelManager.java:172)
+	at org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.accept(AWebArchiveParcelManager.java:58)
+	at org.zkoss.eclipse.pack.PackPlugin.upackZKStandard(PackPlugin.java:79)
+	at org.zkoss.eclipse.pack.PackPlugin.doUnpack(PackPlugin.java:41)
+	at org.zkoss.eclipse.pack.PackPlugin.start(PackPlugin.java:37)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:352)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:280)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:326)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:231)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1193)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:160)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:874)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:267)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:263)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+
+!SESSION 2011&#45;04&#45;28 17:19:19.619 &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
+eclipse.buildId=unknown
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=tr_TR
+Framework arguments:  &#45;product org.eclipse.epp.package.jee.product
+Command&#45;line arguments:  &#45;os linux &#45;ws gtk &#45;arch x86 &#45;product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2011&#45;04&#45;28 17:20:48.085
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2011&#45;04&#45;28 17:20:48.571
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:20:48.571
+!MESSAGE Could not parse key sequence: plug&#45;in='org.zkoss.eclipse.services', id='org.zkoss.eclipse.services.commands.docs', keySequence='Ctrl+Shift+D'
+!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:20:48.571
+!MESSAGE Could not parse key sequence: plug&#45;in='org.zkoss.eclipse.services', id='org.zkoss.eclipse.services.commands.welcome', keySequence='Ctrl+Shift+Z'
+!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:20:48.571
+!MESSAGE Could not parse key sequence: plug&#45;in='org.zkoss.eclipse.services', id='org.zkoss.eclipse.services.commands.check_new_version', keySequence='Ctrl+Shift+P'
+</pre></div></p></div></div><div class="author"><img class='author-image' title='g9164313' src='/forum/mediaService?userId=58411&extName=null' /><span class="author-name">g9164313</span></div><div><span class="comment-date">9 Aug 2012 12:04:44 GMT</span><div class="comment-cotent"><span class="comment-content">9 Aug 2012 12:04:44 GMT</span><p  style="margin:2px 2px;">I encounter this problem, too. fucking zk, garbage</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','lE2U2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','lE2Ud',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','lE2U5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=E5E81AE0131266C7000E14287D8DC5F1?path=http://www.zkoss.org/forum/listComment/16026-ZK-Studio-Crashes-eclipse-both-Helios-and-ganymede'},[]],
+['zk.Native','lE2Ue',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','lE2U6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:2,_offset:0},[
+['zul.grid.Columns','lE2U7',{$$onColSize:false},[
+['zul.grid.Column','lE2U8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','lE2U9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','lE2Ua',{sclass:'comment-rows',_offset:0,visibleItemCount:2},[
+['zul.grid.Row','lE2Un',{_loaded:true,_index:0},[
+['zul.wnd.Window','lE2Ur',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','lE2Us',{prolog:'\n\t'},[
+['zul.box.Vlayout','lE2Ut',{},[
+['zul.box.Hlayout','lE2Uu',{},[
+['zul.wgt.Toolbarbutton','lE2Uv',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'barbarconan'},[]]]],
+['zul.wgt.Label','lE2Ux',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','lE2Uz',{},[]],
+['zul.wgt.Div','lE2U10',{},[
+['zul.wgt.Label','lE2U20',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','lE2U30',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'2'},[]]]],
+['zul.wgt.Div','lE2U40',{},[
+['zul.wgt.Label','lE2U50',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','lE2U60',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jul 29, 2010'},[]]]],
+['zul.wgt.Div','lE2U70',{},[]],
+['zul.wgt.Div','lE2U90',{},[]]],'vertical']]],
+['zul.wnd.Window','lE2Ub0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','lE2Uc0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','lE2Ud0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','lE2Ue0',{id:'dateCreated',sclass:'comment-date',value:'Apr 28, 2011'},[]],
+['zul.wgt.Div','lE2Uf0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','lE2Ui0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;"><b >OS:</b> Archlinux(With kde4.x)<br/><b >Java version:</b> 1.6.0_25<br/><b >Zk Studio:</b> Latest from update site(1.0 i guess)<br/><b >Eclipse Version:</b> Tried both Helios and Ganymede and same problem(EE)<br/><b >Problem:</b></p><p>1)I install Zk studio from update site<br/>2)Restart eclipse<br/>3)Eclipse Opened<br/>4)When eclipse constructed default ZK dir at project exlorer eclipse crushed and killed.</p><p>Below here i post the log for Ganymede contains the first opened /-crushed and killed and opened again-/second opened phases/-crushed and killed-/.</p><p>Exceptions in these two situation is different from each other.Any idea or solution?</p><p>#######################<br/>Crush logs:<div style="class=code" class="code"><pre>!SESSION 2011&#45;04&#45;28 16:59:03.929 &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;\neclipse.buildId=unknown\njava.version=1.6.0_25\njava.vendor=Sun Microsystems Inc.\nBootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=tr_TR\nFramework arguments:  &#45;product org.eclipse.epp.package.jee.product\nCommand&#45;line arguments:  &#45;os linux &#45;ws gtk &#45;arch x86 &#45;product org.eclipse.epp.package.jee.product\n\n!ENTRY org.eclipse.jface 4 0 2011&#45;04&#45;28 17:00:34.012\n!MESSAGE Unhandled event loop exception during blocked modal context.\n!STACK 0\norg.eclipse.swt.SWTException: Failed to execute runnable (java.lang.ArrayIndexOutOfBoundsException: 9)\n\tat org.eclipse.swt.SWT.error(SWT.java:3884)\n\tat org.eclipse.swt.SWT.error(SWT.java:3799)\n\tat org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:137)\n\tat org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3468)\n\tat org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3115)\n\tat org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:173)\n\tat org.eclipse.jface.operation.ModalContext.run(ModalContext.java:388)\n\tat org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:944)\n\tat org.eclipse.equinox.internal.p2.ui.dialogs.ProvisioningOperationWizard.recomputePlan(ProvisioningOperationWizard.java:229)\n\tat org.eclipse.equinox.internal.p2.ui.dialogs.ProvisioningOperationWizard.getNextPage(ProvisioningOperationWizard.java:122)\n\tat org.eclipse.equinox.internal.p2.ui.dialogs.WizardWithLicenses.getNextPage(WizardWithLicenses.java:69)\n\tat org.eclipse.jface.wizard.WizardPage.getNextPage(WizardPage.java:172)\n\tat org.eclipse.jface.wizard.WizardDialog.nextPressed(WizardDialog.java:823)\n\tat org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:369)\n\tat org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)\n\tat org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)\n\tat org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)\n\tat org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)\n\tat org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3493)\n\tat org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3112)\n\tat org.eclipse.jface.window.Window.runEventLoop(Window.java:825)\n\tat org.eclipse.jface.window.Window.open(Window.java:801)\n\tat org.eclipse.equinox.internal.p2.ui.sdk.InstallNewSoftwareHandler.doExecute(InstallNewSoftwareHandler.java:41)\n\tat org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler.doExecuteAndLoad(PreloadingRepositoryHandler.java:101)\n\tat org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$1.run(PreloadingRepositoryHandler.java:52)\n\tat org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)\n\tat org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler.execute(PreloadingRepositoryHandler.java:50)\n\tat org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)\n\tat org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)\n\tat org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)\n\tat org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)\n\tat org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)\n\tat org.eclipse.ui.menus.CommandContributionItem.handleWidgetSelection(CommandContributionItem.java:770)\n\tat org.eclipse.ui.menus.CommandContributionItem.access$10(CommandContributionItem.java:756)\n\tat org.eclipse.ui.menus.CommandContributionItem$5.handleEvent(CommandContributionItem.java:746)\n\tat org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)\n\tat org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)\n\tat org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3493)\n\tat org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3112)\n\tat org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)\n\tat org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)\n\tat org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)\n\tat org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)\n\tat org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)\n\tat org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)\n\tat org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)\n\tat org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)\n\tat org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)\n\tat org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)\n\tat org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)\n\tat org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)\n\tat org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat java.lang.reflect.Method.invoke(Method.java:597)\n\tat org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)\n\tat org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)\n\tat org.eclipse.equinox.launcher.Main.run(Main.java:1311)\nCaused by: java.lang.ArrayIndexOutOfBoundsException: 9\n\tat org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup.repoComboSelectionChanged(RepositorySelectionGroup.java:626)\n\tat org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup$4.modifyText(RepositorySelectionGroup.java:172)\n\tat org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:167)\n\tat org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)\n\tat org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)\n\tat org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1200)\n\tat org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1181)\n\tat org.eclipse.swt.widgets.Combo.setText(Combo.java:2132)\n\tat org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup$10.run(RepositorySelectionGroup.java:338)\n\tat org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)\n\tat org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)\n\t... 56 more\n\n!ENTRY org.eclipse.jface 4 0 2011&#45;04&#45;28 17:00:42.220\n!MESSAGE Unhandled event loop exception during blocked modal context.\n!STACK 0\norg.eclipse.swt.SWTException: Failed to execute runnable (java.lang.ArrayIndexOutOfBoundsException: 8)\n\tat org.eclipse.swt.SWT.error(SWT.java:3884)\n\tat org.eclipse.swt.SWT.error(SWT.java:3799)\n\tat org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:137)\n\tat org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3468)\n\tat org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3115)\n\tat org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:173)\n\tat org.eclipse.jface.operation.ModalContext.run(ModalContext.java:388)\n\tat org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:944)\n\tat org.eclipse.equinox.internal.p2.ui.dialogs.ProvisioningOperationWizard.recomputePlan(ProvisioningOperationWizard.java:229)\n\tat org.eclipse.equinox.internal.p2.ui.dialogs.ProvisioningOperationWizard.getNextPage(ProvisioningOperationWizard.java:122)\n\tat org.eclipse.equinox.internal.p2.ui.dialogs.WizardWithLicenses.getNextPage(WizardWithLicenses.java:69)\n\tat org.eclipse.jface.wizard.WizardPage.getNextPage(WizardPage.java:172)\n\tat org.eclipse.jface.wizard.WizardDialog.nextPressed(WizardDialog.java:823)\n\tat org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:369)\n\tat org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)\n\tat org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)\n\tat org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)\n\tat org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)\n\tat org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3493)\n\tat org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3112)\n\tat org.eclipse.jface.window.Window.runEventLoop(Window.java:825)\n\tat org.eclipse.jface.window.Window.open(Window.java:801)\n\tat org.eclipse.equinox.internal.p2.ui.sdk.InstallNewSoftwareHandler.doExecute(InstallNewSoftwareHandler.java:41)\n\tat org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler.doExecuteAndLoad(PreloadingRepositoryHandler.java:101)\n\tat org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$1.run(PreloadingRepositoryHandler.java:52)\n\tat org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)\n\tat org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler.execute(PreloadingRepositoryHandler.java:50)\n\tat org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)\n\tat org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)\n\tat org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)\n\tat org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)\n\tat org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)\n\tat org.eclipse.ui.menus.CommandContributionItem.handleWidgetSelection(CommandContributionItem.java:770)\n\tat org.eclipse.ui.menus.CommandContributionItem.access$10(CommandContributionItem.java:756)\n\tat org.eclipse.ui.menus.CommandContributionItem$5.handleEvent(CommandContributionItem.java:746)\n\tat org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)\n\tat org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)\n\tat org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3493)\n\tat org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3112)\n\tat org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)\n\tat org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)\n\tat org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)\n\tat org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)\n\tat org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)\n\tat org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)\n\tat org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)\n\tat org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)\n\tat org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)\n\tat org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)\n\tat org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)\n\tat org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)\n\tat org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat java.lang.reflect.Method.invoke(Method.java:597)\n\tat org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)\n\tat org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)\n\tat org.eclipse.equinox.launcher.Main.run(Main.java:1311)\nCaused by: java.lang.ArrayIndexOutOfBoundsException: 8\n\tat org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup.repoComboSelectionChanged(RepositorySelectionGroup.java:626)\n\tat org.eclipse.equinox.internal.provisional.p2.ui.dialogs.RepositorySelectionGroup$10.run(RepositorySelectionGroup.java:346)\n\tat org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)\n\tat org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)\n\t... 56 more\n!SESSION 2011&#45;04&#45;28 17:11:29.651 &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;\neclipse.buildId=unknown\njava.version=1.6.0_25\njava.vendor=Sun Microsystems Inc.\nBootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=tr_TR\nFramework arguments:  &#45;product org.eclipse.epp.package.jee.product\nCommand&#45;line arguments:  &#45;os linux &#45;ws gtk &#45;arch x86 &#45;product org.eclipse.epp.package.jee.product\n\n!ENTRY org.eclipse.ui 2 0 2011&#45;04&#45;28 17:11:36.122\n!MESSAGE Warnings while parsing the key bindings from the \'org.eclipse.ui.commands\' extension point\n!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:11:36.122\n!MESSAGE Could not parse key sequence: plug&#45;in=\'org.zkoss.eclipse.services\', id=\'org.zkoss.eclipse.services.commands.docs\', keySequence=\'Ctrl+Shift+D\'\n!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:11:36.122\n!MESSAGE Could not parse key sequence: plug&#45;in=\'org.zkoss.eclipse.services\', id=\'org.zkoss.eclipse.services.commands.welcome\', keySequence=\'Ctrl+Shift+Z\'\n!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:11:36.122\n!MESSAGE Could not parse key sequence: plug&#45;in=\'org.zkoss.eclipse.services\', id=\'org.zkoss.eclipse.services.commands.check_new_version\', keySequence=\'Ctrl+Shift+P\'\n\n!ENTRY org.eclipse.osgi 2 0 2011&#45;04&#45;28 17:11:46.712\n!MESSAGE While loading class "org.eclipse.wst.validation.internal.Tracing", thread "Thread[Worker&#45;6,5,main]" timed out waiting (5000ms) for thread "Thread[main,6,main]" to finish starting bundle "org.eclipse.wst.validation_1.2.104.v200911120201 [624]". To avoid deadlock, thread "Thread[Worker&#45;6,5,main]" is proceeding but "org.eclipse.wst.validation.internal.Tracing" may not be fully initialized.\n!STACK 0\norg.osgi.framework.BundleException: State change in progress for bundle "reference:file:plugins/org.eclipse.wst.validation_1.2.104.v200911120201.jar" by thread "main".\n\tat org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)\n\tat org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)\n\tat org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)\n\tat org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)\n\tat org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)\n\tat org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)\n\tat org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)\n\tat java.lang.ClassLoader.loadClass(ClassLoader.java:247)\n\tat org.eclipse.wst.validation.internal.EventManager.resourceChanged(EventManager.java:235)\n\tat org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:291)\n\tat org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)\n\tat org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)\n\tat org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)\n\tat org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:313)\n\tat org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1022)\n\tat org.eclipse.core.internal.resources.File.create(File.java:178)\n\tat org.eclipse.core.internal.resources.File.create(File.java:191)\n\tat org.zkoss.eclipse.zks.libmgmt.ZkPackages.copyArchiveEntry(ZkPackages.java:221)\n\tat org.zkoss.eclipse.zks.libmgmt.ZkPackages$1.visit(ZkPackages.java:58)\n\tat org.zkoss.eclipse.zks.archive.ZkBinaryDistributionArchive.browseJavaLibrarys(ZkBinaryDistributionArchive.java:55)\n\tat org.zkoss.eclipse.zks.libmgmt.ZkPackages.copyJavaLibrarys(ZkPackages.java:50)\n\tat org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.createZKParcel(AWebArchiveParcelManager.java:179)\n\tat org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.accept(AWebArchiveParcelManager.java:99)\n\tat org.zkoss.eclipse.zks.storage.mgmt.ZKReleaseParcelManager.accept(ZKReleaseParcelManager.java:172)\n\tat org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.accept(AWebArchiveParcelManager.java:58)\n\tat org.zkoss.eclipse.pack.PackPlugin.upackZKStandard(PackPlugin.java:79)\n\tat org.zkoss.eclipse.pack.PackPlugin.doUnpack(PackPlugin.java:41)\n\tat org.zkoss.eclipse.pack.PackPlugin.start(PackPlugin.java:37)\n\tat org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)\n\tat java.security.AccessController.doPrivileged(Native Method)\n\tat org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)\n\tat org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)\n\tat org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:352)\n\tat org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:280)\n\tat org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)\n\tat org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)\n\tat org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)\n\tat org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)\n\tat org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)\n\tat java.lang.ClassLoader.loadClass(ClassLoader.java:247)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:326)\n\tat org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:231)\n\tat org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1193)\n\tat org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:160)\n\tat org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:874)\n\tat org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)\n\tat org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)\n\tat org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:267)\n\tat org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)\n\tat org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:263)\n\tat org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117)\n\tat org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)\n\tat org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)\n\tat org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)\n\tat org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)\nCaused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException\n\t... 63 more\nRoot exception:\norg.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException\n\tat org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)\n\tat org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)\n\tat org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)\n\tat org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)\n\tat org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)\n\tat org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)\n\tat org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)\n\tat java.lang.ClassLoader.loadClass(ClassLoader.java:247)\n\tat org.eclipse.wst.validation.internal.EventManager.resourceChanged(EventManager.java:235)\n\tat org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:291)\n\tat org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)\n\tat org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)\n\tat org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)\n\tat org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:313)\n\tat org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1022)\n\tat org.eclipse.core.internal.resources.File.create(File.java:178)\n\tat org.eclipse.core.internal.resources.File.create(File.java:191)\n\tat org.zkoss.eclipse.zks.libmgmt.ZkPackages.copyArchiveEntry(ZkPackages.java:221)\n\tat org.zkoss.eclipse.zks.libmgmt.ZkPackages$1.visit(ZkPackages.java:58)\n\tat org.zkoss.eclipse.zks.archive.ZkBinaryDistributionArchive.browseJavaLibrarys(ZkBinaryDistributionArchive.java:55)\n\tat org.zkoss.eclipse.zks.libmgmt.ZkPackages.copyJavaLibrarys(ZkPackages.java:50)\n\tat org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.createZKParcel(AWebArchiveParcelManager.java:179)\n\tat org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.accept(AWebArchiveParcelManager.java:99)\n\tat org.zkoss.eclipse.zks.storage.mgmt.ZKReleaseParcelManager.accept(ZKReleaseParcelManager.java:172)\n\tat org.zkoss.eclipse.zks.storage.mgmt.AWebArchiveParcelManager.accept(AWebArchiveParcelManager.java:58)\n\tat org.zkoss.eclipse.pack.PackPlugin.upackZKStandard(PackPlugin.java:79)\n\tat org.zkoss.eclipse.pack.PackPlugin.doUnpack(PackPlugin.java:41)\n\tat org.zkoss.eclipse.pack.PackPlugin.start(PackPlugin.java:37)\n\tat org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)\n\tat java.security.AccessController.doPrivileged(Native Method)\n\tat org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)\n\tat org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)\n\tat org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:352)\n\tat org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:280)\n\tat org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)\n\tat org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)\n\tat org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)\n\tat org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)\n\tat org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)\n\tat java.lang.ClassLoader.loadClass(ClassLoader.java:247)\n\tat org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:326)\n\tat org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:231)\n\tat org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1193)\n\tat org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:160)\n\tat org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:874)\n\tat org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)\n\tat org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)\n\tat org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:267)\n\tat org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)\n\tat org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:263)\n\tat org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117)\n\tat org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)\n\tat org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)\n\tat org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)\n\tat org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)\n\n\n!SESSION 2011&#45;04&#45;28 17:19:19.619 &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;\neclipse.buildId=unknown\njava.version=1.6.0_25\njava.vendor=Sun Microsystems Inc.\nBootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=tr_TR\nFramework arguments:  &#45;product org.eclipse.epp.package.jee.product\nCommand&#45;line arguments:  &#45;os linux &#45;ws gtk &#45;arch x86 &#45;product org.eclipse.epp.package.jee.product\n\n!ENTRY org.eclipse.core.resources 2 10035 2011&#45;04&#45;28 17:20:48.085\n!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.\n\n!ENTRY org.eclipse.ui 2 0 2011&#45;04&#45;28 17:20:48.571\n!MESSAGE Warnings while parsing the key bindings from the \'org.eclipse.ui.commands\' extension point\n!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:20:48.571\n!MESSAGE Could not parse key sequence: plug&#45;in=\'org.zkoss.eclipse.services\', id=\'org.zkoss.eclipse.services.commands.docs\', keySequence=\'Ctrl+Shift+D\'\n!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:20:48.571\n!MESSAGE Could not parse key sequence: plug&#45;in=\'org.zkoss.eclipse.services\', id=\'org.zkoss.eclipse.services.commands.welcome\', keySequence=\'Ctrl+Shift+Z\'\n!SUBENTRY 1 org.eclipse.ui 2 0 2011&#45;04&#45;28 17:20:48.571\n!MESSAGE Could not parse key sequence: plug&#45;in=\'org.zkoss.eclipse.services\', id=\'org.zkoss.eclipse.services.commands.check_new_version\', keySequence=\'Ctrl+Shift+P\'\n</pre></div></p>'},[]],
+['zul.wgt.Separator','lE2Uj0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','lE2Uk0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','lE2Ul0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','lE2Up',{_loaded:true,_index:1},[
+['zul.wnd.Window','lE2Um0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','lE2Un0',{prolog:'\n\t'},[
+['zul.box.Vlayout','lE2Uo0',{},[
+['zul.box.Hlayout','lE2Up0',{},[
+['zul.wgt.Toolbarbutton','lE2Uq0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'g9164313'},[]]]],
+['zul.wgt.Label','lE2Us0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','lE2Uu0',{},[]],
+['zul.wgt.Div','lE2Ux0',{},[
+['zul.wgt.Label','lE2Uy0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','lE2Uz0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'2'},[]]]],
+['zul.wgt.Div','lE2U_1',{},[
+['zul.wgt.Label','lE2U01',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','lE2U11',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 02, 2012'},[]]]],
+['zul.wgt.Div','lE2U21',{},[]],
+['zul.wgt.Div','lE2U41',{},[]]],'vertical']]],
+['zul.wnd.Window','lE2U61',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','lE2U71',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','lE2U81',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','lE2U91',{id:'dateCreated',sclass:'comment-date',value:'Aug 09, 2012'},[]],
+['zul.wgt.Div','lE2Ua1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','lE2Ud1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">I encounter this problem, too. fucking zk, garbage</p>'},[]],
+['zul.wgt.Separator','lE2Ue1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','lE2Uf1',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','lE2Ug1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','lE2Ub',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','lE2Uc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="lE2Uf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','lE2Uf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="lE2Ug" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','lE2Ug',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=E5E81AE0131266C7000E14287D8DC5F1?path=http://www.zkoss.org/forum/listComment/16026-ZK-Studio-Crashes-eclipse-both-Helios-and-ganymede'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="lE2Uh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','lE2Uh',{id:'comment-reply'},[
+['zk.Native','lE2Uk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','lE2Ui',{},[]],
+['zul.wgt.Label','lE2Uj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=E5E81AE0131266C7000E14287D8DC5F1" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=E5E81AE0131266C7000E14287D8DC5F1"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

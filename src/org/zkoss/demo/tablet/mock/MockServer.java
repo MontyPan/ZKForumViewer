@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.zkoss.demo.tablet.AbstractServer;
+import org.zkoss.demo.tablet.DataServer;
 import org.zkoss.demo.tablet.Utility;
 import org.zkoss.demo.tablet.vo.ContentVO;
 import org.zkoss.demo.tablet.vo.ThreadVO;
@@ -130,5 +131,26 @@ public class MockServer extends AbstractServer{
 			start=end;
 		}
 		return result;
+	}
+	
+	//TODO save in correct path automatically
+	public static void main(String[] args){
+		DataServer ds = new DataServer();
+		File root = new File("listComment");
+		if(!root.exists()){
+			root.mkdir();
+		}
+		System.out.println(root.getAbsolutePath());
+		for(String key : AbstractServer.CAT_URL.keySet()){
+			int value = AbstractServer.CAT_URL.get(key);
+			Utility.stringToText(new File(value+".html"), Utility.urlToString(DataServer.SOURCE_URL+value));
+			for(ThreadVO tvo : ds.getThreadList(key)){
+				Utility.stringToText(
+					new File(root, tvo.getUrl().substring(19)+".html"), //XXX magic number
+					Utility.urlToString(DataServer.HOST+tvo.getUrl())
+				);
+				try {Thread.sleep(1000);} catch (InterruptedException e) {}
+			}
+		}
 	}
 }

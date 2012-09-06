@@ -1,0 +1,762 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=F1D7533DE3E61298B2E6394A241DAD74'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=F1D7533DE3E61298B2E6394A241DAD74?1346908273480' />
+<title>error "Failed to process setAttr o is undefined (TypeError)" | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="error "Failed to process setAttr o is undefined (TypeError)""/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="PratikThacker"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=F1D7533DE3E61298B2E6394A241DAD74"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=F1D7533DE3E61298B2E6394A241DAD74" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=F1D7533DE3E61298B2E6394A241DAD74" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=F1D7533DE3E61298B2E6394A241DAD74' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('pEFP_','z_92a','/forum;jsessionid=F1D7533DE3E61298B2E6394A241DAD74','/forum/zkau;jsessionid=F1D7533DE3E61298B2E6394A241DAD74','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="pEFP0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=F1D7533DE3E61298B2E6394A241DAD74'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','pEFP0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=F1D7533DE3E61298B2E6394A241DAD74?path=http://www.zkoss.org/forum/listComment/20428-error-Failed-to-process-setAttr-o-is-undefined-TypeError'},[]]);
+</script>
+<div id="pEFP1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','pEFP1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=F1D7533DE3E61298B2E6394A241DAD74'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=F1D7533DE3E61298B2E6394A241DAD74" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=F1D7533DE3E61298B2E6394A241DAD74">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=F1D7533DE3E61298B2E6394A241DAD74"><img src="/forum/images/home.png;jsessionid=F1D7533DE3E61298B2E6394A241DAD74" alt="Home"/></a></li>
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/14;jsessionid=F1D7533DE3E61298B2E6394A241DAD74">Help</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=F1D7533DE3E61298B2E6394A241DAD74">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=F1D7533DE3E61298B2E6394A241DAD74">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=F1D7533DE3E61298B2E6394A241DAD74">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=F1D7533DE3E61298B2E6394A241DAD74">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">error "Failed to process setAttr o is undefined (TypeError)"</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('pEFP4','z_92a','/forum;jsessionid=F1D7533DE3E61298B2E6394A241DAD74','/forum/zkau;jsessionid=F1D7533DE3E61298B2E6394A241DAD74','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="pEFP2" class="z-temp"><div class="author"><img class='author-image' title='PratikThacker' src='/forum/mediaService?userId=59033&extName=null' /><span class="author-name">PratikThacker</span></div><div><span class="comment-date">23 Aug 2012 15:15:08 GMT</span><div class="comment-cotent"><span class="comment-content">23 Aug 2012 15:15:08 GMT</span><p  style="margin:2px 2px;">Hello,<br/>I am getting an error "Failed to process setAttr o is undefined (TypeError)"...</p><p>Following code is working fine in one of my project  <br/>but when i try to implement same thing in another project it gives above mention error..<div style="class=code" class="code"><pre>
+Zul file
+&#45;&#45;&#45;
+&lt;tabpanel style="padding&#45;top: 2px; padding&#45;left: 1px; padding&#45;right: 1px;"&gt;
+                           
+                    &lt;timeline height="100%" width="100%"&gt;
+                          &lt;bandinfo width="70%" id="b1" intervalUnit="day" intervalPixels="50" &gt;
+                           &lt;/bandinfo&gt;
+                          &lt;bandinfo width="30%"  intervalUnit="month" intervalPixels="100" syncWith="b1"  &gt;
+                          &lt;/bandinfo&gt;       
+                    &lt;/timeline&gt;
+
+&lt;/tabpanel&gt;
+&#45;&#45;&#45;&#45;
+</pre></div><br/>composer file<div style="class=code" class="code"><pre>
+ OccurEvent event =new OccurEvent();
+	            event.setText("Having a trip to USA");
+	            event.setStart(new Date(Date.parse("Aug 01 2012 00:00:00 GMT&#45;0500")));
+	            event.setEnd(new Date(Date.parse("Sep 01 2012 00:00:00 GMT&#45;0500")));
+	            b1.addOccurEvent(event);//if this line is removed error does not occure
+</pre></div><br/>Initially error was coming due to missing timelinez.jar so I have copied timelinez.jar from previous project..<br/>Now can you tell what minimum other jar files I need to verify?.. Or some other solution if any...</p><p>Waiting for reply...<br/>Pratik</p></div></div><div class="author"><img class='author-image' title='PratikThacker' src='/forum/mediaService?userId=59033&extName=null' /><span class="author-name">PratikThacker</span></div><div><span class="comment-date">24 Aug 2012 06:51:43 GMT</span><div class="comment-cotent"><span class="comment-content">24 Aug 2012 06:51:43 GMT</span><p  style="margin:2px 2px;">In Internet Explorer 9 it gives following error for the same:</p><p>24 Aug, 2012 12:07:17 PM org.zkoss.zk.ui.impl.DesktopImpl service:721<br/>SEVERE: [Desktop z_4h00:/module/user-home.zul] client error: Failed to process <br/>setAttr<br/>Unable to get value of the property 'showLoadingMessage': object is null or undefined (TypeError)</p></div></div><div class="author"><img class='author-image' title='francishsiao' src='/forum/mediaService?userId=56815&extName=null' /><span class="author-name">francishsiao</span></div><div><span class="comment-date">30 Aug 2012 06:15:46 GMT</span><div class="comment-cotent"><span class="comment-content">30 Aug 2012 06:15:46 GMT</span><p  style="margin:2px 2px;">Hi,<br/>I can't reproduce the error neither in ie9 and firefox. They work fine.<br/>What your zk version is?</p><p>Best regards,</p></div></div><div class="author"><img class='author-image' title='PratikThacker' src='/forum/mediaService?userId=59033&extName=null' /><span class="author-name">PratikThacker</span></div><div><span class="comment-date">30 Aug 2012 14:44:15 GMT</span><div class="comment-cotent"><span class="comment-content">30 Aug 2012 14:44:15 GMT</span><p  style="margin:2px 2px;">Hi,<br/>I have observed its behavior.<br/>In my code there are 3 tabpanel.. And OccurEvent is added from composer file .<br/>It gives above error if timeline is kept in 2nd or 3rd panel except 1st..</p><p>Error does not produce if I am putting that timeline in 1st panel..</p><p>One more thing , I need your help <br/>if I put that timeline in 1st panel then it is working fine,<br/> but as soon as I click on 2nd panel and  again come to the 1st panel which the  event data  wipes..<br/>So, it shows empty timeline..</p></div></div><div class="author"><img class='author-image' title='francishsiao' src='/forum/mediaService?userId=56815&extName=null' /><span class="author-name">francishsiao</span></div><div><span class="comment-date">5 Sep 2012 04:33:27 GMT</span><div class="comment-cotent"><span class="comment-content">5 Sep 2012 04:33:27 GMT</span><p  style="margin:2px 2px;">Hi PratikThacker and vicent,</p><p>Would you like to provide reproduceable code as detail as possible for us to test to find out the root cause and solution?</p></div></div><div class="author"><img class='author-image' title='vicent' src='/forum/mediaService?userId=45399&extName=null' /><span class="author-name">vicent</span></div><div><span class="comment-date">5 Sep 2012 06:23:58 GMT</span><div class="comment-cotent"><span class="comment-content">5 Sep 2012 06:23:58 GMT</span><p  style="margin:2px 2px;">Hi,<br/>I'm facing the same problem on Explorer 9 and ZK 6.0.2.</p><p>An exception is thrown on every tree row added to a not visible tabpanel. The exception is like this (in Spanish)</p><p>16:32:37,022 SEVERE [Desktop z_7qb:/mypath/index.zul] client error: Fallo al procesar rm<br/>No se puede obtener valor de la propiedad 'style': el objeto es nulo o está sin definir (TypeError)</p><p>Translating to english will be something like</p><p>16:32:37,022 SEVERE [Desktop z_7qb:/mypath/index.zul] client error: Failed processing rm<br/>'style' property value can't be obtained : object is null or it's not defined (TypeError)</p><p>The exception is also shown on a nice pink browser popup ;-) .</p><p>I don't have experienced such error on other browsers... As PratikThacker says, the exception is not thrown when the row is added dinamically to the tree included in the visible tabpanel.</p></div></div><div class="author"><img class='author-image' title='vicent' src='/forum/mediaService?userId=45399&extName=null' /><span class="author-name">vicent</span></div><div><span class="comment-date">5 Sep 2012 06:50:18 GMT</span><div class="comment-cotent"><span class="comment-content">5 Sep 2012 06:50:18 GMT</span><p  style="margin:2px 2px;">Hi francishsiao,</p><p>It will take to me a couple of days to put a reproduceable code, but here's a summary:</p><p>- ZUL file<div style="class=code" class="code"><pre>
+	&lt;tabbox vflex="1" id="miTab"&gt;
+		&lt;tabs&gt;
+			&lt;tab label="1" id="1"&gt;&lt;/tab&gt;
+			&lt;tab label="1" id="2"&gt;&lt;/tab&gt;
+			... more tabs ...
+		&lt;/tabs&gt;
+		&lt;tabpanels vflex="1"&gt;
+			&lt;tabpanel id="tb1" &gt;
+				&lt;tree id="myTree1"  vflex="1" hflex="1" sclass="myclass" &gt;
+					&lt;treecols sizable="true"&gt;
+				        &lt;treecol label="1"  id="c1" sortAscending="$&#123;des_asc&#125;" sortDescending="$&#123;des_dsc&#125;" hflex="2"&gt;&lt;/treecol&gt;
+				        &lt;treecol label="2" 	id="c2" sortAscending="$&#123;cod_asc&#125;" sortDescending="$&#123;cod_dsc&#125;" visible="false" &gt;&lt;/treecol&gt;
+						... more cols ...
+					&lt;treechildren&gt;
+			                &lt;/treechildren&gt;
+				&lt;/tree&gt;
+			&lt;/tabpanel&gt;
+			&lt;tabpanel id="tb2"&gt;
+				&lt;tree id="myTree2" vflex="1" hflex="1"&gt;
+					&lt;treecols sizable="true"&gt;
+				        &lt;treecol label="A" 	id="cA" sortAscending="$&#123;des_asc&#125;" sortDescending="$&#123;des_dsc&#125;"  hflex="2"&gt;&lt;/treecol&gt;
+				        &lt;treecol label="B" 	id="cB" sortAscending="$&#123;cod_asc&#125;" sortDescending="$&#123;cod_dsc&#125;" visible="false"  hflex="1" &gt;&lt;/treecol&gt;
+						... more cols ...
+					&lt;treechildren&gt;
+  			                &lt;/treechildren&gt;
+				&lt;/tree&gt;
+			&lt;/tabpanel&gt;
+			... more tabpanels ...
+</pre></div></p><p>- Tree Renderer file<div style="class=code" class="code"><pre>
+	public void render(Treeitem treeItem, Object data, int arg2) throws Exception &#123;
+
+		DefaultTreeNode treeNode = (DefaultTreeNode) data;
+		treeItem.setValue(treeNode);
+		Treerow tr;
+		if (treeItem.getTreerow() == null) &#123;
+			tr = new Treerow();
+			tr.setParent(treeItem);
+		&#125; else &#123;
+			tr = treeItem.getTreerow();
+			tr.getChildren().clear();
+		&#125;
+
+		MyRowInfo row = (MyRowInfo)treeNode.getData();
+
+		Treecell desc=new Treecell();
+		desc.appendChild(new Label(mytext));
+		if (mycondition) &#123;
+			desc.setClass("myclass");
+		&#125;
+		tr.appendChild(desc);
+
+		Treecell cell2=new Treecell();
+		Div mydiv=new Div();
+		mydiv.appendChild(new Label(myothertext));
+		if (somecondition) &#123;
+			mydiv.setClass("oneclass");
+		&#125; else if (somecondition) &#123;
+			mydiv.setClass("otherclass");
+		&#125; else &#123;
+			mydiv.setClass("thirdclass");
+		&#125;
+		cell2.appendChild(mydiv);
+		tr.appendChild(cell2);
+			
+		... more cells ...
+
+		if (!treeItem.isListenerAvailable(Events.ON_OPEN, true)) &#123; 
+			treeItem.addEventListener(1000,Events.ON_DOUBLE_CLICK, new EventListener() &#123; 
+				public void onEvent(Event event) throws Exception &#123;
+					Treeitem ti=(Treeitem)event.getTarget();
+					ti.setSelected(true);
+					DefaultTreeNode dtn=(DefaultTreeNode)ti.getValue();
+					MyRowInfo row = (MyRowInfo)dtn.getData();
+					row.changeOpen();
+					ti.setOpen(row.isOpen());
+				&#125;
+			&#125;); 			
+			treeItem.addEventListener(1000,Events.ON_OPEN, new EventListener() &#123; 
+				public void onEvent(Event event) throws Exception &#123;
+					Treeitem ti=(Treeitem)event.getTarget();
+					ti.setSelected(true);
+					DefaultTreeNode dtn=(DefaultTreeNode)ti.getValue();
+					MyRowInfo row = (MyRowInfo)dtn.getData();
+					row.setOpen(((OpenEvent)event).isOpen());
+				&#125;
+			&#125;); 			
+			treeItem.addEventListener(1000,Events.ON_RIGHT_CLICK, new EventListener() &#123; 
+				public void onEvent(Event event) throws Exception &#123;
+					((Treeitem)event.getTarget()).setSelected(true);
+				&#125;
+			&#125;);
+		&#125;
+		
+		if (tr.getContext()==null) &#123;
+			Menupopup popup=new Menupopup();
+			popup.setPage(treeItem.getPage());
+			popup.setWidth("300px");
+
+			if (somecondition) &#123;
+				Menuitem mnc=new Menuitem("sometext");
+				mnc.setImage("/images/image.gif");
+				mnc.setStyle("background&#45;repeat:none");
+				ComponentsCtrl.applyForward(mnc, "somepoint.onClick");
+				popup.appendChild(mnc);
+				...more menuitems ...
+			&#125;
+			tr.setContext(popup);
+		&#125;
+
+		treeItem.setOpen(row.isOpen()); 
+		DefaultTreeModel model = (DefaultTreeModel) treeItem.getTree().getModel();
+		if (row.isOpen())
+			model.addOpenObject(data);		
+	&#125;
+</pre></div></p><p>So this code fails on Internet Explorer 9 during the first startup. It sends an exeption on every row added to a tree in a not visible tabpanel.</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','pEFP2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','pEFPd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','pEFP5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=F1D7533DE3E61298B2E6394A241DAD74?path=http://www.zkoss.org/forum/listComment/20428-error-Failed-to-process-setAttr-o-is-undefined-TypeError'},[]],
+['zk.Native','pEFPe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','pEFP6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:7,_offset:0},[
+['zul.grid.Columns','pEFP7',{$$onColSize:false},[
+['zul.grid.Column','pEFP8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','pEFP9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','pEFPa',{sclass:'comment-rows',_offset:0,visibleItemCount:7},[
+['zul.grid.Row','pEFPn',{_loaded:true,_index:0},[
+['zul.wnd.Window','pEFP00',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','pEFP10',{prolog:'\n\t'},[
+['zul.box.Vlayout','pEFP20',{},[
+['zul.box.Hlayout','pEFP30',{},[
+['zul.wgt.Toolbarbutton','pEFP40',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'PratikThacker'},[]]]],
+['zul.wgt.Label','pEFP60',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','pEFP80',{},[]],
+['zul.wgt.Div','pEFPb0',{},[
+['zul.wgt.Label','pEFPc0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','pEFPd0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'3'},[]]]],
+['zul.wgt.Div','pEFPe0',{},[
+['zul.wgt.Label','pEFPf0',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','pEFPg0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 19, 2012'},[]]]],
+['zul.wgt.Div','pEFPh0',{},[]],
+['zul.wgt.Div','pEFPj0',{},[]]],'vertical']]],
+['zul.wnd.Window','pEFPl0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','pEFPm0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','pEFPn0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','pEFPo0',{id:'dateCreated',sclass:'comment-date',value:'Aug 23, 2012'},[]],
+['zul.wgt.Div','pEFPp0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','pEFPs0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hello,<br/>I am getting an error "Failed to process setAttr o is undefined (TypeError)"...</p><p>Following code is working fine in one of my project  <br/>but when i try to implement same thing in another project it gives above mention error..<div style="class=code" class="code"><pre>\nZul file\n&#45;&#45;&#45;\n&lt;tabpanel style="padding&#45;top: 2px; padding&#45;left: 1px; padding&#45;right: 1px;"&gt;\n                           \n                    &lt;timeline height="100%" width="100%"&gt;\n                          &lt;bandinfo width="70%" id="b1" intervalUnit="day" intervalPixels="50" &gt;\n                           &lt;/bandinfo&gt;\n                          &lt;bandinfo width="30%"  intervalUnit="month" intervalPixels="100" syncWith="b1"  &gt;\n                          &lt;/bandinfo&gt;       \n                    &lt;/timeline&gt;\n\n&lt;/tabpanel&gt;\n&#45;&#45;&#45;&#45;\n</pre></div><br/>composer file<div style="class=code" class="code"><pre>\n OccurEvent event =new OccurEvent();\n\t            event.setText("Having a trip to USA");\n\t            event.setStart(new Date(Date.parse("Aug 01 2012 00:00:00 GMT&#45;0500")));\n\t            event.setEnd(new Date(Date.parse("Sep 01 2012 00:00:00 GMT&#45;0500")));\n\t            b1.addOccurEvent(event);//if this line is removed error does not occure\n</pre></div><br/>Initially error was coming due to missing timelinez.jar so I have copied timelinez.jar from previous project..<br/>Now can you tell what minimum other jar files I need to verify?.. Or some other solution if any...</p><p>Waiting for reply...<br/>Pratik</p>'},[]],
+['zul.wgt.Separator','pEFPt0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','pEFPu0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','pEFPv0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','pEFPp',{_loaded:true,_index:1},[
+['zul.wnd.Window','pEFPw0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','pEFPx0',{prolog:'\n\t'},[
+['zul.box.Vlayout','pEFPy0',{},[
+['zul.box.Hlayout','pEFPz0',{},[
+['zul.wgt.Toolbarbutton','pEFP_1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'PratikThacker'},[]]]],
+['zul.wgt.Label','pEFP11',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','pEFP31',{},[]],
+['zul.wgt.Div','pEFP61',{},[
+['zul.wgt.Label','pEFP71',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','pEFP81',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'3'},[]]]],
+['zul.wgt.Div','pEFP91',{},[
+['zul.wgt.Label','pEFPa1',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','pEFPb1',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 19, 2012'},[]]]],
+['zul.wgt.Div','pEFPc1',{},[]],
+['zul.wgt.Div','pEFPe1',{},[]]],'vertical']]],
+['zul.wnd.Window','pEFPg1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','pEFPh1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','pEFPi1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','pEFPj1',{id:'dateCreated',sclass:'comment-date',value:'Aug 23, 2012'},[]],
+['zul.wgt.Div','pEFPk1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','pEFPn1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">In Internet Explorer 9 it gives following error for the same:</p><p>24 Aug, 2012 12:07:17 PM org.zkoss.zk.ui.impl.DesktopImpl service:721<br/>SEVERE: [Desktop z_4h00:/module/user-home.zul] client error: Failed to process <br/>setAttr<br/>Unable to get value of the property \'showLoadingMessage\': object is null or undefined (TypeError)</p>'},[]],
+['zul.wgt.Separator','pEFPo1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','pEFPp1',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','pEFPq1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','pEFPr',{_loaded:true,_index:2},[
+['zul.wnd.Window','pEFPr1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','pEFPs1',{prolog:'\n\t'},[
+['zul.box.Vlayout','pEFPt1',{},[
+['zul.box.Hlayout','pEFPu1',{},[
+['zul.wgt.Toolbarbutton','pEFPv1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'francishsiao'},[]]]],
+['zul.wgt.Label','pEFPx1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','pEFPz1',{},[]],
+['zul.wgt.Div','pEFP12',{},[
+['zul.wgt.Label','pEFP22',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','pEFP32',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'7'},[]]]],
+['zul.wgt.Div','pEFP42',{},[
+['zul.wgt.Label','pEFP52',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','pEFP62',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 25, 2012'},[]]]],
+['zul.wgt.Div','pEFP72',{},[]],
+['zul.wgt.Div','pEFP92',{},[]]],'vertical']]],
+['zul.wnd.Window','pEFPb2',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','pEFPc2',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','pEFPd2',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','pEFPe2',{id:'dateCreated',sclass:'comment-date',value:'6 days ago'},[]],
+['zul.wgt.Div','pEFPf2',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','pEFPi2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi,<br/>I can\'t reproduce the error neither in ie9 and firefox. They work fine.<br/>What your zk version is?</p><p>Best regards,</p>'},[]],
+['zul.wgt.Separator','pEFPj2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','pEFPk2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','pEFPl2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','pEFPt',{_loaded:true,_index:3},[
+['zul.wnd.Window','pEFPm2',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','pEFPn2',{prolog:'\n\t'},[
+['zul.box.Vlayout','pEFPo2',{},[
+['zul.box.Hlayout','pEFPp2',{},[
+['zul.wgt.Toolbarbutton','pEFPq2',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'PratikThacker'},[]]]],
+['zul.wgt.Label','pEFPs2',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','pEFPu2',{},[]],
+['zul.wgt.Div','pEFPx2',{},[
+['zul.wgt.Label','pEFPy2',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','pEFPz2',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'3'},[]]]],
+['zul.wgt.Div','pEFP_3',{},[
+['zul.wgt.Label','pEFP03',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','pEFP13',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 19, 2012'},[]]]],
+['zul.wgt.Div','pEFP23',{},[]],
+['zul.wgt.Div','pEFP43',{},[]]],'vertical']]],
+['zul.wnd.Window','pEFP63',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','pEFP73',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','pEFP83',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','pEFP93',{id:'dateCreated',sclass:'comment-date',value:'6 days ago'},[]],
+['zul.wgt.Div','pEFPa3',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','pEFPd3',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi,<br/>I have observed its behavior.<br/>In my code there are 3 tabpanel.. And OccurEvent is added from composer file .<br/>It gives above error if timeline is kept in 2nd or 3rd panel except 1st..</p><p>Error does not produce if I am putting that timeline in 1st panel..</p><p>One more thing , I need your help <br/>if I put that timeline in 1st panel then it is working fine,<br/> but as soon as I click on 2nd panel and  again come to the 1st panel which the  event data  wipes..<br/>So, it shows empty timeline..</p>'},[]],
+['zul.wgt.Separator','pEFPe3',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','pEFPf3',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','pEFPg3',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','pEFPv',{_loaded:true,_index:4},[
+['zul.wnd.Window','pEFPh3',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','pEFPi3',{prolog:'\n\t'},[
+['zul.box.Vlayout','pEFPj3',{},[
+['zul.box.Hlayout','pEFPk3',{},[
+['zul.wgt.Toolbarbutton','pEFPl3',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'francishsiao'},[]]]],
+['zul.wgt.Label','pEFPn3',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','pEFPp3',{},[]],
+['zul.wgt.Div','pEFPs3',{},[
+['zul.wgt.Label','pEFPt3',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','pEFPu3',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'7'},[]]]],
+['zul.wgt.Div','pEFPv3',{},[
+['zul.wgt.Label','pEFPw3',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','pEFPx3',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 25, 2012'},[]]]],
+['zul.wgt.Div','pEFPy3',{},[]],
+['zul.wgt.Div','pEFP_4',{},[]]],'vertical']]],
+['zul.wnd.Window','pEFP14',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','pEFP24',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','pEFP34',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','pEFP44',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','pEFP54',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','pEFP84',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi PratikThacker and vicent,</p><p>Would you like to provide reproduceable code as detail as possible for us to test to find out the root cause and solution?</p>'},[]],
+['zul.wgt.Separator','pEFP94',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','pEFPa4',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','pEFPb4',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','pEFPx',{_loaded:true,_index:5},[
+['zul.wnd.Window','pEFPc4',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','pEFPd4',{prolog:'\n\t'},[
+['zul.box.Vlayout','pEFPe4',{},[
+['zul.box.Hlayout','pEFPf4',{},[
+['zul.wgt.Toolbarbutton','pEFPg4',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'vicent'},[]]]],
+['zul.wgt.Label','pEFPi4',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','pEFPk4',{},[]],
+['zul.wgt.Div','pEFPn4',{},[
+['zul.wgt.Label','pEFPo4',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','pEFPp4',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'16'},[]]]],
+['zul.wgt.Div','pEFPq4',{},[
+['zul.wgt.Label','pEFPr4',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','pEFPs4',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 04, 2011'},[]]]],
+['zul.wgt.Div','pEFPt4',{},[]],
+['zul.wgt.Div','pEFPv4',{},[]]],'vertical']]],
+['zul.wnd.Window','pEFPx4',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','pEFPy4',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','pEFPz4',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','pEFP_5',{id:'dateCreated',sclass:'comment-date',value:'22 hrs ago'},[]],
+['zul.wgt.Div','pEFP05',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','pEFP35',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi,<br/>I\'m facing the same problem on Explorer 9 and ZK 6.0.2.</p><p>An exception is thrown on every tree row added to a not visible tabpanel. The exception is like this (in Spanish)</p><p>16:32:37,022 SEVERE [Desktop z_7qb:/mypath/index.zul] client error: Fallo al procesar rm<br/>No se puede obtener valor de la propiedad \'style\': el objeto es nulo o está sin definir (TypeError)</p><p>Translating to english will be something like</p><p>16:32:37,022 SEVERE [Desktop z_7qb:/mypath/index.zul] client error: Failed processing rm<br/>\'style\' property value can\'t be obtained : object is null or it\'s not defined (TypeError)</p><p>The exception is also shown on a nice pink browser popup ;-) .</p><p>I don\'t have experienced such error on other browsers... As PratikThacker says, the exception is not thrown when the row is added dinamically to the tree included in the visible tabpanel.</p>'},[]],
+['zul.wgt.Separator','pEFP45',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','pEFP55',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','pEFP65',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','pEFPz',{_loaded:true,_index:6},[
+['zul.wnd.Window','pEFP75',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','pEFP85',{prolog:'\n\t'},[
+['zul.box.Vlayout','pEFP95',{},[
+['zul.box.Hlayout','pEFPa5',{},[
+['zul.wgt.Toolbarbutton','pEFPb5',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'vicent'},[]]]],
+['zul.wgt.Label','pEFPd5',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','pEFPf5',{},[]],
+['zul.wgt.Div','pEFPi5',{},[
+['zul.wgt.Label','pEFPj5',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','pEFPk5',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'16'},[]]]],
+['zul.wgt.Div','pEFPl5',{},[
+['zul.wgt.Label','pEFPm5',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','pEFPn5',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 04, 2011'},[]]]],
+['zul.wgt.Div','pEFPo5',{},[]],
+['zul.wgt.Div','pEFPq5',{},[]]],'vertical']]],
+['zul.wnd.Window','pEFPs5',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','pEFPt5',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','pEFPu5',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','pEFPv5',{id:'dateCreated',sclass:'comment-date',value:'22 hrs ago'},[]],
+['zul.wgt.Div','pEFPw5',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','pEFPz5',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi francishsiao,</p><p>It will take to me a couple of days to put a reproduceable code, but here\'s a summary:</p><p>- ZUL file<div style="class=code" class="code"><pre>\n\t&lt;tabbox vflex="1" id="miTab"&gt;\n\t\t&lt;tabs&gt;\n\t\t\t&lt;tab label="1" id="1"&gt;&lt;/tab&gt;\n\t\t\t&lt;tab label="1" id="2"&gt;&lt;/tab&gt;\n\t\t\t... more tabs ...\n\t\t&lt;/tabs&gt;\n\t\t&lt;tabpanels vflex="1"&gt;\n\t\t\t&lt;tabpanel id="tb1" &gt;\n\t\t\t\t&lt;tree id="myTree1"  vflex="1" hflex="1" sclass="myclass" &gt;\n\t\t\t\t\t&lt;treecols sizable="true"&gt;\n\t\t\t\t        &lt;treecol label="1"  id="c1" sortAscending="$&#123;des_asc&#125;" sortDescending="$&#123;des_dsc&#125;" hflex="2"&gt;&lt;/treecol&gt;\n\t\t\t\t        &lt;treecol label="2" \tid="c2" sortAscending="$&#123;cod_asc&#125;" sortDescending="$&#123;cod_dsc&#125;" visible="false" &gt;&lt;/treecol&gt;\n\t\t\t\t\t\t... more cols ...\n\t\t\t\t\t&lt;treechildren&gt;\n\t\t\t                &lt;/treechildren&gt;\n\t\t\t\t&lt;/tree&gt;\n\t\t\t&lt;/tabpanel&gt;\n\t\t\t&lt;tabpanel id="tb2"&gt;\n\t\t\t\t&lt;tree id="myTree2" vflex="1" hflex="1"&gt;\n\t\t\t\t\t&lt;treecols sizable="true"&gt;\n\t\t\t\t        &lt;treecol label="A" \tid="cA" sortAscending="$&#123;des_asc&#125;" sortDescending="$&#123;des_dsc&#125;"  hflex="2"&gt;&lt;/treecol&gt;\n\t\t\t\t        &lt;treecol label="B" \tid="cB" sortAscending="$&#123;cod_asc&#125;" sortDescending="$&#123;cod_dsc&#125;" visible="false"  hflex="1" &gt;&lt;/treecol&gt;\n\t\t\t\t\t\t... more cols ...\n\t\t\t\t\t&lt;treechildren&gt;\n  \t\t\t                &lt;/treechildren&gt;\n\t\t\t\t&lt;/tree&gt;\n\t\t\t&lt;/tabpanel&gt;\n\t\t\t... more tabpanels ...\n</pre></div></p><p>- Tree Renderer file<div style="class=code" class="code"><pre>\n\tpublic void render(Treeitem treeItem, Object data, int arg2) throws Exception &#123;\n\n\t\tDefaultTreeNode treeNode = (DefaultTreeNode) data;\n\t\ttreeItem.setValue(treeNode);\n\t\tTreerow tr;\n\t\tif (treeItem.getTreerow() == null) &#123;\n\t\t\ttr = new Treerow();\n\t\t\ttr.setParent(treeItem);\n\t\t&#125; else &#123;\n\t\t\ttr = treeItem.getTreerow();\n\t\t\ttr.getChildren().clear();\n\t\t&#125;\n\n\t\tMyRowInfo row = (MyRowInfo)treeNode.getData();\n\n\t\tTreecell desc=new Treecell();\n\t\tdesc.appendChild(new Label(mytext));\n\t\tif (mycondition) &#123;\n\t\t\tdesc.setClass("myclass");\n\t\t&#125;\n\t\ttr.appendChild(desc);\n\n\t\tTreecell cell2=new Treecell();\n\t\tDiv mydiv=new Div();\n\t\tmydiv.appendChild(new Label(myothertext));\n\t\tif (somecondition) &#123;\n\t\t\tmydiv.setClass("oneclass");\n\t\t&#125; else if (somecondition) &#123;\n\t\t\tmydiv.setClass("otherclass");\n\t\t&#125; else &#123;\n\t\t\tmydiv.setClass("thirdclass");\n\t\t&#125;\n\t\tcell2.appendChild(mydiv);\n\t\ttr.appendChild(cell2);\n\t\t\t\n\t\t... more cells ...\n\n\t\tif (!treeItem.isListenerAvailable(Events.ON_OPEN, true)) &#123; \n\t\t\ttreeItem.addEventListener(1000,Events.ON_DOUBLE_CLICK, new EventListener() &#123; \n\t\t\t\tpublic void onEvent(Event event) throws Exception &#123;\n\t\t\t\t\tTreeitem ti=(Treeitem)event.getTarget();\n\t\t\t\t\tti.setSelected(true);\n\t\t\t\t\tDefaultTreeNode dtn=(DefaultTreeNode)ti.getValue();\n\t\t\t\t\tMyRowInfo row = (MyRowInfo)dtn.getData();\n\t\t\t\t\trow.changeOpen();\n\t\t\t\t\tti.setOpen(row.isOpen());\n\t\t\t\t&#125;\n\t\t\t&#125;); \t\t\t\n\t\t\ttreeItem.addEventListener(1000,Events.ON_OPEN, new EventListener() &#123; \n\t\t\t\tpublic void onEvent(Event event) throws Exception &#123;\n\t\t\t\t\tTreeitem ti=(Treeitem)event.getTarget();\n\t\t\t\t\tti.setSelected(true);\n\t\t\t\t\tDefaultTreeNode dtn=(DefaultTreeNode)ti.getValue();\n\t\t\t\t\tMyRowInfo row = (MyRowInfo)dtn.getData();\n\t\t\t\t\trow.setOpen(((OpenEvent)event).isOpen());\n\t\t\t\t&#125;\n\t\t\t&#125;); \t\t\t\n\t\t\ttreeItem.addEventListener(1000,Events.ON_RIGHT_CLICK, new EventListener() &#123; \n\t\t\t\tpublic void onEvent(Event event) throws Exception &#123;\n\t\t\t\t\t((Treeitem)event.getTarget()).setSelected(true);\n\t\t\t\t&#125;\n\t\t\t&#125;);\n\t\t&#125;\n\t\t\n\t\tif (tr.getContext()==null) &#123;\n\t\t\tMenupopup popup=new Menupopup();\n\t\t\tpopup.setPage(treeItem.getPage());\n\t\t\tpopup.setWidth("300px");\n\n\t\t\tif (somecondition) &#123;\n\t\t\t\tMenuitem mnc=new Menuitem("sometext");\n\t\t\t\tmnc.setImage("/images/image.gif");\n\t\t\t\tmnc.setStyle("background&#45;repeat:none");\n\t\t\t\tComponentsCtrl.applyForward(mnc, "somepoint.onClick");\n\t\t\t\tpopup.appendChild(mnc);\n\t\t\t\t...more menuitems ...\n\t\t\t&#125;\n\t\t\ttr.setContext(popup);\n\t\t&#125;\n\n\t\ttreeItem.setOpen(row.isOpen()); \n\t\tDefaultTreeModel model = (DefaultTreeModel) treeItem.getTree().getModel();\n\t\tif (row.isOpen())\n\t\t\tmodel.addOpenObject(data);\t\t\n\t&#125;\n</pre></div></p><p>So this code fails on Internet Explorer 9 during the first startup. It sends an exeption on every row added to a tree in a not visible tabpanel.</p>'},[]],
+['zul.wgt.Separator','pEFP_6',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','pEFP06',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','pEFP16',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','pEFPb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','pEFPc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="pEFPf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','pEFPf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="pEFPg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','pEFPg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=F1D7533DE3E61298B2E6394A241DAD74?path=http://www.zkoss.org/forum/listComment/20428-error-Failed-to-process-setAttr-o-is-undefined-TypeError'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="pEFPh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','pEFPh',{id:'comment-reply'},[
+['zk.Native','pEFPk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','pEFPi',{},[]],
+['zul.wgt.Label','pEFPj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=F1D7533DE3E61298B2E6394A241DAD74" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=F1D7533DE3E61298B2E6394A241DAD74"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

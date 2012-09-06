@@ -1,6 +1,5 @@
 package org.zkoss.demo.tablet.vm;
 
-import java.util.Date;
 import java.util.List;
 
 import org.zkoss.bind.annotation.AfterCompose;
@@ -10,12 +9,14 @@ import org.zkoss.bind.annotation.ContextParam;
 import org.zkoss.bind.annotation.ContextType;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
-import org.zkoss.demo.tablet.DataServer;
 import org.zkoss.demo.tablet.AbstractServer;
+import org.zkoss.demo.tablet.DataServer;
+import org.zkoss.demo.tablet.DeviceMode;
 import org.zkoss.demo.tablet.mock.MockServer;
 import org.zkoss.demo.tablet.vo.ContentVO;
 import org.zkoss.demo.tablet.vo.ThreadVO;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.event.ClientInfoEvent;
 import org.zkoss.zk.ui.select.Selectors;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zul.Center;
@@ -29,13 +30,13 @@ public class ThreadViewModel {
 	private AbstractServer server;
 	private ThreadVO nowThread;
 	private int nowThreadIndex;
-	private int nowCategoryIndex = 3;
-	private String nowCategory = CATEGORY_LIST[nowCategoryIndex];
+	private int nowCategoryIndex = 1;
 	private List<ThreadVO> nowThreadList;
 	private List<ContentVO> nowContentList;
 	private ContentVO lastContent;
 	private boolean westFlag = true;
 	private boolean centerFlag = true;
+	private DeviceMode deviceMode = new DeviceMode();
 	
 	@Wire("#contentPanel") private Center contentPanel;
 	@Wire("#popup") private Popup popup;
@@ -63,23 +64,46 @@ public class ThreadViewModel {
 	public void afterCompose(@ContextParam(ContextType.VIEW) Component view){
 		 Selectors.wireComponents(view, this, false);
 	 }
-	
-	@NotifyChange({"contentList", "lastContent", "selectedThread", "threadStart", "threadEnd", "contentIndex"})
-	public void setSelectedThreadIndex(int index){
-		nowThreadIndex = index;
-		fetchContent();
+
+	@Command
+	@NotifyChange("deviceMode")
+	public void clientInfoChanged(@BindingParam("event") ClientInfoEvent event){
+		deviceMode.setClientInfo(event);
 	}
 	
+	public DeviceMode getDeviceMode() {
+		return deviceMode;
+	}
+	
+	@NotifyChange({"contentList", "lastContent", "selectedThread", "threadStart", "threadEnd", "threadMode"})
+	public void setSelectedThreadIndex(int index){ 
+		nowThreadIndex = index;
+		threadFlag = true;
+		fetchContent();
+	}
+
+	@Command
+	@NotifyChange("threadMode")
+	public void backToCategory(){
+		threadFlag = false;
+	}
+	
+	private boolean threadFlag = false;
+	//For Phone device
+	public boolean isThreadMode(){
+		return threadFlag; 
+	}
+
 	@NotifyChange("*")
 	public void setSelectedCategoryIndex(int index){
 		nowCategoryIndex = index;
 		westFlag = !westFlag;
 		fetchThread();	
 	}
-		
+			
 	@Command
 	@NotifyChange(
-		{"contentList", "lastContent", "selectedThread", "selectedThreadIndex", "contentIndex", 
+		{"contentList", "lastContent", "selectedThread", "selectedThreadIndex", 
 		 "threadEnd", "threadStart"}
 	)
 	public void prevThread(){
@@ -91,7 +115,7 @@ public class ThreadViewModel {
 	
 	@Command
 	@NotifyChange(
-		{"contentList", "lastContent", "selectedThread", "selectedThreadIndex", "contentIndex", 
+		{"contentList", "lastContent", "selectedThread", "selectedThreadIndex", 
 		 "threadEnd", "threadStart"}
 	)
 	public void nextThread(){
@@ -101,6 +125,7 @@ public class ThreadViewModel {
 		}
 	}
 	
+	//TODO rename and improve the function
 	@Command
 	@NotifyChange("contentList")
 	public void collapseAll(){
@@ -108,10 +133,6 @@ public class ThreadViewModel {
 			cvo.setOpen(!cvo.isOpen());
 	}
 	
-	public int getContentIndex(){
-		return 0;
-	}
-
 	//FIXME button must click twice
 	private boolean popupFlag = false;
 	@Command
@@ -135,7 +156,7 @@ public class ThreadViewModel {
 	}
 
 	@Command
-	@NotifyChange("centerUrl")
+	@NotifyChange({"centerUrl", "centerMode"})
 	public void showSetting(){
 		centerFlag = !centerFlag;
 		contentPanel.invalidate(); //Refactory should trigger after setCenterUrl()
@@ -145,6 +166,10 @@ public class ThreadViewModel {
 		return centerFlag ? "content.zul" : "setting.zul";
 	}
 	
+	public boolean isCenterMode() {
+		return centerFlag;
+	}
+		
 	public List<ThreadVO> getThreadList(){	
 		return nowThreadList;
 	}
@@ -170,13 +195,9 @@ public class ThreadViewModel {
 	}
 	
 	public String getSelectedCategory(){
-		return nowCategory;
+		return CATEGORY_LIST[nowCategoryIndex];
 	}
 	
-	public Date getNow(){
-		return new Date();
-	}
-
 	public int getSelectedThreadIndex() {
 		return nowThreadIndex;
 	}

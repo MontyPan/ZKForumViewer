@@ -1,5 +1,6 @@
 package org.zkoss.demo.tablet;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,8 +17,8 @@ public class DataServer extends AbstractServer {
 		CAT_THREAD.put(INSTALL, new ArrayList<ThreadVO>());
 	}
 	
-	private static final String HOST = "http://www.zkoss.org";
-	private static final String SOURCE_URL = HOST+"/forum/listDiscussion/";
+	public static final String HOST = "http://www.zkoss.org";
+	public static final String SOURCE_URL = HOST+"/forum/listDiscussion/";
 	private static final String THREAD_START = "<div class=\"discussion-subject\">";
 	private static final String TITLE_HEADER = "<a class=\"discussion-title-unread\" href=\"";
 	private static final String TITLE_TAIL = ";jsessionid";
@@ -32,8 +33,7 @@ public class DataServer extends AbstractServer {
 	private static final String POPULAR = "<img alt=\"Popular\" title=\"Popular\"";
 	private static final String HOT = "<img alt=\"Hot\" title=\"Hot\"";
 
-	public DataServer() {
-	}
+	public DataServer() {}
 	
 	private void fetchThreadUrl(String type){
 		String content = Utility.urlToString(SOURCE_URL+CAT_URL.get(type));

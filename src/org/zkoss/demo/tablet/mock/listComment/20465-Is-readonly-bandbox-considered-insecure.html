@@ -1,0 +1,556 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=331B970C5FF17985AA8F81F42DD2E406'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=331B970C5FF17985AA8F81F42DD2E406?1346908269610' />
+<title>Is readonly bandbox considered insecure? | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="Is readonly bandbox considered insecure?"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="czynga"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=331B970C5FF17985AA8F81F42DD2E406"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=331B970C5FF17985AA8F81F42DD2E406" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=331B970C5FF17985AA8F81F42DD2E406" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=331B970C5FF17985AA8F81F42DD2E406' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('dY6Q_','z_m87','/forum;jsessionid=331B970C5FF17985AA8F81F42DD2E406','/forum/zkau;jsessionid=331B970C5FF17985AA8F81F42DD2E406','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="dY6Q0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=331B970C5FF17985AA8F81F42DD2E406'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','dY6Q0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=331B970C5FF17985AA8F81F42DD2E406?path=http://www.zkoss.org/forum/listComment/20465-Is-readonly-bandbox-considered-insecure'},[]]);
+</script>
+<div id="dY6Q1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','dY6Q1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=331B970C5FF17985AA8F81F42DD2E406'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=331B970C5FF17985AA8F81F42DD2E406" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=331B970C5FF17985AA8F81F42DD2E406">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=331B970C5FF17985AA8F81F42DD2E406"><img src="/forum/images/home.png;jsessionid=331B970C5FF17985AA8F81F42DD2E406" alt="Home"/></a></li>
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/14;jsessionid=331B970C5FF17985AA8F81F42DD2E406">Help</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=331B970C5FF17985AA8F81F42DD2E406">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=331B970C5FF17985AA8F81F42DD2E406">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=331B970C5FF17985AA8F81F42DD2E406">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=331B970C5FF17985AA8F81F42DD2E406">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">Is readonly bandbox considered insecure?</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('dY6Q4','z_m87','/forum;jsessionid=331B970C5FF17985AA8F81F42DD2E406','/forum/zkau;jsessionid=331B970C5FF17985AA8F81F42DD2E406','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="dY6Q2" class="z-temp"><div class="author"><img class='author-image' title='czynga' src='/forum/mediaService?userId=56529&extName=jpeg' /><span class="author-name">czynga</span></div><div><span class="comment-date">29 Aug 2012 02:29:27 GMT</span><div class="comment-cotent"><span class="comment-content">29 Aug 2012 02:29:27 GMT</span><p  style="margin:2px 2px;">There is a chapter in documentation which explains that "inaccessible widgets (such as disabled or invisible) can be accessed easily with a debugging tool running at the browser". My question is: does the same apply to readonly bandbox? In other words is it possible for hostile user to change it's behaviour so that it accepts his input?</p></div></div><div class="author"><img class='author-image' title='iantsai' src='/forum/mediaService?userId=146&extName=jpeg' /><span class="author-name">iantsai</span></div><div><span class="comment-date">3 Sep 2012 03:53:38 GMT</span><div class="comment-cotent"><span class="comment-content">3 Sep 2012 03:53:38 GMT</span><p  style="margin:2px 2px;">He might change the value at client side, but if there's no server side registered listener, there's nothing could happen.</p><p>And if you need to have a bandbox that is read-only by now but might be editable in the future, for better Look&feel separation, you can use Label while read-only and swap it with bandbox while edit mode.</p></div></div><div class="author"><img class='author-image' title='czynga' src='/forum/mediaService?userId=56529&extName=jpeg' /><span class="author-name">czynga</span></div><div><span class="comment-date">4 Sep 2012 04:25:05 GMT</span><div class="comment-cotent"><span class="comment-content">4 Sep 2012 04:25:05 GMT</span><p  style="margin:2px 2px;">Nice idea with using a label, I like it. OK so it means that security wise the same rules apply to readonly components. That's exactly what I wanted to know, thank you. Is it not a bit of a design flaw? As far as I understand the same limitations or considerations doesn't apply in Vaadin. But anyway ZK is so much better :)</p></div></div><div class="author"><img class='author-image' title='iantsai' src='/forum/mediaService?userId=146&extName=jpeg' /><span class="author-name">iantsai</span></div><div><span class="comment-date">5 Sep 2012 08:06:51 GMT</span><div class="comment-cotent"><span class="comment-content">5 Sep 2012 08:06:51 GMT</span><p  style="margin:2px 2px;">Actually, we do have feature in ZK EE to prevent such hostile access.<br/><a target="external" href="http://books.zkoss.org/wiki/ZK_Developer's_Reference/Security_Tips/Block_Request_for_Inaccessible_Widgets">Block Request for Inaccessible Widgets</a><br/>and this supports both readonly and disable attributes to official ZK components.</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','dY6Q2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','dY6Qd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','dY6Q5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=331B970C5FF17985AA8F81F42DD2E406?path=http://www.zkoss.org/forum/listComment/20465-Is-readonly-bandbox-considered-insecure'},[]],
+['zk.Native','dY6Qe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','dY6Q6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:4,_offset:0},[
+['zul.grid.Columns','dY6Q7',{$$onColSize:false},[
+['zul.grid.Column','dY6Q8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','dY6Q9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','dY6Qa',{sclass:'comment-rows',_offset:0,visibleItemCount:4},[
+['zul.grid.Row','dY6Qn',{_loaded:true,_index:0},[
+['zul.wnd.Window','dY6Qv',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','dY6Qw',{prolog:'\n\t'},[
+['zul.box.Vlayout','dY6Qx',{},[
+['zul.box.Hlayout','dY6Qy',{},[
+['zul.wgt.Toolbarbutton','dY6Qz',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'czynga'},[]]]],
+['zul.wgt.Label','dY6Q00',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','dY6Q10',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=331B970C5FF17985AA8F81F42DD2E406?userId=56529&extName=jpeg'},[]],
+['zul.wgt.Div','dY6Q20',{},[]],
+['zul.wgt.Div','dY6Q50',{},[
+['zul.wgt.Label','dY6Q60',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','dY6Q70',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'24'},[]]]],
+['zul.wgt.Div','dY6Q80',{},[
+['zul.wgt.Label','dY6Q90',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','dY6Qa0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 16, 2012'},[]]]],
+['zul.wgt.Div','dY6Qb0',{},[]],
+['zul.wgt.Div','dY6Qd0',{},[]]],'vertical']]],
+['zul.wnd.Window','dY6Qf0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','dY6Qg0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','dY6Qh0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','dY6Qi0',{id:'dateCreated',sclass:'comment-date',value:'8 days ago'},[]],
+['zul.wgt.Div','dY6Qj0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','dY6Qm0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">There is a chapter in documentation which explains that "inaccessible widgets (such as disabled or invisible) can be accessed easily with a debugging tool running at the browser". My question is: does the same apply to readonly bandbox? In other words is it possible for hostile user to change it\'s behaviour so that it accepts his input?</p>'},[]],
+['zul.wgt.Separator','dY6Qn0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','dY6Qo0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','dY6Qp0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','dY6Qp',{_loaded:true,_index:1},[
+['zul.wnd.Window','dY6Qq0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','dY6Qr0',{prolog:'\n\t'},[
+['zul.box.Vlayout','dY6Qs0',{},[
+['zul.box.Hlayout','dY6Qt0',{},[
+['zul.wgt.Toolbarbutton','dY6Qu0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'iantsai'},[]]]],
+['zul.wgt.Label','dY6Qw0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','dY6Qx0',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=331B970C5FF17985AA8F81F42DD2E406?userId=146&extName=jpeg'},[]],
+['zul.wgt.Div','dY6Qy0',{},[]],
+['zul.wgt.Div','dY6Q01',{},[
+['zul.wgt.Label','dY6Q11',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','dY6Q21',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'897'},[]]]],
+['zul.wgt.Div','dY6Q31',{},[
+['zul.wgt.Label','dY6Q41',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','dY6Q51',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 07, 2007'},[]]]],
+['zul.wgt.Div','dY6Q61',{},[]],
+['zul.wgt.Div','dY6Q81',{},[]]],'vertical']]],
+['zul.wnd.Window','dY6Qa1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','dY6Qb1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','dY6Qc1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','dY6Qd1',{id:'dateCreated',sclass:'comment-date',value:'3 days ago'},[]],
+['zul.wgt.Div','dY6Qe1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','dY6Qh1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">He might change the value at client side, but if there\'s no server side registered listener, there\'s nothing could happen.</p><p>And if you need to have a bandbox that is read-only by now but might be editable in the future, for better Look&feel separation, you can use Label while read-only and swap it with bandbox while edit mode.</p>'},[]],
+['zul.wgt.Separator','dY6Qi1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','dY6Qj1',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','dY6Qk1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','dY6Qr',{_loaded:true,_index:2},[
+['zul.wnd.Window','dY6Ql1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','dY6Qm1',{prolog:'\n\t'},[
+['zul.box.Vlayout','dY6Qn1',{},[
+['zul.box.Hlayout','dY6Qo1',{},[
+['zul.wgt.Toolbarbutton','dY6Qp1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'czynga'},[]]]],
+['zul.wgt.Label','dY6Qr1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','dY6Qs1',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=331B970C5FF17985AA8F81F42DD2E406?userId=56529&extName=jpeg'},[]],
+['zul.wgt.Div','dY6Qt1',{},[]],
+['zul.wgt.Div','dY6Qw1',{},[
+['zul.wgt.Label','dY6Qx1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','dY6Qy1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'24'},[]]]],
+['zul.wgt.Div','dY6Qz1',{},[
+['zul.wgt.Label','dY6Q_2',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','dY6Q02',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 16, 2012'},[]]]],
+['zul.wgt.Div','dY6Q12',{},[]],
+['zul.wgt.Div','dY6Q32',{},[]]],'vertical']]],
+['zul.wnd.Window','dY6Q52',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','dY6Q62',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','dY6Q72',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','dY6Q82',{id:'dateCreated',sclass:'comment-date',value:'2 days ago'},[]],
+['zul.wgt.Div','dY6Q92',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','dY6Qc2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Nice idea with using a label, I like it. OK so it means that security wise the same rules apply to readonly components. That\'s exactly what I wanted to know, thank you. Is it not a bit of a design flaw? As far as I understand the same limitations or considerations doesn\'t apply in Vaadin. But anyway ZK is so much better :)</p>'},[]],
+['zul.wgt.Separator','dY6Qd2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','dY6Qe2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','dY6Qf2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','dY6Qt',{_loaded:true,_index:3},[
+['zul.wnd.Window','dY6Qg2',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','dY6Qh2',{prolog:'\n\t'},[
+['zul.box.Vlayout','dY6Qi2',{},[
+['zul.box.Hlayout','dY6Qj2',{},[
+['zul.wgt.Toolbarbutton','dY6Qk2',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'iantsai'},[]]]],
+['zul.wgt.Label','dY6Qm2',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','dY6Qn2',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=331B970C5FF17985AA8F81F42DD2E406?userId=146&extName=jpeg'},[]],
+['zul.wgt.Div','dY6Qo2',{},[]],
+['zul.wgt.Div','dY6Qr2',{},[
+['zul.wgt.Label','dY6Qs2',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','dY6Qt2',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'897'},[]]]],
+['zul.wgt.Div','dY6Qu2',{},[
+['zul.wgt.Label','dY6Qv2',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','dY6Qw2',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 07, 2007'},[]]]],
+['zul.wgt.Div','dY6Qx2',{},[]],
+['zul.wgt.Div','dY6Qz2',{},[]]],'vertical']]],
+['zul.wnd.Window','dY6Q03',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','dY6Q13',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','dY6Q23',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','dY6Q33',{id:'dateCreated',sclass:'comment-date',value:'21 hrs ago'},[]],
+['zul.wgt.Div','dY6Q43',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','dY6Q73',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Actually, we do have feature in ZK EE to prevent such hostile access.<br/><a target="external" href="http://books.zkoss.org/wiki/ZK_Developer\'s_Reference/Security_Tips/Block_Request_for_Inaccessible_Widgets">Block Request for Inaccessible Widgets</a><br/>and this supports both readonly and disable attributes to official ZK components.</p>'},[]],
+['zul.wgt.Separator','dY6Q83',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','dY6Q93',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','dY6Qa3',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','dY6Qb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','dY6Qc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="dY6Qf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','dY6Qf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="dY6Qg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','dY6Qg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=331B970C5FF17985AA8F81F42DD2E406?path=http://www.zkoss.org/forum/listComment/20465-Is-readonly-bandbox-considered-insecure'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="dY6Qh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','dY6Qh',{id:'comment-reply'},[
+['zk.Native','dY6Qk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','dY6Qi',{},[]],
+['zul.wgt.Label','dY6Qj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=331B970C5FF17985AA8F81F42DD2E406" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=331B970C5FF17985AA8F81F42DD2E406"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

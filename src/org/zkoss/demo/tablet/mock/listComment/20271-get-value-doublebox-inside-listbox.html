@@ -1,0 +1,881 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=E4CCDC6E25142FB888450F9B3CC37607'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=E4CCDC6E25142FB888450F9B3CC37607?1346908230345' />
+<title>get value doublebox inside listbox | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="get value doublebox inside listbox"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="onsir"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=E4CCDC6E25142FB888450F9B3CC37607"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=E4CCDC6E25142FB888450F9B3CC37607" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=E4CCDC6E25142FB888450F9B3CC37607" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=E4CCDC6E25142FB888450F9B3CC37607' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('cMBQ_','z_pfq','/forum;jsessionid=E4CCDC6E25142FB888450F9B3CC37607','/forum/zkau;jsessionid=E4CCDC6E25142FB888450F9B3CC37607','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="cMBQ0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=E4CCDC6E25142FB888450F9B3CC37607'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','cMBQ0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=E4CCDC6E25142FB888450F9B3CC37607?path=http://www.zkoss.org/forum/listComment/20271-get-value-doublebox-inside-listbox'},[]]);
+</script>
+<div id="cMBQ1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','cMBQ1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=E4CCDC6E25142FB888450F9B3CC37607'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=E4CCDC6E25142FB888450F9B3CC37607" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=E4CCDC6E25142FB888450F9B3CC37607">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=E4CCDC6E25142FB888450F9B3CC37607"><img src="/forum/images/home.png;jsessionid=E4CCDC6E25142FB888450F9B3CC37607" alt="Home"/></a></li>
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/14;jsessionid=E4CCDC6E25142FB888450F9B3CC37607">Help</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=E4CCDC6E25142FB888450F9B3CC37607">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=E4CCDC6E25142FB888450F9B3CC37607">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=E4CCDC6E25142FB888450F9B3CC37607">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=E4CCDC6E25142FB888450F9B3CC37607">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">get value doublebox inside listbox</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('cMBQ4','z_pfq','/forum;jsessionid=E4CCDC6E25142FB888450F9B3CC37607','/forum/zkau;jsessionid=E4CCDC6E25142FB888450F9B3CC37607','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="cMBQ2" class="z-temp"><div class="author"><img class='author-image' title='onsir' src='/forum/mediaService?userId=51040&extName=null' /><span class="author-name">onsir</span></div><div><span class="comment-date">6 Aug 2012 05:14:40 GMT</span><div class="comment-cotent"><span class="comment-content">6 Aug 2012 05:14:40 GMT</span><p  style="margin:2px 2px;">How to get value doublebox inside list box ? because i have try like this result is empty
+<br/>
+<br/>Process is:
+<br/>1 i want get data form database and add/store to listbox 
+<br/>2. then i input value money in doublebox
+<br/>3. then i wan save data from listbox
+<br/>4. but result for doublebox always empty
+<br/>
+<br/>i have code like this
+<br/>
+<br/>UnitPrice.zul
+<div style="class=code" class="code"><pre>
+&lt;?xml version="1.0" encoding="UTF&#45;8"?&gt;
+&lt;?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="./winUnitPrice" ?&gt;
+&lt;?variable&#45;resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?&gt;
+&lt;zk xmlns="http://www.zkoss.org/2005/zul"
+	xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema&#45;instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd"&gt;
+
+
+ &lt;listbox id="listUnitPrice" multiple="true" rows="10"  checkmark="true"  mold="paging" pageSize="20" &gt;                                    
+                   &lt;listhead&gt;
+	     	    &lt;listheader label="ItemCode"  width="100px" sort="auto(itemCode)"/&gt;
+                                &lt;listheader label="Price"     width="150px"/&gt;
+                    &lt;/listhead&gt;
+	 
+	            &lt;listitem self="@&#123;each='Item'&#125;" value="@&#123;Item&#125;"&gt;
+	            &lt;listcell label="@&#123;Item.itemCode&#125;"/&gt;
+	            &lt;listcell&gt;&lt;doublebox id="dblPrice" constraint="no negative" width="90%" /&gt;
+                          &lt;/listitem&gt;
+&lt;/listbox&gt;
+                        
+&lt;div&gt;
+     &lt;button id="btnSave" label="Save" forward="onClick=onBtnClickSave(evt)" /&gt;
+ &lt;/div&gt;
+</pre></div>
+<br/>
+<br/>UnitPriceController.java
+<div style="class=code" class="code"><pre>
+
+public class UnitPriceController extends GenericForwardComposer &#123;
+
+    @Autowired private ItemService ItemService;
+    private Item item;
+    
+    private Listbox listUnitPrice;
+    private ListModelList listModelUnitPrice = new ListModelList();
+    
+     
+    @Override
+    public void doAfterCompose(Component comp) throws Exception &#123;
+        super.doAfterCompose(comp);
+        // TODO Auto&#45;generated method stub
+        MessInfoError.doSetTemplate();
+    &#125;
+
+
+
+
+//mehod for add row in list box
+ public void onBtnClickShowItem(Event evt) &#123;
+        try &#123;
+                    List&lt;Item&gt; listItem=new ArrayList&lt;Item&gt;();
+                    listItem=(List)event.getData();
+                    for(Item items : listItem)&#123;
+                        item=new Item();
+                        item.setItemCode(items.getItemCode());
+                       
+                        listModelUnitPrice.add(item);
+                        listUnitPrice.setModel(listModelUnitPrice);
+                    &#125;
+                 
+                &#125;
+            &#125;);
+        &#125; catch (Exception ex) &#123;
+            ex.printStackTrace();
+        &#125;
+    &#125;
+
+
+public void onBtnClickSave(Event evt) &#123;
+     try &#123;
+            int lineNo=1;
+            for (Object item : listUnitPrice.getItems()) &#123;
+                listUnitPrice.renderItem((Listitem) item);
+                for (Object cell : ((Listitem) item).getChildren()) &#123;
+                    if (((Listcell) cell).getListheader() != null) &#123;
+                        if (((Listcell) cell).getListheader().getColumnIndex() == 0) &#123;
+                            valueIdItem=(((Listcell) cell).getLabel());
+                        &#125;
+
+                        if (((Listcell) cell).getListheader().getColumnIndex() == 1) &#123;
+                           &#60;b >this result alway empty&#60;/b>
+                           // this result valuePrice = 
+                           System.out.println("valuePrice = " + (((Listcell) cell).getLabel()));
+                           
+                        &#125;
+
+                    &#125;
+               &#125;
+           &#125; catch (Exception e) &#123;
+              e.printStackTrace();
+           &#125;
+    &#125;
+
+
+</pre></div>
+<br/>
+<br/>thanks</p></div></div><div class="author"><img class='author-image' title='MontyPan' src='/forum/mediaService?userId=54872&extName=jpeg' /><span class="author-name">MontyPan</span></div><div><span class="comment-date">6 Aug 2012 06:28:38 GMT</span><div class="comment-cotent"><span class="comment-content">6 Aug 2012 06:28:38 GMT</span><p  style="margin:2px 2px;">Hi onsir,</p><p>I can't find the code you fetch value from doublebox?<br/>Because "doublebox" is not a label of listcell,<div style="class=code" class="code"><pre>(((Listcell) cell).getLabel()));</pre></div><br/>will get nothing.</p><p>Regards,<br/>Monty Pan</p></div></div><div class="author"><img class='author-image' title='onsir' src='/forum/mediaService?userId=51040&extName=null' /><span class="author-name">onsir</span></div><div><span class="comment-date">6 Aug 2012 06:44:34 GMT</span><div class="comment-cotent"><span class="comment-content">6 Aug 2012 06:44:34 GMT</span><p  style="margin:2px 2px;">i don't know code for fetch doublebox, 
+<br/>have any sample ?</p></div></div><div class="author"><img class='author-image' title='MontyPan' src='/forum/mediaService?userId=54872&extName=jpeg' /><span class="author-name">MontyPan</span></div><div><span class="comment-date">6 Aug 2012 06:57:08 GMT</span><div class="comment-cotent"><span class="comment-content">6 Aug 2012 06:57:08 GMT</span><p  style="margin:2px 2px;">An intuition but ugly way:<div style="class=code" class="code"><pre>((Doublebox)(cell.getChildren().get(0))).getValue()</pre></div><br/>In my opinion, i will use ZK MVVM....</p><p>Regards,<br/>Monty Pan</p></div></div><div class="author"><img class='author-image' title='onsir' src='/forum/mediaService?userId=51040&extName=null' /><span class="author-name">onsir</span></div><div><span class="comment-date">6 Aug 2012 07:25:53 GMT</span><div class="comment-cotent"><span class="comment-content">6 Aug 2012 07:25:53 GMT</span><p  style="margin:2px 2px;">i has try like this
+<div style="class=code" class="code"><pre>
+for (Object item : listUnitPrice.getItems()) &#123;
+                listUnitPrice.renderItem((Listitem) item);
+                for (Object cell : ((Listitem) item).getChildren()) &#123;
+                    if (((Listcell) cell).getListheader() != null) &#123;
+                       
+                        System.out.println("val = " + ((Doublebox)(((Listitem)cell).getChildren().get(1))).getValue());
+                        &#125;
+
+                    &#125;
+               &#125;
+
+
+get error
+ java.lang.ClassCastException: org.zkoss.zul.Listcell cannot be cast to org.zkoss.zul.Listitem
+ </pre></div></p></div></div><div class="author"><img class='author-image' title='onsir' src='/forum/mediaService?userId=51040&extName=null' /><span class="author-name">onsir</span></div><div><span class="comment-date">7 Aug 2012 03:15:08 GMT</span><div class="comment-cotent"><span class="comment-content">7 Aug 2012 03:15:08 GMT</span><p  style="margin:2px 2px;">i'm not solved,
+<br/>Is there another way
+<br/>this 
+<br/>tractrace complete error
+<div style="class=code" class="code"><pre>
+java.lang.ClassCastException: org.zkoss.zul.Listcell cannot be cast to
+org.zkoss.zul.Listitem
+        at controller.zk.UnitPriceController.onBtnClickSave(UnitPriceController.java:260)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:601)
+        at org.zkoss.zk.ui.event.GenericEventListener.onEvent(GenericEventListener.java:88)
+        at org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)
+        at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)
+        at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)
+        at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)
+        at org.zkoss.zk.ui.event.Events.sendEvent(Events.java:308)
+        at org.zkoss.zk.ui.event.Events.sendEvent(Events.java:331)
+        at org.zkoss.zk.ui.AbstractComponent$ForwardListener.onEvent(AbstractComponent.java:3179)
+        at org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)
+        at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)
+        at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)
+        at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)
+        at org.zkoss.zk.ui.impl.UiEngineImpl.processEvent(UiEngineImpl.java:1699)
+        at org.zkoss.zk.ui.impl.UiEngineImpl.process(UiEngineImpl.java:1484)
+        at org.zkoss.zk.ui.impl.UiEngineImpl.execUpdate(UiEngineImpl.java:1201)
+        at org.zkoss.zk.au.http.DHtmlUpdateServlet.process(DHtmlUpdateServlet.java:558)
+        at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:456)
+        at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:464)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+        at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:393)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:964)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+        at java.lang.Thread.run(Thread.java:722)
+Aug 07, 2012 9:07:24 AM org.zkoss.zk.ui.impl.UiEngineImpl handleError:1348
+
+
+SEVERE: &gt;&gt;java.lang.NullPointerException
+&gt;&gt;      at controller.zk.UnitPriceController.onBtnClickSave(UnitPriceController.java:342)
+&gt;&gt;      at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+&gt;&gt;      at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+&gt;&gt;      at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+&gt;&gt;      at java.lang.reflect.Method.invoke(Method.java:601)
+&gt;&gt;      at org.zkoss.zk.ui.event.GenericEventListener.onEvent(GenericEventListener.java:88)
+&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)
+&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)
+&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)
+&gt;&gt;      at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)
+&gt;&gt;      at org.zkoss.zk.ui.event.Events.sendEvent(Events.java:308)
+&gt;&gt;      at org.zkoss.zk.ui.event.Events.sendEvent(Events.java:331)
+&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent$ForwardListener.onEvent(AbstractComponent.java:3179)
+&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)
+&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)
+&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)
+&gt;&gt;      at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)
+&gt;&gt;      at org.zkoss.zk.ui.impl.UiEngineImpl.processEvent(UiEngineImpl.java:1699)
+&gt;&gt;      at org.zkoss.zk.ui.impl.UiEngineImpl.process(UiEngineImpl.java:1484)
+&gt;&gt;      at org.zkoss.zk.ui.impl.UiEngineImpl.execUpdate(UiEngineImpl.java:1201)
+&gt;&gt;      at org.zkoss.zk.au.http.DHtmlUpdateServlet.process(DHtmlUpdateServlet.java:558)
+&gt;&gt;      at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:456)
+&gt;&gt;      at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:464)
+&gt;&gt;      at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+&gt;&gt;      at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+&gt;&gt;      at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+&gt;&gt;      at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+&gt;&gt;      at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:393)
+&gt;&gt;      at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+&gt;&gt;      at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+&gt;&gt;      at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+&gt;&gt;      at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+&gt;&gt;      at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+&gt;&gt;      at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+&gt;&gt;      at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+&gt;&gt;      at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+&gt;&gt;      at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+&gt;&gt;      at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+&gt;&gt;      at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:964)
+&gt;&gt;      at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+&gt;&gt;      at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)
+&gt;&gt;      at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+&gt;&gt;      at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+&gt;&gt;      at java.lang.Thread.run(Thread.java:722)
+</pre></div></p></div></div><div class="author"><img class='author-image' title='onsir' src='/forum/mediaService?userId=51040&extName=null' /><span class="author-name">onsir</span></div><div><span class="comment-date">7 Aug 2012 09:26:27 GMT</span><div class="comment-cotent"><span class="comment-content">7 Aug 2012 09:26:27 GMT</span><p  style="margin:2px 2px;">thanks, solved</p></div></div><div class="author"><img class='author-image' title='kenshin' src='/forum/mediaService?userId=56686&extName=null' /><span class="author-name">kenshin</span></div><div><span class="comment-date">5 Sep 2012 17:37:35 GMT</span><div class="comment-cotent"><span class="comment-content">5 Sep 2012 17:37:35 GMT</span><p  style="margin:2px 2px;">how?</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','cMBQ2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','cMBQd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','cMBQ5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=E4CCDC6E25142FB888450F9B3CC37607?path=http://www.zkoss.org/forum/listComment/20271-get-value-doublebox-inside-listbox'},[]],
+['zk.Native','cMBQe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','cMBQ6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:8,_offset:0},[
+['zul.grid.Columns','cMBQ7',{$$onColSize:false},[
+['zul.grid.Column','cMBQ8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','cMBQ9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','cMBQa',{sclass:'comment-rows',_offset:0,visibleItemCount:8},[
+['zul.grid.Row','cMBQn',{_loaded:true,_index:0},[
+['zul.wnd.Window','cMBQ20',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','cMBQ30',{prolog:'\n\t'},[
+['zul.box.Vlayout','cMBQ40',{},[
+['zul.box.Hlayout','cMBQ50',{},[
+['zul.wgt.Toolbarbutton','cMBQ60',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'onsir'},[]]]],
+['zul.wgt.Label','cMBQ80',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','cMBQa0',{},[]],
+['zul.wgt.Div','cMBQd0',{},[
+['zul.wgt.Label','cMBQe0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','cMBQf0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'41'},[]]]],
+['zul.wgt.Div','cMBQg0',{},[
+['zul.wgt.Label','cMBQh0',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','cMBQi0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Feb 02, 2012'},[]]]],
+['zul.wgt.Div','cMBQj0',{},[]],
+['zul.wgt.Div','cMBQl0',{},[]]],'vertical']]],
+['zul.wnd.Window','cMBQn0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','cMBQo0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','cMBQp0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','cMBQq0',{id:'dateCreated',sclass:'comment-date',value:'Aug 05, 2012'},[]],
+['zul.wgt.Div','cMBQr0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','cMBQu0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">How to get value doublebox inside list box ? because i have try like this result is empty\r<br/>\r<br/>Process is:\r<br/>1 i want get data form database and add/store to listbox \r<br/>2. then i input value money in doublebox\r<br/>3. then i wan save data from listbox\r<br/>4. but result for doublebox always empty\r<br/>\r<br/>i have code like this\r<br/>\r<br/>UnitPrice.zul\r<div style="class=code" class="code"><pre>\r\n&lt;?xml version="1.0" encoding="UTF&#45;8"?&gt;\r\n&lt;?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="./winUnitPrice" ?&gt;\r\n&lt;?variable&#45;resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?&gt;\r\n&lt;zk xmlns="http://www.zkoss.org/2005/zul"\r\n\txmlns:h="http://www.w3.org/1999/xhtml"\r\n\txmlns:xsi="http://www.w3.org/2001/XMLSchema&#45;instance"\r\n\txsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd"&gt;\r\n\r\n\r\n &lt;listbox id="listUnitPrice" multiple="true" rows="10"  checkmark="true"  mold="paging" pageSize="20" &gt;                                    \r\n                   &lt;listhead&gt;\r\n\t     \t    &lt;listheader label="ItemCode"  width="100px" sort="auto(itemCode)"/&gt;\r\n                                &lt;listheader label="Price"     width="150px"/&gt;\r\n                    &lt;/listhead&gt;\r\n\t \r\n\t            &lt;listitem self="@&#123;each=\'Item\'&#125;" value="@&#123;Item&#125;"&gt;\r\n\t            &lt;listcell label="@&#123;Item.itemCode&#125;"/&gt;\r\n\t            &lt;listcell&gt;&lt;doublebox id="dblPrice" constraint="no negative" width="90%" /&gt;\r\n                          &lt;/listitem&gt;\r\n&lt;/listbox&gt;\r\n                        \r\n&lt;div&gt;\r\n     &lt;button id="btnSave" label="Save" forward="onClick=onBtnClickSave(evt)" /&gt;\r\n &lt;/div&gt;\r\n</pre></div>\r<br/>\r<br/>UnitPriceController.java\r<div style="class=code" class="code"><pre>\r\n\r\npublic class UnitPriceController extends GenericForwardComposer &#123;\r\n\r\n    @Autowired private ItemService ItemService;\r\n    private Item item;\r\n    \r\n    private Listbox listUnitPrice;\r\n    private ListModelList listModelUnitPrice = new ListModelList();\r\n    \r\n     \r\n    @Override\r\n    public void doAfterCompose(Component comp) throws Exception &#123;\r\n        super.doAfterCompose(comp);\r\n        // TODO Auto&#45;generated method stub\r\n        MessInfoError.doSetTemplate();\r\n    &#125;\r\n\r\n\r\n\r\n\r\n//mehod for add row in list box\r\n public void onBtnClickShowItem(Event evt) &#123;\r\n        try &#123;\r\n                    List&lt;Item&gt; listItem=new ArrayList&lt;Item&gt;();\r\n                    listItem=(List)event.getData();\r\n                    for(Item items : listItem)&#123;\r\n                        item=new Item();\r\n                        item.setItemCode(items.getItemCode());\r\n                       \r\n                        listModelUnitPrice.add(item);\r\n                        listUnitPrice.setModel(listModelUnitPrice);\r\n                    &#125;\r\n                 \r\n                &#125;\r\n            &#125;);\r\n        &#125; catch (Exception ex) &#123;\r\n            ex.printStackTrace();\r\n        &#125;\r\n    &#125;\r\n\r\n\r\npublic void onBtnClickSave(Event evt) &#123;\r\n     try &#123;\r\n            int lineNo=1;\r\n            for (Object item : listUnitPrice.getItems()) &#123;\r\n                listUnitPrice.renderItem((Listitem) item);\r\n                for (Object cell : ((Listitem) item).getChildren()) &#123;\r\n                    if (((Listcell) cell).getListheader() != null) &#123;\r\n                        if (((Listcell) cell).getListheader().getColumnIndex() == 0) &#123;\r\n                            valueIdItem=(((Listcell) cell).getLabel());\r\n                        &#125;\r\n\r\n                        if (((Listcell) cell).getListheader().getColumnIndex() == 1) &#123;\r\n                           &#60;b >this result alway empty&#60;/b>\r\n                           // this result valuePrice = \r\n                           System.out.println("valuePrice = " + (((Listcell) cell).getLabel()));\r\n                           \r\n                        &#125;\r\n\r\n                    &#125;\r\n               &#125;\r\n           &#125; catch (Exception e) &#123;\r\n              e.printStackTrace();\r\n           &#125;\r\n    &#125;\r\n\r\n\r\n</pre></div>\r<br/>\r<br/>thanks</p>'},[]],
+['zul.wgt.Separator','cMBQv0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','cMBQw0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','cMBQx0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','cMBQp',{_loaded:true,_index:1},[
+['zul.wnd.Window','cMBQy0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','cMBQz0',{prolog:'\n\t'},[
+['zul.box.Vlayout','cMBQ_1',{},[
+['zul.box.Hlayout','cMBQ01',{},[
+['zul.wgt.Toolbarbutton','cMBQ11',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'MontyPan'},[]]]],
+['zul.wgt.Label','cMBQ31',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','cMBQ41',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=E4CCDC6E25142FB888450F9B3CC37607?userId=54872&extName=jpeg'},[]],
+['zul.wgt.Div','cMBQ51',{},[]],
+['zul.wgt.Div','cMBQ81',{},[
+['zul.wgt.Label','cMBQ91',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','cMBQa1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'65'},[]]]],
+['zul.wgt.Div','cMBQb1',{},[
+['zul.wgt.Label','cMBQc1',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','cMBQd1',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'May 07, 2012'},[]]]],
+['zul.wgt.Div','cMBQe1',{},[]],
+['zul.wgt.Div','cMBQg1',{},[
+['zul.wgt.Toolbarbutton','cMBQh1',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://xitop.blogspot.com',image:'/forum/images/Globe18x18.png;jsessionid=E4CCDC6E25142FB888450F9B3CC37607',href:'http://xitop.blogspot.com',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','cMBQi1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','cMBQj1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','cMBQk1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','cMBQl1',{id:'dateCreated',sclass:'comment-date',value:'Aug 05, 2012'},[]],
+['zul.wgt.Div','cMBQm1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','cMBQp1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi onsir,</p><p>I can\'t find the code you fetch value from doublebox?<br/>Because "doublebox" is not a label of listcell,<div style="class=code" class="code"><pre>(((Listcell) cell).getLabel()));</pre></div><br/>will get nothing.</p><p>Regards,<br/>Monty Pan</p>'},[]],
+['zul.wgt.Separator','cMBQq1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','cMBQr1',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','cMBQs1',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'There is no spoon......'},[]]]]]]]],
+['zul.grid.Row','cMBQr',{_loaded:true,_index:2},[
+['zul.wnd.Window','cMBQt1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','cMBQu1',{prolog:'\n\t'},[
+['zul.box.Vlayout','cMBQv1',{},[
+['zul.box.Hlayout','cMBQw1',{},[
+['zul.wgt.Toolbarbutton','cMBQx1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'onsir'},[]]]],
+['zul.wgt.Label','cMBQz1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','cMBQ02',{},[]],
+['zul.wgt.Div','cMBQ32',{},[
+['zul.wgt.Label','cMBQ42',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','cMBQ52',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'41'},[]]]],
+['zul.wgt.Div','cMBQ62',{},[
+['zul.wgt.Label','cMBQ72',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','cMBQ82',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Feb 02, 2012'},[]]]],
+['zul.wgt.Div','cMBQ92',{},[]],
+['zul.wgt.Div','cMBQb2',{},[]]],'vertical']]],
+['zul.wnd.Window','cMBQd2',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','cMBQe2',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','cMBQf2',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','cMBQg2',{id:'dateCreated',sclass:'comment-date',value:'Aug 05, 2012'},[]],
+['zul.wgt.Div','cMBQh2',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','cMBQk2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">i don\'t know code for fetch doublebox, \r<br/>have any sample ?</p>'},[]],
+['zul.wgt.Separator','cMBQl2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','cMBQm2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','cMBQn2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','cMBQt',{_loaded:true,_index:3},[
+['zul.wnd.Window','cMBQo2',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','cMBQp2',{prolog:'\n\t'},[
+['zul.box.Vlayout','cMBQq2',{},[
+['zul.box.Hlayout','cMBQr2',{},[
+['zul.wgt.Toolbarbutton','cMBQs2',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'MontyPan'},[]]]],
+['zul.wgt.Label','cMBQu2',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','cMBQv2',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=E4CCDC6E25142FB888450F9B3CC37607?userId=54872&extName=jpeg'},[]],
+['zul.wgt.Div','cMBQw2',{},[]],
+['zul.wgt.Div','cMBQz2',{},[
+['zul.wgt.Label','cMBQ_3',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','cMBQ03',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'65'},[]]]],
+['zul.wgt.Div','cMBQ13',{},[
+['zul.wgt.Label','cMBQ23',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','cMBQ33',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'May 07, 2012'},[]]]],
+['zul.wgt.Div','cMBQ43',{},[]],
+['zul.wgt.Div','cMBQ63',{},[
+['zul.wgt.Toolbarbutton','cMBQ73',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://xitop.blogspot.com',image:'/forum/images/Globe18x18.png;jsessionid=E4CCDC6E25142FB888450F9B3CC37607',href:'http://xitop.blogspot.com',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','cMBQ83',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','cMBQ93',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','cMBQa3',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','cMBQb3',{id:'dateCreated',sclass:'comment-date',value:'Aug 05, 2012'},[]],
+['zul.wgt.Div','cMBQc3',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','cMBQf3',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">An intuition but ugly way:<div style="class=code" class="code"><pre>((Doublebox)(cell.getChildren().get(0))).getValue()</pre></div><br/>In my opinion, i will use ZK MVVM....</p><p>Regards,<br/>Monty Pan</p>'},[]],
+['zul.wgt.Separator','cMBQg3',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','cMBQh3',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','cMBQi3',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'There is no spoon......'},[]]]]]]]],
+['zul.grid.Row','cMBQv',{_loaded:true,_index:4},[
+['zul.wnd.Window','cMBQj3',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','cMBQk3',{prolog:'\n\t'},[
+['zul.box.Vlayout','cMBQl3',{},[
+['zul.box.Hlayout','cMBQm3',{},[
+['zul.wgt.Toolbarbutton','cMBQn3',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'onsir'},[]]]],
+['zul.wgt.Label','cMBQp3',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','cMBQr3',{},[]],
+['zul.wgt.Div','cMBQu3',{},[
+['zul.wgt.Label','cMBQv3',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','cMBQw3',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'41'},[]]]],
+['zul.wgt.Div','cMBQx3',{},[
+['zul.wgt.Label','cMBQy3',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','cMBQz3',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Feb 02, 2012'},[]]]],
+['zul.wgt.Div','cMBQ_4',{},[]],
+['zul.wgt.Div','cMBQ14',{},[]]],'vertical']]],
+['zul.wnd.Window','cMBQ34',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','cMBQ44',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','cMBQ54',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','cMBQ64',{id:'dateCreated',sclass:'comment-date',value:'Aug 05, 2012'},[]],
+['zul.wgt.Div','cMBQ74',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','cMBQa4',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">i has try like this\r<div style="class=code" class="code"><pre>\r\nfor (Object item : listUnitPrice.getItems()) &#123;\r\n                listUnitPrice.renderItem((Listitem) item);\r\n                for (Object cell : ((Listitem) item).getChildren()) &#123;\r\n                    if (((Listcell) cell).getListheader() != null) &#123;\r\n                       \r\n                        System.out.println("val = " + ((Doublebox)(((Listitem)cell).getChildren().get(1))).getValue());\r\n                        &#125;\r\n\r\n                    &#125;\r\n               &#125;\r\n\r\n\r\nget error\r\n java.lang.ClassCastException: org.zkoss.zul.Listcell cannot be cast to org.zkoss.zul.Listitem\r\n </pre></div></p>'},[]],
+['zul.wgt.Separator','cMBQb4',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','cMBQc4',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','cMBQd4',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','cMBQx',{_loaded:true,_index:5},[
+['zul.wnd.Window','cMBQe4',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','cMBQf4',{prolog:'\n\t'},[
+['zul.box.Vlayout','cMBQg4',{},[
+['zul.box.Hlayout','cMBQh4',{},[
+['zul.wgt.Toolbarbutton','cMBQi4',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'onsir'},[]]]],
+['zul.wgt.Label','cMBQk4',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','cMBQm4',{},[]],
+['zul.wgt.Div','cMBQp4',{},[
+['zul.wgt.Label','cMBQq4',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','cMBQr4',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'41'},[]]]],
+['zul.wgt.Div','cMBQs4',{},[
+['zul.wgt.Label','cMBQt4',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','cMBQu4',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Feb 02, 2012'},[]]]],
+['zul.wgt.Div','cMBQv4',{},[]],
+['zul.wgt.Div','cMBQx4',{},[]]],'vertical']]],
+['zul.wnd.Window','cMBQz4',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','cMBQ_5',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','cMBQ05',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','cMBQ15',{id:'dateCreated',sclass:'comment-date',value:'Aug 06, 2012'},[]],
+['zul.wgt.Div','cMBQ25',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','cMBQ55',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">i\'m not solved,\r<br/>Is there another way\r<br/>this \r<br/>tractrace complete error\r<div style="class=code" class="code"><pre>\r\njava.lang.ClassCastException: org.zkoss.zul.Listcell cannot be cast to\r\norg.zkoss.zul.Listitem\r\n        at controller.zk.UnitPriceController.onBtnClickSave(UnitPriceController.java:260)\r\n        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\r\n        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n        at java.lang.reflect.Method.invoke(Method.java:601)\r\n        at org.zkoss.zk.ui.event.GenericEventListener.onEvent(GenericEventListener.java:88)\r\n        at org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)\r\n        at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)\r\n        at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)\r\n        at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)\r\n        at org.zkoss.zk.ui.event.Events.sendEvent(Events.java:308)\r\n        at org.zkoss.zk.ui.event.Events.sendEvent(Events.java:331)\r\n        at org.zkoss.zk.ui.AbstractComponent$ForwardListener.onEvent(AbstractComponent.java:3179)\r\n        at org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)\r\n        at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)\r\n        at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)\r\n        at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)\r\n        at org.zkoss.zk.ui.impl.UiEngineImpl.processEvent(UiEngineImpl.java:1699)\r\n        at org.zkoss.zk.ui.impl.UiEngineImpl.process(UiEngineImpl.java:1484)\r\n        at org.zkoss.zk.ui.impl.UiEngineImpl.execUpdate(UiEngineImpl.java:1201)\r\n        at org.zkoss.zk.au.http.DHtmlUpdateServlet.process(DHtmlUpdateServlet.java:558)\r\n        at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:456)\r\n        at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:464)\r\n        at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)\r\n        at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)\r\n        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)\r\n        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)\r\n        at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:393)\r\n        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)\r\n        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)\r\n        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)\r\n        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)\r\n        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)\r\n        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)\r\n        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)\r\n        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)\r\n        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)\r\n        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)\r\n        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:964)\r\n        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)\r\n        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)\r\n        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)\r\n        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)\r\n        at java.lang.Thread.run(Thread.java:722)\r\nAug 07, 2012 9:07:24 AM org.zkoss.zk.ui.impl.UiEngineImpl handleError:1348\r\n\r\n\r\nSEVERE: &gt;&gt;java.lang.NullPointerException\r\n&gt;&gt;      at controller.zk.UnitPriceController.onBtnClickSave(UnitPriceController.java:342)\r\n&gt;&gt;      at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n&gt;&gt;      at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\r\n&gt;&gt;      at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n&gt;&gt;      at java.lang.reflect.Method.invoke(Method.java:601)\r\n&gt;&gt;      at org.zkoss.zk.ui.event.GenericEventListener.onEvent(GenericEventListener.java:88)\r\n&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)\r\n&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)\r\n&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)\r\n&gt;&gt;      at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)\r\n&gt;&gt;      at org.zkoss.zk.ui.event.Events.sendEvent(Events.java:308)\r\n&gt;&gt;      at org.zkoss.zk.ui.event.Events.sendEvent(Events.java:331)\r\n&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent$ForwardListener.onEvent(AbstractComponent.java:3179)\r\n&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.onEvent(AbstractComponent.java:2741)\r\n&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2712)\r\n&gt;&gt;      at org.zkoss.zk.ui.AbstractComponent.service(AbstractComponent.java:2653)\r\n&gt;&gt;      at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:136)\r\n&gt;&gt;      at org.zkoss.zk.ui.impl.UiEngineImpl.processEvent(UiEngineImpl.java:1699)\r\n&gt;&gt;      at org.zkoss.zk.ui.impl.UiEngineImpl.process(UiEngineImpl.java:1484)\r\n&gt;&gt;      at org.zkoss.zk.ui.impl.UiEngineImpl.execUpdate(UiEngineImpl.java:1201)\r\n&gt;&gt;      at org.zkoss.zk.au.http.DHtmlUpdateServlet.process(DHtmlUpdateServlet.java:558)\r\n&gt;&gt;      at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:456)\r\n&gt;&gt;      at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:464)\r\n&gt;&gt;      at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)\r\n&gt;&gt;      at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)\r\n&gt;&gt;      at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)\r\n&gt;&gt;      at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)\r\n&gt;&gt;      at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:393)\r\n&gt;&gt;      at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)\r\n&gt;&gt;      at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)\r\n&gt;&gt;      at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)\r\n&gt;&gt;      at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)\r\n&gt;&gt;      at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)\r\n&gt;&gt;      at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)\r\n&gt;&gt;      at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)\r\n&gt;&gt;      at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)\r\n&gt;&gt;      at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)\r\n&gt;&gt;      at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)\r\n&gt;&gt;      at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:964)\r\n&gt;&gt;      at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)\r\n&gt;&gt;      at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)\r\n&gt;&gt;      at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)\r\n&gt;&gt;      at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)\r\n&gt;&gt;      at java.lang.Thread.run(Thread.java:722)\r\n</pre></div></p>'},[]],
+['zul.wgt.Separator','cMBQ65',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','cMBQ75',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','cMBQ85',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','cMBQz',{_loaded:true,_index:6},[
+['zul.wnd.Window','cMBQ95',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','cMBQa5',{prolog:'\n\t'},[
+['zul.box.Vlayout','cMBQb5',{},[
+['zul.box.Hlayout','cMBQc5',{},[
+['zul.wgt.Toolbarbutton','cMBQd5',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'onsir'},[]]]],
+['zul.wgt.Label','cMBQf5',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','cMBQh5',{},[]],
+['zul.wgt.Div','cMBQk5',{},[
+['zul.wgt.Label','cMBQl5',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','cMBQm5',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'41'},[]]]],
+['zul.wgt.Div','cMBQn5',{},[
+['zul.wgt.Label','cMBQo5',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','cMBQp5',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Feb 02, 2012'},[]]]],
+['zul.wgt.Div','cMBQq5',{},[]],
+['zul.wgt.Div','cMBQs5',{},[]]],'vertical']]],
+['zul.wnd.Window','cMBQu5',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','cMBQv5',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','cMBQw5',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','cMBQx5',{id:'dateCreated',sclass:'comment-date',value:'Aug 07, 2012'},[]],
+['zul.wgt.Div','cMBQy5',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','cMBQ06',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">thanks, solved</p>'},[]],
+['zul.wgt.Separator','cMBQ16',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','cMBQ26',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','cMBQ36',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','cMBQ00',{_loaded:true,_index:7},[
+['zul.wnd.Window','cMBQ46',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','cMBQ56',{prolog:'\n\t'},[
+['zul.box.Vlayout','cMBQ66',{},[
+['zul.box.Hlayout','cMBQ76',{},[
+['zul.wgt.Toolbarbutton','cMBQ86',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'kenshin'},[]]]],
+['zul.wgt.Label','cMBQa6',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','cMBQc6',{},[]],
+['zul.wgt.Div','cMBQf6',{},[
+['zul.wgt.Label','cMBQg6',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','cMBQh6',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'2'},[]]]],
+['zul.wgt.Div','cMBQi6',{},[
+['zul.wgt.Label','cMBQj6',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','cMBQk6',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 20, 2012'},[]]]],
+['zul.wgt.Div','cMBQl6',{},[]],
+['zul.wgt.Div','cMBQn6',{},[]]],'vertical']]],
+['zul.wnd.Window','cMBQp6',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','cMBQq6',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','cMBQr6',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','cMBQs6',{id:'dateCreated',sclass:'comment-date',value:'11 hrs ago'},[]],
+['zul.wgt.Div','cMBQt6',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','cMBQw6',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">how?</p>'},[]],
+['zul.wgt.Separator','cMBQx6',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','cMBQy6',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','cMBQz6',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','cMBQb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','cMBQc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="cMBQf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','cMBQf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="cMBQg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','cMBQg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=E4CCDC6E25142FB888450F9B3CC37607?path=http://www.zkoss.org/forum/listComment/20271-get-value-doublebox-inside-listbox'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="cMBQh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','cMBQh',{id:'comment-reply'},[
+['zk.Native','cMBQk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','cMBQi',{},[]],
+['zul.wgt.Label','cMBQj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=E4CCDC6E25142FB888450F9B3CC37607" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=E4CCDC6E25142FB888450F9B3CC37607"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

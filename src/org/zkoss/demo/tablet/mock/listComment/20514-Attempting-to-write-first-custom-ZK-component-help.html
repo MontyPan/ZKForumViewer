@@ -1,0 +1,841 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=8D29F3127E178DA27EBF131869960C52'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=8D29F3127E178DA27EBF131869960C52?1346908277573' />
+<title>Attempting to write first custom ZK component - help! | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="Attempting to write first custom ZK component - help!"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="davout"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=8D29F3127E178DA27EBF131869960C52"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=8D29F3127E178DA27EBF131869960C52" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=8D29F3127E178DA27EBF131869960C52" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=8D29F3127E178DA27EBF131869960C52' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('e0GQ_','z_v1d','/forum;jsessionid=8D29F3127E178DA27EBF131869960C52','/forum/zkau;jsessionid=8D29F3127E178DA27EBF131869960C52','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="e0GQ0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=8D29F3127E178DA27EBF131869960C52'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','e0GQ0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=8D29F3127E178DA27EBF131869960C52?path=http://www.zkoss.org/forum/listComment/20514-Attempting-to-write-first-custom-ZK-component-help'},[]]);
+</script>
+<div id="e0GQ1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','e0GQ1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=8D29F3127E178DA27EBF131869960C52'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=8D29F3127E178DA27EBF131869960C52" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=8D29F3127E178DA27EBF131869960C52">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=8D29F3127E178DA27EBF131869960C52"><img src="/forum/images/home.png;jsessionid=8D29F3127E178DA27EBF131869960C52" alt="Home"/></a></li>
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/14;jsessionid=8D29F3127E178DA27EBF131869960C52">Help</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=8D29F3127E178DA27EBF131869960C52">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/13;jsessionid=8D29F3127E178DA27EBF131869960C52">General</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=8D29F3127E178DA27EBF131869960C52">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=8D29F3127E178DA27EBF131869960C52">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">Attempting to write first custom ZK component - help!</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('e0GQ4','z_v1d','/forum;jsessionid=8D29F3127E178DA27EBF131869960C52','/forum/zkau;jsessionid=8D29F3127E178DA27EBF131869960C52','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="e0GQ2" class="z-temp"><div class="author"><img class='author-image' title='davout' src='/forum/mediaService?userId=2633&extName=jpeg' /><span class="author-name">davout</span></div><div><span class="comment-date">4 Sep 2012 09:32:29 GMT</span><div class="comment-cotent"><span class="comment-content">4 Sep 2012 09:32:29 GMT</span><p  style="margin:2px 2px;">I'm attempting to write my first custom ZK component - a non visual 'block' tag - as described at the tail end of this forum thread (see <a target="external" href="http://www.zkoss.org/forum/listComment/20257-Templates-for-grid-s-with-variable-number-of-columns">http://www.zkoss.org/forum/listComment/20257-Templates-for-grid-s-with-variable-number-of-columns</a> )</p><p>My custom non visual ZK component derives from 'AbstractComponent', like:</p><p>Java Class...<div style="class=code" class="code"><pre>
+public class Block extends AbstractComponent &#123;
+
+	private static final long serialVersionUID = &#45;6756928372758156349L;
+
+	public Block() &#123;
+		super();
+	&#125;
+
+	@Override
+	protected void renderProperties(ContentRenderer arg0) throws IOException &#123;
+		super.renderProperties(arg0);
+	&#125;
+
+&#125;
+
+</pre></div></p><p>JS class:<div style="class=code" class="code"><pre>
+zk.$package('com.eis.zk.component');
+
+com.eis.zk.component.Blank = zk.$extends(zk.Object, &#123;
+ 
+&#125;);
+</pre></div></p><p>When the try to use it in the following 'index.zul'  page...<div style="class=code" class="code"><pre>
+&lt;?page title="Auto Generated index.zul"?&gt;
+&lt;window title="Dynamic Grid demo #01" border="normal" width="100%"
+	apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('vm') @init('com.eis.grid.dynamic.DynamicGridDemoVM')"&gt;
+
+	&lt;grid width="95%" model="@load(vm.customerModel)"&gt;
+		&lt;columns children="@init(vm.columnModel)"&gt;
+			&lt;template name="children" var="c"&gt;
+				&lt;column label="@load(c.title)" align="@load(c.align)"
+					hflex="@load(c.hflex)" visible="true" /&gt;
+			&lt;/template&gt;
+		&lt;/columns&gt;
+		&lt;template name="model" var="r"&gt;
+			&lt;row&gt;
+				&lt;cell&gt;
+					&lt;a label="@load(r.surname)" &gt;&lt;/a&gt;
+				&lt;/cell&gt;
+				&lt;cell&gt;
+					&lt;a label="@load(r.firstName)" &gt;&lt;/a&gt;
+				&lt;/cell&gt;
+				&lt;block children="@load(r.purchaseValues)"&gt;
+					&lt;template name="children" var="p"&gt;
+						&lt;cell&gt;
+							&lt;label value="@load(p)" &gt;&lt;/label&gt;
+						&lt;/cell&gt;
+					&lt;/template&gt;
+				&lt;/block&gt;
+
+			&lt;/row&gt;
+		&lt;/template&gt;
+	&lt;/grid&gt;
+&lt;/window&gt;
+</pre></div></p><p>..  the web app just hangs showing the 'processing'  popup message </p><p>I can't find another non visual component to copy from.  Any suggestions?</p></div></div><div class="author"><img class='author-image' title='gekkio' src='/forum/mediaService?userId=1577&extName=jpeg' /><span class="author-name">gekkio</span></div><div><span class="comment-date">4 Sep 2012 12:31:33 GMT</span><div class="comment-cotent"><span class="comment-content">4 Sep 2012 12:31:33 GMT</span><p  style="margin:2px 2px;">If the app does nothing once "processing" pops up, you probably have an error in your Javascript.</p><p>If you intend to do custom component development, I strongly suggest you to learn how to use Firebug or Chrome developer tools. You can easily see the Javascript error with the console feature of those tools.</p></div></div><div class="author"><img class='author-image' title='davout' src='/forum/mediaService?userId=2633&extName=jpeg' /><span class="author-name">davout</span></div><div><span class="comment-date">4 Sep 2012 13:21:52 GMT</span><div class="comment-cotent"><span class="comment-content">4 Sep 2012 13:21:52 GMT</span><p  style="margin:2px 2px;">Umm...   </p><p>I simply followed the reference docs at <a target="external" href="http://books.zkoss.org/wiki/ZK_Component_Development_Essentials. ">http://books.zkoss.org/wiki/ZK_Component_Development_Essentials. </a></p><p>It would help if ZK could provide either better docs or some pointers on where to start debugging.</p></div></div><div class="author"><img class='author-image' title='gekkio' src='/forum/mediaService?userId=1577&extName=jpeg' /><span class="author-name">gekkio</span></div><div><span class="comment-date">4 Sep 2012 14:43:30 GMT</span><div class="comment-cotent"><span class="comment-content">4 Sep 2012 14:43:30 GMT</span><p  style="margin:2px 2px;">You should start with finding out the Javascript error. Even though you are following a ready-made guide, it's very easy to make a small mistake in the code, such as adding an extra brace or a comma somewhere. Since Javascript is not compiled, you will never see these errors unless you validate the JS file or debug it yourself in the browser with Firebug/Chrome. An classic example is an extra comma in a Javascript object, which breaks at least IE6. So, <i >{a: 1, b: 2, }</i> breaks IE6, while <i >{a: 1, b: 2}</i> does not. Trailing commas are allowed by the spec, and Firefox and Chrome work fine with both examples.</p><p>If you are using Firefox, <a target="external" href="https://addons.mozilla.org/en-US/firefox/addon/firebug" rel="nofollow" >download Firebug</a>.<br/>You can then open your app so that the Firebug window is open. In order to open the window, either click the Firebug button in the toolbar, or right-click somewhere on the page and select "Inspect element with Firebug".  Make sure Firebug was enabled when you loaded the page in your app (refresh with F5 if necessary). You can then see any Javascript errors you might have in the "Console"-tab in Firebug.</p></div></div><div class="author"><img class='author-image' title='neillee' src='/forum/mediaService?userId=56191&extName=jpeg' /><span class="author-name">neillee</span></div><div><span class="comment-date">4 Sep 2012 15:06:02 GMT</span><div class="comment-cotent"><span class="comment-content">4 Sep 2012 15:06:02 GMT</span><p  style="margin:2px 2px;">Hello davout,</p><p>Based on what you are trying to achieve, you can simply use forEach to generate the variable number of cells for each row.<div style="class=code" class="code"><pre>
+&lt;?page title="Auto Generated index.zul"?&gt;
+&lt;window title="Dynamic Grid demo #01" border="normal" width="100%"
+	apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('vm') @init('com.eis.grid.dynamic.DynamicGridDemoVM')"&gt;
+
+	&lt;grid width="95%" model="@load(vm.customerModel)"&gt;
+		&lt;columns children="@init(vm.columnModel)"&gt;
+			&lt;template name="children" var="c"&gt;
+				&lt;column label="@load(c.title)" align="@load(c.align)"
+					hflex="@load(c.hflex)" visible="true" /&gt;
+			&lt;/template&gt;
+		&lt;/columns&gt;
+		&lt;template name="model" var="r"&gt;
+			&lt;row&gt;
+				&lt;cell&gt;
+					&lt;a label="@load(r.surname)" &gt;&lt;/a&gt;
+				&lt;/cell&gt;
+				&lt;cell&gt;
+					&lt;a label="@load(r.firstName)" &gt;&lt;/a&gt;
+				&lt;/cell&gt;
+                                &lt;zk forEach="$&#123;r.purchaseValues&#125;"&gt;
+				  &lt;cell&gt;
+				    &lt;label value="$&#123;each&#125;" &gt;&lt;/label&gt;
+				  &lt;/cell&gt;
+                               &lt;/zk&gt;
+			&lt;/row&gt;
+		&lt;/template&gt;
+	&lt;/grid&gt;
+&lt;/window&gt;
+</pre></div></p><p>Neil Lee, Engineer<br/>Potix Corporation</p></div></div><div class="author"><img class='author-image' title='davout' src='/forum/mediaService?userId=2633&extName=jpeg' /><span class="author-name">davout</span></div><div><span class="comment-date">4 Sep 2012 15:18:03 GMT</span><div class="comment-cotent"><span class="comment-content">4 Sep 2012 15:18:03 GMT</span><p  style="margin:2px 2px;">Thanks for the 'ZK ForEach' suggestion...   that works.</p><p>Unfortunately it means that those cells are outside of the MVVM binding.  For instance if I want use an inplace edit Textbox in one of these variable column.</p><p>Any more suggestions?</p></div></div><div class="author"><img class='author-image' title='davout' src='/forum/mediaService?userId=2633&extName=jpeg' /><span class="author-name">davout</span></div><div><span class="comment-date">4 Sep 2012 15:30:19 GMT</span><div class="comment-cotent"><span class="comment-content">4 Sep 2012 15:30:19 GMT</span><p  style="margin:2px 2px;">It's a pity that the 'ZK' tag doesn't support MVVM, like<div style="class=code" class="code"><pre>
+&lt;zk children="@load(r.purchaseValues)" &gt;
+	&lt;template name="children" var="t"&gt;
+		&lt;cell&gt;
+			&lt;label value="@load(t)" &gt;&lt;/label&gt;
+		&lt;/cell&gt;
+    &lt;/template&gt; 
+&lt;/zk&gt;
+
+</pre></div></p><p>Is it possible to derive a new class/tag from 'ZK' to support this?</p></div></div><div class="author"><img class='author-image' title='sjoshi' src='/forum/mediaService?userId=56696&extName=null' /><span class="author-name">sjoshi</span></div><div><span class="comment-date">5 Sep 2012 04:42:05 GMT</span><div class="comment-cotent"><span class="comment-content">5 Sep 2012 04:42:05 GMT</span><p  style="margin:2px 2px;">I think it would work i am using listHead it is working fine for me	</p><p>&lt;listhead children="@load(vm.headerList)" sizable="true"&gt;<br/>				&lt;template name="children" var="headerName"&gt;</p><p>					&lt;listheader label="@load(headerName)"&gt;&lt;/listheader&gt;<br/>				&lt;/template&gt;<br/>			&lt;/listhead&gt;</p></div></div><div class="author"><img class='author-image' title='davout' src='/forum/mediaService?userId=2633&extName=jpeg' /><span class="author-name">davout</span></div><div><span class="comment-date">5 Sep 2012 06:23:28 GMT</span><div class="comment-cotent"><span class="comment-content">5 Sep 2012 06:23:28 GMT</span><p  style="margin:2px 2px;">This is a grid!  I've tried both listheader and listhead and the app crashes with 'wrong parent' errors. Thus...
+<br/>
+<div style="class=code" class="code"><pre>
+	&lt;grid width="95%" model="@load(vm.customerModel)"&gt;
+		&lt;columns children="@init(vm.columnModel)"&gt;
+			&lt;template name="children" var="c"&gt;
+				&lt;column label="@load(c.title)" align="@load(c.align)"
+					hflex="@load(c.hflex)" visible="true" /&gt;
+			&lt;/template&gt;
+		&lt;/columns&gt;
+		&lt;template name="model" var="r"&gt;
+			&lt;row&gt;
+				&lt;cell&gt;
+					&lt;a label="@load(r.surname)" /&gt;
+				&lt;/cell&gt;
+				&lt;cell&gt;
+					&lt;a label="@load(r.firstName)" /&gt;
+				&lt;/cell&gt;
+				&lt;listheader children="@load(r.purchaseValues)"&gt;
+					&lt;template name="children" var="p"&gt;
+						&lt;cell&gt;
+							&lt;label value="@load(p)" /&gt;
+						&lt;/cell&gt;
+					&lt;/template&gt;
+				&lt;/listheader&gt;
+
+			&lt;/row&gt;
+		&lt;/template&gt;
+	&lt;/grid&gt;
+
+</pre></div>
+<br/>
+<br/>Today I'll have a go at writing a new 'row-ext' tag (derived from 'row') that includes a new property called 'extra' that will allow something like the following to work:
+<br/>
+<div style="class=code" class="code"><pre>
+	&lt;grid width="95%" model="@load(vm.customerModel)"&gt;
+		&lt;columns children="@init(vm.columnModel)"&gt;
+			&lt;template name="children" var="c"&gt;
+				&lt;column label="@load(c.title)" align="@load(c.align)"
+					hflex="@load(c.hflex)" visible="true" /&gt;
+			&lt;/template&gt;
+		&lt;/columns&gt;
+		&lt;template name="model" var="r"&gt;
+			&lt;row&#45;ext extra="@load(r.purchaseValues)"&gt;
+				&lt;cell&gt;
+					&lt;a label="@load(r.surname)" /&gt;
+				&lt;/cell&gt;
+				&lt;cell&gt;
+					&lt;a label="@load(r.firstName)" /&gt;
+				&lt;/cell&gt;
+				&lt;template name="extra" var="p"&gt;
+					&lt;cell&gt;
+						&lt;label value="@load(p)" /&gt;
+					&lt;/cell&gt;
+				&lt;/template&gt;
+			&lt;/row&#45;ext&gt;
+		&lt;/template&gt;
+	&lt;/grid&gt;
+
+</pre></div></p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','e0GQ2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','e0GQd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','e0GQ5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=8D29F3127E178DA27EBF131869960C52?path=http://www.zkoss.org/forum/listComment/20514-Attempting-to-write-first-custom-ZK-component-help'},[]],
+['zk.Native','e0GQe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','e0GQ6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:9,_offset:0},[
+['zul.grid.Columns','e0GQ7',{$$onColSize:false},[
+['zul.grid.Column','e0GQ8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','e0GQ9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','e0GQa',{sclass:'comment-rows',_offset:0,visibleItemCount:9},[
+['zul.grid.Row','e0GQn',{_loaded:true,_index:0},[
+['zul.wnd.Window','e0GQ40',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','e0GQ50',{prolog:'\n\t'},[
+['zul.box.Vlayout','e0GQ60',{},[
+['zul.box.Hlayout','e0GQ70',{},[
+['zul.wgt.Toolbarbutton','e0GQ80',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'davout'},[]]]],
+['zul.wgt.Label','e0GQa0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','e0GQb0',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=8D29F3127E178DA27EBF131869960C52?userId=2633&extName=jpeg'},[]],
+['zul.wgt.Div','e0GQc0',{},[]],
+['zul.wgt.Div','e0GQf0',{},[
+['zul.wgt.Label','e0GQg0',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','e0GQh0',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'407'},[]]]],
+['zul.wgt.Div','e0GQi0',{},[
+['zul.wgt.Label','e0GQj0',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','e0GQk0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 12, 2008'},[]]]],
+['zul.wgt.Div','e0GQl0',{},[]],
+['zul.wgt.Div','e0GQn0',{},[]]],'vertical']]],
+['zul.wnd.Window','e0GQp0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','e0GQq0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','e0GQr0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','e0GQs0',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','e0GQt0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','e0GQw0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">I\'m attempting to write my first custom ZK component - a non visual \'block\' tag - as described at the tail end of this forum thread (see <a target="external" href="http://www.zkoss.org/forum/listComment/20257-Templates-for-grid-s-with-variable-number-of-columns">http://www.zkoss.org/forum/listComment/20257-Templates-for-grid-s-with-variable-number-of-columns</a> )</p><p>My custom non visual ZK component derives from \'AbstractComponent\', like:</p><p>Java Class...<div style="class=code" class="code"><pre>\npublic class Block extends AbstractComponent &#123;\n\n\tprivate static final long serialVersionUID = &#45;6756928372758156349L;\n\n\tpublic Block() &#123;\n\t\tsuper();\n\t&#125;\n\n\t@Override\n\tprotected void renderProperties(ContentRenderer arg0) throws IOException &#123;\n\t\tsuper.renderProperties(arg0);\n\t&#125;\n\n&#125;\n\n</pre></div></p><p>JS class:<div style="class=code" class="code"><pre>\nzk.$package(\'com.eis.zk.component\');\n\ncom.eis.zk.component.Blank = zk.$extends(zk.Object, &#123;\n \n&#125;);\n</pre></div></p><p>When the try to use it in the following \'index.zul\'  page...<div style="class=code" class="code"><pre>\n&lt;?page title="Auto Generated index.zul"?&gt;\n&lt;window title="Dynamic Grid demo #01" border="normal" width="100%"\n\tapply="org.zkoss.bind.BindComposer"\n\tviewModel="@id(\'vm\') @init(\'com.eis.grid.dynamic.DynamicGridDemoVM\')"&gt;\n\n\t&lt;grid width="95%" model="@load(vm.customerModel)"&gt;\n\t\t&lt;columns children="@init(vm.columnModel)"&gt;\n\t\t\t&lt;template name="children" var="c"&gt;\n\t\t\t\t&lt;column label="@load(c.title)" align="@load(c.align)"\n\t\t\t\t\thflex="@load(c.hflex)" visible="true" /&gt;\n\t\t\t&lt;/template&gt;\n\t\t&lt;/columns&gt;\n\t\t&lt;template name="model" var="r"&gt;\n\t\t\t&lt;row&gt;\n\t\t\t\t&lt;cell&gt;\n\t\t\t\t\t&lt;a label="@load(r.surname)" &gt;&lt;/a&gt;\n\t\t\t\t&lt;/cell&gt;\n\t\t\t\t&lt;cell&gt;\n\t\t\t\t\t&lt;a label="@load(r.firstName)" &gt;&lt;/a&gt;\n\t\t\t\t&lt;/cell&gt;\n\t\t\t\t&lt;block children="@load(r.purchaseValues)"&gt;\n\t\t\t\t\t&lt;template name="children" var="p"&gt;\n\t\t\t\t\t\t&lt;cell&gt;\n\t\t\t\t\t\t\t&lt;label value="@load(p)" &gt;&lt;/label&gt;\n\t\t\t\t\t\t&lt;/cell&gt;\n\t\t\t\t\t&lt;/template&gt;\n\t\t\t\t&lt;/block&gt;\n\n\t\t\t&lt;/row&gt;\n\t\t&lt;/template&gt;\n\t&lt;/grid&gt;\n&lt;/window&gt;\n</pre></div></p><p>..  the web app just hangs showing the \'processing\'  popup message </p><p>I can\'t find another non visual component to copy from.  Any suggestions?</p>'},[]],
+['zul.wgt.Separator','e0GQx0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','e0GQy0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','e0GQz0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','e0GQp',{_loaded:true,_index:1},[
+['zul.wnd.Window','e0GQ_1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','e0GQ01',{prolog:'\n\t'},[
+['zul.box.Vlayout','e0GQ11',{},[
+['zul.box.Hlayout','e0GQ21',{},[
+['zul.wgt.Toolbarbutton','e0GQ31',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'gekkio'},[]]]],
+['zul.wgt.Label','e0GQ51',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','e0GQ61',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=8D29F3127E178DA27EBF131869960C52?userId=1577&extName=jpeg'},[]],
+['zul.wgt.Div','e0GQ71',{},[]],
+['zul.wgt.Div','e0GQa1',{},[
+['zul.wgt.Label','e0GQb1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','e0GQc1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'165'},[]]]],
+['zul.wgt.Div','e0GQd1',{},[
+['zul.wgt.Label','e0GQe1',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','e0GQf1',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 05, 2008'},[]]]],
+['zul.wgt.Div','e0GQg1',{},[]],
+['zul.wgt.Div','e0GQi1',{},[
+['zul.wgt.Toolbarbutton','e0GQj1',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://jawsy.fi/blog',image:'/forum/images/Globe18x18.png;jsessionid=8D29F3127E178DA27EBF131869960C52',href:'http://jawsy.fi/blog',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','e0GQk1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','e0GQl1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','e0GQm1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','e0GQn1',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','e0GQo1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','e0GQr1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">If the app does nothing once "processing" pops up, you probably have an error in your Javascript.</p><p>If you intend to do custom component development, I strongly suggest you to learn how to use Firebug or Chrome developer tools. You can easily see the Javascript error with the console feature of those tools.</p>'},[]],
+['zul.wgt.Separator','e0GQs1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','e0GQt1',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','e0GQu1',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','e0GQr',{_loaded:true,_index:2},[
+['zul.wnd.Window','e0GQv1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','e0GQw1',{prolog:'\n\t'},[
+['zul.box.Vlayout','e0GQx1',{},[
+['zul.box.Hlayout','e0GQy1',{},[
+['zul.wgt.Toolbarbutton','e0GQz1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'davout'},[]]]],
+['zul.wgt.Label','e0GQ02',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','e0GQ12',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=8D29F3127E178DA27EBF131869960C52?userId=2633&extName=jpeg'},[]],
+['zul.wgt.Div','e0GQ22',{},[]],
+['zul.wgt.Div','e0GQ52',{},[
+['zul.wgt.Label','e0GQ62',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','e0GQ72',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'407'},[]]]],
+['zul.wgt.Div','e0GQ82',{},[
+['zul.wgt.Label','e0GQ92',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','e0GQa2',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 12, 2008'},[]]]],
+['zul.wgt.Div','e0GQb2',{},[]],
+['zul.wgt.Div','e0GQd2',{},[]]],'vertical']]],
+['zul.wnd.Window','e0GQf2',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','e0GQg2',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','e0GQh2',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','e0GQi2',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','e0GQj2',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','e0GQm2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Umm...   </p><p>I simply followed the reference docs at <a target="external" href="http://books.zkoss.org/wiki/ZK_Component_Development_Essentials. ">http://books.zkoss.org/wiki/ZK_Component_Development_Essentials. </a></p><p>It would help if ZK could provide either better docs or some pointers on where to start debugging.</p>'},[]],
+['zul.wgt.Separator','e0GQn2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','e0GQo2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','e0GQp2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','e0GQt',{_loaded:true,_index:3},[
+['zul.wnd.Window','e0GQq2',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','e0GQr2',{prolog:'\n\t'},[
+['zul.box.Vlayout','e0GQs2',{},[
+['zul.box.Hlayout','e0GQt2',{},[
+['zul.wgt.Toolbarbutton','e0GQu2',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'gekkio'},[]]]],
+['zul.wgt.Label','e0GQw2',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','e0GQx2',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=8D29F3127E178DA27EBF131869960C52?userId=1577&extName=jpeg'},[]],
+['zul.wgt.Div','e0GQy2',{},[]],
+['zul.wgt.Div','e0GQ03',{},[
+['zul.wgt.Label','e0GQ13',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','e0GQ23',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'165'},[]]]],
+['zul.wgt.Div','e0GQ33',{},[
+['zul.wgt.Label','e0GQ43',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','e0GQ53',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 05, 2008'},[]]]],
+['zul.wgt.Div','e0GQ63',{},[]],
+['zul.wgt.Div','e0GQ83',{},[
+['zul.wgt.Toolbarbutton','e0GQ93',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://jawsy.fi/blog',image:'/forum/images/Globe18x18.png;jsessionid=8D29F3127E178DA27EBF131869960C52',href:'http://jawsy.fi/blog',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','e0GQa3',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','e0GQb3',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','e0GQc3',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','e0GQd3',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','e0GQe3',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','e0GQh3',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">You should start with finding out the Javascript error. Even though you are following a ready-made guide, it\'s very easy to make a small mistake in the code, such as adding an extra brace or a comma somewhere. Since Javascript is not compiled, you will never see these errors unless you validate the JS file or debug it yourself in the browser with Firebug/Chrome. An classic example is an extra comma in a Javascript object, which breaks at least IE6. So, <i >{a: 1, b: 2, }</i> breaks IE6, while <i >{a: 1, b: 2}</i> does not. Trailing commas are allowed by the spec, and Firefox and Chrome work fine with both examples.</p><p>If you are using Firefox, <a target="external" href="https://addons.mozilla.org/en-US/firefox/addon/firebug" rel="nofollow" >download Firebug</a>.<br/>You can then open your app so that the Firebug window is open. In order to open the window, either click the Firebug button in the toolbar, or right-click somewhere on the page and select "Inspect element with Firebug".  Make sure Firebug was enabled when you loaded the page in your app (refresh with F5 if necessary). You can then see any Javascript errors you might have in the "Console"-tab in Firebug.</p>'},[]],
+['zul.wgt.Separator','e0GQi3',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','e0GQj3',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','e0GQk3',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','e0GQv',{_loaded:true,_index:4},[
+['zul.wnd.Window','e0GQl3',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','e0GQm3',{prolog:'\n\t'},[
+['zul.box.Vlayout','e0GQn3',{},[
+['zul.box.Hlayout','e0GQo3',{},[
+['zul.wgt.Toolbarbutton','e0GQp3',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'neillee'},[]]]],
+['zul.wgt.Label','e0GQr3',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','e0GQs3',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=8D29F3127E178DA27EBF131869960C52?userId=56191&extName=jpeg'},[]],
+['zul.wgt.Div','e0GQt3',{},[]],
+['zul.wgt.Div','e0GQw3',{},[
+['zul.wgt.Label','e0GQx3',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','e0GQy3',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'6'},[]]]],
+['zul.wgt.Div','e0GQz3',{},[
+['zul.wgt.Label','e0GQ_4',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','e0GQ04',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 07, 2012'},[]]]],
+['zul.wgt.Div','e0GQ14',{},[]],
+['zul.wgt.Div','e0GQ34',{},[]]],'vertical']]],
+['zul.wnd.Window','e0GQ54',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','e0GQ64',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','e0GQ74',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','e0GQ84',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','e0GQ94',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','e0GQc4',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hello davout,</p><p>Based on what you are trying to achieve, you can simply use forEach to generate the variable number of cells for each row.<div style="class=code" class="code"><pre>\n&lt;?page title="Auto Generated index.zul"?&gt;\n&lt;window title="Dynamic Grid demo #01" border="normal" width="100%"\n\tapply="org.zkoss.bind.BindComposer"\n\tviewModel="@id(\'vm\') @init(\'com.eis.grid.dynamic.DynamicGridDemoVM\')"&gt;\n\n\t&lt;grid width="95%" model="@load(vm.customerModel)"&gt;\n\t\t&lt;columns children="@init(vm.columnModel)"&gt;\n\t\t\t&lt;template name="children" var="c"&gt;\n\t\t\t\t&lt;column label="@load(c.title)" align="@load(c.align)"\n\t\t\t\t\thflex="@load(c.hflex)" visible="true" /&gt;\n\t\t\t&lt;/template&gt;\n\t\t&lt;/columns&gt;\n\t\t&lt;template name="model" var="r"&gt;\n\t\t\t&lt;row&gt;\n\t\t\t\t&lt;cell&gt;\n\t\t\t\t\t&lt;a label="@load(r.surname)" &gt;&lt;/a&gt;\n\t\t\t\t&lt;/cell&gt;\n\t\t\t\t&lt;cell&gt;\n\t\t\t\t\t&lt;a label="@load(r.firstName)" &gt;&lt;/a&gt;\n\t\t\t\t&lt;/cell&gt;\n                                &lt;zk forEach="$&#123;r.purchaseValues&#125;"&gt;\n\t\t\t\t  &lt;cell&gt;\n\t\t\t\t    &lt;label value="$&#123;each&#125;" &gt;&lt;/label&gt;\n\t\t\t\t  &lt;/cell&gt;\n                               &lt;/zk&gt;\n\t\t\t&lt;/row&gt;\n\t\t&lt;/template&gt;\n\t&lt;/grid&gt;\n&lt;/window&gt;\n</pre></div></p><p>Neil Lee, Engineer<br/>Potix Corporation</p>'},[]],
+['zul.wgt.Separator','e0GQd4',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','e0GQe4',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','e0GQf4',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','e0GQx',{_loaded:true,_index:5},[
+['zul.wnd.Window','e0GQg4',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','e0GQh4',{prolog:'\n\t'},[
+['zul.box.Vlayout','e0GQi4',{},[
+['zul.box.Hlayout','e0GQj4',{},[
+['zul.wgt.Toolbarbutton','e0GQk4',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'davout'},[]]]],
+['zul.wgt.Label','e0GQm4',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','e0GQn4',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=8D29F3127E178DA27EBF131869960C52?userId=2633&extName=jpeg'},[]],
+['zul.wgt.Div','e0GQo4',{},[]],
+['zul.wgt.Div','e0GQr4',{},[
+['zul.wgt.Label','e0GQs4',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','e0GQt4',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'407'},[]]]],
+['zul.wgt.Div','e0GQu4',{},[
+['zul.wgt.Label','e0GQv4',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','e0GQw4',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 12, 2008'},[]]]],
+['zul.wgt.Div','e0GQx4',{},[]],
+['zul.wgt.Div','e0GQz4',{},[]]],'vertical']]],
+['zul.wnd.Window','e0GQ05',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','e0GQ15',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','e0GQ25',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','e0GQ35',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','e0GQ45',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','e0GQ75',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Thanks for the \'ZK ForEach\' suggestion...   that works.</p><p>Unfortunately it means that those cells are outside of the MVVM binding.  For instance if I want use an inplace edit Textbox in one of these variable column.</p><p>Any more suggestions?</p>'},[]],
+['zul.wgt.Separator','e0GQ85',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','e0GQ95',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','e0GQa5',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','e0GQz',{_loaded:true,_index:6},[
+['zul.wnd.Window','e0GQb5',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','e0GQc5',{prolog:'\n\t'},[
+['zul.box.Vlayout','e0GQd5',{},[
+['zul.box.Hlayout','e0GQe5',{},[
+['zul.wgt.Toolbarbutton','e0GQf5',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'davout'},[]]]],
+['zul.wgt.Label','e0GQh5',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','e0GQi5',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=8D29F3127E178DA27EBF131869960C52?userId=2633&extName=jpeg'},[]],
+['zul.wgt.Div','e0GQj5',{},[]],
+['zul.wgt.Div','e0GQm5',{},[
+['zul.wgt.Label','e0GQn5',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','e0GQo5',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'407'},[]]]],
+['zul.wgt.Div','e0GQp5',{},[
+['zul.wgt.Label','e0GQq5',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','e0GQr5',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 12, 2008'},[]]]],
+['zul.wgt.Div','e0GQs5',{},[]],
+['zul.wgt.Div','e0GQu5',{},[]]],'vertical']]],
+['zul.wnd.Window','e0GQw5',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','e0GQx5',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','e0GQy5',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','e0GQz5',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','e0GQ_6',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','e0GQ26',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">It\'s a pity that the \'ZK\' tag doesn\'t support MVVM, like<div style="class=code" class="code"><pre>\n&lt;zk children="@load(r.purchaseValues)" &gt;\n\t&lt;template name="children" var="t"&gt;\n\t\t&lt;cell&gt;\n\t\t\t&lt;label value="@load(t)" &gt;&lt;/label&gt;\n\t\t&lt;/cell&gt;\n    &lt;/template&gt; \n&lt;/zk&gt;\n\n</pre></div></p><p>Is it possible to derive a new class/tag from \'ZK\' to support this?</p>'},[]],
+['zul.wgt.Separator','e0GQ36',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','e0GQ46',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','e0GQ56',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','e0GQ00',{_loaded:true,_index:7},[
+['zul.wnd.Window','e0GQ66',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','e0GQ76',{prolog:'\n\t'},[
+['zul.box.Vlayout','e0GQ86',{},[
+['zul.box.Hlayout','e0GQ96',{},[
+['zul.wgt.Toolbarbutton','e0GQa6',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'sjoshi'},[]]]],
+['zul.wgt.Label','e0GQc6',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','e0GQe6',{},[]],
+['zul.wgt.Div','e0GQh6',{},[
+['zul.wgt.Label','e0GQi6',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','e0GQj6',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'56'},[]]]],
+['zul.wgt.Div','e0GQk6',{},[
+['zul.wgt.Label','e0GQl6',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','e0GQm6',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Jun 20, 2012'},[]]]],
+['zul.wgt.Div','e0GQn6',{},[]],
+['zul.wgt.Div','e0GQp6',{},[
+['zul.wgt.Toolbarbutton','e0GQq6',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://www.askkuber.com',image:'/forum/images/Globe18x18.png;jsessionid=8D29F3127E178DA27EBF131869960C52',href:'http://www.askkuber.com',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','e0GQr6',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','e0GQs6',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','e0GQt6',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','e0GQu6',{id:'dateCreated',sclass:'comment-date',value:'1 days ago'},[]],
+['zul.wgt.Div','e0GQv6',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','e0GQy6',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">I think it would work i am using listHead it is working fine for me\t</p><p>&lt;listhead children="@load(vm.headerList)" sizable="true"&gt;<br/>\t\t\t\t&lt;template name="children" var="headerName"&gt;</p><p>\t\t\t\t\t&lt;listheader label="@load(headerName)"&gt;&lt;/listheader&gt;<br/>\t\t\t\t&lt;/template&gt;<br/>\t\t\t&lt;/listhead&gt;</p>'},[]],
+['zul.wgt.Separator','e0GQz6',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','e0GQ_7',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','e0GQ07',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','e0GQ20',{_loaded:true,_index:8},[
+['zul.wnd.Window','e0GQ17',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','e0GQ27',{prolog:'\n\t'},[
+['zul.box.Vlayout','e0GQ37',{},[
+['zul.box.Hlayout','e0GQ47',{},[
+['zul.wgt.Toolbarbutton','e0GQ57',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'davout'},[]]]],
+['zul.wgt.Label','e0GQ77',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','e0GQ87',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=8D29F3127E178DA27EBF131869960C52?userId=2633&extName=jpeg'},[]],
+['zul.wgt.Div','e0GQ97',{},[]],
+['zul.wgt.Div','e0GQc7',{},[
+['zul.wgt.Label','e0GQd7',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','e0GQe7',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'407'},[]]]],
+['zul.wgt.Div','e0GQf7',{},[
+['zul.wgt.Label','e0GQg7',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','e0GQh7',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Sep 12, 2008'},[]]]],
+['zul.wgt.Div','e0GQi7',{},[]],
+['zul.wgt.Div','e0GQk7',{},[]]],'vertical']]],
+['zul.wnd.Window','e0GQm7',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','e0GQn7',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','e0GQo7',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','e0GQp7',{id:'dateCreated',sclass:'comment-date',value:'22 hrs ago'},[]],
+['zul.wgt.Div','e0GQq7',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','e0GQt7',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">This is a grid!  I\'ve tried both listheader and listhead and the app crashes with \'wrong parent\' errors. Thus...\r<br/>\r<div style="class=code" class="code"><pre>\r\n\t&lt;grid width="95%" model="@load(vm.customerModel)"&gt;\r\n\t\t&lt;columns children="@init(vm.columnModel)"&gt;\r\n\t\t\t&lt;template name="children" var="c"&gt;\r\n\t\t\t\t&lt;column label="@load(c.title)" align="@load(c.align)"\r\n\t\t\t\t\thflex="@load(c.hflex)" visible="true" /&gt;\r\n\t\t\t&lt;/template&gt;\r\n\t\t&lt;/columns&gt;\r\n\t\t&lt;template name="model" var="r"&gt;\r\n\t\t\t&lt;row&gt;\r\n\t\t\t\t&lt;cell&gt;\r\n\t\t\t\t\t&lt;a label="@load(r.surname)" /&gt;\r\n\t\t\t\t&lt;/cell&gt;\r\n\t\t\t\t&lt;cell&gt;\r\n\t\t\t\t\t&lt;a label="@load(r.firstName)" /&gt;\r\n\t\t\t\t&lt;/cell&gt;\r\n\t\t\t\t&lt;listheader children="@load(r.purchaseValues)"&gt;\r\n\t\t\t\t\t&lt;template name="children" var="p"&gt;\r\n\t\t\t\t\t\t&lt;cell&gt;\r\n\t\t\t\t\t\t\t&lt;label value="@load(p)" /&gt;\r\n\t\t\t\t\t\t&lt;/cell&gt;\r\n\t\t\t\t\t&lt;/template&gt;\r\n\t\t\t\t&lt;/listheader&gt;\r\n\r\n\t\t\t&lt;/row&gt;\r\n\t\t&lt;/template&gt;\r\n\t&lt;/grid&gt;\r\n\r\n</pre></div>\r<br/>\r<br/>Today I\'ll have a go at writing a new \'row-ext\' tag (derived from \'row\') that includes a new property called \'extra\' that will allow something like the following to work:\r<br/>\r<div style="class=code" class="code"><pre>\r\n\t&lt;grid width="95%" model="@load(vm.customerModel)"&gt;\r\n\t\t&lt;columns children="@init(vm.columnModel)"&gt;\r\n\t\t\t&lt;template name="children" var="c"&gt;\r\n\t\t\t\t&lt;column label="@load(c.title)" align="@load(c.align)"\r\n\t\t\t\t\thflex="@load(c.hflex)" visible="true" /&gt;\r\n\t\t\t&lt;/template&gt;\r\n\t\t&lt;/columns&gt;\r\n\t\t&lt;template name="model" var="r"&gt;\r\n\t\t\t&lt;row&#45;ext extra="@load(r.purchaseValues)"&gt;\r\n\t\t\t\t&lt;cell&gt;\r\n\t\t\t\t\t&lt;a label="@load(r.surname)" /&gt;\r\n\t\t\t\t&lt;/cell&gt;\r\n\t\t\t\t&lt;cell&gt;\r\n\t\t\t\t\t&lt;a label="@load(r.firstName)" /&gt;\r\n\t\t\t\t&lt;/cell&gt;\r\n\t\t\t\t&lt;template name="extra" var="p"&gt;\r\n\t\t\t\t\t&lt;cell&gt;\r\n\t\t\t\t\t\t&lt;label value="@load(p)" /&gt;\r\n\t\t\t\t\t&lt;/cell&gt;\r\n\t\t\t\t&lt;/template&gt;\r\n\t\t\t&lt;/row&#45;ext&gt;\r\n\t\t&lt;/template&gt;\r\n\t&lt;/grid&gt;\r\n\r\n</pre></div></p>'},[]],
+['zul.wgt.Separator','e0GQu7',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','e0GQv7',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','e0GQw7',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','e0GQb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','e0GQc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="e0GQf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','e0GQf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="e0GQg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','e0GQg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=8D29F3127E178DA27EBF131869960C52?path=http://www.zkoss.org/forum/listComment/20514-Attempting-to-write-first-custom-ZK-component-help'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="e0GQh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','e0GQh',{id:'comment-reply'},[
+['zk.Native','e0GQk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','e0GQi',{},[]],
+['zul.wgt.Label','e0GQj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=8D29F3127E178DA27EBF131869960C52" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=8D29F3127E178DA27EBF131869960C52"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

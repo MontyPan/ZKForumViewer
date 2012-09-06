@@ -1,0 +1,588 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">	
+	<link rel="shortcut icon" type="image/ico" href="/resource/img/favicon.ico" >
+	<link rel="bookmark" href="/resource/img/favicon.ico" >
+	<link href="http://feeds.feedburner.com/zkoss?format=xml" rel="alternate" type="application/rss+xml" title="ZK RSS FEED" />
+	<link rel="stylesheet" type="text/css" href='/forum/css/website/template.css.dsp;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE'	/>
+	<link type="text/css" rel="stylesheet" href='/forum/less/index;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE?1346908372463' />
+<title>ZKoss Canvas using KineticJS | Forum | ZK </title>
+<meta name="keywords" content="ajax zk forum" />
+<meta name="description" content="ZKoss Canvas using KineticJS"/> 
+<meta name="Robots" content="all"/>
+<meta name="author" content="Jales"/>
+<meta name="classification" content="forum"/>
+<meta name="generator" content="zk jsp"/>
+
+
+<link rel="stylesheet" type="text/css" href="/forum/zkau/web/dd3ed978/_zkiju-breeze/zul/css/zk.wcs;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE"/>
+
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zk.wpd;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE" charset="UTF-8">
+</script>
+<script type="text/javascript" src="/forum/zkau/web/dd3ed978/js/zul.lang.wpd;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE" charset="UTF-8">
+</script>
+<!-- ZK 5.0.9 EE 2011102015 Evaluation Only -->
+
+<script type="text/javascript" src='/forum/js/zorum.js.dsp;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE' charset="UTF-8">
+</script>
+<style>
+	.gridRows iframe{
+		border:none;
+	}
+	.fiddleiframe{
+		display:none;
+	}
+	.commentBody iframe{
+	   border:none;	
+	}	
+</style>
+</head>
+<body class="zk-forum">
+	<div id="zk-container">
+		<div id="index-header">
+		<div id="index-header-inner">
+		<h1 id="zk-logo">
+		<em>
+			<a href="/" rel="canonical" title="ZK Home" name="top"><img width="63" src="http://www.zkoss.org/resource/img/template/top_zk_logo.png"
+				title="ZK - Open Source Ajax Java Framework" alt="ZK - Open Source Ajax Java Framework" class="open-source-ajax" >ZK - Open Source Ajax Java Framework</a>
+		</em>
+		</h1>		
+		
+<div id="main_menu">
+	<ul class='menu new-style'>
+		<li class='menuitem '>
+			<div class="menuitem-right">
+				<a href="/product/" class="menulink">Products</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/product/zk" title="ZK">ZK</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkstudio" title="ZK Studio">ZK Studio</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspring" title="ZK Spring">ZK Spring</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkspreadsheet" title="ZK Spreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkpivottable" title="ZK Pivottable">ZK Pivottable</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkcalendar" title="ZK Calendar">ZK Calendar</a>
+	<div class="sep"></div></li>
+<li><a href="/product/zkjsp" title="ZK JSP">ZK JSP</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="http://www.zkoss.org/product/zats" title="ZTL">ZATS</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a>
+				</li>
+			</ul>
+		</li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/demo/" class="menulink">Demos</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/zkdemo/">ZK</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/product/zkstudio/demo">ZK Studio</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zssdemo.zkoss.org">ZK SpreadSheet</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://www.zkoss.org/zkdemo/application/pivottable">ZK Pivottable</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="http://zcal.zkoss.org">ZK Calendar</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zkmail/">ZK Web Mail</a>
+				<div class="sep"></div>
+				</li>
+				<li><a href="/zksandbox">ZK Sandbox</a>
+				<div class="sep"></div>
+				</li>
+				<li class="bottom"><a href="/demo/external">Real World Apps</a>
+				</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/download/" class="menulink">Downloads</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/download/zk">ZK</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkstudio">ZK Studio</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspring">ZK Spring</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkspreadsheet">ZK Spreadsheet</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkpivottable">ZK Pivottable</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkcalendar">ZK Calendar</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/download/zkjsp">ZK JSP</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/download/zats">ZATS</a>
+</li>
+<!--
+		<li class="bottom"><a href="/download/ztl">ZTL</a>
+				</li>
+				 -->
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/whyzk/" class="menulink">Why ZK</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/whyzk/features">Features</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/TopReasons">Top Reasons</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/WhosUsing">Who's Using</a>
+	<div class="sep"></div>
+</li>
+<li><a href="/whyzk/casestudies">Case Studies</a>
+	<div class="sep"></div>
+</li>
+<li class="bottom"><a href="/whyzk/Testimonials">Testimonials</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem menuitem-sel'>
+			<div class="menuitem-right">
+				<a href="/community/" class="menulink">Community</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/forum/">Forum</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://blog.zkoss.org">Blog</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Hall_of_Fame">Contributors</a>
+  <div class="sep"></div>
+</li>
+<li><a href="http://books.zkoss.org/wiki/Blogosphere">Blogosphere</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation#Small_Talks">Small Talks</a>
+  <div class="sep"></div>
+</li>
+<li><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10002'>Request Features</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href='http://tracker.zkoss.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10001'>Report Bugs</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/documentation" class="menulink">Documentation</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/documentation">ZK</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkstudio">ZK Studio</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspring">ZK Spring</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkspreadsheet">ZK Spreadsheet</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkpivottable">ZK Pivottable</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkcalendar">ZK Calendar</a>
+  <div class="sep"></div>
+</li>
+<li><a href="/documentation/zkjsp">ZK JSP</a>
+  <div class="sep"></div>
+</li>
+<li class="bottom"><a href="http://www.zkoss.org/documentation/zats">ZATS</a>
+</li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+		<li class='menuitem'>
+			<div class="menuitem-right">
+				<a href="/support/" class="menulink">Support</a>
+			</div>
+			<ul>
+				<li class="round-top"></li>
+				<li class="top"><a href="/support/options">Support Options</a>
+	<div class="sep"></div></li>
+<li><a href="/partner/">Partners</a>
+	<div class="sep"></div></li>
+<li class="bottom"><a href="/support/about">About Us</a></li>
+				<li class="round-bottom"></li>
+				<li class="touch-close"><a title="Close Menu" href="#"></a></li>
+			</ul></li>
+	</ul>
+
+</div>
+		
+
+
+
+
+
+<div id="reglang-box">
+	<script type="text/javascript">zkpb('f6EP_','z_6iy','/forum;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE','/forum/zkau;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="f6EP0" class="z-temp"><script src='/forum/zkau/web/dd3ed978/js/zul.breeze.wpd;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE'></script></div><script type="text/javascript">zk.pi=1;zkx(
+['zul.wgt.Toolbarbutton','f6EP0',{sclass:'item',label:'Login',href:'/forum/login.zul;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE?path=http://www.zkoss.org/forum/listComment/19631-ZKoss-Canvas-using-KineticJS'},[]]);
+</script>
+<div id="f6EP1" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Toolbarbutton','f6EP1',{sclass:'item',label:'Register',href:'/forum/signup.zul;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE'},[]]);
+</script>
+
+</div>
+<div id="search-box">
+	<div id="searchBodyg">
+		<form id="cse-search-box" action="/doc/searchresult.jsp" method="get">
+			<div>
+				<input type="hidden" name="cx" value="008321236477929467003:63kdpeqkkvw">
+				
+				<input type="hidden" name="cof" value="FORID:11">  
+				<input class="searchinp" type="text" id="googleInput" value="" size="25" name="q" /> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+
+	<div id="searchBodySql" style="display: none;">
+		<form id="sql-search-box" action="/forum/searchSqlResult.jsp;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE" method="get">
+			<div>
+				<input type="hidden" value="1" name="PageIndex" /> 
+				<input class="searchinp" type="text" id="sqlInput" value="" size="25" name="q" style=""/> 
+				<input id="sa" class="searchsubmit" type="submit" value="" name="sa" />
+			</div>
+		</form>
+	</div>
+	<form id="searchchoice">
+		<input class="rad" type="radio" CHECKED value="google" name="search">Google 
+		<input class="rad" type="radio" value="SQL" name="search" />Database &nbsp;| 
+		<a href="/forum/advanceSearch.zul;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE">Advanced Search</a>
+	</form>
+</div>
+
+	</div>
+</div>
+		<div id="zk-template">
+			<div id="template-inner">
+<div id="container-top"></div>
+<div id="internal"></div>
+<div id="listComment">
+	<div id="main">
+		<div id="content-top"></div>
+		<div id="content">
+			<table border="0" width="98%" height="50px">
+				<tr>
+					<td>
+			           <div id="category-navigation">
+							<ul>
+								<li class="category-home"><a href="/forum/;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE"><img src="/forum/images/home.png;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE" alt="Home"/></a></li>
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/14;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE">Help</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/18;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE">ZK Studio</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+										<li class="category category-selected"><a href="/forum/listDiscussion/13;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE">General</a>
+										</li>
+									
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/15;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE">Announcements</a></li>
+									
+									
+										<li>|</li>
+									
+								
+									
+									
+										<li class="category"><a href="/forum/listDiscussion/17;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE">Installation</a></li>
+									
+									
+								
+							</ul>
+						</div>
+			        </td>
+				</tr>
+			</table>
+			<h2 id="discussionTitle">ZKoss Canvas using KineticJS</h2>
+			<!-- *************************** List Comments *************************** -->
+			<script type="text/javascript">zkpb('f6EP4','z_6iy','/forum;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE','/forum/zkau;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE','/WEB-INF/website/template_header-search.jsp');zkpe();</script>
+<div id="f6EP2" class="z-temp"><div class="author"><img class='author-image' title='Jales' src='/forum/mediaService?userId=39317&extName=null' /><span class="author-name">Jales</span></div><div><span class="comment-date">25 May 2012 08:41:29 GMT</span><div class="comment-cotent"><span class="comment-content">25 May 2012 08:41:29 GMT</span><p  style="margin:2px 2px;">Hi, </p><p>I'm aware of ZKoss Canvas, or Canvas4Z project, and using it for current project.</p><p>But, this library lacks of certain interactivity, which we need.</p><p>So, I search for another Javascript library that is able to interact smoothly with Canvas, </p><p>and I stumbled upon KineticJS, and we think that KineticJS is a great Javascript HTML5 Canvas library.</p><p>( <a target="external" href="http://www.kineticjs.com/ " rel="nofollow" >http://www.kineticjs.com/ </a>)</p><p>Does ZKoss developer team has considered using this library in ZKoss?<br/>I don't know if Canvas4Z is an actual component of ZKoss or is an external project.</p><p>Is there anyone already porting KineticJS to ZKoss? If not, we might want to try to port it to ZKoss.</p><p>We have found this documentation to develop component in ZKoss :<br/>http://books.zkoss.org/wiki/ZK%20Component%20Development%20Essentials</p><p>Can we use this documentation to port KineticJS to ZKoss?<br/>What "other things" we need to consider/know before porting this library to ZKoss?</p><p>Thanks. :)</p></div></div><div class="author"><img class='author-image' title='MontyPan' src='/forum/mediaService?userId=54872&extName=jpeg' /><span class="author-name">MontyPan</span></div><div><span class="comment-date">25 May 2012 09:51:14 GMT</span><div class="comment-cotent"><span class="comment-content">25 May 2012 09:51:14 GMT</span><p  style="margin:2px 2px;">The architecture of ZK component is complex, and the document simplify many details. <br/><a target="external" href="http://books.zkoss.org/wiki/Small_Talks/2010/April/Client_Side_Programming">Client Side Programming</a> is another approach, maybe easier (maybe)</p><p>BTW, would you like to talk about  which parts of ZKoss Canvas or Canvas4Z didn't meet your requirements?</p></div></div><div class="author"><img class='author-image' title='Jales' src='/forum/mediaService?userId=39317&extName=null' /><span class="author-name">Jales</span></div><div><span class="comment-date">29 May 2012 08:26:33 GMT</span><div class="comment-cotent"><span class="comment-content">29 May 2012 08:26:33 GMT</span><p  style="margin:2px 2px;">Yes, we have considered the client side programming too. We currently don't have a very good Javascript expert. We do understand Javascript, but not really good. So, that's why we think it would be best to just port it to ZKoss, because the documentation shows it is quite simple. And, it's just we want to contribute to ZK by porting this great library to ZKoss. </p><p>One of our requirement is to be able to interact easily with the graphic component of a strategy map (example : <a target="external" href="http://www.balancedscorecards.com/wp-content/uploads/2010/11/Strategy_map.jpg" rel="nofollow" >http://www.balancedscorecards.com/wp-content/uploads/2010/11/Strategy_map.jpg</a>) </p><p>The interactivity needed is such as :<br/>a. Easily positioning the strategic objective (the elipse component). This means we must be able to easily select and then drag them across the canvas. We happen to stumbled upon this tutorial ( <a target="external" href="http://books.zkoss.org/wiki/Small_Talks/2012/February/How_To_Use_Canvas4Z_Part2">http://books.zkoss.org/wiki/Small_Talks/2012/February/How_To_Use_Canvas4Z_Part2</a> ) that shows how to select it and move the graphic component. But, this is not as good as we hoped. We want it to be just like this :<br/><a target="external" href="http://www.html5canvastutorials.com/labs/html5-canvas-drag-and-drop-multiple-shapes-with-kineticjs/" rel="nofollow" >http://www.html5canvastutorials.com/labs/html5-canvas-drag-and-drop-multiple-shapes-with-kineticjs/</a> .<br/>b. Easily connect two strategic objective (the elipse component) but the line must be flexible enough to be shaped as curve (look at those connecting lines in the strategic map example above). We have been able to connect it using and arrow line, but the line is rigid, and it cannot be shaped as curve easily. We want it to look like this :<br/><a target="external" href="http://www.html5canvastutorials.com/labs/html5-canvas-modify-curves-with-anchor-points-using-kineticjs/" rel="nofollow" >http://www.html5canvastutorials.com/labs/html5-canvas-modify-curves-with-anchor-points-using-kineticjs/</a></p><p>Those are just two I could think of right now. If we succeeded in porting the KineticJS library to ZKoss, we will have more requirements since it will open more interactivity possibilities. That's why we want to port this library to ZKoss.</p></div></div><div class="author"><img class='author-image' title='SoundwaveTape' src='/forum/mediaService?userId=58924&extName=null' /><span class="author-name">SoundwaveTape</span></div><div><span class="comment-date">29 Aug 2012 02:51:41 GMT</span><div class="comment-cotent"><span class="comment-content">29 Aug 2012 02:51:41 GMT</span><p  style="margin:2px 2px;">I love KineticJS as well and needed to use it in a ZK environment (with ServerPush). KineticJS is continuously updated. Porting the library would be a very hard thing, but maintaining the port would be just as costly. I thought a great approach is to keep it a JS library and write my own JS wrapper library on top of it (customizing grouping and other functions). The server would do as much as it can and send JSON updates to the KineticJS wrapper.</p><p>Declare in ZUL:<div style="class=code" class="code"><pre>
+&lt;?script type="text/javascript" src="/js/kinetic&#45;v4.0.1.min.js"?&gt;
+&lt;?script type="text/javascript" src="/js/yourKineticWrapper.js?productionNumber12345"?&gt;
+</pre></div><br/>For some reason, I have to initialize my canvas and start my server push in this fashion. Inline in ZUL.<div style="class=code" class="code"><pre>
+&lt;label visible="false"&gt;
+      &lt;attribute name="onCreate"&gt;
+      		Clients.evalJavaScript("initCanvas(&#92;"kineticCanvas&#92;", 800, 800);");
+      		com.yourCompany.ui.kinetic.KineticServerPush.start(anyComponent);
+      &lt;/attribute&gt;
+&lt;/label&gt;    
+</pre></div></p><p>For some reason, it does NOT work if I try to use a static Java call to do a Clients.evalJavaScript() or even if I do an onCreate=''.<div style="class=code" class="code"><pre>
+	&lt;label visible="false" onCreate="com.yourCompany.ui.kinetic.KineticFunctions.initCanvas(800, 800)"/&gt; // does not work
+	&lt;label visible="false" onCreate='Clients.evalJavaScript("initCanvas(&#92;"kineticCanvas&#92;", 800, 800)");'/&gt; // does not work
+</pre></div></p><p>At the same time while server push is attached, I cannot call more Clients.evalJavaScript() inline ZUL. For some reason (which I'm happy to do), I need to call static server Java methods. (This is only necessary when ServerPush has been activated.) Funny that I have to do init inline and then updates like:<div style="class=code" class="code"><pre>
+	&lt;button label="100%" onClick="com.yourCompany.ui.kinetic.KineticFunctions.setScale(1.0)"/&gt;
+	&lt;button label="50%" onClick="com.yourCompany.ui.kinetic.KineticFunctions.setScale(0.5)"/&gt;
+</pre></div></p><p>For KineticJS, you need a div for a canvas:<div style="class=code" class="code"><pre>
+	&lt;html&gt;
+		&lt;body&gt;
+			&lt;div id="kineticCanvas"&gt;&lt;/div&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+</pre></div></p><p>In your KineticFunctions, just have methods like:<div style="class=code" class="code"><pre>
+    public static void setScale(double scale) &#123;
+	Clients.evalJavaScript("setScale(" + scale + ");");
+    &#125;
+
+// Based on ZK's CometServerPush:
+                    Executions.activate(_desktop);
+                    try &#123;
+			Clients.evalJavaScript("jsonUpdate('" + yourJson.toString() + "');");
+                    &#125; finally &#123;
+                        Executions.deactivate(_desktop);
+                    &#125;
+</pre></div></p><p>I could have saved at least seven days knowing the above. This should apply to any JavaScript library that is trying to be adapted with dynamic server updates plus client interaction with ZK. Sorry that I couldn't post the full source.</p></div></div></div><script type="text/javascript">zkx(
+['zul.wnd.Window','f6EP2',{$$onSize:false,$$onMaximize:false,$$onOpen:false,$$onMinimize:false,$$onZIndex:false,$onClose:true,$$onMove:false,width:'100%'},[
+['zk.Native','f6EPd',{prolog:'<div class="c-middlebar">\r\n\t\t\t\t<table border="0" width="100%">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td align="left" style="width: 1%">\r\n\t\t\t\t\t\t\t<div class="c-newthread" align="right">'},[]],
+['zul.wgt.Button','f6EP5',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE?path=http://www.zkoss.org/forum/listComment/19631-ZKoss-Canvas-using-KineticJS'},[]],
+['zk.Native','f6EPe',{prolog:'</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t\t<td align="right" style="width: 99%">\r\n\t\t\t\t\t        <div class="c-pages">\r\n\t\t\t\t\t            \r\n\t\t\t\t\t        </div>\r\n\t\t\t\t\t\t</td>\t\t\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table>\r\n\t\t\t\t</div>'},[]],
+['zul.grid.Grid','f6EP6',{id:'commentGrid',$$onRender:true,$onTopPad:false,$$onDataLoading:true,$onDataLoading:true,$$onInnerWidth:false,$$onPageSize:true,$$onScrollPos:false,style:'margin-top: 5px; margin-bottom: 5px;',model:true,_topPad:0,emptyMessage:null,_totalSize:4,_offset:0},[
+['zul.grid.Columns','f6EP7',{$$onColSize:false},[
+['zul.grid.Column','f6EP8',{$onSort:true,$onGroup:true,width:'140px'},[]],
+['zul.grid.Column','f6EP9',{$onSort:true,$onGroup:true},[]]]],
+['zul.grid.Rows','f6EPa',{sclass:'comment-rows',_offset:0,visibleItemCount:4},[
+['zul.grid.Row','f6EPn',{_loaded:true,_index:0},[
+['zul.wnd.Window','f6EPv',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','f6EPw',{prolog:'\n\t'},[
+['zul.box.Vlayout','f6EPx',{},[
+['zul.box.Hlayout','f6EPy',{},[
+['zul.wgt.Toolbarbutton','f6EPz',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'Jales'},[]]]],
+['zul.wgt.Label','f6EP00',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','f6EP20',{},[]],
+['zul.wgt.Div','f6EP50',{},[
+['zul.wgt.Label','f6EP60',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','f6EP70',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'45'},[]]]],
+['zul.wgt.Div','f6EP80',{},[
+['zul.wgt.Label','f6EP90',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','f6EPa0',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Mar 04, 2011'},[]]]],
+['zul.wgt.Div','f6EPb0',{},[]],
+['zul.wgt.Div','f6EPd0',{},[]]],'vertical']]],
+['zul.wnd.Window','f6EPf0',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','f6EPg0',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','f6EPh0',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','f6EPi0',{id:'dateCreated',sclass:'comment-date',value:'May 25, 2012'},[]],
+['zul.wgt.Div','f6EPj0',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','f6EPm0',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Hi, </p><p>I\'m aware of ZKoss Canvas, or Canvas4Z project, and using it for current project.</p><p>But, this library lacks of certain interactivity, which we need.</p><p>So, I search for another Javascript library that is able to interact smoothly with Canvas, </p><p>and I stumbled upon KineticJS, and we think that KineticJS is a great Javascript HTML5 Canvas library.</p><p>( <a target="external" href="http://www.kineticjs.com/ " rel="nofollow" >http://www.kineticjs.com/ </a>)</p><p>Does ZKoss developer team has considered using this library in ZKoss?<br/>I don\'t know if Canvas4Z is an actual component of ZKoss or is an external project.</p><p>Is there anyone already porting KineticJS to ZKoss? If not, we might want to try to port it to ZKoss.</p><p>We have found this documentation to develop component in ZKoss :<br/>http://books.zkoss.org/wiki/ZK%20Component%20Development%20Essentials</p><p>Can we use this documentation to port KineticJS to ZKoss?<br/>What "other things" we need to consider/know before porting this library to ZKoss?</p><p>Thanks. :)</p>'},[]],
+['zul.wgt.Separator','f6EPn0',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','f6EPo0',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','f6EPp0',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','f6EPp',{_loaded:true,_index:1},[
+['zul.wnd.Window','f6EPq0',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','f6EPr0',{prolog:'\n\t'},[
+['zul.box.Vlayout','f6EPs0',{},[
+['zul.box.Hlayout','f6EPt0',{},[
+['zul.wgt.Toolbarbutton','f6EPu0',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'MontyPan'},[]]]],
+['zul.wgt.Label','f6EPw0',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Image','f6EPx0',{id:'userImage',style:'max-width:70px; max-height:70px',src:'/forum/mediaService;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE?userId=54872&extName=jpeg'},[]],
+['zul.wgt.Div','f6EPy0',{},[]],
+['zul.wgt.Div','f6EP01',{},[
+['zul.wgt.Label','f6EP11',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','f6EP21',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'65'},[]]]],
+['zul.wgt.Div','f6EP31',{},[
+['zul.wgt.Label','f6EP41',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','f6EP51',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'May 07, 2012'},[]]]],
+['zul.wgt.Div','f6EP61',{},[]],
+['zul.wgt.Div','f6EP81',{},[
+['zul.wgt.Toolbarbutton','f6EP91',{id:'myWebsite',tooltiptext:'Personal Website',prolog:'\n\t\t\t',tooltip:'http://xitop.blogspot.com',image:'/forum/images/Globe18x18.png;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE',href:'http://xitop.blogspot.com',target:'_blank'},[]]]]],'vertical']]],
+['zul.wnd.Window','f6EPa1',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','f6EPb1',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','f6EPc1',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','f6EPd1',{id:'dateCreated',sclass:'comment-date',value:'May 25, 2012'},[]],
+['zul.wgt.Div','f6EPe1',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','f6EPh1',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">The architecture of ZK component is complex, and the document simplify many details. <br/><a target="external" href="http://books.zkoss.org/wiki/Small_Talks/2010/April/Client_Side_Programming">Client Side Programming</a> is another approach, maybe easier (maybe)</p><p>BTW, would you like to talk about  which parts of ZKoss Canvas or Canvas4Z didn\'t meet your requirements?</p>'},[]],
+['zul.wgt.Separator','f6EPi1',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','f6EPj1',{id:'signatureDiv',sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','f6EPk1',{id:'signature',sclass:'signature',prolog:'\n\t\t\t',value:'There is no spoon......'},[]]]]]]]],
+['zul.grid.Row','f6EPr',{_loaded:true,_index:2},[
+['zul.wnd.Window','f6EPl1',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','f6EPm1',{prolog:'\n\t'},[
+['zul.box.Vlayout','f6EPn1',{},[
+['zul.box.Hlayout','f6EPo1',{},[
+['zul.wgt.Toolbarbutton','f6EPp1',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'Jales'},[]]]],
+['zul.wgt.Label','f6EPr1',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','f6EPt1',{},[]],
+['zul.wgt.Div','f6EPw1',{},[
+['zul.wgt.Label','f6EPx1',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','f6EPy1',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'45'},[]]]],
+['zul.wgt.Div','f6EPz1',{},[
+['zul.wgt.Label','f6EP_2',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','f6EP02',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Mar 04, 2011'},[]]]],
+['zul.wgt.Div','f6EP12',{},[]],
+['zul.wgt.Div','f6EP32',{},[]]],'vertical']]],
+['zul.wnd.Window','f6EP52',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','f6EP62',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','f6EP72',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','f6EP82',{id:'dateCreated',sclass:'comment-date',value:'May 29, 2012'},[]],
+['zul.wgt.Div','f6EP92',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','f6EPc2',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">Yes, we have considered the client side programming too. We currently don\'t have a very good Javascript expert. We do understand Javascript, but not really good. So, that\'s why we think it would be best to just port it to ZKoss, because the documentation shows it is quite simple. And, it\'s just we want to contribute to ZK by porting this great library to ZKoss. </p><p>One of our requirement is to be able to interact easily with the graphic component of a strategy map (example : <a target="external" href="http://www.balancedscorecards.com/wp-content/uploads/2010/11/Strategy_map.jpg" rel="nofollow" >http://www.balancedscorecards.com/wp-content/uploads/2010/11/Strategy_map.jpg</a>) </p><p>The interactivity needed is such as :<br/>a. Easily positioning the strategic objective (the elipse component). This means we must be able to easily select and then drag them across the canvas. We happen to stumbled upon this tutorial ( <a target="external" href="http://books.zkoss.org/wiki/Small_Talks/2012/February/How_To_Use_Canvas4Z_Part2">http://books.zkoss.org/wiki/Small_Talks/2012/February/How_To_Use_Canvas4Z_Part2</a> ) that shows how to select it and move the graphic component. But, this is not as good as we hoped. We want it to be just like this :<br/><a target="external" href="http://www.html5canvastutorials.com/labs/html5-canvas-drag-and-drop-multiple-shapes-with-kineticjs/" rel="nofollow" >http://www.html5canvastutorials.com/labs/html5-canvas-drag-and-drop-multiple-shapes-with-kineticjs/</a> .<br/>b. Easily connect two strategic objective (the elipse component) but the line must be flexible enough to be shaped as curve (look at those connecting lines in the strategic map example above). We have been able to connect it using and arrow line, but the line is rigid, and it cannot be shaped as curve easily. We want it to look like this :<br/><a target="external" href="http://www.html5canvastutorials.com/labs/html5-canvas-modify-curves-with-anchor-points-using-kineticjs/" rel="nofollow" >http://www.html5canvastutorials.com/labs/html5-canvas-modify-curves-with-anchor-points-using-kineticjs/</a></p><p>Those are just two I could think of right now. If we succeeded in porting the KineticJS library to ZKoss, we will have more requirements since it will open more interactivity possibilities. That\'s why we want to port this library to ZKoss.</p>'},[]],
+['zul.wgt.Separator','f6EPd2',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','f6EPe2',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','f6EPf2',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]],
+['zul.grid.Row','f6EPt',{_loaded:true,_index:3},[
+['zul.wnd.Window','f6EPg2',{$onClose:true,width:'140px',sclass:'commentAuthorContent',prolog:'\n\n'},[
+['zul.box.Box','f6EPh2',{prolog:'\n\t'},[
+['zul.box.Vlayout','f6EPi2',{},[
+['zul.box.Hlayout','f6EPj2',{},[
+['zul.wgt.Toolbarbutton','f6EPk2',{id:'authorBtn',$onClick:true,sclass:'author-popup-btn',label:'SoundwaveTape'},[]]]],
+['zul.wgt.Label','f6EPm2',{id:'roleDescription',style:'color: #EA4317;'},[]]]],
+['zul.wgt.Div','f6EPo2',{},[]],
+['zul.wgt.Div','f6EPr2',{},[
+['zul.wgt.Label','f6EPs2',{id:'post',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Posts:'},[]],
+['zul.wgt.Label','f6EPt2',{id:'postValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'2'},[]]]],
+['zul.wgt.Div','f6EPu2',{},[
+['zul.wgt.Label','f6EPv2',{id:'joined',sclass:'authorTitle',prolog:'\n\t\t\t',value:'Joined:'},[]],
+['zul.wgt.Label','f6EPw2',{id:'joinedValue',sclass:'authorValue',style:'font-size: 10px;',prolog:'\n\t\t\t',value:'Aug 15, 2012'},[]]]],
+['zul.wgt.Div','f6EPx2',{},[]],
+['zul.wgt.Div','f6EPz2',{},[]]],'vertical']]],
+['zul.wnd.Window','f6EP03',{$onClose:true,sclass:'commentContent',prolog:'\n\t'},[
+['zul.wgt.Div','f6EP13',{id:'mainVbox',width:'100%',prolog:'\n\t\t'},[
+['zul.box.Vlayout','f6EP23',{sclass:'comment-meta',prolog:'\n\t\t\t'},[
+['zul.wgt.Label','f6EP33',{id:'dateCreated',sclass:'comment-date',value:'8 days ago'},[]],
+['zul.wgt.Div','f6EP43',{sclass:'comment-ctrl'},[]]]],
+['zul.wgt.Html','f6EP73',{id:'body',sclass:'commentBody',prolog:'\n\t\t\t',content:'<p  style="margin:2px 2px;">I love KineticJS as well and needed to use it in a ZK environment (with ServerPush). KineticJS is continuously updated. Porting the library would be a very hard thing, but maintaining the port would be just as costly. I thought a great approach is to keep it a JS library and write my own JS wrapper library on top of it (customizing grouping and other functions). The server would do as much as it can and send JSON updates to the KineticJS wrapper.</p><p>Declare in ZUL:<div style="class=code" class="code"><pre>\n&lt;?script type="text/javascript" src="/js/kinetic&#45;v4.0.1.min.js"?&gt;\n&lt;?script type="text/javascript" src="/js/yourKineticWrapper.js?productionNumber12345"?&gt;\n</pre></div><br/>For some reason, I have to initialize my canvas and start my server push in this fashion. Inline in ZUL.<div style="class=code" class="code"><pre>\n&lt;label visible="false"&gt;\n      &lt;attribute name="onCreate"&gt;\n      \t\tClients.evalJavaScript("initCanvas(&#92;"kineticCanvas&#92;", 800, 800);");\n      \t\tcom.yourCompany.ui.kinetic.KineticServerPush.start(anyComponent);\n      &lt;/attribute&gt;\n&lt;/label&gt;    \n</pre></div></p><p>For some reason, it does NOT work if I try to use a static Java call to do a Clients.evalJavaScript() or even if I do an onCreate=\'\'.<div style="class=code" class="code"><pre>\n\t&lt;label visible="false" onCreate="com.yourCompany.ui.kinetic.KineticFunctions.initCanvas(800, 800)"/&gt; // does not work\n\t&lt;label visible="false" onCreate=\'Clients.evalJavaScript("initCanvas(&#92;"kineticCanvas&#92;", 800, 800)");\'/&gt; // does not work\n</pre></div></p><p>At the same time while server push is attached, I cannot call more Clients.evalJavaScript() inline ZUL. For some reason (which I\'m happy to do), I need to call static server Java methods. (This is only necessary when ServerPush has been activated.) Funny that I have to do init inline and then updates like:<div style="class=code" class="code"><pre>\n\t&lt;button label="100%" onClick="com.yourCompany.ui.kinetic.KineticFunctions.setScale(1.0)"/&gt;\n\t&lt;button label="50%" onClick="com.yourCompany.ui.kinetic.KineticFunctions.setScale(0.5)"/&gt;\n</pre></div></p><p>For KineticJS, you need a div for a canvas:<div style="class=code" class="code"><pre>\n\t&lt;html&gt;\n\t\t&lt;body&gt;\n\t\t\t&lt;div id="kineticCanvas"&gt;&lt;/div&gt;\n\t\t&lt;/body&gt;\n\t&lt;/html&gt;\n</pre></div></p><p>In your KineticFunctions, just have methods like:<div style="class=code" class="code"><pre>\n    public static void setScale(double scale) &#123;\n\tClients.evalJavaScript("setScale(" + scale + ");");\n    &#125;\n\n// Based on ZK\'s CometServerPush:\n                    Executions.activate(_desktop);\n                    try &#123;\n\t\t\tClients.evalJavaScript("jsonUpdate(\'" + yourJson.toString() + "\');");\n                    &#125; finally &#123;\n                        Executions.deactivate(_desktop);\n                    &#125;\n</pre></div></p><p>I could have saved at least seven days knowing the above. This should apply to any JavaScript library that is trying to be adapted with dynamic server updates plus client interaction with ZK. Sorry that I couldn\'t post the full source.</p>'},[]],
+['zul.wgt.Separator','f6EP83',{prolog:'\n\t\t\t',orient:'horizontal'},[]],
+['zul.wgt.Div','f6EP93',{id:'signatureDiv',visible:false,sclass:'news-line',prolog:'\n\t\t\t'},[]],
+['zul.wgt.Label','f6EPa3',{id:'signature',visible:false,sclass:'signature',prolog:'\n\t\t\t'},[]]]]]]]]]]]],
+['zul.wgt.Popup','f6EPb',{id:'authorPopup',visible:false,$$onOpen:false,sclass:'user-popup'},[]],
+['zul.wgt.Label','f6EPc',{id:'anchor',visible:false},[]]]]);
+</script>
+<div id="f6EPf" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Label','f6EPf',{},[]]);
+</script>
+<div class="c-middlebar">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" style="width: 1%">
+							<div class="c-newthread" align="right"><div id="f6EPg" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Button','f6EPg',{sclass:'forumButton',label:'Reply',href:'/forum/login.zul;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE?path=http://www.zkoss.org/forum/listComment/19631-ZKoss-Canvas-using-KineticJS'},[]]);
+</script>
+</div>
+						</td>
+						<td align="right" style="width: 99%">
+					        <div class="c-pages">
+					            
+					        </div>
+						</td>		
+					</tr>
+				</table>
+			</div>
+			
+			<br /><div id="f6EPh" class="z-temp"></div><script type="text/javascript">zkx(
+['zul.wgt.Div','f6EPh',{id:'comment-reply'},[
+['zk.Native','f6EPk',{prolog:'<a name="reply"></a>'},[]],
+['zk.Macro','f6EPi',{},[]],
+['zul.wgt.Label','f6EPj',{},[]]]]);
+</script>
+
+		<div id="content-bottom"></div>
+	</div>	
+	</div>
+</div>
+	
+<script type="text/javascript" 	src="/forum/js/commentCodeHandle.js;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE" ></script>
+
+
+
+</div> </div>
+<!-- Google  -->
+<script type="text/javascript">
+ var z_n = "null",
+	z_i = "220.135.202.140" ;
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.zkoss.org/resource/js/page/gaz.js"></script>
+<script type="text/javascript" src="/forum/js/template.js;jsessionid=3A9EFB6580C00351B1F31EE27F9FCDBE"></script>
+<!-- Google  -->
+<div id="footer-2">
+	<div id="footer-2-inner">
+		<img src="http://sourceforge.net/sflogo.php?group_id=152762&amp;type=1" width="0" height="0" alt="SourceForge" style="float:right;">
+		
+		<div id="footer-txt">
+		<div class="contacts"><a href="http://www.zkoss.org/support/about/contact" title="Contact Us">Contact Us</a></div>
+		&#169; 2012 Potix Corporation. All rights reserved.<br />
+		ZK is a trademark of Potix Corporation.</div>
+		<div id="partners">
+			<div class="txt">Partners :</div>
+			<div class="allpartners"><a href="/partner/" title="ZK Partners">Partners</a></div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html>

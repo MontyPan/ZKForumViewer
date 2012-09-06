@@ -1,3 +1,4 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
 <div>
 	<grid>
 		<columns>
@@ -12,7 +13,7 @@
 			<row>
 				<label value="Datebox : " />
 				<datebox width="300px" 
-				 value="@load(vm.now)" format="long+medium" />
+				 value="${c:new('java.util.Date') }" format="long+medium" />
 			</row>
 			<row>
 				<label value="Colorbox : " />
