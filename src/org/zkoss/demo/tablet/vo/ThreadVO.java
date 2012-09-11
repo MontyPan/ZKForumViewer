@@ -8,7 +8,14 @@ public class ThreadVO {
 	private String url;
 	private boolean popular;
 	private boolean hot;
+	private String category;
 	
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public String getTitle() {
 		return title;
 	}

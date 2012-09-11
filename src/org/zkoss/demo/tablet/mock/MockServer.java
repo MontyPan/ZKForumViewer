@@ -12,47 +12,52 @@ import org.zkoss.demo.tablet.vo.ContentVO;
 import org.zkoss.demo.tablet.vo.ThreadVO;
 
 public class MockServer extends AbstractServer{	
-	private static final HashMap<String, ArrayList<ThreadVO>> CAT_THREAD = new HashMap<String, ArrayList<ThreadVO>>();
+	private static final HashMap<String, List<ThreadVO>> threadData = new HashMap<String, List<ThreadVO>>();
 	static{
-		CAT_THREAD.put(HELP, new ArrayList<ThreadVO>());
-		CAT_THREAD.put(STUDIO, new ArrayList<ThreadVO>());
-		CAT_THREAD.put(GENERAL, new ArrayList<ThreadVO>());
-		CAT_THREAD.put(ANNOUNCE, new ArrayList<ThreadVO>());
-		CAT_THREAD.put(INSTALL, new ArrayList<ThreadVO>());
-	}
-	
-	private static final String THREAD_START = "<div class=\"discussion-subject\">";
-	private static final String TITLE_HEADER = "<a class=\"discussion-title-unread\" href=\"/forum/";
-	private static final String TITLE_TAIL = ";jsessionid";
-	
-	//not unique, just in case
-	private static final String POST_HEADER = "<td class=\"align-center\">";
-	private static final String POST_TAIL = "</td>";
-	
-	private static final String AUTHOR_HEADER = ",label:'";
-	private static final String AUTHOR_TAIL = "'},";
-	
-	private static final String POPULAR = "<img alt=\"Popular\" title=\"Popular\"";
-	private static final String HOT = "<img alt=\"Hot\" title=\"Hot\"";
+		//20 thread in one category (ZK forum setting)
+		ArrayList<ThreadVO> inbox = new ArrayList<ThreadVO>(AbstractServer.CATEGORY_LIST.length*20);
+		ArrayList<ThreadVO> important = new ArrayList<ThreadVO>();
+		ArrayList<ThreadVO> starred = new ArrayList<ThreadVO>();
+		ArrayList<ThreadVO> trash = new ArrayList<ThreadVO>();
+		threadData.put(AbstractServer.INBOX, inbox);
+		threadData.put(AbstractServer.IMPORTANT, important);
+		threadData.put(AbstractServer.STARRED, starred);
+		threadData.put(AbstractServer.TRASH, trash);
+		
+		for(String type : AbstractServer.CATEGORY_LIST){
+			List<ThreadVO> data = fetchThreadUrl(type);
+			threadData.put(type, data);
 
-	public MockServer() {}
-	
+			//fetch every thread data and prepare Inbox, Important and Starred
+			for(ThreadVO tvo : data){
+				inbox.add(tvo);
+				if(tvo.isHot()){
+					starred.add(tvo);
+				}
+				if(tvo.isPopular()){
+					important.add(tvo);
+				}
+			}
+		}
+	}
+		
 	//FIXME getResource() will error when classpath include blank.
-	private String mockThread(int no){
+	private static String mockThread(int no){
 		return Utility.getString(new File(MockServer.class.getResource(no+".html").getFile()));
 	}
 	
-	private String mockPost(String x){
+	private static String mockPost(String x){
 		return Utility.getString(new File(MockServer.class.getResource(x+".html").getFile()));
 	}
 	
-	void fetchThreadUrl(String type){
-		String content = mockThread(CAT_URL.get(type));
-		ArrayList<ThreadVO> tvo = CAT_THREAD.get(type);
+	private static List<ThreadVO> fetchThreadUrl(String type){ 
+		String content = mockThread(CATEGORY_URL.get(type));
+		ArrayList<ThreadVO> result = new ArrayList<ThreadVO>();
 
 		int start = 0, end;
 		while((start=content.indexOf(THREAD_START, start)) != -1){
 			ThreadVO thread = new ThreadVO();
+			thread.setCategory(type);
 			
 			//XXX "hot" or "popular" will ignore at last thread
 			int tmp;
@@ -88,20 +93,52 @@ public class MockServer extends AbstractServer{
 			end=content.indexOf(AUTHOR_TAIL, start);
 			thread.setLastPoster(content.substring(start+AUTHOR_HEADER.length(), end));
 
-			tvo.add(thread);
+			result.add(thread);
 			start=end;
+		}
+		return result;
+	}
+
+	private final HashMap<String, List<ThreadVO>> _threadData = new HashMap<String, List<ThreadVO>>();
+	public MockServer() {
+		for(String key : threadData.keySet()){
+			//ThreadVO never set data, so just use the same reference
+			ArrayList<ThreadVO> result = new ArrayList<ThreadVO>();
+			result.addAll(threadData.get(key));
+			_threadData.put(key, result);
 		}
 	}
 
 	@Override
-	public List<ThreadVO> getThreadList(String type){
-		List<ThreadVO> result = CAT_THREAD.get(type);
-		if(result.size()==0){
-			fetchThreadUrl(type);
+	public void moveToTrash(ArrayList<ThreadVO> selectedThread) {
+		List<ThreadVO> inbox = _threadData.get(AbstractServer.INBOX);
+		List<ThreadVO> important = _threadData.get(AbstractServer.IMPORTANT);
+		List<ThreadVO> starred = _threadData.get(AbstractServer.STARRED);
+		List<ThreadVO> trash = _threadData.get(AbstractServer.TRASH);
+		
+		for(ThreadVO tvo : selectedThread){
+			List<ThreadVO> type = _threadData.get(tvo.getCategory());
+			trash.add(tvo);
+			if(inbox.contains(tvo)){
+				inbox.remove(tvo);
+			}
+			if(important.contains(tvo)){
+				important.remove(tvo);
+			}
+			if(starred.contains(tvo)){
+				starred.remove(tvo);
+			}
+			if(type.contains(tvo)){
+				type.remove(tvo);
+			}
 		}
-		return result;
 	}
 	
+	@Override
+	public List<ThreadVO> getThreadList(String type){
+		return _threadData.get(type);
+	}
+
 	@Override
 	public List<ContentVO> getContentList(ThreadVO thread) {
 		ArrayList<ContentVO> result = new ArrayList<ContentVO>();
@@ -122,8 +159,7 @@ public class MockServer extends AbstractServer{
 			start=content.indexOf(CONTENT_HEADER, start);
 			end=content.indexOf(CONTENT_TAIL, start);
 			if(end==-1){	//last post of thread, no more <div class="author">
-				end=content.indexOf("</div></div>", start);
-				
+				end=content.indexOf("</div></div>", start);				
 			}
 			cvo.setContent(content.substring(start+CONTENT_HEADER.length(), end));
 			cvo.setOpen(false);
@@ -141,8 +177,8 @@ public class MockServer extends AbstractServer{
 			root.mkdir();
 		}
 		System.out.println(root.getAbsolutePath());
-		for(String key : AbstractServer.CAT_URL.keySet()){
-			int value = AbstractServer.CAT_URL.get(key);
+		for(String key : AbstractServer.CATEGORY_URL.keySet()){
+			int value = AbstractServer.CATEGORY_URL.get(key);
 			Utility.stringToText(new File(value+".html"), Utility.urlToString(DataServer.SOURCE_URL+value));
 			for(ThreadVO tvo : ds.getThreadList(key)){
 				Utility.stringToText(
@@ -153,4 +189,18 @@ public class MockServer extends AbstractServer{
 			}
 		}
 	}
+	
+	private static final String THREAD_START = "<div class=\"discussion-subject\">";
+	private static final String TITLE_HEADER = "<a class=\"discussion-title-unread\" href=\"/forum/";
+	private static final String TITLE_TAIL = ";jsessionid";
+	
+	//not unique, just in case
+	private static final String POST_HEADER = "<td class=\"align-center\">";
+	private static final String POST_TAIL = "</td>";
+	
+	private static final String AUTHOR_HEADER = ",label:'";
+	private static final String AUTHOR_TAIL = "'},";
+	
+	private static final String POPULAR = "<img alt=\"Popular\" title=\"Popular\"";
+	private static final String HOT = "<img alt=\"Hot\" title=\"Hot\"";
 }

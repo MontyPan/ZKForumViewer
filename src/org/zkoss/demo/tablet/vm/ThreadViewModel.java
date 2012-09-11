@@ -1,5 +1,6 @@
 package org.zkoss.demo.tablet.vm;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zkoss.bind.annotation.AfterCompose;
@@ -19,18 +20,45 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.ClientInfoEvent;
 import org.zkoss.zk.ui.select.Selectors;
 import org.zkoss.zk.ui.select.annotation.Wire;
+import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Center;
-import org.zkoss.zul.Popup;
+import org.zkoss.zul.Checkbox;
+import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Listitem;
 
 public class ThreadViewModel {
-	private static final String[] CATEGORY_LIST = {
-		AbstractServer.HELP, AbstractServer.STUDIO, AbstractServer.GENERAL, AbstractServer.ANNOUNCE, AbstractServer.INSTALL
-	};
-
+	// ==== for setting category color ==== //
+	private StyleConverter styleConverter = new StyleConverter();
+	private String setCategory = AbstractServer.HELP;
+	public StyleConverter getStyleConverter() {
+		return styleConverter;
+	}
+	
+	@NotifyChange("categoryColor")
+	public void setSetColorCategory(String s){
+		setCategory = s;
+	}
+	
+	public String getSetColorCategory(){
+		return setCategory;
+	}
+	
+	public String getCategoryColor(){
+		return styleConverter.getColorTable().get(setCategory);
+	}
+	
+	@Command
+	@NotifyChange({"threadList", "categoryList"})
+	public void categoryColor(@BindingParam("color") String value, @BindingParam("category") String category){
+		styleConverter.setCategoryColor(category, value);
+	}
+	// ======== //
+	
 	private AbstractServer server;
 	private ThreadVO nowThread;
 	private int nowThreadIndex;
-	private int nowCategoryIndex = 1;
+	private int nowCategoryIndex = -1;
+	private int nowFolderIndex=1;
 	private List<ThreadVO> nowThreadList;
 	private List<ContentVO> nowContentList;
 	private ContentVO lastContent;
@@ -39,12 +67,40 @@ public class ThreadViewModel {
 	private DeviceMode deviceMode = new DeviceMode();
 	
 	@Wire("#contentPanel") private Center contentPanel;
-	@Wire("#popup") private Popup popup;
+	@Wire("#threadList") private Listbox threadList;
+	
+	@Command
+	//XXX Why can be @NotifyChange({"threadList", "selectedThread", "contentList"})
+	@NotifyChange("*")
+	public void deleteThread(){
+		ArrayList<ThreadVO> selectedThread = new ArrayList<ThreadVO>(); 
+		for(Listitem s : threadList.getItems()){
+			Checkbox ckb = (Checkbox)s.getChildren().get(0).getChildren().get(0).getChildren().get(0);  //TODO WTF code
+			if(ckb.isChecked()){
+				selectedThread.add((ThreadVO)s.getValue());
+				System.out.println((ThreadVO)s.getValue());//Delete
+			}
+		}
+		if(selectedThread.size()==0){
+			Clients.showNotification("Please select as least one item.");
+			return;
+		}
+		
+		server.moveToTrash(selectedThread);
+		fetchThread();
+	}
 	
 	private void fetchThread(){
-		nowThreadList = server.getThreadList(CATEGORY_LIST[nowCategoryIndex]);
+		if(nowCategoryIndex!=-1){
+			nowThreadList = server.getThreadList(AbstractServer.CATEGORY_LIST[nowCategoryIndex]);
+		}else{
+			nowThreadList = server.getThreadList(AbstractServer.FOLDER_LIST[nowFolderIndex]);
+		}
 		nowThreadIndex = 0;
-		fetchContent();
+		
+		if(nowThreadList.size()!=0){
+			fetchContent();
+		}
 	}
 	
 	private void fetchContent(){
@@ -97,6 +153,15 @@ public class ThreadViewModel {
 	@NotifyChange("*")
 	public void setSelectedCategoryIndex(int index){
 		nowCategoryIndex = index;
+		nowFolderIndex = -1;
+		westFlag = !westFlag;
+		fetchThread();	
+	}
+	
+	@NotifyChange("*")
+	public void setSelectedFolderIndex(int index){
+		nowFolderIndex = index;
+		nowCategoryIndex = -1;
 		westFlag = !westFlag;
 		fetchThread();	
 	}
@@ -132,26 +197,19 @@ public class ThreadViewModel {
 		for(ContentVO cvo : nowContentList)
 			cvo.setOpen(!cvo.isOpen());
 	}
-	
-	//FIXME button must click twice
-	private boolean popupFlag = false;
-	@Command
-	public void showPopup(@BindingParam("component") Component c){
-		if(popupFlag){
-			popup.close();
-		}else{
-			popup.open(c, "before_center");
-		}
-		popupFlag = !popupFlag;
-	}
-	
+
 	@Command
 	@NotifyChange({"westMode", "threadList", "categoryList"})  
 	public void showCategory(){
 		westFlag = !westFlag;
 	}
 
-	public boolean isWestMode() {
+	@Deprecated
+	public String getWestUrl() {
+		return westFlag ? "thread.zul" : "category.zul";
+	}
+	
+	public boolean isWestMode(){
 		return westFlag;
 	}
 
@@ -174,6 +232,16 @@ public class ThreadViewModel {
 		return nowThreadList;
 	}
 	
+	//TODO MVVM's issue? (why not : vm.threadList.empty())
+	public boolean isThreadListEmpty(){
+		return nowThreadList.isEmpty();
+	}
+	
+	//TODO MVVM's issue?
+	public int getEmptyIndex(){
+		return -1;
+	}
+	
 	public List<ContentVO> getContentList(){
 		return nowContentList;
 	}
@@ -185,9 +253,17 @@ public class ThreadViewModel {
 	public ThreadVO getSelectedThread(){
 		return nowThread;
 	}
-		
+	
+	public String[] getFolderList(){
+		return AbstractServer.FOLDER_LIST;
+	}
+	
+	public int getSelectedFolderIndex(){
+		return nowFolderIndex;
+	}
+	
 	public String[] getCategoryList(){
-		return CATEGORY_LIST;
+		return AbstractServer.CATEGORY_LIST;
 	}
 	
 	public int getSelectedCategoryIndex(){
@@ -195,7 +271,11 @@ public class ThreadViewModel {
 	}
 	
 	public String getSelectedCategory(){
-		return CATEGORY_LIST[nowCategoryIndex];
+		if(nowCategoryIndex!=-1){
+			return AbstractServer.CATEGORY_LIST[nowCategoryIndex];	
+		}else{
+			return AbstractServer.FOLDER_LIST[nowFolderIndex];
+		}
 	}
 	
 	public int getSelectedThreadIndex() {

@@ -6,7 +6,17 @@ import org.zkoss.zk.ui.event.ClientInfoEvent;
 public class DeviceMode {
 	private boolean vertical;
 	private int value;
+	private int width;
+	private int height;
 	
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
 	public void setVertical(boolean flag) {
 		vertical = flag;
 	}

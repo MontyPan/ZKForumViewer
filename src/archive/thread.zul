@@ -1,35 +1,27 @@
-<vlayout vflex="1" hflex="1" spacing="0">
-	<listbox vflex='1' visible="@load(vm.westMode)" 
-	 model="@load(vm.threadList)" selectedIndex="@bind(vm.selectedThreadIndex)" >
-		<template name="model" var="thread">
-			<listitem>
-				<listcell>
-					<hlayout valign="middle">
-						<checkbox />
-						<div hflex="1">
-							<label value="@load(thread.author)" sclass="thread_title" />
-							(<label value='@load(thread.post)' />)
-							<image visible="@load(thread.popular)" 
-							 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAA4ElEQVQoU2M4NUP4BxD/w4P/A3HD////GWCY4fhUoX9/P+36jwv/eLXmP1DNRyA2h2s6MlHg3/879v/x4RfHQ/4D1T0HYnGwpoM9fP/+X7P4jxffsP9/f0/4f6DazUDMzrC3neff//OG/wniS3b/b24N+Q9Uv5thZxPXv/8nNP8Tg28s1/4PVL+FYWstx7//h5T/E8I354v+B6rdCsQcDBsr2P793yPzHx9+tFjkP1DdCyAWAQfEumKWf/+2if3Hhb9vFPkPVPMRiBFBviqf6RcQ/wXiP1AaHf8H4jrkyAUAlSRgDlxOvSkAAAAASUVORK5CYII=" />
-							<separator visible="@load(not vm.deviceMode.phone)"/>
-							<html content="@load(thread.title)" sclass="thread_title autoSkip" />
-							<separator visible="@load(not vm.deviceMode.phone)"/>
-							Last post by <label value="@load(thread.lastPoster)" />						
-						</div>
-						<image width="27px" height="25px"
-						 src='@load(thread.hot ? "img/star.png" : "img/starEmpty.png")' />
-						<div width="2px" />
-					</hlayout>				
-				</listcell>
-			</listitem>
-		</template>
-	</listbox>
-	<listbox vflex='1' visible="@load(!vm.westMode)"
-	 model="@load(vm.categoryList)" selectedIndex="@bind(vm.selectedCategoryIndex)">
-		<template name="model" var="category">
-			<listitem>
-				<listcell label="${category}" />
-			</listitem>
-		</template>
-	</listbox>
-</vlayout>
+<listbox id="threadList" xmlns:ca="client/attribute" ca:data-scrollable="false"
+ model="@load(vm.threadList)" emptyMessage="Is Empty!"
+ selectedIndex='@load(vm.threadListEmpty ? vm.emptyIndex : vm.selectedThreadIndex) @save(vm.selectedThreadIndex)' >
+	<template name="model" var="thread">
+		<listitem>
+			<listcell>
+				<hlayout valign="middle">
+					<checkbox />
+					<div hflex="1">
+						<label value="@load(thread.author)" sclass="thread_title" />
+						(<label value='@load(thread.post)' />)
+						<image visible="@load(thread.popular)" 
+						 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAA4ElEQVQoU2M4NUP4BxD/w4P/A3HD////GWCY4fhUoX9/P+36jwv/eLXmP1DNRyA2h2s6MlHg3/879v/x4RfHQ/4D1T0HYnGwpoM9fP/+X7P4jxffsP9/f0/4f6DazUDMzrC3neff//OG/wniS3b/b24N+Q9Uv5thZxPXv/8nNP8Tg28s1/4PVL+FYWstx7//h5T/E8I354v+B6rdCsQcDBsr2P793yPzHx9+tFjkP1DdCyAWAQfEumKWf/+2if3Hhb9vFPkPVPMRiBFBviqf6RcQ/wXiP1AaHf8H4jrkyAUAlSRgDlxOvSkAAAAASUVORK5CYII=" />
+						<separator visible="@load(not vm.deviceMode.phone)"/>
+						<html content="@load(thread.title)" sclass="thread_title autoSkip" />
+						<separator visible="@load(not vm.deviceMode.phone)"/>
+						Last post by <label value="@load(thread.lastPoster)" />
+						<label value="@load(thread.category)" style="@load(thread.category) @converter(vm.styleConverter)" />
+					</div>
+					<image width="27px" height="25px"
+					 src='@load(thread.hot ? "img/star.png" : "img/starEmpty.png")' />
+					<div width="2px" />
+				</hlayout>
+			</listcell>
+		</listitem>
+	</template>
+</listbox>

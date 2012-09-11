@@ -1,9 +1,9 @@
 package org.zkoss.demo.tablet;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import org.zkoss.demo.tablet.vo.ContentVO;
 import org.zkoss.demo.tablet.vo.ThreadVO;
 
@@ -36,7 +36,7 @@ public class DataServer extends AbstractServer {
 	public DataServer() {}
 	
 	private void fetchThreadUrl(String type){
-		String content = Utility.urlToString(SOURCE_URL+CAT_URL.get(type));
+		String content = Utility.urlToString(SOURCE_URL+CATEGORY_URL.get(type));
 		
 		int start = 0, end;
 		ArrayList<ThreadVO> tvo = CAT_THREAD.get(type);
@@ -121,5 +121,10 @@ public class DataServer extends AbstractServer {
 			start=end;
 		}
 		return result;
+	}
+
+	@Override
+	public void moveToTrash(ArrayList<ThreadVO> selectedThread) {
+		return;
 	}
 }

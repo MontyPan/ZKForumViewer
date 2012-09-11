@@ -1,9 +1,28 @@
-<?page title="ZK Maile 2"?>
+<?page title="ZK Mail 2"?>
 <?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
 <?taglib uri="http://www.zkoss.org/dsp/web/theme" prefix="t" ?>
 <zk>
+<!-- Google Analytics -->
+<script type="text/javascript"
+ if='${execution.serverName == "www.zkoss.org" or execution.serverName == "www.potix.com"}'><![CDATA[
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-34371271-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	  var ga = document.createElement('script'); 
+	  ga.type = 'text/javascript'; 
+	  ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+			  '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; 
+	  s.parentNode.insertBefore(ga, s);
+	})();
+]]></script>
+<!-- ================ -->
+
 <style>
-/* ==override zk style== */
+/* ### override zk style ### */
 .z-label {
 	font-size: 13px;
 }
@@ -14,30 +33,17 @@
 
 .z-html {
 	font-family: arial,sans-serif;
+	font-size: 13px;
+	display: inline; /* for iPhone font size issue */
+	/* TODO find cross-browser css :'( */
+	white-space: pre-wrap; 
+	word-wrap:break-word;
+	word-break:break-all;
 }
 
-/* make desktop browser looks like tablet */
-.z-west-header, .z-center-header, .z-east-header, .z-north-header, .z-south-header {
-	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
-	background:    -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
-	background:     -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
-	background:      -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
-	background:	        linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
-	line-height: 32px;
-	
-	/* for fxck IE8+ */
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(
-		src='${c:encodeThemeURL('~./zul/img/layout/borderlayout-hm.png')}',
-		sizingMethod='scale'
-	);
+tbody.z-listbox-empty-body td{
+    font-size: 20px;
 }
-
-@media screen and (max-width: 640px) {
-	.z-borderlayout-icon {
-		display:none;
-	}
-}
-/* ==== */
 
 pre {
 	/* TODO find cross-browser css :'( */
@@ -51,8 +57,18 @@ pre {
 	height: 19px;
 	padding: 5px;
 	border: 1px solid #ccc;
-	border-radius: 5px;
+	${t:borderRadius("5px")}
 	cursor: pointer;
+}
+
+.button:hover{
+	border-color: #AEAEAE;
+	${t:boxShadow("inset 1px 1px 1px #0CBCFF, inset -1px -1px 1px #0CBCFF")};
+}
+
+.button:focus{
+	border-color: #0CBCFF;
+	${t:boxShadow("inset 1px 1px 1px #0CBCFF, inset -1px -1px 1px #0CBCFF")};
 }
 
 .back_button {
@@ -64,7 +80,7 @@ pre {
 	height: 25px;
 	padding: 2px;
 	border: 1px solid #ccc;
-	border-radius: 5px;
+	${t:borderRadius("5px")}
 	cursor: pointer;
 }
 
@@ -102,17 +118,6 @@ pre {
 	margin-left: 50px;
 }
 
-.product_btn > img {
-	/* for "product" button image */
-	width: 20px;
-	height: 20px;
-}
-
-.product_title {
-	font-size: 14px;
-	font-weight: bold;
-}
-
 .autoSkip {
 	display: block;
 	overflow: hidden;
@@ -123,53 +128,133 @@ pre {
 .disable {
 	opacity: 0.3;
 }
+</style>
 
-.popup {
-	/* border: 2px solid #D0F0FF; */
-	width: 210px;
-	${t:boxShadow('0 0 10px #ACACAC')}
-	${t:borderRadius("8px")}
+<style if="${zk.iphone != null}">
+.autoSkip {
+	white-space: normal; /* override for iPhone rendering bug */
 }
 
-.popup > div {
-	${t:borderRadius("8px")}
+/* #### hide on phone device #### */
+@media screen and (max-width: 640px) {
+	.z-borderlayout-icon {
+		display:none;
+	}
 }
 </style>
+
+<style if="${zk.mobile == null}">
+/* make desktop browser looks like tablet */
+.z-west-header, .z-center-header, .z-east-header, .z-north-header, .z-south-header {
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	background:    -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	background:     -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	background:      -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	background:	        linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(237, 237, 237, 1) 100%);
+	line-height: 32px;
+	
+	/* for fxck IE8+ */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(
+		src='${c:encodeThemeURL('~./zul/img/layout/borderlayout-hm.png')}',
+		sizingMethod='scale'
+	);
+}
+</style>
+
 <borderlayout apply="org.zkoss.bind.BindComposer" onClientInfo='@command("clientInfoChanged", event=event)'
  viewModel='@id("vm") @init("org.zkoss.demo.tablet.vm.ThreadViewModel", mode="mock")'>
-	<west border="none" 
+	<west border="none" collapsible="true" autoscroll="true" xmlns:ca="client/attribute"
 	 visible="@load(not vm.deviceMode.phone or (vm.deviceMode.phone and not vm.threadMode))"
-	 size='@load(vm.deviceMode.phone ? "100%" : "30%")' 
-	 collapsible="true">
+	 size='@load(vm.deviceMode.phone ? "100%" : "30%")' >
 		<caption>
 			<include src="threadHead.zul" />
 		</caption>
-		<include src="thread.zul" vflex="1"/>
+		<div>
+			<!-- #### Thread.zul ####-->
+			<listbox id="threadList" visible="@load(vm.westMode)"  ca:data-scrollable="false"
+			 model="@load(vm.threadList)" emptyMessage="Is Empty!"
+			 selectedIndex='@load(vm.threadListEmpty ? vm.emptyIndex : vm.selectedThreadIndex) @save(vm.selectedThreadIndex)' >
+				<template name="model" var="thread">
+					<listitem>
+						<listcell>
+							<hlayout valign="middle" hflex="1">
+								<checkbox />
+								<div hflex="1">
+									<label value="@load(thread.author)" sclass="thread_title" />
+									(<label value='@load(thread.post)' />)
+									<image 
+									 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAA4ElEQVQoU2M4NUP4BxD/w4P/A3HD////GWCY4fhUoX9/P+36jwv/eLXmP1DNRyA2h2s6MlHg3/879v/x4RfHQ/4D1T0HYnGwpoM9fP/+X7P4jxffsP9/f0/4f6DazUDMzrC3neff//OG/wniS3b/b24N+Q9Uv5thZxPXv/8nNP8Tg28s1/4PVL+FYWstx7//h5T/E8I354v+B6rdCsQcDBsr2P793yPzHx9+tFjkP1DdCyAWAQfEumKWf/+2if3Hhb9vFPkPVPMRiBFBviqf6RcQ/wXiP1AaHf8H4jrkyAUAlSRgDlxOvSkAAAAASUVORK5CYII=" />
+									<separator visible="@load(not vm.deviceMode.phone)"/>
+									<html content="@load(thread.title)" sclass="thread_title autoSkip" />
+									<separator visible="@load(not vm.deviceMode.phone)"/>
+									Last post by <label value="@load(thread.lastPoster)" />
+									<label value="@load(thread.category)" style="@load(thread.category) @converter(vm.styleConverter)" />
+								</div>
+								<image width="27px" height="25px"
+								 src='@load(thread.hot ? "img/star.png" : "img/starEmpty.png")' />
+								<div width="2px" />
+							</hlayout>
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+			<!-- #### category.zul #### -->
+			<vlayout spacing="0" visible="@load(not vm.westMode)">
+				<div style="background-color:#ccc;padding:0 0 0 10px;font-size:14px;">
+					<label style="line-height:32px;font-weight:bold;">Labels</label>
+				</div>
+				<listbox ca:data-scrollable="false"
+				 model="@load(vm.categoryList)" selectedIndex="@bind(vm.selectedCategoryIndex)">
+					<template name="model" var="category">
+						<listitem>
+							<listcell>
+								<label value="${category}" style="padding:0 0 0 10px;line-height:32px;font-size:14px;font-weight:bold" />
+							</listcell>
+						</listitem>
+					</template>
+				</listbox>
+				<div style="background-color:#ccc;padding:0 0 0 10px;font-size:14px;">
+					<label style="line-height:32px;font-weight:bold;">Folders</label>
+				</div>
+				<listbox ca:data-scrollable="false"
+				 model="@load(vm.folderList)" selectedIndex="@bind(vm.selectedFolderIndex)">
+					<template name="model" var="folder">
+						<listitem>
+							<listcell>
+								<label value="${folder}" style="padding:0 0 0 10px;line-height:32px;font-size:14px;font-weight:bold" />
+							</listcell>
+						</listitem>
+					</template>
+				</listbox>
+			</vlayout>
+		</div>
 	</west>
 	
 	<center border="none" id="contentPanel" autoscroll="true">
 		<caption>
 			<hlayout sclass="right">
-				<image sclass="button"
-				 onClick='Clients.showNotification("This feature is currently disabled.")'
-				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACfUlEQVQ4y2P4//8/Ay6s69GmBcRbgPgnEH8D4o1ArItPD04J0+BJuqHZ824BDfiPjP1SZz4CyhkQZSBQIScQVwPxEyD+H5Qx+39uw+r/MFDQtOa/fcSE/yA5IH4FxO1ALITTQIuwKVehioF44hUjn87/126/+ALkp4HwlVvPP4NcaRI44RpMnVX41AdAmg2XC8GKgBrCgXxxIP4HxElIapKgjg0DqnEHqv0FUt82Y58kXgP1vdrfAl0yH4i9gdgYiJmBmA3K9gDJ6Xu2f7IInfwXpH7rgeuaeA3Mblj3om/uvnNeidNv24b134VFiHVI30O3uCl3myZtv9w798BdmHqcBi7fcuGaeehksKKksqXXNu6+dPLkhQdH//z5e+DHz98HQewt+66cTK1cdhPo5T8gdQvWnbkJ1CuDK9k0+WUuAIdLTd/Wiw6REy+YB/Zcg7nQ1L8b5OIrVd2bL4DU2EVNB4VxJ950GFW87D1I8eodlyYC+XuXbDh9H5ZsFq49+QTo0iNHzz2YDFIDtPwLwYSd27zhKTRsooCuAuWWD1CaAepSUFi7gtQklK98Q9DAmv4dN6EGFuExMBmkprhj80OCBvbNP3QaamAfHgPrQGpapu29QtDARevPboMauAaPgXNBamYsP36IoIEb9lyZCTXwCB4Dd4DUrNx6YSVBA4+de1AKNfAeHgMvgdTsOXa7g6CBb95/dbSOmPoXaijItQYwA0FsqNh/YEHy99HzD2HElIfcwNR/wzxk8j9EyYOKQXLz1pwC5RAxYgvYzqu3X5wsat/8Ijh30WeYQSB2SceW5yA5oJpukkpsIPYE4lVAvB2I90MxiL0SKodVHwDM8eaDXMjxKgAAAABJRU5ErkJggg==" />
-				<image sclass="button"
-				 onClick='Clients.showNotification("This feature is currently disabled.")'
-				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUUlEQVQ4y2P4//8/AzUxw6iBtDPQIrD3PwgTK060gciasYmR4uX/yAagGfaf3DAkyTBiw/A/DjZFYfgf3bXDMAyxGUrIMFJyClGGjRYOg9RAACVSk51kPAfYAAAAAElFTkSuQmCC" />
 				<image sclass="button" visible="@load(not vm.deviceMode.phone)"
-				 tooltiptext="setting"
+				 tooltiptext="configuration"
 				 onClick='@command("showSetting")'
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABXklEQVQ4y2NgGPJAz7O9AYj/Q3EDOQYYQA0RAPFL2tYfgBkIYkPVCEDVGBA0zMC74xNIs6FP5yUQPzR77nWYgVC2AVTuP1QtbkP902bNQPIeURikB6eBz1597AjNnke0YSC1ID04Dfz//7/AhWtPbqBrrO3b8r+gaS2GgSC1ID24wm8+EO83D+xBMfDG3RdAPf/nA/F6EBtZDqp2P0gvNgMxXAByFRAYIPnAAORabGqJMjC7ftVDdHWxRYseEmXg4vWn/k9bchhbWBmgpVEUH4D0gPRii5ACIG44ffHhPiwuWA8NYxRxkFqQHpBeXBEjgB4p+DBUrQDOZGMV0tdBasIG6cFp4N6jN2dYh/TDEy0omSCHKYgNEoMlfpBakB58Cdvg6u3nn0AB/f7jt0sgftPk7fC8DGKDxEByIDUgtcjJCqeh0IDGKG0aJmzbActRUDUGJBdnUI0wUED3AhkArBrfFAIi6aMAAAAASUVORK5CYII=" />			
 			</hlayout>
 			<image sclass="back_button left" visible="@load(vm.deviceMode.phone)"
 			 onClick='@command("backToCategory")' 
-			 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAgCAYAAABHA7voAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABFxJREFUeNrcWUtIo1cUPkmMj6hJNPWJWImPjYkwiA+KinahIAMKltIuSkGoqzI7R4ZCFgNDVqW4qUqx9MEUF7OoG0VduFAUdVEqIoqvsb4To8zCqPHV8x3ml/jKc6D9PXC8l3v///7nu9953Bs109PTFIJ8x/o5qUfesv5cVlbWH3N1dRXsYRvrZ+Xl5XZuNWpA5/V6C9xu9xMmTx8MoJbVUVhY+LHP59OohT69Xm9IS0vT7O7ufqEN8uyX2dnZnxiNxhQVuSeBNAYZz938QAyms377Ecvl5SWpTRiXhlUbCODzvLw8a0xMTFwIcfq/ZfIhF622WCwt6SxqBafIfQwawB5jSz0/P1c1OGC7D+A3ubm5pYmJiUY1xl4wgFbWrzIyMtLVDu4hgI6ioqI8HtPRI5DbAJ9yzfs0NTXVcnFxQY8NoAmJhau/JdLEsrW1RUNDQzfGEhISyG63k81mi9hIrIm1W1tbowL4zGq1FsbHxxsijb2TkxNaWVm5Mz43NyfG5efnR7Tuzs7OveuGA/AJu+XXWVlZmWdnZ1G7RWNjI9XV1Ul/dHSUBgYGhAHeQDo+Pqbh4WE6ODgg/ibV19cLyxCMjY2NSYvNqKmpuWPs9vY2LS8vy7uheIUC8AWDs3wIcJD9/X2an5+/7kNycnKk7e/vF0YhCitNTU0CvKurS1r/OX+QmOvr65O2vb09LAb1iLsPdWLB/dL/jllSUiLswfX5dCQMV1ZWksPhoMPDQ/kuQMNwZa6zs5NWV1epurr6eh0FXFtbG8XGxoZkrwLwJVNv5xuDOdqMBeGrlShkc3OTZmdnieuqGFtQUCAu1t3dLfMajUbeQ/xCMjMzZayjo0PGT09Pr9cHq3DnpKQkCjVPyFmU//zFO/kHx8kuBiJVRQCiqqpKtLm5WcbW1tYktnp7eyUelRi9/a7H4xHjnU4n9fT03JgHu2AQ3hGOXUoW/X59fb3WbDabDAZDQjRMTk1N0eLiovThggqrSh8AkXz8BaUE5QAJaGZmRp5VvEARbBg2aWRkhIqLiyklJSVkBtF5x/qDy+XyRMsijED8QGEoYrC0tFSYraioEBYQi7W1tQLW6/VScnIytbS0iAsiUwJcQ0PDDXZ9Pp+AhIyPj4dsk2ZwcNAf9C9syFMU/HCZ0+l0xHX0zjgSGIzDx+Li4ojvl6QkNfQBWOkjeSAGcZJC/GEca2Lto6MjmWMPk/f94/MhmZycnL19Fn21tLRk4zpj1mHVMARGwYhAAqP8DQNw/4247xSlJCDF5YJ9I9hhe4n1d3aTbK5dWY/xNgH5iRNOA6fjRJPJZHyMAL2szr29vd+4NqoeoPaB7DPGGfVPdlWX6hkMMO/kAl3J9cbM2S9WrSC1AWqIi/VHdlV3NLXxP1TIpTbIQ683NjYmuHgfqo05rq8nbP/bYD/d41T7amFhYf39jqiCPT4dHbvdbg/b/jqU/y79zfpmYmJCqyIC/2H9lQ/7b/4VYACBYoFpUvbg2wAAAABJRU5ErkJggg==" />			
+			 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAgCAYAAABHA7voAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAA9pJREFUWEfdmEtLW0EYhgeXbtz5AwrdFYo/wH9QKAV3pb9B3CrdRHcWuvCy87LxSiHGaLzf4iVeInHUhWIhmsTUQGysl2hVOn3fKROOaUwO0YUngRdn5psZv2e+b+bMOWJ9fV3YUAP6SAfJA1/fK6WEWFtbK6Q36BNC5z+QI35X+B0eHkbgd41YXV3NpzLYB09PT39yNZwkMKbh+7dCgB8jkUjMSWBWXwEYEoFA4DFVwhZIp9M3TgWE+1KsrKw8pi/xeDzhVDj6DbZHAav39/fD9/f3PFQctfes/mrA5eXlbJWjzZtKpX45GY6+g0OKpaWlbNXiYIk7HY7+g02KxcVFq16hHiwFODKARQq/329V98nJSbJUAMEmxcLCgtG7g4ODSKnAkQNsUszPz1MVkP/s7OyqWEAsjmptbX2gjo4OhTvhk05it9ut5yzGLzBJMTc3R30+Ojr6UcwkZszOzo6qq6vLKdqKnbu9vV3PWcx4cEkxOztbtbW19b2YCaxjDODU1JTi85Nimc6Nj49rB5PJpOrt7dUR4V/WzRzRaDRjGxsby7RbAZkltOESbQsYbFLMzMwMJhKJ1HMB9vX1qe3tbS2WCbi7u6sdYspao0xIA15fX//AZiANIBejsbFRsR+e0bYAwSbF9PS0+/j4+NkAs9O0q6tL4T6rLi8v1dDQkI7qxcWFhmlra9Pt2Cu6bmxNTU0ZmwFk1AmH1yBbcFw4sEmBSas2NjaenKKMGJ2kQ3SUIhzbfD6fhmIkCdnc3Jzpy3amMPsxzQl8d3enbm9v9RgDSDsBrWldKOvggxSTk5OUa29v70mHjAHEXOr6+lqLqWQihUMsUw4Gg5ny+fl5BpCRZN3lcqmWlhYdKUbZRNcsViEwY4cvUkxMTFAVkB8P+bTdwdn9DCD3CZ2j6CidIjQOMl1mFEwE6TyBsEX+s3H/WgG5YAMDA7ofF8uOn2CSAulh9AFORu0MzNVHSpnzEcE0ZX+mXn9/v+7T2dmpPB6PhsWiajvujfoQMWlu/oeJIOtmIXp6emwBgk0KnFZWdeMoLuqqxv3CvZMtrrxxlmXa+ZcHD/eZsXEBWKf95obv2P9e01hmm6mb8XYCATYpcABY9Rr1krlsg0WK0dHRbNXiNCuJ1yWwSTEyMpKtcrT5wuGw4194wSGF1+vNpWp8kQrbyfOX3AdsUgwPDz+mr0hVR390AltewEp0CMRisd8vOUr5fNOAeB7l06fNzU3HfvgFW0jgbphPZbAP4hrnuE/3uO2k4bu7ECDtb6GQk9IUbxxp3Hej8LtG4JOAHTWgn3SQvPC1hkH5C4XKu3awTlGfAAAAAElFTkSuQmCC" />			
 		</caption>
 		<include vflex='1' hflex='1' src="@load(vm.centerUrl)"/>
 	</center>
 	
 	<south border="none">
 		<caption>
+			<hlayout sclass="left" style="padding:0 0 0 10px" spacing="15px">
+				<image sclass="button" tooltiptext="source code"
+				 onClick='Executions.sendRedirect("https://github.com/MontyPan/ZKForumViewer")'
+				 src="data:image/png;base64,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" />
+				<image sclass="button" tooltiptext="ZK Demo"
+				 onClick='Executions.sendRedirect("http://www.zkoss.org/zkdemo/")'
+				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAA4pJREFUSEvlVslPE3EU7mJDA+IShURjoonGSGJAPOlJTxo5yMWLntC/QOPNg5482BUKKgIFCYlEaYyGznTBUrYqaxcKSJC9ZSsIlNICpe34TactRaCZknCieW3a6Xvzvfe9773fcDhS8mDtYO+O7A8fAFdGcmWaJOpOwjUsh1S5NqNQx2cvjaQAuFLy/teuGe+GqHOEI1azimXlFM2XJ9fkVjRtBEO9854UMcFhw1WyANnlRgDYFw4XAA/tEqk54DTeROGf29WCHrClSBLdQOlFumbnYnW/U9nnUPbhM2JlvZPPjQM5VS0CyRYMGwAo7XRJw50vHRfKGun8oGvn6lowRO00iqICIUo/Pn/xQyPC4M0GgC/T5H1ux93qR1w0MQg7W6LPV3U9+NYdb4/qzW/N45MrNDaEn13ZDAw2ADwxUWIZR5TS7ogAYPR5uxjJE6kzi3Tfh+eCFPVnyZuh0PHl2gQ9wBbBhN+sbvX4A5uh0I0aE00R/ca87GHATpOSFtcKMnpq6BdIyf8AQAgq44oJZJMiIfLrOud9/s1gCE3lMxrBmysheBJyV+NK6ODHpBUA3bPLR8TEFgBCxATyLSBtL01Dip4xy5w7EArBUzU0kyaNLkShXIu5H3H7RveyZd+sdwMsOVfXTxTpssOrwjbvySkz/phYQLK4I/PCF3w1TS2lI+nYFkkr1K76IRYKrmuBYAJDw2MAgFxY8yNqdNlXapt41tj/omWw9vc02MfFnjl3ZrE+MkNgCosFVx+qLScVuuMK/V6GiYEWGIqYlCvsjnRkipHEWIFxkTqr3Ag+UK5hckEQ6YGYeN0+jBDNqIu+JEv0DBCTKRCgrkgb46adK9WcK2lw+egc7qk6aGAUcr7UgJIRozCPCdHVuNHda1WAiCxl066bGJ1/ZRoCwKfBabo42klC5Kk6QR+uokUFhDX3Y+vVypZ4u1zeJJTS48JQ5PSsH2WUveNog3Bv1bTRqptzQ7uRpwpo8Xbtr4G/HoZeqA05xhskgJWVWqi9FlZRgvMANF5X0j5W1wo/UkE4C8zLMZnmicZWZXfgXm1T2+zn9JLZtYJhvlvX4QsE31kndu5aphoI9JRCB9EPLnoFTA9ihv8wWbw36l1MpE6Xa7AJoLQrpQZhwsMSuZ4p1l96b0DPk3jwYmYHCwck4DPxWcsst+guYv8Msg/PpA79/TjvJyapOg4a4B8+EjWDR5ISvgAAAABJRU5ErkJggg=="/>
+			</hlayout>
 			<hlayout sclass="right" style="padding:0 20px 0 0" spacing="15px"
 			 visible="@load(vm.centerMode and (not vm.deviceMode.phone or vm.threadMode)))">
 				<image sclass='@load(vm.threadStart ? "button disable" : "button")' 
@@ -178,32 +263,7 @@ pre {
 				<image sclass='@load(vm.threadEnd ? "button disable" : "button")' 
 				 onClick='@command(vm.threadEnd ? "" : "nextThread")'
 				 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAATklEQVQ4y2P4//8/AzUxw6iBtDXQIrD3PwhT3UBSDCWk4D+phhJjK0mGEhs2RBtKdGBT1UA0wygzkBTDSE02/6mZsKmXDkkxbLS0oQ4GABpVmyQ8nT5cAAAAAElFTkSuQmCC" />
-			 </hlayout>			 
-			 <button sclass="product_btn" dir="reverse"
-			  visible="@load(not vm.deviceMode.phone or (vm.deviceMode.phone and not vm.threadMode))"
-			  image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAkCAYAAADsHujfAAAAm0lEQVRYw+3VsQqAIBDGcZ+o9+ghhKCpSXBqau2lhesOPGgoMi+r4RP+o+cPHXRE5P6QAwQQQAABBJCTun5dpE8hDJg5ys2fQPjguENo8VUIHxgOEFp4BXKBqMbcRUwFCG1qAuHB4w2ENj4K4YFDBUIbHoFkRDJAZK83QWSAEVGMKXkaudpE9Uv2euvTeCOiGIPfFxBAAAEEkNZtTVf0GEek2W8AAAAASUVORK5CYII="
-			  label="ZK Product" onClick='@command("showPopup", component=self)' />
-			
-			 <popup id="popup" sclass="popup textCenter">
-			 	<vlayout>
-			 	<label sclass="product_title">Application Components</label>
-			 	<label>ZK Spreadsheet</label>
-			 	<label>ZK Pivottable</label>
-			 	<label>ZK Calendar</label>
-			 	</vlayout>
-			 	<separator bar="true" />
-			 	<vlayout>
-			 	<label sclass="product_title">Tools</label>
-			 	<label>ZK Studio</label>
-			 	<label>ZATS</label>
-			 	</vlayout>
-			 	<separator bar="true" />
-			 	<vlayout>
-			 	<label sclass="product_title">Extensions</label>
-			 	<label>ZK Spring</label>
-			 	<label>ZK JSP</label>
-			 	</vlayout>			 	
-			</popup>			  
+			 </hlayout>	  
 		</caption>
 	</south>
 </borderlayout>

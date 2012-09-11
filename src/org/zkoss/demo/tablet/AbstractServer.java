@@ -1,5 +1,6 @@
 package org.zkoss.demo.tablet;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,20 +13,32 @@ public abstract class AbstractServer {
 	public static final String GENERAL = "General";
 	public static final String ANNOUNCE = "Announcements";
 	public static final String INSTALL = "Installation";
-
-	public static final HashMap<String, Integer> CAT_URL = new HashMap<String, Integer>();
+	
+	public static final String INBOX = "Inbox";
+	public static final String IMPORTANT = "Important";
+	public static final String STARRED = "Starred";
+	public static final String TRASH = "Trash";
+	
+	public static final String[] FOLDER_LIST = {
+		INBOX, IMPORTANT, STARRED, TRASH
+	};
+	
+	public static final String[] CATEGORY_LIST = {
+		HELP, STUDIO, GENERAL, ANNOUNCE, INSTALL
+	};
+	
+	public static final HashMap<String, Integer> CATEGORY_URL = new HashMap<String, Integer>();
 	static{
-		CAT_URL.put(HELP, 14);
-		CAT_URL.put(STUDIO, 18);
-		CAT_URL.put(GENERAL, 13);
-		CAT_URL.put(ANNOUNCE, 15);
-		CAT_URL.put(INSTALL, 17);
+		CATEGORY_URL.put(HELP, 14);
+		CATEGORY_URL.put(STUDIO, 18);
+		CATEGORY_URL.put(GENERAL, 13);
+		CATEGORY_URL.put(ANNOUNCE, 15);
+		CATEGORY_URL.put(INSTALL, 17);
 	}
 	
 	//Refactory extract parser of DataServer and MockServer
 	public abstract List<ThreadVO> getThreadList(String type);
 
-	
 	protected static final String CONTENT_AUTHOR_HEADER = "<span class=\"author-name\">";
 	protected static final String CONTENT_AUTHOR_TAIL = "</span>";
 	protected static final String CONTENT_DATE_HEADER = "<span class=\"comment-date\">";
@@ -34,5 +47,7 @@ public abstract class AbstractServer {
 	protected static final String CONTENT_HEADER = "</span>";
 	protected static final String CONTENT_TAIL = "</div></div><div class=\"author\">";
 	public abstract List<ContentVO> getContentList(ThreadVO thread);
+
+	public abstract void moveToTrash(ArrayList<ThreadVO> selectedThread);
 
 }

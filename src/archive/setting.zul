@@ -1,33 +1,27 @@
 <?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
 <div>
-	<grid>
+	<grid model="@load(vm.categoryList)">
 		<columns>
-			<column label="Type" width="100px" />
-			<column label="" />
+			<column>Category</column>
+			<column>Color</column>
 		</columns>
 		<rows>
+			<template name="model" var="category">
 			<row>
-				<label value="Intbox" />
-				<intbox constraint="no zero" placeholder="can't be zero" />
-			</row>		
-			<row>
-				<label value="Datebox : " />
-				<datebox width="300px" 
-				 value="${c:new('java.util.Date') }" format="long+medium" />
+				<label value="${category}" />
+				<label value="@load(vm.styleConverter.colorTable[category])" 
+				 style="@load(category) @converter(vm.styleConverter)" />
 			</row>
-			<row>
-				<label value="Colorbox : " />
-				<colorbox />
-			</row>
-			<row>
-				<label value="Combobox : " />
-				<combobox model="@load(vm.categoryList)" selectedIndex="@load(vm.selectedCategoryIndex)">
-					<template name="model" var="category">
-						<comboitem label="${category}" />
-					</template>
-				</combobox>
-			</row>
+			</template>
 		</rows>
 	</grid>	
+	<combobox id="category" model="@load(vm.categoryList)" selectedItem="@bind(vm.setColorCategory)">
+		<template name="model" var="category">
+			<comboitem label="${category}" />
+		</template>
+	</combobox>
+	<colorbox id="colorbox" value="@load(vm.categoryColor)" 
+	 onChange='@command("categoryColor" , color=self.value, category=category.selectedItem.value)'/>
+	<separator spacing="30px" />
 	<button label="back" onClick='@command("showSetting")' />
 </div>
