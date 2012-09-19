@@ -21,12 +21,13 @@ import org.zkoss.zk.ui.event.ClientInfoEvent;
 import org.zkoss.zk.ui.select.Selectors;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.Clients;
+import org.zkoss.zul.Borderlayout;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.Checkbox;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listitem;
 
-public class ThreadViewModel {
+public class FVViewModel {
 	// ==== for setting category color ==== //
 	private StyleConverter styleConverter = new StyleConverter();
 	private String setCategory = AbstractServer.HELP;
@@ -67,18 +68,17 @@ public class ThreadViewModel {
 	private DeviceMode deviceMode = new DeviceMode();
 	
 	@Wire("#contentPanel") private Center contentPanel;
+	@Wire("#mainPanel") private Borderlayout mainPanel;
 	@Wire("#threadList") private Listbox threadList;
 	
 	@Command
-	//XXX Why can be @NotifyChange({"threadList", "selectedThread", "contentList"})
-	@NotifyChange("*")
+	@NotifyChange({"threadList", "selectedThread", "contentList"})
 	public void deleteThread(){
 		ArrayList<ThreadVO> selectedThread = new ArrayList<ThreadVO>(); 
 		for(Listitem s : threadList.getItems()){
 			Checkbox ckb = (Checkbox)s.getChildren().get(0).getChildren().get(0).getChildren().get(0);  //TODO WTF code
 			if(ckb.isChecked()){
 				selectedThread.add((ThreadVO)s.getValue());
-				System.out.println((ThreadVO)s.getValue());//Delete
 			}
 		}
 		if(selectedThread.size()==0){
@@ -119,12 +119,13 @@ public class ThreadViewModel {
 	@AfterCompose
 	public void afterCompose(@ContextParam(ContextType.VIEW) Component view){
 		 Selectors.wireComponents(view, this, false);
-	 }
+	}
 
 	@Command
-	@NotifyChange("deviceMode")
+	@NotifyChange("*")
 	public void clientInfoChanged(@BindingParam("event") ClientInfoEvent event){
 		deviceMode.setClientInfo(event);
+		Clients.resize(mainPanel);//For fxck Android native browser can't resize component
 	}
 	
 	public DeviceMode getDeviceMode() {
@@ -199,12 +200,11 @@ public class ThreadViewModel {
 	}
 
 	@Command
-	@NotifyChange({"westMode", "threadList", "categoryList"})  
+	@NotifyChange({"westUrl", "threadList", "categoryList"})  
 	public void showCategory(){
 		westFlag = !westFlag;
 	}
 
-	@Deprecated
 	public String getWestUrl() {
 		return westFlag ? "thread.zul" : "category.zul";
 	}

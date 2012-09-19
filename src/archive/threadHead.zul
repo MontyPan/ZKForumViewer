@@ -2,12 +2,12 @@
 	<hlayout sclass="right" hflex="min">
 		<image sclass="button"
 		 tooltiptext="delete"
-		 onClick='@command("deleteThread")'
+		 onClick="Clients.showNotification(&quot;You don't have the permission to remove.&quot;)"
 		 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACfUlEQVQ4y2P4//8/Ay6s69GmBcRbgPgnEH8D4o1ArItPD04J0+BJuqHZ824BDfiPjP1SZz4CyhkQZSBQIScQVwPxEyD+H5Qx+39uw+r/MFDQtOa/fcSE/yA5IH4FxO1ALITTQIuwKVehioF44hUjn87/126/+ALkp4HwlVvPP4NcaRI44RpMnVX41AdAmg2XC8GKgBrCgXxxIP4HxElIapKgjg0DqnEHqv0FUt82Y58kXgP1vdrfAl0yH4i9gdgYiJmBmA3K9gDJ6Xu2f7IInfwXpH7rgeuaeA3Mblj3om/uvnNeidNv24b134VFiHVI30O3uCl3myZtv9w798BdmHqcBi7fcuGaeehksKKksqXXNu6+dPLkhQdH//z5e+DHz98HQewt+66cTK1cdhPo5T8gdQvWnbkJ1CuDK9k0+WUuAIdLTd/Wiw6REy+YB/Zcg7nQ1L8b5OIrVd2bL4DU2EVNB4VxJ950GFW87D1I8eodlyYC+XuXbDh9H5ZsFq49+QTo0iNHzz2YDFIDtPwLwYSd27zhKTRsooCuAuWWD1CaAepSUFi7gtQklK98Q9DAmv4dN6EGFuExMBmkprhj80OCBvbNP3QaamAfHgPrQGpapu29QtDARevPboMauAaPgXNBamYsP36IoIEb9lyZCTXwCB4Dd4DUrNx6YSVBA4+de1AKNfAeHgMvgdTsOXa7g6CBb95/dbSOmPoXaijItQYwA0FsqNh/YEHy99HzD2HElIfcwNR/wzxk8j9EyYOKQXLz1pwC5RAxYgvYzqu3X5wsat/8Ijh30WeYQSB2SceW5yA5oJpukkpsIPYE4lVAvB2I90MxiL0SKodVHwDM8eaDXMjxKgAAAABJRU5ErkJggg==" />	
 	</hlayout>
 	<image sclass="button left"
 	 tooltiptext="category" 
 	 onClick='@command("showCategory")'
 	 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAkCAYAAAD7PHgWAAAAeUlEQVRYw+2VMQqAMAxFGw/kmtnRi3gNcfIOXsY1OVVc20VBQSO8vxUKfTT5PImIkjldSR4An0b6cX19Cbd5kPo8LXswYgABvNvi+EAl7t60WFX/22K5umBm7CCAuJgRAwggLsbFlAQX42IAAcTF9aMiTYvPGNL/4AG/MDHYyxz/MQAAAABJRU5ErkJggg==" />
-	<label value="@load(vm.selectedCategory)" hflex="1" sclass="autoSkip"/>
+	<label value="@load(vm.selectedCategory)" hflex="1" sclass="autoSkip category_title"/>
 </div>

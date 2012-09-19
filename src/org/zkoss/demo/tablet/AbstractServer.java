@@ -20,7 +20,7 @@ public abstract class AbstractServer {
 	public static final String TRASH = "Trash";
 	
 	public static final String[] FOLDER_LIST = {
-		INBOX, IMPORTANT, STARRED, TRASH
+		INBOX, IMPORTANT, STARRED//, TRASH
 	};
 	
 	public static final String[] CATEGORY_LIST = {

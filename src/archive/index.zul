@@ -6,7 +6,8 @@
 <script type="text/javascript"
  if='${execution.serverName == "www.zkoss.org" or execution.serverName == "www.potix.com"}'><![CDATA[
 	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-34371271-1']);
+	_gaq.push(['_setAccount', 'UA-121377-3']);
+	_gaq.push(['_setDomainName', 'zkoss.org']);
 	_gaq.push(['_trackPageview']);
 
 	(function() {
@@ -84,6 +85,16 @@ pre {
 	cursor: pointer;
 }
 
+.collapse_button:hover{
+	border-color: #AEAEAE;
+	${t:boxShadow("inset 1px 1px 1px #0CBCFF, inset -1px -1px 1px #0CBCFF")};
+}
+
+.collapse_button:focus{
+	border-color: #0CBCFF;
+	${t:boxShadow("inset 1px 1px 1px #0CBCFF, inset -1px -1px 1px #0CBCFF")};
+}
+
 .textCenter {
 	text-align: center;
 }
@@ -91,6 +102,11 @@ pre {
 .thread_title {
 	font-size: 15px;
 	font-weight: bold;
+}
+
+.category_title {
+	line-height: 32px;
+	font-size: 15px;
 }
 
 .content_header {
@@ -130,16 +146,21 @@ pre {
 }
 </style>
 
-<style if="${zk.iphone != null}">
-.autoSkip {
-	white-space: normal; /* override for iPhone rendering bug */
-}
-
+<style if="${zk.mobile != null }">
 /* #### hide on phone device #### */
 @media screen and (max-width: 640px) {
 	.z-borderlayout-icon {
 		display:none;
 	}
+	.category_title {
+		width:280px; //TODO don't use the fixed width
+	}
+}
+</style>
+
+<style if="${zk.iphone != null}">
+.autoSkip {
+	white-space: normal; /* override for iPhone rendering bug */
 }
 </style>
 
@@ -160,74 +181,15 @@ pre {
 	);
 }
 </style>
-
-<borderlayout apply="org.zkoss.bind.BindComposer" onClientInfo='@command("clientInfoChanged", event=event)'
- viewModel='@id("vm") @init("org.zkoss.demo.tablet.vm.ThreadViewModel", mode="mock")'>
-	<west border="none" collapsible="true" autoscroll="true" xmlns:ca="client/attribute"
+<borderlayout id="mainPanel" apply="org.zkoss.bind.BindComposer" onClientInfo='@command("clientInfoChanged", event=event)'
+ viewModel='@id("vm") @init("org.zkoss.demo.tablet.vm.FVViewModel", mode="mock")'>
+	<west border="none" collapsible="true" 
 	 visible="@load(not vm.deviceMode.phone or (vm.deviceMode.phone and not vm.threadMode))"
-	 size='@load(vm.deviceMode.phone ? "100%" : "30%")' >
+	 size='@load(vm.deviceMode.phone ? "100%" : "30%" )' >
 		<caption>
 			<include src="threadHead.zul" />
 		</caption>
-		<div>
-			<!-- #### Thread.zul ####-->
-			<listbox id="threadList" visible="@load(vm.westMode)"  ca:data-scrollable="false"
-			 model="@load(vm.threadList)" emptyMessage="Is Empty!"
-			 selectedIndex='@load(vm.threadListEmpty ? vm.emptyIndex : vm.selectedThreadIndex) @save(vm.selectedThreadIndex)' >
-				<template name="model" var="thread">
-					<listitem>
-						<listcell>
-							<hlayout valign="middle" hflex="1">
-								<checkbox />
-								<div hflex="1">
-									<label value="@load(thread.author)" sclass="thread_title" />
-									(<label value='@load(thread.post)' />)
-									<image 
-									 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAA4ElEQVQoU2M4NUP4BxD/w4P/A3HD////GWCY4fhUoX9/P+36jwv/eLXmP1DNRyA2h2s6MlHg3/879v/x4RfHQ/4D1T0HYnGwpoM9fP/+X7P4jxffsP9/f0/4f6DazUDMzrC3neff//OG/wniS3b/b24N+Q9Uv5thZxPXv/8nNP8Tg28s1/4PVL+FYWstx7//h5T/E8I354v+B6rdCsQcDBsr2P793yPzHx9+tFjkP1DdCyAWAQfEumKWf/+2if3Hhb9vFPkPVPMRiBFBviqf6RcQ/wXiP1AaHf8H4jrkyAUAlSRgDlxOvSkAAAAASUVORK5CYII=" />
-									<separator visible="@load(not vm.deviceMode.phone)"/>
-									<html content="@load(thread.title)" sclass="thread_title autoSkip" />
-									<separator visible="@load(not vm.deviceMode.phone)"/>
-									Last post by <label value="@load(thread.lastPoster)" />
-									<label value="@load(thread.category)" style="@load(thread.category) @converter(vm.styleConverter)" />
-								</div>
-								<image width="27px" height="25px"
-								 src='@load(thread.hot ? "img/star.png" : "img/starEmpty.png")' />
-								<div width="2px" />
-							</hlayout>
-						</listcell>
-					</listitem>
-				</template>
-			</listbox>
-			<!-- #### category.zul #### -->
-			<vlayout spacing="0" visible="@load(not vm.westMode)">
-				<div style="background-color:#ccc;padding:0 0 0 10px;font-size:14px;">
-					<label style="line-height:32px;font-weight:bold;">Labels</label>
-				</div>
-				<listbox ca:data-scrollable="false"
-				 model="@load(vm.categoryList)" selectedIndex="@bind(vm.selectedCategoryIndex)">
-					<template name="model" var="category">
-						<listitem>
-							<listcell>
-								<label value="${category}" style="padding:0 0 0 10px;line-height:32px;font-size:14px;font-weight:bold" />
-							</listcell>
-						</listitem>
-					</template>
-				</listbox>
-				<div style="background-color:#ccc;padding:0 0 0 10px;font-size:14px;">
-					<label style="line-height:32px;font-weight:bold;">Folders</label>
-				</div>
-				<listbox ca:data-scrollable="false"
-				 model="@load(vm.folderList)" selectedIndex="@bind(vm.selectedFolderIndex)">
-					<template name="model" var="folder">
-						<listitem>
-							<listcell>
-								<label value="${folder}" style="padding:0 0 0 10px;line-height:32px;font-size:14px;font-weight:bold" />
-							</listcell>
-						</listitem>
-					</template>
-				</listbox>
-			</vlayout>
-		</div>
+		<include src="@load(vm.westUrl)" vflex="1" hflex="1" />
 	</west>
 	
 	<center border="none" id="contentPanel" autoscroll="true">

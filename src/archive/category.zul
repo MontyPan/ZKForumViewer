@@ -1,0 +1,29 @@
+<groupbox vflex="1" xmlns:ca="client/attribute" 
+ visible="@load(not vm.westMode)" contentStyle="overflow:auto">
+		<div style="background-color:#ccc;padding:0 0 0 10px;font-size:14px;">
+			<label style="line-height:32px;font-weight:bold;">Labels</label>
+		</div>
+		<listbox ca:data-scrollable="false"
+		 model="@load(vm.categoryList)" selectedIndex="@bind(vm.selectedCategoryIndex)">
+			<template name="model" var="category">
+				<listitem>
+					<listcell>
+						<label value="${category}" style="padding:0 0 0 10px;line-height:32px;font-size:14px;font-weight:bold" />
+					</listcell>
+				</listitem>
+			</template>
+		</listbox>
+		<div style="background-color:#ccc;padding:0 0 0 10px;font-size:14px;">
+			<label style="line-height:32px;font-weight:bold;">Folders</label>
+		</div>
+		<listbox ca:data-scrollable="false"
+		 model="@load(vm.folderList)" selectedIndex="@bind(vm.selectedFolderIndex)">
+			<template name="model" var="folder">
+				<listitem>
+					<listcell>
+						<label value="${folder}" style="padding:0 0 0 10px;line-height:32px;font-size:14px;font-weight:bold" />
+					</listcell>
+				</listitem>
+			</template>
+		</listbox>
+</groupbox>

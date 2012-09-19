@@ -55,8 +55,8 @@ public class DeviceMode {
 	}
 
 	public void setClientInfo(ClientInfoEvent event) {
-		int width = event.getDesktopWidth();
-		int height = event.getDesktopHeight();
+		width = event.getDesktopWidth();
+		height = event.getDesktopHeight();
 		this.setVertical(event.isVertical());
 		if (vertical) {
 			if (height <= 640){

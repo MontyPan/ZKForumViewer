@@ -1,4 +1,4 @@
-<vlayout>
+<vlayout width='${zk.mobile !=null ? "100%" : "99%"}'>
 	<hlayout hflex="1">
 		<div hflex="1" sclass="content_header">
 			<html content="@load(vm.selectedThread.title)" sclass="thread_title"/>			
